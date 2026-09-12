@@ -1,0 +1,18 @@
+# Python build/generator scripts - excluded from repo
+*.py
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets / env
+.env
+.env.*
+*.key
+*.pem
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
