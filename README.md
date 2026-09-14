@@ -27,6 +27,8 @@ Chi tiết đầy đủ: xem [`docs/khung-chuong-trinh-6-buoi.md`](docs/khung-ch
 claude-ai/
 ├── buoi-01-lam-theo-tung-buoc.md   # Giáo án buổi 01 (bản gốc, làm theo từng bước)
 ├── workbook.html                   # Workbook tương tác buổi 01 (mở bằng trình duyệt)
+├── slides/
+│   └── slide-buoi-01.html          # Slide trình chiếu buổi 01 (mở bằng trình duyệt)
 ├── docs/
 │   ├── khung-chuong-trinh-6-buoi.md # Khung chương trình đầy đủ 6 buổi
 │   └── course-outline-source.md     # Bản outline nguồn (tham chiếu khi soạn bài)
@@ -49,6 +51,7 @@ claude-ai/
 ### Dành cho giảng viên / trợ giảng
 
 - Dùng [`buoi-01-lam-theo-tung-buoc.md`](buoi-01-lam-theo-tung-buoc.md) làm **giáo án bám giảng**: nội dung chia theo Phần, mỗi thao tác có bước đánh số và khối thực hành (thẻ `<details>` bấm để mở).
+- Dùng [`slides/slide-buoi-01.html`](slides/slide-buoi-01.html) để **trình chiếu tại lớp**: mở bằng trình duyệt và chiếu toàn màn hình.
 - Dùng [`docs/khung-chuong-trinh-6-buoi.md`](docs/khung-chuong-trinh-6-buoi.md) để nắm mạch năng lực xuyên suốt 6 buổi và sản phẩm đầu ra từng buổi.
 - File demo trong `demo-files/buoi-01/` dùng để phát cho học viên chưa mang dữ liệu thật.
 
