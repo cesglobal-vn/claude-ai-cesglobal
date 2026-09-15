@@ -2523,18 +2523,59 @@ Giao diện phong cách Legal Tech hiện đại, màu sắc trang nhã, trực 
             <h2 class="section-title">Bài tập tại lớp, Nghiệm thu & chuẩn bị Buổi 3</h2>
           </div>
 
-          <div class="card-panel">
+                    <div class="card-panel">
             <h3 style="font-size: 16px; margin-bottom: 8px;">4.1. Bài tập thực hành tại lớp (chọn 1 trong 2 đề)</h3>
-            <div class="principles-grid" style="grid-template-columns: 1fr 1fr;">
-              <div class="principle-card" style="border-left: 4px solid var(--brand-primary);">
-                <div class="principle-title" style="color: var(--brand-primary);">Đề A - Bán hàng / Marketing / CSKH</div>
-                <div class="principle-desc">Xây "Bảng tính ROI &amp; Báo giá dịch vụ tự động" hoặc "Bộ chấm điểm Lead tiềm năng". Yêu cầu: &ge; 3 tham số đầu vào, logic phân loại màu (Nóng/Ấm/Lạnh), bảng tóm tắt đề xuất hành động.</div>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 6px;"><strong>Ưu tiên 1:</strong> làm trên chính tài liệu, bảng tính hoặc quy chế thực tế của công ty bạn.</p>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 14px;"><strong>Nếu chưa có tài liệu riêng:</strong> dùng ngay 2 file demo NovaTech trong thư mục <code>demo-files/buoi-02/</code>.</p>
+
+            <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 6px; color: var(--brand-primary);">Đề bài A - Bán hàng / Marketing / CSKH: Lead Scoring App</h4>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;"><strong>Mục tiêu:</strong> xây "Bộ công cụ Chấm điểm &amp; Phân loại Khách hàng Tiềm năng B2B (Lead Scoring App)".</p>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div>Lấy file demo <code>Ma trận chấm điểm Lead tiềm năng và Kịch bản chốt deal - NovaTech.xlsx</code> trong <code>demo-files/buoi-02/</code>.</div></li>
+              <li><span class="step-badge">2</span><div>Nạp file vào Project Buổi 1 hoặc đính kèm trực tiếp vào ô chat.</div></li>
+              <li><span class="step-badge">3</span><div>Dán câu lệnh mẫu dưới đây:</div></li>
+            </ul>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Câu lệnh Đề A - Lead Scoring App</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
               </div>
-              <div class="principle-card" style="border-left: 4px solid var(--accent-cyan);">
-                <div class="principle-title" style="color: var(--accent-cyan);">Đề B - Nhân sự / Vận hành / Nội bộ</div>
-                <div class="principle-desc">Xây "Bảng tính lương Net sang Gross &amp; chi phí doanh nghiệp" hoặc "Checklist tiếp nhận nhân sự mới" có checkbox tích hoàn thành theo ngày/tuần và thanh tiến độ % tự nhảy.</div>
-              </div>
+              <div class="prompt-content">Dựa vào file Excel "Ma trận chấm điểm Lead tiềm năng và Kịch bản chốt deal" tôi vừa nạp:
+Hãy tạo cho tôi một BẢNG TÍNH CHẤM ĐIỂM VÀ PHÂN LOẠI KHÁCH HÀNG B2B TƯƠNG TÁC (Lead Scoring App) trong cửa sổ Artifact:
+
+- Đọc từ Sheet "Barem_Cham_Diem" để tạo các nhóm tiêu chí cho Sales bấm chọn: Quy mô doanh nghiệp, Vị trí người liên hệ, Ngân sách dự kiến và Mức độ cấp thiết.
+- Tự động cộng tổng điểm và đối chiếu với Sheet "Quy_Tac_Phan_Loai" để:
+  + Đổi màu thẻ xếp hạng trực quan: Đỏ (Lead Nóng - 150-200đ) | Vàng (Lead Ấm - 100-149đ) | Xám (Lead Lạnh - Dưới 100đ).
+  + Hiển thị thời hạn cam kết phản hồi (SLA) và kịch bản hành động chi tiết tương ứng.
+- Có nút bấm "Sao chép tóm tắt đánh giá Lead" để Sales dán nhanh vào CRM hoặc gửi Zalo nhóm cho Trưởng phòng.
+
+Giao diện thiết kế trực quan, chia 2 cột hiện đại, dễ thao tác nhé!</div>
             </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>4. Trải nghiệm:</strong> bấm chọn các tiêu chí xem điểm số tự nhảy và thẻ trạng thái tự đổi màu Đỏ/Vàng/Xám theo đúng quy tắc trong file Excel.</p>
+
+            <h4 style="font-size: 15px; font-weight: 700; margin: 20px 0 6px; color: var(--accent-cyan);">Đề bài B - Nhân sự / Vận hành / Nội bộ: Onboarding Tracker</h4>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;"><strong>Mục tiêu:</strong> xây "Bảng theo dõi Hội nhập &amp; Đánh giá Thử việc 30 ngày (Interactive Onboarding Tracker)".</p>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div>Lấy file demo <code>Quy trình tiếp nhận và kế hoạch thử việc 30 ngày cho nhân sự mới - NovaTech.docx</code> trong <code>demo-files/buoi-02/</code>.</div></li>
+              <li><span class="step-badge">2</span><div>Đính kèm file Word này vào ô chat hoặc Project của bạn.</div></li>
+              <li><span class="step-badge">3</span><div>Dán câu lệnh mẫu dưới đây:</div></li>
+            </ul>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Câu lệnh Đề B - Onboarding Tracker</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Dựa vào file Word "Quy trình tiếp nhận và kế hoạch thử việc 30 ngày cho nhân sự mới" tôi vừa nạp:
+Hãy tạo cho tôi một BẢNG THEO DÕI HỘI NHẬP VÀ ĐÁNH GIÁ THỬ VIỆC TƯƠNG TÁC (Interactive Onboarding Tracker) trong cửa sổ Artifact:
+
+- Đọc từ tài liệu để chia lộ trình 30 ngày thành 4 giai đoạn theo tuần (Tuần 1: Chào sân, Tuần 2: Học nghề, Tuần 3: Thử lửa, Tuần 4: Về đích).
+- Mỗi tuần hiển thị danh sách các đầu việc có checkbox để tick chọn khi hoàn thành, ghi rõ người phụ trách và tiêu chuẩn nghiệm thu.
+- Phía trên cùng có thanh tiến độ (Progress Bar %) tự động cập nhật khi người dùng tích chọn xong từng việc.
+- Có khối chấm điểm nghiệm thu 30 ngày (thang 100 điểm theo 3 tiêu chí trong tài liệu) và nút "Sao chép Báo cáo thử việc gửi HR".
+
+Giao diện phong cách quản trị nhân sự hiện đại, thanh lịch, trực quan nhé!</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>4. Trải nghiệm:</strong> tích chọn các đầu việc Tuần 1 và Tuần 2 -> xem thanh tiến độ % tự nhảy từ 0% lên 30%, 50% cực kỳ trực quan.</p>
           </div>
 
           <div class="card-panel">
