@@ -5,10 +5,11 @@
 | Phần | Nội dung | Thời lượng dự kiến |
 |:---:|---|:---:|
 | **0** | Từ văn bản tĩnh sang công cụ tương tác: Sản phẩm hôm nay bạn mang về là gì? | 15 phút |
-| **1** | Bản chất của Claude Artifacts & Cơ chế hoạt động của "Cửa sổ thứ hai" | 25 phút |
-| **2** | Kỹ thuật "Prompt-to-App" & 2 Case Study Xây dựng công cụ thực chiến | 70 phút |
+| **1** | Bản chất của Artifacts, Khởi động nhanh ngoài Chat & "Aha Moment" | 30 phút |
+| **2** | Kỹ thuật "Prompt-to-App" & 2 Case Study Xây dựng công cụ thực chiến trong Project | 65 phút |
 | **3** | Kỹ thuật tinh chỉnh (Iterate), Khắc phục lỗi (Debug) & Xuất bản chia sẻ link (Publish & Share) | 25 phút |
 | **4** | Nghiệm thu cuối buổi & Định hướng Buổi 3 | 15 phút |
+
 
 ---
 
@@ -75,7 +76,92 @@ Khi Claude tạo một Artifact, góc trên bên phải màn hình sẽ xuất h
 
 ---
 
-## PHẦN 2. KỸ THUẬT "PROMPT-TO-APP" & 2 CASE STUDY THỰC CHIẾN
+### 1.4. Khởi động nhanh (Warm-up): Tạo ngay công cụ đầu tiên trong 30 giây (ngoài màn hình Chat thường)
+
+- **Mục tiêu:** Giúp bạn có ngay khoảnh khắc "Aha!" - tận mắt thấy cửa sổ Artifacts trượt ra, kéo thử các thanh trượt và hiểu cơ chế hoạt động mà không bị áp lực bởi các quy chế nghiệp vụ phức tạp.
+- **Vị trí thực hiện:** Ra ngoài màn hình chính của Claude (Chat thông thường / Cowork), **chưa cần mở Project**.
+
+#### 👉 Bài tập khởi động chính (Thực hành tại lớp): Bảng tính Lãi vay mua nhà / mua xe trả góp (Loan Calculator)
+- Chỉ với một câu lệnh 5 dòng đơn giản, Claude sẽ dựng ngay một công cụ tài chính có 2 thanh trượt mượt mà.
+
+<details>
+<summary><b>Thao tác thực hành: Khởi động với Bảng tính Lãi vay trả góp</b> (bấm để mở)</summary>
+
+1. Bấm vào nút **Start a new chat** (hoặc dấu `+` ở góc trên bên trái màn hình) để mở một phiên chat mới tinh ngoài màn hình chính.
+2. Copy và dán câu lệnh ngắn sau vào ô chat:
+
+```markdown
+Hãy tạo một ứng dụng mini bằng HTML, Tailwind CSS và JavaScript trong một cửa sổ Artifact duy nhất:
+"BẢNG TÍNH LÃI VAY MUA NHÀ & XE TRẢ GÓP"
+- Đầu vào:
+  + Thanh trượt (Slider) chọn số tiền vay: từ 200 triệu đến 5 tỷ đồng (bước nhảy 50 triệu, mặc định 1 tỷ).
+  + Thanh trượt chọn thời hạn vay: từ 1 năm đến 25 năm (mặc định 10 năm).
+  + Ô nhập hoặc thanh trượt lãi suất: mặc định 8.5%/năm.
+- Logic & Kết quả:
+  + Tự động tính số tiền gốc hàng tháng = Tiền vay / (Số năm * 12).
+  + Tự động tính số tiền lãi tháng đầu = Tiền vay * (Lãi suất / 12).
+  + Hiển thị nổi bật: Tổng số tiền phải trả tháng đầu (Gốc + Lãi) với con số to, rõ ràng.
+  + Hiển thị bảng tóm tắt: Tổng lãi phải trả trong suốt kỳ hạn và Tổng số tiền cả gốc lẫn lãi.
+- Giao diện: Hiện đại, sạch sẽ, màu xanh tài chính (Emerald/Teal), số tiền định dạng chuẩn tiếng Việt (ví dụ: 1.000.000.000 đ).
+```
+
+3. Bấm **Gửi (Send)** và quan sát:
+   - Trong vòng 30 giây, khung chat bên trái sẽ tự động nhường chỗ cho **cửa sổ Artifacts bên phải**.
+   - Tab **Preview** hiển thị giao diện sống động: Thử kéo thanh trượt từ 1 tỷ lên 2 tỷ đồng -> Xem con số tiền trả hàng tháng nhảy lập tức theo thời gian thực!
+   - Thử chuyển qua tab **Code** để xem Claude vừa tự viết hàng chục dòng mã lệnh cho bạn.
+</details>
+
+---
+
+#### 🌟 2 Lựa chọn khởi động bổ sung (Học viên tự thử nghiệm thêm nếu muốn)
+
+Nếu bạn muốn khám phá thêm các dạng giao diện khác (như danh sách tích chọn hoặc chia tiền theo nhóm), hãy thử copy 1 trong 2 lệnh dưới đây:
+
+<details>
+<summary><b>Lựa chọn bổ sung 1: Bảng tính chia tiền ăn trưa & Quỹ trà sữa văn phòng (Lunch & Coffee Splitter)</b> (bấm để mở)</summary>
+
+```markdown
+Hãy tạo một ứng dụng mini trong Artifact: "CÔNG CỤ CHIA TIỀN ĂN TRƯA VĂN PHÒNG"
+- Cho nhập tổng hóa đơn bữa trưa (ô nhập số tiền).
+- Thanh trượt chọn số người tham gia (từ 2 đến 15 người).
+- Danh sách tùy chọn (Checkbox) cho các món gọi riêng:
+  + "Có uống trà sữa / cà phê (+35.000 đ/ly)" -> Cho chọn số người uống.
+  + "Có người ăn chay / giảm khẩu phần (-20.000 đ)" -> Cho chọn số người.
+- Kết quả: Tự tính số tiền chính xác mỗi người cần chuyển khoản (chia nhóm: Người ăn thường chuyển bao nhiêu, Người có uống thêm nước chuyển bao nhiêu).
+- Kèm nút bấm: "Sao chép thông báo chia tiền để gửi Zalo nhóm" (định dạng sẵn lời nhắn lịch sự, vui vẻ).
+```
+</details>
+
+<details>
+<summary><b>Lựa chọn bổ sung 2: Bảng phân loại việc cần làm theo Ma trận Eisenhower (Daily Focus Tracker)</b> (bấm để mở)</summary>
+
+```markdown
+Hãy tạo một ứng dụng mini trong Artifact: "MA TRẬN QUẢN LÝ CÔNG VIỆC TRONG NGÀY (EISENHOWER MATRIX)"
+- Bố cục 4 ô trực quan:
+  1. Khẩn cấp & Quan trọng (Làm ngay - Màu đỏ)
+  2. Quan trọng nhưng Không khẩn cấp (Lên lịch làm - Màu xanh dương)
+  3. Khẩn cấp nhưng Không quan trọng (Ủy quyền/Giao việc - Màu vàng)
+  4. Không khẩn cấp & Không quan trọng (Loại bỏ - Màu xám)
+- Mỗi ô cho phép gõ thêm đầu việc mới và có nút checkbox để tick khi hoàn thành.
+- Phía trên cùng có một thanh tiến độ (Progress Bar) tự động cập nhật % công việc đã hoàn thành trong ngày.
+- Giao diện phẳng tối giản, hiện đại, lưu trạng thái tạm thời trên trình duyệt.
+```
+</details>
+
+---
+
+### 1.5. Cầu nối tư duy: Khi nào làm ngoài Chat, khi nào phải vào Claude Projects?
+
+- **Làm ngoài Chat thông thường:** Rất tuyệt vời cho các công cụ cá nhân, công cụ tính toán nhanh một lần (như tính tiền vay, chia bill ăn trưa, to-do list cá nhân).
+- **Khi nào bắt buộc phải đưa vào Claude Projects?**
+  - Khi bạn cần xây dựng **công cụ nghiệp vụ cho công ty** (như Bảng tính báo giá NovaTech hay Bảng kiểm tra hợp đồng).
+  - Vì nếu làm ngoài Chat, mỗi lần bạn muốn đổi công cụ, bạn lại phải ngồi gõ lại 3 trang bảng giá PDF và 4 trang quy chế chiết khấu.
+  - Còn khi làm trong **Claude Projects của Buổi 1**, toàn bộ dữ liệu nội bộ đã nằm sẵn trong mục `Context`. Bạn chỉ cần đặc tả chức năng, Claude sẽ tự động bốc toàn bộ bảng giá và quy định của công ty đưa vào ứng dụng mà không sai một dấu phẩy!
+
+---
+
+## PHẦN 2. KỸ THUẬT "PROMPT-TO-APP" & 2 CASE STUDY THỰC CHIẾN TRONG PROJECT
+
 
 ### 2.1. Công thức 4 thành tố "Prompt-to-App" cho người không biết lập trình
 
@@ -92,10 +178,15 @@ Khi Claude tạo một Artifact, góc trên bên phải màn hình sẽ xuất h
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-1. **Input (Đầu vào):** Quy định rõ người dùng tương tác bằng gì (ô nhập số, thanh trượt slider, menu thả xuống dropdown, hay nút chọn radio).
-2. **Logic (Quy tắc tính toán):** Nêu rõ các bước tính, công thức chiết khấu, điều kiện if/else (Ví dụ: Nếu trên 50 người thì giảm 8%, nếu trả chậm thì cộng thêm 4%).
-3. **Output (Đầu ra hiển thị):** Kết quả hiển thị gồm số tiền, bảng tóm tắt, màu cảnh báo trạng thái phê duyệt (Xanh/Vàng/Đỏ), và văn bản hoàn chỉnh.
-4. **UX/UI (Trải nghiệm người dùng):** Yêu cầu giao diện hiện đại, sạch sẽ, chuẩn doanh nghiệp (corporate), thân thiện với cả máy tính và điện thoại di động, có nút "Sao chép một chạm" (Copy to clipboard).
+1. **Input (Đầu vào):** Nêu rõ những gì bạn muốn người dùng thao tác (ô nhập tên khách, thanh trượt số người, nút chọn gói dịch vụ, nút chọn trả góp...).
+2. **Logic (Quy tắc tính toán & Thẩm quyền):** Bảo Claude tự đọc các công thức, bậc thang chiết khấu, phụ phí và thẩm quyền phê duyệt từ các file trong Context.
+3. **Output (Đầu ra hiển thị):** Kết quả hiển thị gồm bảng chiết tính tiền, các thẻ đổi màu cảnh báo thẩm quyền (Xanh/Vàng/Đỏ), và văn bản mẫu điền sẵn số liệu.
+4. **UX/UI (Trải nghiệm người dùng):** Yêu cầu giao diện hiện đại, bố cục 2 cột rõ ràng, có nút bấm sao chép một chạm.
+
+> [!IMPORTANT]
+> **Bí quyết vàng của người làm chủ AI (Không làm thay việc của AI):**
+> Bạn **KHÔNG CẦN VÀ KHÔNG NÊN** ngồi chép lại từng mức giá, từng bậc chiết khấu hay từng điều luật vào câu lệnh prompt! 
+> Đó là cách làm của người chưa biết dùng Projects. Với Claude Projects, bạn chỉ cần ra lệnh: *"Đọc từ file Bảng giá và Quy chế chiết khấu trong Context của dự án này..."*. Claude sẽ tự động bốc toàn bộ dữ liệu nội bộ ra để lập trình ứng dụng cho bạn!
 
 ---
 
@@ -103,77 +194,54 @@ Khi Claude tạo một Artifact, góc trên bên phải màn hình sẽ xuất h
 
 #### Vấn đề bài toán
 Đội ngũ Sales B2B của công ty NovaTech thường xuyên phải tính giá cho khách hàng với nhiều biến số phức tạp:
-- Chọn gói phần mềm (Starter, Professional, Enterprise).
-- Chọn số lượng người dùng (tính thêm phí nếu vượt định mức gói).
-- Đăng ký thêm dịch vụ đào tạo tại văn phòng (15 triệu/3 buổi).
-- Áp dụng bậc chiết khấu doanh số theo quy chế công ty (0% - 12%).
-- Ưu đãi thanh toán 100% (giảm 5%) hoặc phụ thu nếu trả 3 đợt (+4%).
-- Hiển thị cảnh báo cấp thẩm quyền duyệt giá (Sales tự quyết / Cần Trưởng phòng / Bắt buộc CEO phê duyệt).
-- Tự động xuất Thư chào giá hoàn chỉnh kèm số tài khoản ngân hàng để gửi khách ngay lập tức.
+- Chọn gói phần mềm, số người dùng thực tế, đăng ký thêm gói đào tạo tại văn phòng.
+- Áp dụng bậc chiết khấu doanh số, ưu đãi trả 100% hoặc phụ thu trả 3 đợt.
+- Kiểm soát thẩm quyền duyệt giá (Sales tự quyết / Cần Trưởng phòng / Bắt buộc CEO phê duyệt).
+- Xuất Thư chào giá hoàn chỉnh gửi khách ngay lập tức.
 
 #### Thao tác tạo ứng dụng Báo giá tương tác
 
 <details>
 <summary><b>Thao tác thực hành: Tạo Bảng tính Báo giá tương tác bằng Artifacts</b> (bấm để mở)</summary>
 
-**Bước 1: Mở Project hoặc mở một phiên Chat mới**
-- Bạn có thể vào lại Project **"Trợ lý Báo giá & Thương mại B2B - NovaTech"** đã tạo ở Buổi 1 (đã có sẵn 3 file tài liệu trong Context).
-- Hoặc mở trực tiếp một phiên chat mới trên Claude nếu muốn xây dựng ứng dụng độc lập.
+**Bước 1: Mở lại Project đã tạo ở Buổi 1**
+- Vào mục **Projects** ở menu bên trái -> Bấm chọn Project **"Trợ lý Báo giá & Thương mại B2B - NovaTech"** (đã có sẵn 3 file: Bảng giá PDF, Quy chế chiết khấu Word, Mẫu thư chào giá Word trong Context).
+- Bấm mở một phiên chat mới bên trong Project này.
 
-**Bước 2: Copy và dán câu lệnh "Prompt-to-App" chuẩn vào ô chat**
+**Bước 2: Copy và dán câu lệnh yêu cầu tự nhiên vào ô chat**
+*(Hãy chú ý: Câu lệnh ngắn gọn, tự nhiên như giao việc cho nhân viên, để Claude tự đọc 3 file tài liệu trong Context chứ không cần bạn gõ lại giá tiền!)*
 
 ```markdown
-Hãy đóng vai trò là một Chuyên gia Lập trình Web Frontend và Chuyên gia Tối ưu Vận hành B2B. 
-Dựa vào các tài liệu nội bộ của NovaTech (hoặc các quy tắc nghiệp vụ tôi cung cấp dưới đây), hãy xây dựng một ỨNG DỤNG WEB TƯƠNG TÁC ĐỘC LẬP (Interactive Single-Page Web App) bằng HTML, Tailwind CSS và JavaScript hiện đại, chạy trực tiếp trong cửa sổ Artifact.
+Dựa vào các file tài liệu trong mục Context của dự án này (Bảng giá, Quy chế chiết khấu, Mẫu thư chào giá):
+Hãy tạo cho tôi một ỨNG DỤNG WEB TƯƠNG TÁC trong cửa sổ Artifact để nhân viên kinh doanh NovaTech tính giá và duyệt deal B2B với khách hàng:
 
-Ứng dụng mang tên: "BẢNG TÍNH BÁO GIÁ & PHÊ DUYỆT DEAL B2B - NOVATECH"
+1. ĐẦU VÀO (Cho Sales thao tác):
+- Tự động đọc từ file Bảng giá để tạo danh sách các gói phần mềm cho Sales bấm chọn, và tùy chọn dịch vụ đào tạo tại văn phòng đi kèm.
+- Có ô nhập tên khách hàng / công ty, và thanh trượt chọn số lượng người dùng thực tế.
+- Chọn phương thức thanh toán: Trả 100% (hưởng ưu đãi thanh toán sớm) hoặc Chia 3 đợt (phụ thu phí dòng tiền) theo đúng quy chế công ty.
+- Thanh trượt cho Sales đề xuất mức giảm giá thêm (từ 0% đến 15%).
 
-CÁC YÊU CẦU CHI TIẾT VỀ CHỨC NĂNG & GIAO DIỆN:
+2. LOGIC TÍNH TOÁN & CẢNH BÁO THẨM QUYỀN (Tự động theo Quy chế chiết khấu):
+- Tự động áp đúng tỷ lệ chiết khấu theo bậc doanh số từ file Quy chế chiết khấu trong Context.
+- Tính chính xác thuế VAT 10% và tổng tiền thanh toán cuối cùng.
+- RẤT QUAN TRỌNG: Tự động đổi màu thẻ cảnh báo thẩm quyền duyệt deal theo đúng quy chế công ty:
+  + Mức giảm giá nằm trong hạn mức Sales được tự quyết -> Thẻ màu xanh lá.
+  + Vượt hạn mức Sales nhưng trong quyền hạn Trưởng phòng -> Thẻ màu vàng cam cảnh báo cần Trưởng phòng duyệt.
+  + Vượt thẩm quyền Trưởng phòng -> Đổi sang màu đỏ cảnh báo bắt buộc Tổng Giám đốc CEO ký duyệt.
 
-1. KHỐI ĐẦU VÀO (INPUT CONTROLS):
-- Tên khách hàng & Doanh nghiệp: Ô nhập văn bản.
-- Lựa chọn Gói giải pháp phần mềm (Radio Card hoặc Dropdown đẹp mắt):
-  + Gói Starter: 18.000.000 đ/năm (Tối đa 15 người dùng).
-  + Gói Professional: 36.000.000 đ/năm (Tối đa 50 người dùng).
-  + Gói Enterprise: 72.000.000 đ/năm (Không giới hạn người dùng, mặc định 100).
-- Số lượng người dùng thực tế: Thanh trượt (Slider) kết hợp ô nhập số trực tiếp (từ 5 đến 200 người). Tự động gợi ý gói phù hợp nếu số người dùng vượt trần của gói được chọn.
-- Dịch vụ cộng thêm: Checkbox tùy chọn "Đào tạo trực tiếp tại văn phòng khách hàng (+15.000.000 đ/gói 3 buổi)".
-- Hình thức thanh toán: Chọn 1 trong 2:
-  + "Thanh toán 100% khi ký kết" (Được chiết khấu thanh toán sớm: giảm thêm 5% trên giá sau chiết khấu doanh số).
-  + "Thanh toán chia làm 3 đợt theo tiến độ" (Phụ thu chi phí dòng tiền: cộng thêm 4% trên giá niêm yết).
-- Đề xuất giảm giá thêm từ Sales: Thanh trượt từ 0% đến 15% (bước nhảy 1%).
+3. XUẤT BẢN THƯ CHÀO GIÁ (Bên phải màn hình):
+- Tự động điền thông tin và bảng chiết tính vào bản xem trước Thư chào giá chuẩn theo đúng file Mẫu thư trong Context (nhớ lấy đúng thông tin tài khoản ngân hàng của NovaTech).
+- Có nút bấm "Sao chép toàn bộ Thư chào giá" để Sales copy gửi khách ngay.
 
-2. KHỐI LOGIC TÍNH TOÁN & CẢNH BÁO THẨM QUYỀN (DYNAMIC LOGIC):
-- Chiết khấu theo bậc doanh số hợp đồng:
-  + Dưới 30 triệu: 0%
-  + Từ 30 triệu đến dưới 60 triệu: 5%
-  + Từ 60 triệu đến dưới 100 triệu: 8%
-  + Từ 100 triệu trở lên: 12%
-- Tính tổng chiết khấu, phụ thu thanh toán và tính thuế VAT 10%.
-- CẢNH BÁO THẨM QUYỀN DUYỆT DEAL (Thẻ trạng thái đổi màu động):
-  + Nếu tổng mức giảm giá <= 5%: Badge màu xanh lá "[Thẩm quyền: Chuyên viên Sales tự quyết]".
-  + Nếu tổng mức giảm giá > 5% và <= 8%: Badge màu vàng cam "[Cảnh báo: Cần Trưởng phòng Kinh doanh duyệt]".
-  + Nếu tổng mức giảm giá > 8%: Badge màu đỏ nhấp nháy "[CẢNH BÁO ĐỎ: VƯỢT THẨM QUYỀN - Bắt buộc có chữ ký phê duyệt của Tổng Giám đốc CEO]".
-
-3. KHỐI XUẤT BẢN THƯ CHÀO GIÁ (OUTPUT & PREVIEW):
-- Một bảng tóm tắt chi phí rõ ràng: Giá gốc niêm yết -> Mức giảm giá/Chiết khấu -> Phụ thu (nếu có) -> Giá trước thuế -> Thuế VAT 10% -> TỔNG CỘNG THANH TOÁN (Số to, in đậm, nổi bật).
-- Khung "Xem trước Thư chào giá chuẩn gửi khách": Điền tự động toàn bộ tên khách, ngày tháng, bảng chiết tính và số tài khoản ngân hàng của NovaTech (Vietcombank: 0071001234567 - CN TP.HCM).
-- Nút bấm: "Sao chép toàn bộ Thư chào giá" (Click to copy text kèm hiệu ứng thông báo "Đã sao chép thành công!").
-
-4. THIẾT KẾ UX/UI:
-- Giao diện hiện đại, sạch sẽ, bố cục 2 cột (Cột trái: Điều khiển nhập liệu; Cột phải: Bảng tính tiền & Xem trước thư).
-- Phông chữ tiếng Việt chuẩn đẹp, màu sắc nhận diện công nghệ chuyên nghiệp (Xanh Navy, Trắng, Xám sang trọng).
-- Tương thích tốt trên màn hình máy tính và điện thoại.
-
-Hãy xuất toàn bộ mã nguồn trong một Artifact duy nhất để tôi sử dụng ngay!
+Giao diện thiết kế phong cách doanh nghiệp hiện đại, trực quan, chia 2 cột rõ ràng, dễ dùng cho dân kinh doanh nhé!
 ```
 
 **Bước 3: Trải nghiệm ứng dụng tại Tab Preview**
-1. Quan sát cửa sổ bên phải mở ra, Claude sẽ render giao diện ứng dụng.
+1. Quan sát cửa sổ bên phải mở ra: Claude sẽ tự đọc 3 file trong Context và hiển thị đầy đủ tên các gói Starter, Professional, Enterprise, kèm đơn giá niêm yết mà bạn không hề phải gõ vào prompt!
 2. Thử kéo thanh trượt số người dùng từ 15 lên 45 người.
-3. Thử đổi phương thức từ "Thanh toán 100%" sang "Chia 3 đợt" $\rightarrow$ Xem số tiền phụ thu tự động nhảy.
-4. Thử kéo thanh giảm giá thêm lên 10% $\rightarrow$ Xem thẻ cảnh báo thẩm quyền lập tức đổi sang màu đỏ kèm thông báo *"VƯỢT THẨM QUYỀN - Bắt buộc CEO duyệt"*.
-5. Bấm nút **"Sao chép toàn bộ Thư chào giá"** và dán thử vào Zalo / Word xem nội dung có chuẩn xác không.
+3. Thử đổi phương thức từ "Thanh toán 100%" sang "Chia 3 đợt" -> Xem số tiền phụ thu tự động nhảy.
+4. Thử kéo thanh giảm giá thêm lên 10% -> Xem thẻ cảnh báo thẩm quyền lập tức đổi sang màu đỏ kèm thông báo *"VƯỢT THẨM QUYỀN - Bắt buộc CEO duyệt"*.
+5. Bấm nút **"Sao chép toàn bộ Thư chào giá"** và dán thử vào Zalo / Word xem số tài khoản Vietcombank và bảng giá có được điền tự động chính xác không.
 </details>
 
 ---
@@ -193,52 +261,40 @@ Chuyên viên kinh doanh hoặc quản lý khi nhận một bản hợp đồng 
 <details>
 <summary><b>Thao tác thực hành: Tạo Bảng điều khiển Pháp lý tương tác</b> (bấm để mở)</summary>
 
-**Bước 1: Tiếp tục trong ô chat hoặc mở phiên chat mới**
+**Bước 1: Mở lại Project Pháp chế đã tạo ở Buổi 1**
+- Vào mục **Projects** ở menu bên trái -> Chọn Project **"Trợ lý Rà soát Hợp đồng & Pháp chế Doanh nghiệp - NovaTech"** (đã có sẵn file `Bộ tiêu chuẩn rà soát pháp lý hợp đồng doanh nghiệp - NovaTech.pdf` trong Context).
+- Mở một phiên chat mới bên trong Project.
 
-**Bước 2: Copy và dán câu lệnh "Prompt-to-App" cho Case Study Pháp lý**
+**Bước 2: Copy và dán câu lệnh yêu cầu tự nhiên vào ô chat**
+*(Tương tự Case Study 1, bạn chỉ nêu đề bài, Claude sẽ tự đọc Bộ tiêu chuẩn pháp lý để trích xuất các điều khoản, căn cứ luật Việt Nam và câu chữ redline!)*
 
 ```markdown
-Hãy đóng vai trò là một Chuyên gia Công nghệ Pháp lý (LegalTech Specialist) và Nhà thiết kế UI/UX cấp cao.
-Hãy tạo một ỨNG DỤNG WEB TƯƠNG TÁC ĐỘC LẬP (Interactive Single-Page Web App) trong cửa sổ Artifact bằng HTML, Tailwind CSS và JavaScript.
+Dựa vào tài liệu "Bộ tiêu chuẩn rà soát pháp lý" và "Hợp đồng dịch vụ mẫu" trong mục Context của dự án:
+Hãy tạo cho tôi một BẢNG ĐIỀU KHIỂN RÀ SOÁT RỦI RO HỢP ĐỒNG TƯƠNG TÁC (Legal Risk Dashboard) trong cửa sổ Artifact:
 
-Ứng dụng mang tên: "BẢNG ĐIỀU KHIỂN RÀ SOÁT HỢP ĐỒNG & CHẤM ĐIỂM RỦI RO PHÁP LÝ (NOVATECH LEGAL SCANNER)"
+1. TỔNG QUAN & ĐO LƯỜNG RỦI RO:
+- Có đồng hồ đo điểm rủi ro tổng thể (Risk Scorecard từ 0 - 100) và các thẻ thống kê nhanh số lượng điều khoản (An toàn / Cần đàm phán / Nguy cơ cao).
 
-CÁC TÍNH NĂNG VÀ BỐ CỤC BẮT BUỘC:
+2. DANH MỤC CÁC ĐIỀU KHOẢN RỦI RO CẦN RÀ SOÁT:
+- Tự động đọc từ file Bộ tiêu chuẩn pháp lý của công ty để trích xuất sẵn 4 điều khoản rủi ro kinh điển nhất làm dữ liệu mẫu (nhất là điều khoản phạt vi phạm, quyền sở hữu trí tuệ/mã nguồn, đơn phương chấm dứt và thẩm quyền tài phán).
+- Mỗi điều khoản trình bày dạng thẻ bấm mở rộng (Accordion) xem chi tiết:
+  + Nêu rõ câu chữ đối tác hay gài bẫy (tô đỏ các cụm từ bất lợi).
+  + Căn cứ theo đúng điều luật của Việt Nam và quy chuẩn công ty trong Context để giải thích rõ lý do vì sao nguy hiểm.
+  + Viết sẵn câu chữ đề xuất sửa đổi (redline) chuẩn mực, giữ văn phong thiện chí hợp tác.
+  + Có nút bấm "Sao chép câu chữ Redline" để chuyên viên copy gửi đi đàm phán lại.
 
-1. KHỐI TỔNG QUAN & ĐO ĐỘ RỦI RO (RISK METRICS BAR):
-- Đồng hồ đo mức độ rủi ro tổng thể (Risk Gauge / Scorecard): Hiển thị điểm số từ 0 - 100 và cấp độ an toàn (Xanh: An toàn | Vàng: Cần đàm phán | Đỏ: Nguy cơ pháp lý cao).
-- Thống kê nhanh số lượng điều khoản: Tổng số điều khoản quét, Số điều khoản nghiêm trọng (Đỏ), Số điều khoản trung bình (Vàng), Số điều khoản an toàn (Xanh).
+3. TƯƠNG TÁC THỰC TẾ:
+- Có một ô nhập liệu để tôi có thể dán thử một điều khoản hợp đồng mới bất kỳ vào và nút "Quét nhanh rủi ro".
+- Nút "Sao chép bảng tổng hợp rủi ro" để gửi báo cáo nhanh cho sếp qua email.
 
-2. KHỐI BỘ LỌC & DANH SÁCH RÀ SOÁT CÁC ĐIỀU KHOẢN TRỌNG YẾU:
-- Nạp sẵn sẵn 4 điều khoản rủi ro kinh điển trong hợp đồng công nghệ (dữ liệu mẫu thực tế):
-  + Điều khoản 1 (Phạt vi phạm 20%): Vi phạm Điều 301 Luật Thương mại Việt Nam (mức trần tối đa 8%). Mức rủi ro: CỰC KỲ NGHIÊM TRỌNG.
-  + Điều khoản 2 (Quyền sở hữu trí tuệ & Dữ liệu nguồn): Đối tác đòi nắm quyền sở hữu toàn bộ mã nguồn nền tảng. Mức rủi ro: CỰC KỲ NGHIÊM TRỌNG.
-  + Điều khoản 3 (Đơn phương chấm dứt không bồi thường): Đối tác có quyền cắt hợp đồng chỉ báo trước 7 ngày mà không trả chi phí đã thực hiện. Mức rủi ro: TRUNG BÌNH.
-  + Điều khoản 4 (Cơ quan tài phán & Địa điểm tranh chấp): Chỉ định tòa án tại nước ngoài thay vì VIAC tại Việt Nam. Mức rủi ro: TRUNG BÌNH.
-- Mỗi điều khoản được thiết kế dạng thẻ tương tác (Card) có thể bấm mở rộng (Accordion) xem chi tiết:
-  + Nguyên văn điều khoản đối tác đề xuất (tô đỏ các cụm từ gài bẫy).
-  + Căn cứ pháp lý & Lý do bất lợi cho công ty.
-  + Câu chữ đề xuất viết lại (Redline) chuẩn chỉ, thiện chí hợp tác.
-  + Nút bấm "Sao chép câu chữ Redline" để đi đàm phán.
-
-3. KHỐI NHẬP LIỆU THỰC TẾ (LIVE AUDIT INPUT):
-- Ô nhập liệu cho phép người dùng dán thêm một điều khoản mới bất kỳ.
-- Nút "Chấm điểm điều khoản mới": Sau khi bấm, mô phỏng quá trình quét và tự động phân tích hiển thị kết quả trực quan ngay bên dưới.
-
-4. NÚT XUẤT BÁO CÁO NHANH:
-- Nút "Sao chép toàn bộ Bảng đối chiếu rủi ro sang văn bản" (định dạng sẵn bảng Markdown/Text đẹp để gửi sếp hoặc đính kèm email).
-
-5. THIẾT KẾ & TRẢI NGHIỆM:
-- Phong cách giao diện chuẩn văn phòng luật hiện đại (Corporate Legal Tech): Gam màu Xanh Đen (Slate/Indigo), Trắng, cảnh báo màu Đỏ Rượu/Vàng Hổ Phách.
-- Giao diện trực quan, rõ ràng, không rối mắt, có thanh tìm kiếm nhanh các điều khoản theo từ khóa.
-
-Hãy tạo ứng dụng hoàn chỉnh trong một Artifact độc lập!
+Giao diện phong cách Legal Tech hiện đại, màu sắc trang nhã, trực quan, chuyên nghiệp nhé!
 ```
 
 **Bước 3: Trải nghiệm và thử nghiệm công cụ**
-1. Bấm mở rộng từng thẻ điều khoản để xem cách ứng dụng làm nổi bật câu chữ gài bẫy và phần đề xuất viết lại.
-2. Bấm thử nút "Sao chép câu chữ Redline" của Điều khoản 1 (Mức phạt 20%) xem nội dung đã dẫn chiếu chính xác Điều 301 Luật Thương mại chưa.
-3. Thử dán một đoạn điều khoản thực tế từ công việc của bạn vào ô nhập liệu để kiểm tra tính hữu dụng.
+1. Quan sát Claude tự đọc file trong Context và hiển thị ngay 4 điều khoản rủi ro kèm căn cứ chính xác Điều 301 Luật Thương mại (phạt trần 8%) mà bạn không phải gõ một dòng luật nào!
+2. Bấm mở rộng từng thẻ điều khoản để xem câu chữ gài bẫy và phần đề xuất viết lại.
+3. Bấm thử nút "Sao chép câu chữ Redline" để kiểm tra tính tiện lợi khi đi đàm phán hợp đồng.
+4. Thử dán một đoạn điều khoản thực tế từ công việc của bạn vào ô nhập liệu để kiểm tra tính năng quét rủi ro.
 </details>
 
 ---
@@ -333,6 +389,7 @@ Hãy tự kiểm tra lại sản phẩm của bạn trước khi đóng máy:
 
 #### Về kỹ năng thao tác:
 - [ ] Phân biệt rõ sự khác nhau giữa nội dung trong khung Chat và nội dung trong cửa sổ Artifacts.
+- [ ] Tự tay tạo được công cụ khởi động nhanh ngoài Chat thường (Bảng tính lãi vay mua nhà/xe hoặc Chia tiền ăn trưa).
 - [ ] Nắm vững công thức 4 thành tố **Prompt-to-App (I - L - O - U)** để đặc tả công cụ cho AI.
 - [ ] Biết cách xem trước tại tab **Preview**, chuyển qua tab **Code** và sử dụng lịch sử phiên bản (**Versions**).
 - [ ] Biết cách dùng ngôn ngữ nói thông thường để yêu cầu Claude tinh chỉnh giao diện hoặc bổ sung tính năng mà không cần biết lập trình.
@@ -340,6 +397,7 @@ Hãy tự kiểm tra lại sản phẩm của bạn trước khi đóng máy:
 - [ ] Xuất bản thành công ít nhất **01 đường link Public Artifact** và gửi mở thử nghiệm trên điện thoại hoặc tab ẩn danh.
 
 #### Về sản phẩm số mang về:
+- [ ] **Sản phẩm Khởi động:** 01 Ứng dụng mini cá nhân (Tính lãi vay / Chia bill / Ma trận công việc).
 - [ ] **Sản phẩm 1:** Bản tính Báo giá & Phê duyệt Deal B2B tương tác (hoặc công cụ tính giá ngành của bạn).
 - [ ] **Sản phẩm 2:** Bảng điều khiển rà soát rủi ro pháp lý & Redline (hoặc công cụ nghiệp vụ tự chọn).
 - [ ] Đường link web độc lập sẵn sàng gửi cho sếp hoặc đồng nghiệp trải nghiệm ngay trong sáng mai.
