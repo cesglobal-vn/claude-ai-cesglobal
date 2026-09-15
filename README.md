@@ -1,5 +1,7 @@
 # Làm chủ Claude AI cho công việc thật - Tài liệu khóa học
 
+> **Workbook trực tuyến (mở là dùng ngay):** https://cesglobal-claude.vercel.app
+
 Kho tài liệu chính thức cho khóa đào tạo **"Làm chủ Claude AI cho công việc thật"** của **CES Global**: giáo án từng bước, workbook tương tác cho học viên, khung chương trình và bộ file demo dùng để thực hành.
 
 > Khóa 6 buổi x 2.5 giờ (15 giờ thực chiến). Dành cho dân văn phòng, quản lý, freelancer, chủ SME - **không yêu cầu nền tảng lập trình**.
