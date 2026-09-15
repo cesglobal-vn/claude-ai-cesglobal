@@ -21,3 +21,8 @@ Thumbs.db
 .vercel
 vercel.json
 docs/deployment-guide.md
+
+# Agent & Claude configurations / skills
+.claude/
+.agents/
+
