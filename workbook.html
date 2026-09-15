@@ -1160,6 +1160,33 @@
       color: var(--text-muted);
     }
 
+    /* Callout boxes (TIP / IMPORTANT / NOTE) */
+    .callout {
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin: 16px 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-main);
+      border-left: 3px solid var(--border-color);
+      background: var(--bg-input);
+    }
+    .callout p { margin: 0 0 6px; }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout-title {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .callout-tip { background: var(--brand-primary-glow); border-color: var(--brand-primary); }
+    .callout-tip .callout-title { color: var(--brand-primary); }
+    .callout-warn { background: rgba(245, 158, 11, 0.12); border-color: var(--accent-amber); }
+    .callout-warn .callout-title { color: var(--accent-amber); }
+    .callout-note { background: var(--bg-input); border-color: var(--text-subtle); }
+    .callout-note .callout-title { color: var(--text-muted); }
+
     /* Responsive - tablet & below: sidebar becomes a slide-in drawer */
     @media (max-width: 992px) {
       .app-container {
@@ -1361,11 +1388,26 @@
               <div class="session-num">2</div>
               <div class="session-info">
                 <div class="session-name">Công cụ tương tác (Artifacts)</div>
-                <div class="session-badge-row">
-                  <span class="tag-status tag-next">Buổi tiếp theo</span>
-                </div>
               </div>
             </button>
+            <!-- Nested TOC for Buổi 2 (hidden until active) -->
+            <div class="sidebar-toc" style="display: none;">
+              <ul class="toc-list">
+                <li class="toc-item"><a href="#b2-phan-0">0. Từ văn bản tĩnh sang công cụ tương tác</a></li>
+                <li class="toc-item"><a href="#b2-phan-1">1. Bản chất Artifacts & Cửa sổ thứ hai</a></li>
+                <li class="toc-item toc-sub"><a href="#b2-1-1">1.1. Khi nào Claude bật Artifacts</a></li>
+                <li class="toc-item toc-sub"><a href="#b2-1-2">1.2. Giải phẫu giao diện Artifacts</a></li>
+                <li class="toc-item toc-sub"><a href="#b2-1-3">1.3. Bật tính năng Artifacts</a></li>
+                <li class="toc-item toc-sub"><a href="#b2-warmup">1.4. Khởi động nhanh (Warm-up)</a></li>
+                <li class="toc-item toc-sub"><a href="#b2-1-5">1.5. Ngoài Chat hay vào Projects?</a></li>
+                <li class="toc-item"><a href="#b2-phan-2">2. Prompt-to-App & 2 Case Study</a></li>
+                <li class="toc-item toc-sub"><a href="#b2-2-1">2.1. Công thức Prompt-to-App</a></li>
+                <li class="toc-item toc-sub"><a href="#b2-case-1">2.2. Case 1: Báo giá tương tác</a></li>
+                <li class="toc-item toc-sub"><a href="#b2-case-2">2.3. Case 2: Dashboard pháp lý</a></li>
+                <li class="toc-item"><a href="#b2-phan-3">3. Tinh chỉnh, sửa lỗi & chia sẻ</a></li>
+                <li class="toc-item"><a href="#b2-phan-4">4. Nghiệm thu & bài tập</a></li>
+              </ul>
+            </div>
           </li>
           <li>
             <button class="session-tab-btn" data-tab="tab-buoi-03">
@@ -2170,9 +2212,6 @@ Trình bày thành BẢNG CẢNH BÁO RỦI RO gồm các cột: Tên điều kh
       <!-- ============================================================== -->
       <div class="tab-pane" id="tab-buoi-02">
         <div class="session-hero">
-          <div class="hero-meta-row">
-            <span class="hero-tag tag-next">Buổi 2 • Buổi tiếp theo</span>
-          </div>
           <h1 class="hero-title">Tạo công cụ làm việc tương tác bằng Claude Artifacts</h1>
           <p class="hero-desc">
             Biến ý tưởng công việc thành công cụ, mini web app, biểu mẫu, bảng tính tương tác chạy ngay trên trình duyệt mà không cần biết viết code. Tạo link chia sẻ độc lập cho đồng nghiệp hoặc khách hàng.
@@ -2182,40 +2221,367 @@ Trình bày thành BẢNG CẢNH BÁO RỦI RO gồm các cột: Tên điều kh
           </div>
         </div>
 
-        <div class="card-panel">
-          <h3 style="font-size: 18px; margin-bottom: 14px; color: var(--brand-primary);">Nội dung bài học & Kỹ năng đạt được</h3>
-          <ul class="steps-list" style="gap: 14px;">
-            <li>
-              <span class="step-badge">1</span>
-              <div>
-                <strong>Khám phá sức mạnh Claude Artifacts:</strong> Chuyển đổi từ câu trả lời văn bản tĩnh (text) sang các ứng dụng sống (Web App, Calculator, Dynamic Form, Interactive Charts).
-              </div>
-            </li>
-            <li>
-              <span class="step-badge">2</span>
-              <div>
-                <strong>Kỹ thuật "Prompt-to-App" không cần code:</strong> Công thức đặc tả 4 thành phần cho AI: Đầu vào (Input) -> Logic tính toán -> Đầu ra (Output) -> Trải nghiệm người dùng (UX/UI).
-              </div>
-            </li>
-            <li>
-              <span class="step-badge">3</span>
-              <div>
-                <strong>Tinh chỉnh giao diện & Xuất bản (Publishing):</strong> Sửa lỗi hiển thị, tối ưu màu sắc nhận diện thương hiệu và tạo Public Link chia sẻ cho đồng nghiệp dùng chung.
-              </div>
-            </li>
-            <li>
-              <span class="step-badge">4</span>
-              <div>
-                <strong>Thực hành tại lớp:</strong> Xây dựng 01 Mini App tương tác phục vụ trực tiếp cho công việc hàng ngày (Công cụ tính báo giá & hoa hồng tự động / Bảng theo dõi tiến độ công việc).
-              </div>
-            </li>
-          </ul>
-
-          <div class="notes-box">
-            <div style="font-size: 14px; font-weight: 700; color: var(--text-main);"><svg class="icon inline-icon icon-brand"><use href="#icon-edit"/></svg>Sổ tay ghi chú cá nhân (Buổi 2)</div>
-            <textarea class="notes-textarea" id="note-buoi-02" placeholder="Ghi chú ý tưởng công cụ bạn muốn xây dựng trong buổi 2..."></textarea>
+        <section class="content-section" id="b2-phan-0">
+          <div class="section-header">
+            <span class="section-badge">PHẦN 0</span>
+            <h2 class="section-title">Từ văn bản tĩnh sang công cụ tương tác</h2>
           </div>
-        </div>
+          <div class="card-panel">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">0.1. Điểm nghẽn sau Buổi 1</h3>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div>Ở Buổi 1, ta đã tạo được 2 Trợ lý chuyên việc trong Claude Projects (Báo giá B2B và Thẩm định hợp đồng), kết quả xuất sắc nhưng vẫn ở dạng <strong>văn bản tĩnh trong khung chat</strong>.</div></li>
+              <li><span class="step-badge">2</span><div>Muốn thử 5 phương án báo giá khác nhau (đổi số người dùng, đổi phương thức thanh toán...) là phải gõ đi gõ lại 5 câu lệnh chat.</div></li>
+              <li><span class="step-badge">3</span><div>Không thể gửi nguyên đoạn hội thoại dài cho sếp/đồng nghiệp xem; người khác muốn dùng cũng không biết bấm vào đâu.</div></li>
+              <li><span class="step-badge">4</span><div>Văn bản chữ khó hình dung trực quan bằng nút bấm, thanh trượt, bảng tính tự nhảy số và khối màu cảnh báo.</div></li>
+            </ul>
+
+            <h3 style="font-size: 16px; margin: 20px 0 8px;">0.2. Giải pháp: Claude Artifacts - biến ý tưởng thành Mini Web App chạy ngay</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 10px;"><strong>Claude Artifacts</strong> mở ra một <strong>"cửa sổ thứ hai"</strong> bên cạnh khung chat. Thay vì chỉ trả câu chữ, Claude tự lập trình một <strong>ứng dụng tương tác sống</strong>: có ô nhập liệu, thanh trượt, nút bấm chọn gói; có logic tự tính toán, đổi màu cảnh báo thời gian thực; có nút sao chép / xuất kết quả dùng ngay.</p>
+            <p style="font-size: 14px; color: var(--text-muted);">Điều kỳ diệu: bạn <strong>không cần viết một dòng code nào</strong> - bạn chỉ là "người đặt đề bài", Claude vừa là kỹ sư vừa là nhà thiết kế giao diện.</p>
+            <div class="callout callout-tip">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-gift"/></svg>Sản phẩm cầm về hôm nay</div>
+              Ít nhất 01 Công cụ tương tác hoàn chỉnh, mở được trên trình duyệt máy tính + điện thoại, và tạo link công khai gửi đồng nghiệp / khách hàng dùng độc lập.
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section" id="b2-phan-1">
+          <div class="section-header">
+            <span class="section-badge">PHẦN 1</span>
+            <h2 class="section-title">Bản chất của Artifacts & Cơ chế cửa sổ thứ hai</h2>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b2-1-1" style="font-size: 16px; margin-bottom: 8px;">1.1. Khi nào Claude tự động bật cửa sổ Artifacts?</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Claude tự tách nội dung sang cửa sổ Artifacts bên phải khi thỏa 1 trong các tiêu chí:</p>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div><strong>Mã nguồn / Ứng dụng độc lập:</strong> ứng dụng tương tác HTML/Tailwind/JavaScript, React Component hoặc SVG.</div></li>
+              <li><span class="step-badge">2</span><div><strong>Tài liệu có cấu trúc dài (&gt; 15 dòng):</strong> tài liệu nghiệp vụ, bản đề xuất, văn bản mẫu muốn lưu lại và chỉnh riêng.</div></li>
+              <li><span class="step-badge">3</span><div><strong>Biểu đồ &amp; sơ đồ trực quan:</strong> sơ đồ luồng công việc (Mermaid), kiến trúc hệ thống, dòng thời gian dự án.</div></li>
+            </ul>
+            <div class="callout callout-tip">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lightbulb"/></svg>Quy tắc vàng phân biệt</div>
+              <p><strong>Cửa sổ Chat (trái):</strong> nơi bạn và Claude đối thoại, giao nhiệm vụ, góp ý sửa đổi.</p>
+              <p><strong>Cửa sổ Artifacts (phải):</strong> nơi chứa "thành phẩm" cuối cùng - đứng độc lập, tương tác được, chỉnh sửa được, chia sẻ được.</p>
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b2-1-2" style="font-size: 16px; margin-bottom: 8px;">1.2. Giải phẫu giao diện cửa sổ Artifacts</h3>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div><strong>Tab Preview (Xem trước):</strong> hiển thị giao diện để bấm thử, kéo trượt, nhập liệu như website thật.</div></li>
+              <li><span class="step-badge">2</span><div><strong>Tab Code (Mã nguồn):</strong> xem code Claude tự viết (người không chuyên có thể bỏ qua).</div></li>
+              <li><span class="step-badge">3</span><div><strong>Nút Copy / Download:</strong> sao chép nội dung hoặc tải file HTML về mở offline.</div></li>
+              <li><span class="step-badge">4</span><div><strong>Nút Version (v1, v2, v3...):</strong> xem lại và quay về bất kỳ phiên bản cũ nào nếu bản mới chưa ưng.</div></li>
+              <li><span class="step-badge">5</span><div><strong>Nút Publish / Share:</strong> xuất bản ứng dụng thành link web công khai gửi cho bất kỳ ai.</div></li>
+            </ul>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b2-1-3" style="font-size: 16px; margin-bottom: 8px;">1.3. Bật tính năng Artifacts trong tài khoản</h3>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div>Mở <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" style="color: var(--brand-primary);">claude.ai</a> -> bấm ảnh đại diện góc dưới trái -> <strong>Settings</strong>.</div></li>
+              <li><span class="step-badge">2</span><div>Vào mục <strong>Capabilities</strong> (hoặc <strong>General / Feature Preview</strong> tùy phiên bản).</div></li>
+              <li><span class="step-badge">3</span><div>Đảm bảo <strong>Artifacts</strong> đang <strong>BẬT (ON)</strong>. <em>(Thường đã bật mặc định cho mọi tài khoản.)</em></div></li>
+            </ul>
+          </div>
+
+          <div class="card-panel" id="b2-warmup">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">1.4. Khởi động nhanh: tạo công cụ đầu tiên trong 30 giây (ngoài màn hình Chat)</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 10px;"><strong>Mục tiêu:</strong> có ngay khoảnh khắc "Aha!" - tận mắt thấy cửa sổ Artifacts trượt ra và kéo thử thanh trượt. <strong>Vị trí:</strong> ra màn hình Chat thông thường, <strong>chưa cần mở Project</strong>.</p>
+
+            <h4 style="font-size: 14px; font-weight: 700; margin: 16px 0 6px;">Bài tập khởi động chính: Bảng tính Lãi vay mua nhà / xe trả góp</h4>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">1. Bấm <strong>Start a new chat</strong> (dấu <code>+</code> góc trên trái) mở phiên chat mới. 2. Dán câu lệnh dưới đây và bấm Gửi:</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Câu lệnh khởi động - Bảng tính Lãi vay trả góp</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Hãy tạo một ứng dụng mini bằng HTML, Tailwind CSS và JavaScript trong một cửa sổ Artifact duy nhất:
+"BẢNG TÍNH LÃI VAY MUA NHÀ &amp; XE TRẢ GÓP"
+- Đầu vào:
+  + Thanh trượt (Slider) chọn số tiền vay: từ 200 triệu đến 5 tỷ đồng (bước nhảy 50 triệu, mặc định 1 tỷ).
+  + Thanh trượt chọn thời hạn vay: từ 1 năm đến 25 năm (mặc định 10 năm).
+  + Ô nhập hoặc thanh trượt lãi suất: mặc định 8.5%/năm.
+- Logic &amp; Kết quả:
+  + Tự động tính số tiền gốc hàng tháng = Tiền vay / (Số năm * 12).
+  + Tự động tính số tiền lãi tháng đầu = Tiền vay * (Lãi suất / 12).
+  + Hiển thị nổi bật: Tổng số tiền phải trả tháng đầu (Gốc + Lãi) với con số to, rõ ràng.
+  + Hiển thị bảng tóm tắt: Tổng lãi phải trả trong suốt kỳ hạn và Tổng số tiền cả gốc lẫn lãi.
+- Giao diện: Hiện đại, sạch sẽ, màu xanh tài chính (Emerald/Teal), số tiền định dạng chuẩn tiếng Việt (ví dụ: 1.000.000.000 đ).</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">3. Quan sát: trong ~30 giây cửa sổ Artifacts trượt ra bên phải. Kéo thử thanh trượt từ 1 tỷ lên 2 tỷ -> số tiền trả hàng tháng nhảy tức thì. Chuyển tab <strong>Code</strong> để thấy Claude vừa tự viết hàng chục dòng mã cho bạn.</p>
+
+            <h4 style="font-size: 14px; font-weight: 700; margin: 18px 0 6px;">2 lựa chọn khởi động bổ sung (tự thử thêm nếu muốn)</h4>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Bổ sung 1 - Chia tiền ăn trưa & quỹ trà sữa văn phòng</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Hãy tạo một ứng dụng mini trong Artifact: "CÔNG CỤ CHIA TIỀN ĂN TRƯA VĂN PHÒNG"
+- Cho nhập tổng hóa đơn bữa trưa (ô nhập số tiền).
+- Thanh trượt chọn số người tham gia (từ 2 đến 15 người).
+- Danh sách tùy chọn (Checkbox) cho các món gọi riêng:
+  + "Có uống trà sữa / cà phê (+35.000 đ/ly)" -&gt; Cho chọn số người uống.
+  + "Có người ăn chay / giảm khẩu phần (-20.000 đ)" -&gt; Cho chọn số người.
+- Kết quả: Tự tính số tiền chính xác mỗi người cần chuyển khoản (chia nhóm: Người ăn thường chuyển bao nhiêu, Người có uống thêm nước chuyển bao nhiêu).
+- Kèm nút bấm: "Sao chép thông báo chia tiền để gửi Zalo nhóm" (định dạng sẵn lời nhắn lịch sự, vui vẻ).</div>
+            </div>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Bổ sung 2 - Ma trận Eisenhower quản lý công việc trong ngày</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Hãy tạo một ứng dụng mini trong Artifact: "MA TRẬN QUẢN LÝ CÔNG VIỆC TRONG NGÀY (EISENHOWER MATRIX)"
+- Bố cục 4 ô trực quan:
+  1. Khẩn cấp &amp; Quan trọng (Làm ngay - Màu đỏ)
+  2. Quan trọng nhưng Không khẩn cấp (Lên lịch làm - Màu xanh dương)
+  3. Khẩn cấp nhưng Không quan trọng (Ủy quyền/Giao việc - Màu vàng)
+  4. Không khẩn cấp &amp; Không quan trọng (Loại bỏ - Màu xám)
+- Mỗi ô cho phép gõ thêm đầu việc mới và có nút checkbox để tick khi hoàn thành.
+- Phía trên cùng có một thanh tiến độ (Progress Bar) tự động cập nhật % công việc đã hoàn thành trong ngày.
+- Giao diện phẳng tối giản, hiện đại, lưu trạng thái tạm thời trên trình duyệt.</div>
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b2-1-5" style="font-size: 16px; margin-bottom: 8px;">1.5. Cầu nối tư duy: khi nào làm ngoài Chat, khi nào vào Projects?</h3>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div><strong>Làm ngoài Chat:</strong> tuyệt cho công cụ cá nhân, tính toán nhanh một lần (tính vay, chia bill, to-do list).</div></li>
+              <li><span class="step-badge">2</span><div><strong>Bắt buộc vào Claude Projects</strong> khi xây <strong>công cụ nghiệp vụ cho công ty</strong>: vì làm ngoài Chat thì mỗi lần đổi công cụ lại phải gõ lại bảng giá, quy chế. Trong Project (Buổi 1), dữ liệu nội bộ đã nằm sẵn ở <code>Context</code> - chỉ cần đặc tả chức năng, Claude tự bốc toàn bộ bảng giá/quy định vào ứng dụng, không sai một dấu phẩy.</div></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-section" id="b2-phan-2">
+          <div class="section-header">
+            <span class="section-badge">PHẦN 2</span>
+            <h2 class="section-title">Kỹ thuật "Prompt-to-App" & 2 Case Study thực chiến trong Project</h2>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b2-2-1" style="font-size: 16px; margin-bottom: 8px;">2.1. Công thức 4 thành tố "Prompt-to-App" (I - L - O - U)</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 10px;">Để Claude tạo công cụ đúng ý ngay lần đầu, cung cấp đủ 4 thành tố:</p>
+            <ul class="steps-list">
+              <li><span class="step-badge">I</span><div><strong>Input (Đầu vào):</strong> người dùng nhập / chọn gì (ô nhập tên khách, thanh trượt số người, nút chọn gói, chọn trả góp...).</div></li>
+              <li><span class="step-badge">L</span><div><strong>Logic (Quy tắc tính & thẩm quyền):</strong> bảo Claude tự đọc công thức, bậc chiết khấu, phụ phí, thẩm quyền phê duyệt từ file trong Context.</div></li>
+              <li><span class="step-badge">O</span><div><strong>Output (Kết quả hiển thị):</strong> bảng chiết tính, thẻ đổi màu cảnh báo thẩm quyền (Xanh/Vàng/Đỏ), văn bản mẫu điền sẵn số liệu.</div></li>
+              <li><span class="step-badge">U</span><div><strong>UX/UI (Trải nghiệm):</strong> giao diện hiện đại, bố cục 2 cột rõ ràng, nút sao chép một chạm.</div></li>
+            </ul>
+            <div class="callout callout-warn">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-alert-triangle"/></svg>Bí quyết vàng: đừng làm thay việc của AI</div>
+              <p>Bạn <strong>KHÔNG CẦN và KHÔNG NÊN</strong> chép lại từng mức giá, từng bậc chiết khấu hay điều luật vào prompt.</p>
+              <p>Với Claude Projects, chỉ cần ra lệnh: <em>"Đọc từ file Bảng giá và Quy chế chiết khấu trong Context của dự án này..."</em> - Claude tự bốc toàn bộ dữ liệu nội bộ ra để lập trình ứng dụng.</p>
+            </div>
+          </div>
+
+          <div class="card-panel" id="b2-case-1">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+              <h3 style="font-size: 17px; color: var(--text-main);">2.2. Case Study 1: Bảng tính chiết khấu & Soạn Thư chào giá B2B tương tác</h3>
+              <span class="tag-status tag-ready">NovaTech Deal Desk</span>
+            </div>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bài toán:</strong> Sales B2B tính giá với nhiều biến số - chọn gói, số người dùng, gói đào tạo; áp bậc chiết khấu + ưu đãi/phụ thu thanh toán; kiểm soát thẩm quyền duyệt giá; xuất Thư chào giá gửi khách ngay.</p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bước 1:</strong> Vào <strong>Projects</strong> -> mở Project <strong>"Trợ lý Báo giá &amp; Thương mại B2B - NovaTech"</strong> (đã có 3 file trong Context) -> mở phiên chat mới trong Project.</p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bước 2:</strong> Dán câu lệnh tự nhiên dưới đây (Claude tự đọc 3 file, không cần gõ lại giá tiền):</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Câu lệnh tạo ứng dụng Báo giá tương tác (dán trong Project)</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Dựa vào các file tài liệu trong mục Context của dự án này (Bảng giá, Quy chế chiết khấu, Mẫu thư chào giá):
+Hãy tạo cho tôi một ỨNG DỤNG WEB TƯƠNG TÁC trong cửa sổ Artifact để nhân viên kinh doanh NovaTech tính giá và duyệt deal B2B với khách hàng:
+
+1. ĐẦU VÀO (Cho Sales thao tác):
+- Tự động đọc từ file Bảng giá để tạo danh sách các gói phần mềm cho Sales bấm chọn, và tùy chọn dịch vụ đào tạo tại văn phòng đi kèm.
+- Có ô nhập tên khách hàng / công ty, và thanh trượt chọn số lượng người dùng thực tế.
+- Chọn phương thức thanh toán: Trả 100% (hưởng ưu đãi thanh toán sớm) hoặc Chia 3 đợt (phụ thu phí dòng tiền) theo đúng quy chế công ty.
+- Thanh trượt cho Sales đề xuất mức giảm giá thêm (từ 0% đến 15%).
+
+2. LOGIC TÍNH TOÁN &amp; CẢNH BÁO THẨM QUYỀN (Tự động theo Quy chế chiết khấu):
+- Tự động áp đúng tỷ lệ chiết khấu theo bậc doanh số từ file Quy chế chiết khấu trong Context.
+- Tính chính xác thuế VAT 10% và tổng tiền thanh toán cuối cùng.
+- RẤT QUAN TRỌNG: Tự động đổi màu thẻ cảnh báo thẩm quyền duyệt deal theo đúng quy chế công ty:
+  + Mức giảm giá nằm trong hạn mức Sales được tự quyết -&gt; Thẻ màu xanh lá.
+  + Vượt hạn mức Sales nhưng trong quyền hạn Trưởng phòng -&gt; Thẻ màu vàng cam cảnh báo cần Trưởng phòng duyệt.
+  + Vượt thẩm quyền Trưởng phòng -&gt; Đổi sang màu đỏ cảnh báo bắt buộc Tổng Giám đốc CEO ký duyệt.
+
+3. XUẤT BẢN THƯ CHÀO GIÁ (Bên phải màn hình):
+- Tự động điền thông tin và bảng chiết tính vào bản xem trước Thư chào giá chuẩn theo đúng file Mẫu thư trong Context (nhớ lấy đúng thông tin tài khoản ngân hàng của NovaTech).
+- Có nút bấm "Sao chép toàn bộ Thư chào giá" để Sales copy gửi khách ngay.
+
+Giao diện thiết kế phong cách doanh nghiệp hiện đại, trực quan, chia 2 cột rõ ràng, dễ dùng cho dân kinh doanh nhé!</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Bước 3 - Trải nghiệm tại tab Preview:</strong></p>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div>Claude tự đọc 3 file và hiển thị đủ tên gói Starter, Professional, Enterprise kèm đơn giá - bạn không hề gõ vào prompt.</div></li>
+              <li><span class="step-badge">2</span><div>Kéo thanh trượt số người dùng từ 15 lên 45 người.</div></li>
+              <li><span class="step-badge">3</span><div>Đổi "Thanh toán 100%" sang "Chia 3 đợt" -> xem số tiền phụ thu tự nhảy.</div></li>
+              <li><span class="step-badge">4</span><div>Kéo giảm giá thêm lên 10% -> thẻ cảnh báo thẩm quyền đổi sang đỏ kèm "VƯỢT THẨM QUYỀN - Bắt buộc CEO duyệt".</div></li>
+              <li><span class="step-badge">5</span><div>Bấm "Sao chép toàn bộ Thư chào giá", dán thử vào Zalo/Word xem số tài khoản Vietcombank và bảng giá có điền tự động chính xác không.</div></li>
+            </ul>
+          </div>
+
+          <div class="card-panel" id="b2-case-2">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+              <h3 style="font-size: 17px; color: var(--text-main);">2.3. Case Study 2: Bảng điều khiển Rà soát Hợp đồng & Chấm điểm Rủi ro Pháp lý</h3>
+              <span class="tag-status tag-ready">Legal Audit Dashboard</span>
+            </div>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bài toán:</strong> nhận hợp đồng dài ngại đọc từng trang - cần công cụ trực quan: dán nhanh điều khoản nghi vấn, có sẵn danh mục điều khoản rủi ro điển hình, tự chấm điểm rủi ro, đối chiếu luật Việt Nam, sinh sẵn câu chữ redline + nút copy đàm phán.</p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bước 1:</strong> Vào <strong>Projects</strong> -> mở Project Pháp chế đã tạo ở Buổi 1 (đã có <code>Bộ tiêu chuẩn rà soát pháp lý...pdf</code> trong Context) -> mở phiên chat mới.</p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bước 2:</strong> Dán câu lệnh (Claude tự đọc Bộ tiêu chuẩn để trích điều khoản, căn cứ luật, câu chữ redline):</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Câu lệnh tạo Bảng điều khiển Pháp lý tương tác (dán trong Project)</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Dựa vào tài liệu "Bộ tiêu chuẩn rà soát pháp lý" và "Hợp đồng dịch vụ mẫu" trong mục Context của dự án:
+Hãy tạo cho tôi một BẢNG ĐIỀU KHIỂN RÀ SOÁT RỦI RO HỢP ĐỒNG TƯƠNG TÁC (Legal Risk Dashboard) trong cửa sổ Artifact:
+
+1. TỔNG QUAN &amp; ĐO LƯỜNG RỦI RO:
+- Có đồng hồ đo điểm rủi ro tổng thể (Risk Scorecard từ 0 - 100) và các thẻ thống kê nhanh số lượng điều khoản (An toàn / Cần đàm phán / Nguy cơ cao).
+
+2. DANH MỤC CÁC ĐIỀU KHOẢN RỦI RO CẦN RÀ SOÁT:
+- Tự động đọc từ file Bộ tiêu chuẩn pháp lý của công ty để trích xuất sẵn 4 điều khoản rủi ro kinh điển nhất làm dữ liệu mẫu (nhất là điều khoản phạt vi phạm, quyền sở hữu trí tuệ/mã nguồn, đơn phương chấm dứt và thẩm quyền tài phán).
+- Mỗi điều khoản trình bày dạng thẻ bấm mở rộng (Accordion) xem chi tiết:
+  + Nêu rõ câu chữ đối tác hay gài bẫy (tô đỏ các cụm từ bất lợi).
+  + Căn cứ theo đúng điều luật của Việt Nam và quy chuẩn công ty trong Context để giải thích rõ lý do vì sao nguy hiểm.
+  + Viết sẵn câu chữ đề xuất sửa đổi (redline) chuẩn mực, giữ văn phong thiện chí hợp tác.
+  + Có nút bấm "Sao chép câu chữ Redline" để chuyên viên copy gửi đi đàm phán lại.
+
+3. TƯƠNG TÁC THỰC TẾ:
+- Có một ô nhập liệu để tôi có thể dán thử một điều khoản hợp đồng mới bất kỳ vào và nút "Quét nhanh rủi ro".
+- Nút "Sao chép bảng tổng hợp rủi ro" để gửi báo cáo nhanh cho sếp qua email.
+
+Giao diện phong cách Legal Tech hiện đại, màu sắc trang nhã, trực quan, chuyên nghiệp nhé!</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Bước 3 - Trải nghiệm & thử nghiệm:</strong></p>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div>Claude tự đọc file và hiển thị ngay 4 điều khoản rủi ro kèm căn cứ chính xác (Điều 301 Luật Thương mại - phạt trần 8%) mà không phải gõ dòng luật nào.</div></li>
+              <li><span class="step-badge">2</span><div>Mở rộng từng thẻ điều khoản xem câu chữ gài bẫy và phần đề xuất viết lại.</div></li>
+              <li><span class="step-badge">3</span><div>Bấm "Sao chép câu chữ Redline" kiểm tra tiện lợi khi đi đàm phán.</div></li>
+              <li><span class="step-badge">4</span><div>Dán một điều khoản thực tế từ công việc của bạn vào ô nhập để thử tính năng quét rủi ro.</div></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-section" id="b2-phan-3">
+          <div class="section-header">
+            <span class="section-badge">PHẦN 3</span>
+            <h2 class="section-title">Tinh chỉnh, sửa lỗi & chia sẻ link (Publish & Share)</h2>
+          </div>
+
+          <div class="card-panel">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">3.1. Kỹ thuật "chỉ điểm" để tinh chỉnh giao diện (không đụng code)</h3>
+            <div class="callout callout-warn">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-alert-triangle"/></svg>Nguyên tắc khi chỉnh sửa Artifact</div>
+              Không cần và không nên mở tab Code sửa tay. Hãy đứng ở khung chat, mô tả theo công thức: <strong>[Vị trí màn hình] + [Hiện trạng] + [Yêu cầu thay đổi cụ thể]</strong>.
+            </div>
+            <p style="font-size: 14px; font-weight: 700; margin: 12px 0 6px;">Các mẫu câu tinh chỉnh kinh điển:</p>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div><strong>Thêm tính năng:</strong> <em>"Ở phần kết quả chiết tính, bổ sung nút 'In Thư chào giá (Print/PDF)' để bấm vào mở hộp thoại in của trình duyệt."</em></div></li>
+              <li><span class="step-badge">2</span><div><strong>Sửa giao diện/màu:</strong> <em>"Bảng cảnh báo màu đỏ hơi gắt, chuyển sang viền đỏ nhạt, nền kem trang nhã và làm nút 'Sao chép' to hơn ở giữa."</em></div></li>
+              <li><span class="step-badge">3</span><div><strong>Thêm trường dữ liệu:</strong> <em>"Cột nhập liệu bên trái thêm Dropdown chọn thời hạn hợp đồng: 1 năm (giá chuẩn), 2 năm (giảm 10%), 3 năm (giảm 15%); chọn thì tự áp vào bảng tính."</em></div></li>
+            </ul>
+          </div>
+
+          <div class="card-panel">
+            <h3 style="font-size: 16px; margin-bottom: 10px;">3.2. Khắc phục sự cố thường gặp (Troubleshooting)</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>Tình huống</th><th>Nguyên nhân</th><th>Cách khắc phục (gõ vào chat)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Preview trắng tinh</strong></td><td>Lỗi cú pháp JavaScript hoặc thư viện ngoài bị chặn</td><td><em>"Màn hình Preview đang trắng, kiểm tra lại toàn bộ JavaScript đảm bảo thẻ đóng/mở đầy đủ và không dùng thư viện ngoài bị chặn."</em></td></tr>
+                  <tr><td><strong>Bấm nút mà số không nhảy</strong></td><td>Sự kiện click chưa liên kết biến</td><td><em>"Khi đổi thanh trượt, ô tổng tiền chưa tự cập nhật. Viết lại hàm tính tự cập nhật mỗi khi thay đổi (onInput/onChange)."</em></td></tr>
+                  <tr><td><strong>Claude in code vào chat, không tạo Artifact</strong></td><td>Prompt chưa rõ định dạng đầu ra</td><td><em>"Hãy đóng gói toàn bộ ứng dụng vào MỘT CỬA SỔ ARTIFACT DUY NHẤT để tôi xem trước (Preview) và dùng ngay."</em></td></tr>
+                  <tr><td><strong>Giao diện vỡ trên điện thoại</strong></td><td>Chưa tối ưu Responsive</td><td><em>"Tối ưu giao diện cho di động: màn hình nhỏ chuyển bố cục 1 cột dọc (nhập liệu trên, kết quả dưới)."</em></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">3.3. Xuất bản & chia sẻ cho đồng nghiệp dùng độc lập</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Đây là tính năng giá trị nhất: biến sản phẩm thành công cụ dùng chung cả phòng ban hoặc gửi thẳng khách hàng.</p>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div>Nhìn thanh tiêu đề cửa sổ Artifact (góc trên phải), tìm nút <strong>Publish</strong> (hoặc biểu tượng chia sẻ / ba chấm).</div></li>
+              <li><span class="step-badge">2</span><div>Bấm <strong>Publish to Web</strong> -> hệ thống sinh Public URL (dạng <code>https://claude.site/artifacts/...</code>).</div></li>
+              <li><span class="step-badge">3</span><div>Bấm <strong>Copy Link</strong>, gửi qua Zalo/Slack/Email cho đồng nghiệp.</div></li>
+              <li><span class="step-badge">4</span><div>Thử nghiệm: mở tab ẩn danh (Incognito) dán link, hoặc gửi bạn trong lớp mở trên điện thoại kéo thử. Người nhận <strong>không cần đăng nhập / không cần tài khoản Claude</strong> vẫn dùng được.</div></li>
+            </ul>
+            <div class="callout callout-note">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-message"/></svg>Tính năng Remix (dành cho người nhận)</div>
+              Nếu người nhận có tài khoản Claude, họ bấm <strong>"Remix"</strong> để sao chép công cụ về tài khoản của họ và tùy biến thêm mà không làm thay đổi bản gốc của bạn.
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section" id="b2-phan-4">
+          <div class="section-header">
+            <span class="section-badge">PHẦN 4</span>
+            <h2 class="section-title">Bài tập tại lớp, Nghiệm thu & chuẩn bị Buổi 3</h2>
+          </div>
+
+          <div class="card-panel">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">4.1. Bài tập thực hành tại lớp (chọn 1 trong 2 đề)</h3>
+            <div class="principles-grid" style="grid-template-columns: 1fr 1fr;">
+              <div class="principle-card" style="border-left: 4px solid var(--brand-primary);">
+                <div class="principle-title" style="color: var(--brand-primary);">Đề A - Bán hàng / Marketing / CSKH</div>
+                <div class="principle-desc">Xây "Bảng tính ROI &amp; Báo giá dịch vụ tự động" hoặc "Bộ chấm điểm Lead tiềm năng". Yêu cầu: &ge; 3 tham số đầu vào, logic phân loại màu (Nóng/Ấm/Lạnh), bảng tóm tắt đề xuất hành động.</div>
+              </div>
+              <div class="principle-card" style="border-left: 4px solid var(--accent-cyan);">
+                <div class="principle-title" style="color: var(--accent-cyan);">Đề B - Nhân sự / Vận hành / Nội bộ</div>
+                <div class="principle-desc">Xây "Bảng tính lương Net sang Gross &amp; chi phí doanh nghiệp" hoặc "Checklist tiếp nhận nhân sự mới" có checkbox tích hoàn thành theo ngày/tuần và thanh tiến độ % tự nhảy.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">4.2. Nghiệm thu buổi 2</h3>
+            <div class="checklist-container">
+              <div class="checklist-title">
+                <span><svg class="icon icon-emerald"><use href="#icon-check-circle"/></svg></span>
+                <span>Về kỹ năng thao tác</span>
+              </div>
+              <div class="checklist-items">
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b2-chk-1"><span class="checklist-text">Phân biệt rõ nội dung trong khung Chat và trong cửa sổ Artifacts.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b2-chk-2"><span class="checklist-text">Tự tạo được công cụ khởi động nhanh ngoài Chat (tính lãi vay / chia tiền ăn trưa).</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b2-chk-3"><span class="checklist-text">Nắm vững công thức 4 thành tố Prompt-to-App (I - L - O - U).</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b2-chk-4"><span class="checklist-text">Biết xem trước ở tab Preview, chuyển tab Code và dùng lịch sử phiên bản (Versions).</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b2-chk-5"><span class="checklist-text">Dùng ngôn ngữ nói để yêu cầu Claude tinh chỉnh giao diện / thêm tính năng mà không cần biết code.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b2-chk-6"><span class="checklist-text">Nắm cách xử lý khi gặp lỗi trắng màn hình hoặc nút bấm không ăn.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b2-chk-7"><span class="checklist-text">Xuất bản thành công ít nhất 01 link Public Artifact và mở thử trên điện thoại / tab ẩn danh.</span></label>
+              </div>
+            </div>
+            <div class="checklist-container" style="margin-top: 14px;">
+              <div class="checklist-title">
+                <span><svg class="icon icon-emerald"><use href="#icon-check-circle"/></svg></span>
+                <span>Về sản phẩm số mang về</span>
+              </div>
+              <div class="checklist-items">
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b2-chk-8"><span class="checklist-text">Sản phẩm khởi động: 01 ứng dụng mini cá nhân (tính lãi vay / chia bill / ma trận công việc).</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b2-chk-9"><span class="checklist-text">Sản phẩm 1: Bảng tính Báo giá &amp; Phê duyệt Deal B2B tương tác (hoặc công cụ tính giá ngành của bạn).</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b2-chk-10"><span class="checklist-text">Sản phẩm 2: Bảng điều khiển rà soát rủi ro pháp lý &amp; Redline (hoặc công cụ nghiệp vụ tự chọn).</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b2-chk-11"><span class="checklist-text">Có link web độc lập sẵn sàng gửi sếp / đồng nghiệp trải nghiệm ngay sáng mai.</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">4.3. Cầu nối sang Buổi 3: Kết nối dữ liệu thật (Connectors)</h3>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div><strong>Thành tựu hôm nay:</strong> tự tạo được bất kỳ phần mềm mini / công cụ tương tác nào chỉ bằng vài câu lệnh tiếng Việt.</div></li>
+              <li><span class="step-badge">2</span><div><strong>Giới hạn cần vượt:</strong> công cụ vẫn nhận dữ liệu do bạn gõ tay từng lần.</div></li>
+              <li><span class="step-badge">3</span><div><strong>Buổi 3:</strong> phá vỡ copy-paste thủ công - kết nối Claude trực tiếp với <strong>Google Drive, Sheets, Gmail</strong>; Claude tự đọc báo cáo/đơn hàng thật, đối chiếu và tự điền vào báo cáo.</div></li>
+            </ul>
+
+            <div class="notes-box">
+              <div style="font-size: 14px; font-weight: 700; color: var(--text-main);"><svg class="icon inline-icon icon-brand"><use href="#icon-edit"/></svg>Sổ tay ghi chú cá nhân (Buổi 2)</div>
+              <textarea class="notes-textarea" id="note-buoi-02" placeholder="Ghi chú ý tưởng công cụ bạn muốn xây dựng trong buổi 2..."></textarea>
+            </div>
+          </div>
+        </section>
       </div>
 
       <!-- ============================================================== -->
@@ -2393,12 +2759,10 @@ Trình bày thành BẢNG CẢNH BÁO RỦI RO gồm các cột: Tên điều kh
         btn.classList.add('active');
         document.getElementById(targetTab).classList.add('active');
 
-        // Update sidebar TOC visibility
-        if (targetTab === 'tab-buoi-01') {
-          sidebarToc.style.display = 'block';
-        } else {
-          sidebarToc.style.display = 'none';
-        }
+        // Show only the TOC nested under the active session
+        document.querySelectorAll('.sidebar-toc').forEach(t => { t.style.display = 'none'; });
+        const activeToc = btn.closest('li') && btn.closest('li').querySelector('.sidebar-toc');
+        if (activeToc) activeToc.style.display = 'block';
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
