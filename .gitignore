@@ -16,3 +16,8 @@ venv/
 Thumbs.db
 .idea/
 .vscode/
+
+# Vercel deploy (chỉ dùng local, không đưa vào repo học viên)
+.vercel
+vercel.json
+docs/deployment-guide.md
