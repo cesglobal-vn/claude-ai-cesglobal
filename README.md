@@ -27,7 +27,8 @@ Chi tiết đầy đủ: xem [`docs/khung-chuong-trinh-6-buoi.md`](docs/khung-ch
 
 ```
 claude-ai/
-├── buoi-01-lam-theo-tung-buoc.md   # Giáo án buổi 01 (bản gốc, làm theo từng bước)
+├── buoi-01-lam-theo-tung-buoc.md   # Giáo án buổi 01 (Làm quen & thiết lập trợ lý Claude cá nhân hóa)
+├── buoi-02-lam-theo-tung-buoc.md   # Giáo án buổi 02 (Tạo công cụ làm việc tương tác bằng Artifacts)
 ├── workbook.html                   # Workbook tương tác buổi 01 (mở bằng trình duyệt)
 ├── slides/
 │   └── slide-buoi-01.html          # Slide trình chiếu buổi 01 (mở bằng trình duyệt)
@@ -35,8 +36,10 @@ claude-ai/
 │   ├── khung-chuong-trinh-6-buoi.md # Khung chương trình đầy đủ 6 buổi
 │   └── course-outline-source.md     # Bản outline nguồn (tham chiếu khi soạn bài)
 ├── demo-files/
-│   └── buoi-01/                     # File demo để thực hành (hợp đồng, bảng giá... của công ty giả định NovaTech)
+│   ├── buoi-01/                     # File demo buổi 01 (hợp đồng, bảng giá, quy chế chiết khấu...)
+│   └── buoi-02/                     # File demo buổi 02 (Excel chấm điểm Lead B2B, Word kế hoạch onboarding HR...)
 └── scripts/
+    ├── generate_demo_files_buoi02.py # Script sinh dữ liệu mẫu buổi 02
     └── logo_b64.txt                 # Logo CES (base64) dùng khi dựng lại workbook
 ```
 

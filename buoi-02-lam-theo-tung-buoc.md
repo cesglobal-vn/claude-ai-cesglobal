@@ -372,14 +372,66 @@ Sau khi Claude tạo xong ứng dụng lần đầu, chắc chắn bạn sẽ mu
 
 ### 4.1. Bài tập thực hành tại lớp (30 phút tự do sáng tạo)
 
-Chọn **1 trong 2 đề bài** sau để tự tay làm công cụ cho công việc của chính bạn:
+Chọn **1 trong 2 đề bài** sau để tự tay tạo ra công cụ phục vụ cho công việc:
+- **Ưu tiên 1:** Làm trên chính tài liệu, bảng tính hoặc quy chế thực tế của công ty bạn.
+- **Nếu chưa có sẵn tài liệu riêng:** Sử dụng ngay **2 file demo được chuẩn bị sẵn** của công ty NovaTech trong thư mục `demo-files/buoi-02/`.
 
-- **Đề bài A (Khối Bán hàng / Marketing / Chăm sóc khách hàng):**
-  - Xây dựng một **"Bảng tính ROI & Báo giá dịch vụ tự động"** hoặc **"Bộ công cụ chấm điểm Lead tiềm năng (Lead Scoring Calculator)"** cho công ty bạn.
-  - Yêu cầu: Có ít nhất 3 tham số đầu vào, có logic phân loại màu sắc (Nóng / Ấm / Lạnh), có bảng tóm tắt đề xuất hành động tiếp theo.
+---
 
-- **Đề bài B (Khối Nhân sự / Vận hành / Quản lý nội bộ):**
-  - Xây dựng một **"Bảng tính lương Net sang Gross & Chi phí doanh nghiệp"** hoặc **"Checklist tiếp nhận nhân sự mới (Interactive Onboarding Tracker)"** có các checkbox tích chọn hoàn thành nhiệm vụ theo ngày/tuần và thanh tiến độ hoàn thành (Progress Bar % tự nhảy).
+#### 🌟 Đề bài A (Khối Bán hàng / Marketing / Chăm sóc khách hàng):
+**Mục tiêu:** Xây dựng **"Bộ công cụ Chấm điểm & Phân loại Khách hàng Tiềm năng B2B (Lead Scoring App)"**.
+
+<details>
+<summary><b>Hướng dẫn thực hành Đề bài A với File Excel mẫu</b> (bấm để mở)</summary>
+
+1. **Lấy file demo:** Mở thư mục `demo-files/buoi-02/` trên máy tính, lấy file:
+   - `Ma trận chấm điểm Lead tiềm năng và Kịch bản chốt deal - NovaTech.xlsx`
+2. **Nạp file vào Claude:** Bạn có thể nạp vào Project Buổi 1 hoặc đính kèm trực tiếp vào ô chat.
+3. **Copy và dán câu lệnh tự nhiên sau:**
+
+```markdown
+Dựa vào file Excel "Ma trận chấm điểm Lead tiềm năng và Kịch bản chốt deal" tôi vừa nạp:
+Hãy tạo cho tôi một BẢNG TÍNH CHẤM ĐIỂM VÀ PHÂN LOẠI KHÁCH HÀNG B2B TƯƠNG TÁC (Lead Scoring App) trong cửa sổ Artifact:
+
+- Đọc từ Sheet "Barem_Cham_Diem" để tạo các nhóm tiêu chí cho Sales bấm chọn: Quy mô doanh nghiệp, Vị trí người liên hệ, Ngân sách dự kiến và Mức độ cấp thiết.
+- Tự động cộng tổng điểm và đối chiếu với Sheet "Quy_Tac_Phan_Loai" để:
+  + Đổi màu thẻ xếp hạng trực quan: Đỏ (Lead Nóng - 150-200đ) | Vàng (Lead Ấm - 100-149đ) | Xám (Lead Lạnh - Dưới 100đ).
+  + Hiển thị thời hạn cam kết phản hồi (SLA) và kịch bản hành động chi tiết tương ứng.
+- Có nút bấm "Sao chép tóm tắt đánh giá Lead" để Sales dán nhanh vào CRM hoặc gửi Zalo nhóm cho Trưởng phòng.
+
+Giao diện thiết kế trực quan, chia 2 cột hiện đại, dễ thao tác nhé!
+```
+
+4. **Trải nghiệm:** Thử bấm chọn các tiêu chí xem điểm số tự nhảy và thẻ trạng thái tự động đổi màu Đỏ/Vàng/Xám theo đúng quy tắc trong file Excel!
+</details>
+
+---
+
+#### 🌟 Đề bài B (Khối Nhân sự / Vận hành / Quản trị nội bộ):
+**Mục tiêu:** Xây dựng **"Bảng theo dõi Hội nhập & Đánh giá Thử việc 30 ngày (Interactive Onboarding Tracker)"**.
+
+<details>
+<summary><b>Hướng dẫn thực hành Đề bài B với File Word mẫu</b> (bấm để mở)</summary>
+
+1. **Lấy file demo:** Mở thư mục `demo-files/buoi-02/` trên máy tính, lấy file:
+   - `Quy trình tiếp nhận và kế hoạch thử việc 30 ngày cho nhân sự mới - NovaTech.docx`
+2. **Nạp file vào Claude:** Đính kèm file Word này vào ô chat hoặc Project của bạn.
+3. **Copy và dán câu lệnh tự nhiên sau:**
+
+```markdown
+Dựa vào file Word "Quy trình tiếp nhận và kế hoạch thử việc 30 ngày cho nhân sự mới" tôi vừa nạp:
+Hãy tạo cho tôi một BẢNG THEO DÕI HỘI NHẬP VÀ ĐÁNH GIÁ THỬ VIỆC TƯƠNG TÁC (Interactive Onboarding Tracker) trong cửa sổ Artifact:
+
+- Đọc từ tài liệu để chia lộ trình 30 ngày thành 4 giai đoạn theo tuần (Tuần 1: Chào sân, Tuần 2: Học nghề, Tuần 3: Thử lửa, Tuần 4: Về đích).
+- Mỗi tuần hiển thị danh sách các đầu việc có checkbox để tick chọn khi hoàn thành, ghi rõ người phụ trách và tiêu chuẩn nghiệm thu.
+- Phía trên cùng có thanh tiến độ (Progress Bar %) tự động cập nhật khi người dùng tích chọn xong từng việc.
+- Có khối chấm điểm nghiệm thu 30 ngày (thang 100 điểm theo 3 tiêu chí trong tài liệu) và nút "Sao chép Báo cáo thử việc gửi HR".
+
+Giao diện phong cách quản trị nhân sự hiện đại, thanh lịch, trực quan nhé!
+```
+
+4. **Trải nghiệm:** Thử tích chọn các đầu việc của Tuần 1 và Tuần 2 $\rightarrow$ Xem thanh tiến độ % tự động nhảy từ 0% lên 30%, 50% cực kỳ trực quan!
+</details>
 
 ---
 
