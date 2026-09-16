@@ -91,7 +91,7 @@ Khi Claude tạo một Artifact, góc trên bên phải màn hình sẽ xuất h
 2. Copy và dán câu lệnh ngắn sau vào ô chat:
 
 ```markdown
-Hãy tạo một ứng dụng mini bằng HTML, Tailwind CSS và JavaScript trong một cửa sổ Artifact duy nhất:
+Hãy tạo một ứng dụng mini web app bằng Artifact như sau:
 "BẢNG TÍNH LÃI VAY MUA NHÀ & XE TRẢ GÓP"
 - Đầu vào:
   + Thanh trượt (Slider) chọn số tiền vay: từ 200 triệu đến 5 tỷ đồng (bước nhảy 50 triệu, mặc định 1 tỷ).
@@ -121,7 +121,7 @@ Nếu bạn muốn khám phá thêm các dạng giao diện khác (như danh sá
 <summary><b>Lựa chọn bổ sung 1: Bảng tính chia tiền ăn trưa & Quỹ trà sữa văn phòng (Lunch & Coffee Splitter)</b> (bấm để mở)</summary>
 
 ```markdown
-Hãy tạo một ứng dụng mini trong Artifact: "CÔNG CỤ CHIA TIỀN ĂN TRƯA VĂN PHÒNG"
+Hãy tạo một ứng dụng mini web app bằng Artifact như sau: "CÔNG CỤ CHIA TIỀN ĂN TRƯA VĂN PHÒNG"
 - Cho nhập tổng hóa đơn bữa trưa (ô nhập số tiền).
 - Thanh trượt chọn số người tham gia (từ 2 đến 15 người).
 - Danh sách tùy chọn (Checkbox) cho các món gọi riêng:
@@ -136,7 +136,7 @@ Hãy tạo một ứng dụng mini trong Artifact: "CÔNG CỤ CHIA TIỀN ĂN T
 <summary><b>Lựa chọn bổ sung 2: Bảng phân loại việc cần làm theo Ma trận Eisenhower (Daily Focus Tracker)</b> (bấm để mở)</summary>
 
 ```markdown
-Hãy tạo một ứng dụng mini trong Artifact: "MA TRẬN QUẢN LÝ CÔNG VIỆC TRONG NGÀY (EISENHOWER MATRIX)"
+Hãy tạo một ứng dụng mini web app bằng Artifact như sau: "MA TRẬN QUẢN LÝ CÔNG VIỆC TRONG NGÀY (EISENHOWER MATRIX)"
 - Bố cục 4 ô trực quan:
   1. Khẩn cấp & Quan trọng (Làm ngay - Màu đỏ)
   2. Quan trọng nhưng Không khẩn cấp (Lên lịch làm - Màu xanh dương)
@@ -213,7 +213,7 @@ Hãy tạo một ứng dụng mini trong Artifact: "MA TRẬN QUẢN LÝ CÔNG V
 
 ```markdown
 Dựa vào các file tài liệu trong mục Context của dự án này (Bảng giá, Quy chế chiết khấu, Mẫu thư chào giá):
-Hãy tạo cho tôi một ỨNG DỤNG WEB TƯƠNG TÁC trong cửa sổ Artifact để nhân viên kinh doanh NovaTech tính giá và duyệt deal B2B với khách hàng:
+Hãy tạo cho tôi một ỨNG DỤNG WEB TƯƠNG TÁC bằng Artifact để nhân viên kinh doanh NovaTech tính giá và duyệt deal B2B với khách hàng:
 
 1. ĐẦU VÀO (Cho Sales thao tác):
 - Tự động đọc từ file Bảng giá để tạo danh sách các gói phần mềm cho Sales bấm chọn, và tùy chọn dịch vụ đào tạo tại văn phòng đi kèm.
@@ -270,7 +270,7 @@ Chuyên viên kinh doanh hoặc quản lý khi nhận một bản hợp đồng 
 
 ```markdown
 Dựa vào tài liệu "Bộ tiêu chuẩn rà soát pháp lý" và "Hợp đồng dịch vụ mẫu" trong mục Context của dự án:
-Hãy tạo cho tôi một BẢNG ĐIỀU KHIỂN RÀ SOÁT RỦI RO HỢP ĐỒNG TƯƠNG TÁC (Legal Risk Dashboard) trong cửa sổ Artifact:
+Hãy tạo cho tôi một BẢNG ĐIỀU KHIỂN RÀ SOÁT RỦI RO HỢP ĐỒNG TƯƠNG TÁC (Legal Risk Dashboard) bằng Artifact:
 
 1. TỔNG QUAN & ĐO LƯỜNG RỦI RO:
 - Có đồng hồ đo điểm rủi ro tổng thể (Risk Scorecard từ 0 - 100) và các thẻ thống kê nhanh số lượng điều khoản (An toàn / Cần đàm phán / Nguy cơ cao).
@@ -391,7 +391,7 @@ Chọn **1 trong 2 đề bài** sau để tự tay tạo ra công cụ phục v�
 
 ```markdown
 Dựa vào file Excel "Ma trận chấm điểm Lead tiềm năng và Kịch bản chốt deal" tôi vừa nạp:
-Hãy tạo cho tôi một BẢNG TÍNH CHẤM ĐIỂM VÀ PHÂN LOẠI KHÁCH HÀNG B2B TƯƠNG TÁC (Lead Scoring App) trong cửa sổ Artifact:
+Hãy tạo cho tôi một BẢNG TÍNH CHẤM ĐIỂM VÀ PHÂN LOẠI KHÁCH HÀNG B2B TƯƠNG TÁC (Lead Scoring App) bằng Artifact:
 
 - Đọc từ Sheet "Barem_Cham_Diem" để tạo các nhóm tiêu chí cho Sales bấm chọn: Quy mô doanh nghiệp, Vị trí người liên hệ, Ngân sách dự kiến và Mức độ cấp thiết.
 - Tự động cộng tổng điểm và đối chiếu với Sheet "Quy_Tac_Phan_Loai" để:
@@ -420,7 +420,7 @@ Giao diện thiết kế trực quan, chia 2 cột hiện đại, dễ thao tác
 
 ```markdown
 Dựa vào file Word "Quy trình tiếp nhận và kế hoạch thử việc 30 ngày cho nhân sự mới" tôi vừa nạp:
-Hãy tạo cho tôi một BẢNG THEO DÕI HỘI NHẬP VÀ ĐÁNH GIÁ THỬ VIỆC TƯƠNG TÁC (Interactive Onboarding Tracker) trong cửa sổ Artifact:
+Hãy tạo cho tôi một BẢNG THEO DÕI HỘI NHẬP VÀ ĐÁNH GIÁ THỬ VIỆC TƯƠNG TÁC (Interactive Onboarding Tracker) bằng Artifact:
 
 - Đọc từ tài liệu để chia lộ trình 30 ngày thành 4 giai đoạn theo tuần (Tuần 1: Chào sân, Tuần 2: Học nghề, Tuần 3: Thử lửa, Tuần 4: Về đích).
 - Mỗi tuần hiển thị danh sách các đầu việc có checkbox để tick chọn khi hoàn thành, ghi rõ người phụ trách và tiêu chuẩn nghiệm thu.
