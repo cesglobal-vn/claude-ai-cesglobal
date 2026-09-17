@@ -242,6 +242,31 @@ Giao diện thiết kế phong cách doanh nghiệp hiện đại, trực quan, 
 3. Thử đổi phương thức từ "Thanh toán 100%" sang "Chia 3 đợt" -> Xem số tiền phụ thu tự động nhảy.
 4. Thử kéo thanh giảm giá thêm lên 10% -> Xem thẻ cảnh báo thẩm quyền lập tức đổi sang màu đỏ kèm thông báo *"VƯỢT THẨM QUYỀN - Bắt buộc CEO duyệt"*.
 5. Bấm nút **"Sao chép toàn bộ Thư chào giá"** và dán thử vào Zalo / Word xem số tài khoản Vietcombank và bảng giá có được điền tự động chính xác không.
+
+**Bước 4 (Nâng cấp tương tác - gõ tiếp trong cùng phiên chat, không tạo app mới):**
+Sau khi ứng dụng đã chạy, gửi tiếp 2 câu lệnh dưới để nâng cấp Thư chào giá thành phiếu điện tử có mã VietQR + con dấu và xuất ảnh/file gửi khách.
+
+*Câu lệnh nâng cấp 1 - Phiếu báo giá điện tử + VietQR + xuất ảnh PNG:*
+
+```markdown
+Ở phần Thư chào giá bên phải, hãy thiết kế lại thành một "PHIẾU BÁO GIÁ & HỢP ĐỒNG ĐIỆN TỬ" dạng thẻ card đẹp và thêm tính năng XUẤT ẢNH PNG:
+
+THIẾT KẾ PHIẾU BÁO GIÁ (Định dạng như một hóa đơn điện tử cao cấp):
+Có tên Công ty NovaTech
+Bảng chiết tính rõ ràng: Gói cước, số người dùng, chiết khấu, phụ thu và TỔNG TIỀN THANH TOÁN (in số to, nổi bật).
+TỰ ĐỘNG CHÈN MÃ VIETQR: Nhúng mã QR thanh toán động từ VietQR (Ngân hàng: Vietcombank, STK: 0071001234567, số tiền tự động cập nhật theo Tổng thanh toán).
+Có đóng một con dấu mộc tròn điện tử màu đỏ: "NOVATECH - ĐÃ PHÊ DUYỆT DEAL".
+TÍNH NĂNG XUẤT ẢNH:
+Thêm nút bấm nổi bật: "Tải ảnh Báo giá (PNG gửi Zalo)" và nút "Sao chép ảnh vào Clipboard".
+Khi bấm "Tải ảnh PNG", chụp lại toàn bộ phiếu báo giá đó và tự động tải file ảnh sắc nét về máy tính.
+Hãy cập nhật lại Artifact này cho tôi nhé!
+```
+
+*Câu lệnh nâng cấp 2 - Xuất Artifact thành file HTML tải về máy:*
+
+```markdown
+xuất artifact này thành file html cho tôi tải xuống nhé
+```
 </details>
 
 ---
@@ -295,6 +320,31 @@ Giao diện phong cách Legal Tech hiện đại, màu sắc trang nhã, trực 
 2. Bấm mở rộng từng thẻ điều khoản để xem câu chữ gài bẫy và phần đề xuất viết lại.
 3. Bấm thử nút "Sao chép câu chữ Redline" để kiểm tra tính tiện lợi khi đi đàm phán hợp đồng.
 4. Thử dán một đoạn điều khoản thực tế từ công việc của bạn vào ô nhập liệu để kiểm tra tính năng quét rủi ro.
+
+**Bước 4 (Nâng cấp tương tác - gõ tiếp trong cùng phiên chat, không tạo app mới):**
+Sau khi bảng điều khiển đã chạy, gửi tiếp 2 câu lệnh dưới để gói kết quả rà soát thành một phiếu thẩm định có con dấu và xuất ảnh/file gửi sếp, đối tác.
+
+*Câu lệnh nâng cấp 1 - Phiếu thẩm định rủi ro pháp lý + xuất ảnh PNG:*
+
+```markdown
+Ở phần bảng tổng hợp rủi ro bên phải, hãy thiết kế lại thành một "PHIẾU KẾT QUẢ THẨM ĐỊNH RỦI RO PHÁP LÝ" dạng thẻ card đẹp và thêm tính năng XUẤT ẢNH PNG:
+
+THIẾT KẾ PHIẾU THẨM ĐỊNH (Định dạng như một biên bản pháp chế cao cấp):
+Có tên Công ty NovaTech - Phòng Pháp chế.
+Bảng tổng hợp rõ ràng: Điểm rủi ro tổng thể (thang 0-100, in số to nổi bật), số lượng điều khoản theo từng mức (An toàn / Cần đàm phán / Nguy cơ cao) và danh sách các điều khoản nguy hiểm nhất kèm đề xuất xử lý.
+Có đóng một con dấu mộc tròn điện tử màu đỏ: "NOVATECH - ĐÃ RÀ SOÁT PHÁP CHẾ".
+Ghi rõ ngày rà soát và dòng "Người thẩm định: Phòng Pháp chế NovaTech".
+TÍNH NĂNG XUẤT ẢNH:
+Thêm nút bấm nổi bật: "Tải ảnh Phiếu thẩm định (PNG gửi Zalo)" và nút "Sao chép ảnh vào Clipboard".
+Khi bấm "Tải ảnh PNG", chụp lại toàn bộ phiếu thẩm định đó và tự động tải file ảnh sắc nét về máy tính.
+Hãy cập nhật lại Artifact này cho tôi nhé!
+```
+
+*Câu lệnh nâng cấp 2 - Xuất Artifact thành file HTML tải về máy:*
+
+```markdown
+xuất artifact này thành file html cho tôi tải xuống nhé
+```
 </details>
 
 ---
