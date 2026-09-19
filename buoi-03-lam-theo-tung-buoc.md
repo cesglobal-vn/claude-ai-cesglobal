@@ -4,7 +4,7 @@
 
 | Phần | Nội dung chi tiết | Thời lượng dự kiến |
 |:---:|---|:---:|
-| **0** | **Giải mã MCP & Kết nối Claude với Google Drive:**<br>- MCP là gì? Ẩn dụ "cổng USB vạn năng" của AI.<br>- Kết nối Google Drive Connector trên Claude để đọc dữ liệu từ xa. | 25 phút |
+| **0** | **Giải mã MCP & Kết nối Google Workspace (Drive & Gmail):**<br>- MCP là gì? Ẩn dụ "cổng USB vạn năng" của AI.<br>- Kết nối Google Drive & Gmail trên Claude.<br>- Thực hành: Quét và phân loại email công việc trong 24h. | 25 phút |
 | **1** | **Tư duy Kiến trúc: Google Sheets làm Database cho Web App:**<br>- Mô hình 2 file của Google Apps Script (GAS): `Code.gs` + `Index.html`.<br>- Quy trình "Deploy as Web App" để lấy link website chạy độc lập. | 15 phút |
 | **2** | **THỰC HÀNH DEMO 1: Xây dựng Dashboard Analytics Tương tác (Read-Only):**<br>- Prompt chuyên gia phân tích dữ liệu Google Sheets.<br>- Lắp ráp 2 file `Code.gs` và `Index.html` $\rightarrow$ Triển khai Dashboard trực quan. | 45 phút |
 | **3** | **THỰC HÀNH DEMO 2: Hệ thống Quản lý Đơn hàng B2B (Tiến hóa qua từng Prompt):**<br>- *Prompt 2.1:* Xây dựng Web App tiếp nhận đơn & đồng bộ 2 chiều vào Sheet.<br>- *Prompt 2.2 (Follow-up 1):* Bổ sung tính năng Xuất Phiếu giao hàng / Hóa đơn PDF.<br>- *Prompt 2.3 (Follow-up 2):* Tạo Menu tùy chỉnh `⚡ ĐƠN HÀNG` ngay trên Google Sheets (tự động gom số liệu & cộng dồn). | 50 phút |
@@ -12,7 +12,7 @@
 
 ---
 
-## PHẦN 0. GIẢI MÃ MCP & KẾT NỐI CLAUDE VỚI GOOGLE DRIVE
+## PHẦN 0. GIẢI MÃ MCP & KẾT NỐI CLAUDE VỚI GOOGLE DRIVE & GMAIL
 
 ### 0.1. Điểm nghẽn từ Buổi 2: Dữ liệu tĩnh vs Dữ liệu sống
 - Ở Buổi 2, chúng ta đã tự tay tạo ra những Web App / Artifacts rất đẹp.
@@ -39,21 +39,48 @@
 
 ---
 
-### 0.3. Thao tác thực hành: Kết nối Google Drive Connector trên Claude
+### 0.3. Thao tác thực hành: Kết nối Google Workspace (Drive & Gmail) trên Claude
 
 <details>
-<summary><b>Thao tác thực hành: Bật kết nối Google Drive trên Web</b> (bấm để mở)</summary>
+<summary><b>Thao tác thực hành: Bật kết nối Google Drive & Gmail trên Web</b> (bấm để mở)</summary>
 
 1. Mở trang chủ Claude ([claude.ai](https://claude.ai)).
 2. Bấm vào ảnh đại diện hoặc tên tài khoản ở góc dưới cùng bên trái màn hình $\rightarrow$ Chọn **Settings**.
 3. Ở menu bên trái, tìm mục **Integrations** (hoặc **Connectors / Connected Accounts**).
-4. Tìm dòng **Google Drive** $\rightarrow$ Bấm nút **Connect** (hoặc **Add**).
-5. Một cửa sổ đăng nhập Google hiện ra: Chọn tài khoản Google làm việc của bạn $\rightarrow$ Bấm **Cho phép (Allow)** cấp quyền đọc tài liệu.
+4. Tìm dòng **Google Drive** và **Gmail** (hoặc gói tích hợp **Google Workspace**) $\rightarrow$ Bấm nút **Connect** (hoặc **Add**).
+5. Một cửa sổ đăng nhập Google hiện ra: Chọn tài khoản Google làm việc của bạn $\rightarrow$ Bấm **Cho phép (Allow)** cấp quyền đọc tài liệu và email.
 6. Khi trạng thái chuyển sang màu xanh **Connected**, quay lại khung chat.
-7. **Thử nghiệm ngay:**
+7. **Thử nghiệm nhanh với Google Drive:**
    - Trong ô chat mới, bấm biểu tượng dấu cộng `+` $\rightarrow$ Chọn **Add from Google Drive**.
    - Tìm một file tài liệu bất kỳ trên Drive của bạn $\rightarrow$ Bấm chọn $\rightarrow$ Gõ lệnh: *"Tóm tắt 3 ý chính của tài liệu này cho tôi"*.
    - Quan sát Claude tự động đọc trực tiếp từ Drive mà bạn không cần tải file về máy!
+</details>
+
+---
+
+### 0.4. Thực hành tương tác với Gmail: Trợ lý phân loại hòm thư công việc
+
+<details>
+<summary><b>Thao tác thực hành: Quét và phân loại email với Gmail Connector</b> (bấm để mở)</summary>
+
+**Bước 1: Mở phiên chat mới trên Claude và dán câu lệnh sau:**
+
+```markdown
+Hãy đóng vai Thư ký Điều hành của tôi.
+Hãy quét các email tôi nhận được trong 24 giờ qua (hoặc 3 ngày gần nhất) trong hòm thư Gmail và thực hiện:
+
+1. Phân loại email thành 3 nhóm rõ ràng:
+   - [KHẨN CẤP / CẦN XỬ LÝ NGAY]: Email từ cấp trên, đối tác quan trọng, hoặc có thời hạn gấp.
+   - [CẦN THEO DÕI]: Email cập nhật tiến độ, thông báo nội bộ, không cần phản hồi ngay.
+   - [TIN TỨC / BỎ QUA]: Email quảng cáo, bản tin tiếp thị, thư tự động từ hệ thống.
+
+2. Với các email thuộc nhóm [KHẨN CẤP / CẦN XỬ LÝ NGAY]:
+   - Tóm tắt 1 câu ngắn gọn nội dung người gửi yêu cầu.
+   - Đề xuất 1 việc cụ thể tôi cần làm hôm nay.
+```
+
+**Bước 2: Trải nghiệm kết quả**
+Claude sẽ tự động quét hòm thư đến và trả về bảng tóm tắt công việc trong ngày, giúp bạn nắm bắt nhanh các đầu việc quan trọng mà không cần mở từng email để đọc.
 </details>
 
 ---

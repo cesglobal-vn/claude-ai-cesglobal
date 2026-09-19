@@ -1419,9 +1419,10 @@
             <!-- Nested TOC for Buổi 3 (hidden until active) -->
             <div class="sidebar-toc" style="display: none;">
               <ul class="toc-list">
-                <li class="toc-item"><a href="#b3-phan-0">0. Giải mã MCP &amp; Kết nối Google Drive</a></li>
+                <li class="toc-item"><a href="#b3-phan-0">0. Giải mã MCP &amp; Kết nối Drive/Gmail</a></li>
                 <li class="toc-item toc-sub"><a href="#b3-0-2">0.2. MCP là gì (cổng USB của AI)</a></li>
-                <li class="toc-item toc-sub"><a href="#b3-0-3">0.3. Kết nối Google Drive Connector</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-0-3">0.3. Kết nối Drive &amp; Gmail</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-0-4">0.4. Trợ lý phân loại Gmail</a></li>
                 <li class="toc-item"><a href="#b3-phan-1">1. Google Sheets làm Database</a></li>
                 <li class="toc-item toc-sub"><a href="#b3-1-2">1.2. Giải phẫu Apps Script Web App</a></li>
                 <li class="toc-item toc-sub"><a href="#b3-1-3">1.3. Bảng đơn vs Database đa bảng</a></li>
@@ -2706,7 +2707,7 @@ Giao diện phong cách quản trị nhân sự hiện đại, thanh lịch, tr�
         <section class="content-section" id="b3-phan-0">
           <div class="section-header">
             <span class="section-badge">PHẦN 0</span>
-            <h2 class="section-title">Giải mã MCP &amp; Kết nối Claude với Google Drive</h2>
+            <h2 class="section-title">Giải mã MCP &amp; Kết nối Claude với Google Drive &amp; Gmail</h2>
           </div>
 
           <div class="card-panel">
@@ -2730,16 +2731,42 @@ Giao diện phong cách quản trị nhân sự hiện đại, thanh lịch, tr�
           </div>
 
           <div class="card-panel">
-            <h3 id="b3-0-3" style="font-size: 16px; margin-bottom: 8px;">0.3. Thao tác thực hành: Bật kết nối Google Drive trên Web</h3>
+            <h3 id="b3-0-3" style="font-size: 16px; margin-bottom: 8px;">0.3. Thao tác thực hành: Kết nối Google Workspace (Drive &amp; Gmail) trên Web</h3>
             <ul class="steps-list">
               <li><span class="step-badge">1</span><div>Mở <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" style="color: var(--brand-primary);">claude.ai</a>.</div></li>
               <li><span class="step-badge">2</span><div>Bấm ảnh đại diện / tên tài khoản góc dưới trái -> chọn <strong>Settings</strong>.</div></li>
               <li><span class="step-badge">3</span><div>Menu bên trái, tìm mục <strong>Integrations</strong> (hoặc <strong>Connectors / Connected Accounts</strong>).</div></li>
-              <li><span class="step-badge">4</span><div>Tìm dòng <strong>Google Drive</strong> -> bấm <strong>Connect</strong> (hoặc <strong>Add</strong>).</div></li>
-              <li><span class="step-badge">5</span><div>Cửa sổ Google hiện ra: chọn tài khoản Google làm việc -> bấm <strong>Cho phép (Allow)</strong> cấp quyền đọc tài liệu.</div></li>
+              <li><span class="step-badge">4</span><div>Tìm dòng <strong>Google Drive</strong> và <strong>Gmail</strong> (hoặc gói tích hợp <strong>Google Workspace</strong>) -> bấm <strong>Connect</strong> (hoặc <strong>Add</strong>).</div></li>
+              <li><span class="step-badge">5</span><div>Cửa sổ Google hiện ra: chọn tài khoản Google làm việc -> bấm <strong>Cho phép (Allow)</strong> cấp quyền đọc tài liệu và email.</div></li>
               <li><span class="step-badge">6</span><div>Trạng thái chuyển màu xanh <strong>Connected</strong> là xong, quay lại khung chat.</div></li>
-              <li><span class="step-badge">7</span><div><strong>Thử ngay:</strong> trong ô chat, bấm dấu cộng <code>+</code> -> <strong>Add from Google Drive</strong> -> chọn 1 file bất kỳ -> gõ <em>"Tóm tắt 3 ý chính của tài liệu này cho tôi"</em>. Claude đọc thẳng từ Drive, không cần tải file về máy!</div></li>
+              <li><span class="step-badge">7</span><div><strong>Thử nghiệm nhanh với Google Drive:</strong> trong ô chat, bấm dấu cộng <code>+</code> -> <strong>Add from Google Drive</strong> -> chọn 1 file bất kỳ -> gõ <em>"Tóm tắt 3 ý chính của tài liệu này cho tôi"</em>. Claude đọc thẳng từ Drive, không cần tải file về máy!</div></li>
             </ul>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b3-0-4" style="font-size: 16px; margin-bottom: 8px;">0.4. Thực hành với Gmail: Trợ lý phân loại hòm thư công việc</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bước 1:</strong> Mở phiên chat mới trên Claude và dán câu lệnh sau:</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Câu lệnh - Trợ lý phân loại hòm thư Gmail (Thư ký điều hành)</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Hãy đóng vai Thư ký Điều hành của tôi.
+Hãy quét các email tôi nhận được trong 24 giờ qua (hoặc 3 ngày gần nhất) trong hòm thư Gmail và thực hiện:
+
+1. Phân loại email thành 3 nhóm rõ ràng:
+   - [KHẨN CẤP / CẦN XỬ LÝ NGAY]: Email từ cấp trên, đối tác quan trọng, hoặc có thời hạn gấp.
+   - [CẦN THEO DÕI]: Email cập nhật tiến độ, thông báo nội bộ, không cần phản hồi ngay.
+   - [TIN TỨC / BỎ QUA]: Email quảng cáo, bản tin tiếp thị, thư tự động từ hệ thống.
+
+2. Với các email thuộc nhóm [KHẨN CẤP / CẦN XỬ LÝ NGAY]:
+   - Tóm tắt 1 câu ngắn gọn nội dung người gửi yêu cầu.
+   - Đề xuất 1 việc cụ thể tôi cần làm hôm nay.</div>
+            </div>
+            <div class="callout callout-tip">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-message"/></svg>Bước 2 - Trải nghiệm kết quả</div>
+              Claude tự động quét hòm thư đến và trả về bảng tóm tắt công việc trong ngày, giúp bạn nắm nhanh các đầu việc quan trọng mà không cần mở từng email để đọc.
+            </div>
           </div>
         </section>
 
