@@ -18,7 +18,6 @@ Thumbs.db
 .vscode/
 ~$*
 *.tmp
-demo-files/buoi-03/Du lieu Doanh so Ban hang NovaTech 2026.xlsx
 
 # Vercel deploy (chỉ dùng local, không đưa vào repo học viên)
 .vercel
