@@ -39,7 +39,9 @@ claude-ai/
 ├── demo-files/
 │   ├── buoi-01/                     # File demo buổi 01 (hợp đồng, bảng giá, quy chế chiết khấu...)
 │   ├── buoi-02/                     # File demo buổi 02 (Excel chấm điểm Lead B2B, Word kế hoạch onboarding HR...)
-│   └── buoi-03/                     # File demo buổi 03 (Excel dữ liệu doanh số B2B NovaTech làm data cho Dashboard & GAS)
+│   └── buoi-03/                     # File demo buổi 03:
+│       ├── Demo 1 - Du lieu Dashboard Doanh so NovaTech.xlsx              # File phẳng 1 sheet vẽ Dashboard Analytics
+│       └── Demo 2 - Co so Du lieu He thong Don hang B2B NovaTech.xlsx     # Database 4 sheet cho Web App Quản trị Đơn hàng
 └── scripts/
     ├── generate_demo_files_buoi02.py # Script sinh dữ liệu mẫu buổi 02
     └── logo_b64.txt                 # Logo CES (base64) dùng khi dựng lại workbook

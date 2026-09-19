@@ -99,6 +99,18 @@ Google Apps Script cho phép bạn dựng một ứng dụng web chạy thẳng 
 
 ---
 
+### 1.3. Phân biệt 2 cấp độ dữ liệu: Bảng thống kê đơn vs Database đa bảng
+Để chuẩn bị cho 2 bài thực hành lớn hôm nay, chúng ta cần phân biệt rõ 2 mô hình dữ liệu tương ứng với 2 file Excel mẫu khác nhau:
+
+| Tiêu chí so sánh | DEMO 1: Dashboard Analytics | DEMO 2: Web App Quản lý Đơn hàng |
+|---|---|---|
+| **Bản chất** | Báo cáo phân tích tĩnh / chỉ đọc (Read-only Analytics) | Hệ thống phần mềm mini tương tác 2 chiều (CRUD Web App) |
+| **Cấu trúc file** | **01 Sheet phẳng duy nhất** (`DoanhSo_NovaTech_2026`) | **04 Sheet quan hệ đa bảng** mô phỏng Database thực thụ |
+| **File mẫu đi kèm** | `Demo 1 - Du lieu Dashboard Doanh so NovaTech.xlsx` | `Demo 2 - Co so Du lieu He thong Don hang B2B NovaTech.xlsx` |
+| **Các bảng dữ liệu** | Gom chung toàn bộ dữ liệu lịch sử vào một bảng để vẽ biểu đồ | 1. `DonHang`: Ghi nhận đơn phát sinh từ Web.<br>2. `DanhMuc_GoiDichVu`: Bảng giá & tính năng để Web tự nạp dropdown.<br>3. `KhachHang_B2B`: Danh bạ MST, địa chỉ để in hóa đơn/PDF.<br>4. `TongHop_DoanhThu`: Nhận số liệu cộng dồn từ Apps Script. |
+
+---
+
 ## PHẦN 2. THỰC HÀNH DEMO 1: XÂY DỰNG DASHBOARD ANALYTICS BẰNG GOOGLE APPS SCRIPT
 
 ### 2.1. Bài toán thực tế
@@ -141,8 +153,8 @@ Hãy đóng vai một Chuyên gia Lập trình Tự động hóa Doanh nghiệp 
 ```
 
 **Bước 2: Triển khai mã nguồn vào Google Sheets**
-1. Mở một bảng tính Google Sheets mới (hoặc đặt tên là `NovaTech_Sales_2026`).
-2. Nhập dữ liệu: Bạn có thể vào **Tệp (File) $\rightarrow$ Nhập (Import) $\rightarrow$ Tải lên (Upload)** file mẫu có sẵn trong thư mục `demo-files/buoi-03/Du lieu Doanh so Ban hang NovaTech 2026.xlsx` (gồm 20 đơn hàng mẫu cực chuẩn), hoặc dán dữ liệu doanh số thực tế của bạn.
+1. Mở một bảng tính Google Sheets mới (hoặc đặt tên là `NovaTech_Sales_Dashboard_2026`).
+2. Nhập dữ liệu: Bạn vào **Tệp (File) $\rightarrow$ Nhập (Import) $\rightarrow$ Tải lên (Upload)** file mẫu `demo-files/buoi-03/Demo 1 - Du lieu Dashboard Doanh so NovaTech.xlsx` (gồm 20 dòng doanh số chuẩn của NovaTech), hoặc dán dữ liệu doanh số thực tế của bạn.
 3. Bấm menu: **Extensions (Tiện ích mở rộng) $\rightarrow$ Apps Script**.
 4. **Tại file `Code.gs`:** Xóa sạch mã mặc định, dán toàn bộ code `Code.gs` mà Claude vừa tạo vào.
 5. **Tạo file `Index.html`:**
@@ -173,16 +185,31 @@ Hãy đóng vai một Chuyên gia Lập trình Tự động hóa Doanh nghiệp 
 > **Phương pháp phát triển lặp từng bước (Iterative Development):**
 > Khi làm việc với AI để xây dựng phần mềm hoặc quy trình tự động hóa, **tuyệt đối không nên quăng một câu lệnh khổng lồ** đòi hỏi làm tất cả mọi thứ cùng một lúc.
 > Hãy đi theo quy trình 3 bước chuyên nghiệp:
-> - **Bước 1:** Dựng phần lõi cơ bản (Core Web App) cho chạy mượt mà trước.
-> - **Bước 2:** Bổ sung tính năng nghiệp vụ (Xuất hóa đơn / phiếu giao hàng PDF).
-> - **Bước 3:** Tạo menu tự động hóa cao cấp trên chính Google Sheets (`⚡ ĐƠN HÀNG`).
+> - **Bước 1:** Dựng phần lõi cơ bản (Core Web App kết nối Database đa bảng) cho chạy mượt mà trước.
+> - **Bước 2:** Bổ sung tính năng nghiệp vụ (Xuất hóa đơn / phiếu giao hàng PDF tra cứu từ bảng đối tác).
+> - **Bước 3:** Tạo menu tự động hóa cao cấp trên chính Google Sheets (`⚡ QUẢN LÝ ĐƠN HÀNG` gom số liệu và phân hạng khách hàng).
 
 ---
 
-### 3.1. Bước 1: Dựng Web App tiếp nhận đơn hàng & ghi dữ liệu vào Sheet (Prompt 2.1)
+### 3.0. Chuẩn bị Cơ sở Dữ liệu Đa bảng (Multi-sheet Database)
+Khác với Demo 1 chỉ có 1 sheet doanh số phẳng, Demo 2 là **một ứng dụng quản trị hoàn chỉnh**, vì vậy chúng ta sẽ sử dụng một file Google Sheets riêng biệt đóng vai trò là một Cơ sở dữ liệu quan hệ (Mini Relational DB):
+
+1. Mở Google Drive $\rightarrow$ Tạo một file Google Sheets mới (đặt tên là `NovaTech_Order_System_2026`).
+2. Vào **Tệp (File) $\rightarrow$ Nhập (Import) $\rightarrow$ Tải lên (Upload)** file mẫu:
+   `demo-files/buoi-03/Demo 2 - Co so Du lieu He thong Don hang B2B NovaTech.xlsx`.
+3. Kiểm tra file đã có đủ **4 Sheet quan hệ**:
+   - 📑 **Sheet `DonHang` (Bảng giao dịch):** Lưu trữ toàn bộ lịch sử đơn hàng và là nơi Web App sẽ ghi dòng đơn mới vào.
+   - 📑 **Sheet `DanhMuc_GoiDichVu` (Bảng danh mục):** Bảng giá niêm yết và thông số tính năng của 4 gói giải pháp số.
+   - 📑 **Sheet `KhachHang_B2B` (Bảng khách hàng):** Danh bạ đối tác gồm Mã KH, Tên công ty, MST, Người đại diện, Hotline, Địa chỉ.
+   - 📑 **Sheet `TongHop_DoanhThu` (Bảng tổng hợp):** Bảng đích sẵn sàng nhận dữ liệu tự động cộng dồn từ script.
+4. Bấm menu: **Extensions (Tiện ích mở rộng) $\rightarrow$ Apps Script** để sẵn sàng lập trình cùng Claude!
+
+---
+
+### 3.1. Bước 1: Dựng Web App tiếp nhận đơn hàng kết nối đa bảng (Prompt 2.1)
 
 #### Bài toán
-Nhân viên kinh doanh hoặc đối tác khi đi thị trường cần một trang web trên điện thoại/laptop để tạo đơn hàng mới. Bấm "Gửi đơn" một cái là dữ liệu phải **tự động bắn về lưu thành 1 dòng mới trong Google Sheets** và hiển thị danh sách đơn hàng đã có.
+Nhân viên kinh doanh hoặc đối tác khi đi thị trường cần một trang web trên điện thoại/laptop để tạo đơn hàng mới. Trang web phải tự động lấy danh mục gói cước và danh bạ khách hàng từ Google Sheets để người dùng chọn, khi bấm "Gửi đơn" thì tự động sinh mã đơn và lưu vào sheet `DonHang`.
 
 <details>
 <summary><b>Thao tác thực hành: Chạy Prompt 2.1 dựng Web App Đơn hàng</b> (bấm để mở)</summary>
@@ -190,42 +217,53 @@ Nhân viên kinh doanh hoặc đối tác khi đi thị trường cần một tr
 **Copy và dán câu lệnh sau vào Claude:**
 
 ```markdown
-Tiếp tục đóng vai chuyên gia Google Apps Script. Bây giờ tôi muốn xây dựng một "HỆ THỐNG TIẾP NHẬN & QUẢN LÝ ĐƠN HÀNG B2B" hoàn chỉnh kết nối trực tiếp với Google Sheets.
+Tiếp tục đóng vai chuyên gia Google Apps Script. Bây giờ tôi muốn xây dựng một "HỆ THỐNG TIẾP NHẬN & QUẢN LÝ ĐƠN HÀNG B2B" hoạt động như một ứng dụng Web thực thụ kết nối trực tiếp với file Google Sheets (hiện có các sheet: "DonHang", "DanhMuc_GoiDichVu", "KhachHang_B2B").
 
 Hãy viết mã nguồn gồm 2 file (Code.gs và Index.html) để triển khai thành Web App:
 
-1. GIAO DIỆN WEB (Index.html):
-- Form tạo đơn hàng mới gồm các trường nhập liệu:
-  + Tên khách hàng & Doanh nghiệp (ô nhập văn bản)
-  + Chọn Gói giải pháp phần mềm (Dropdown: Gói Starter, Gói Professional, Gói Enterprise)
-  + Số lượng người dùng (ô nhập số)
-  + Phương thức thanh toán (Radio: Thanh toán 100% hoặc Chia 3 đợt)
-  + Ngày hẹn bàn giao (chọn lịch ngày)
-  + Ghi chú đơn hàng (ô nhập văn bản)
-- Nút bấm nổi bật: "GỬI ĐƠN HÀNG MỚI" (có hiệu ứng loading khi đang gửi).
-- Danh sách bảng các đơn hàng gần nhất đã đặt (hiển thị ngay phía dưới form để người dùng kiểm tra).
+1. XỬ LÝ SERVER (Code.gs):
+- Hàm doGet(): Phục vụ giao diện trang Web App.
+- Hàm getInitialData(): Đọc dữ liệu từ sheet "DanhMuc_GoiDichVu" (Tên gói, Đơn giá niêm yết) và sheet "KhachHang_B2B" (Tên công ty) để nạp sẵn cho form phía giao diện client.
+- Hàm saveOrder(orderData):
+  + Tự động sinh Mã đơn hàng tiếp theo (ví dụ: DH-008, DH-009...).
+  + Ghi nhận thời gian tạo đơn thực tế (YYYY-MM-DD HH:mm).
+  + Chèn một dòng mới vào sheet "DonHang" với trạng thái ban đầu là "Chờ duyệt".
+  + Trả về kết quả thành công kèm Mã đơn vừa tạo.
+- Hàm getRecentOrders(): Lấy danh sách các đơn hàng gần nhất từ sheet "DonHang" để gửi lên giao diện web.
 
-2. XỬ LÝ SERVER (Code.gs):
-- Hàm doPost hoặc hàm gọi từ client (google.script.run): Nhận dữ liệu từ form và tự động chèn một dòng mới vào sheet có tên "DonHang" (tự động tạo sheet nếu chưa có, tự sinh Mã đơn hàng dạng DH-001, DH-002... và ghi nhận thời gian đặt).
-- Hàm lấy danh sách đơn hàng từ sheet để gửi ngược lại hiển thị lên giao diện web.
+2. GIAO DIỆN WEB (Index.html):
+- Thiết kế giao diện hiện đại bằng Tailwind CSS, responsive mượt mà trên cả máy tính và điện thoại.
+- Form tạo đơn hàng B2B gồm:
+  + Chọn Khách hàng (Dropdown động nạp từ sheet KhachHang_B2B, có ô nhập khách mới nếu chưa có).
+  + Chọn Gói giải pháp (Dropdown động nạp từ sheet DanhMuc_GoiDichVu - tự động hiển thị đơn giá tham chiếu).
+  + Số lượng người dùng (ô nhập số).
+  + Phương thức thanh toán (Radio: Thanh toán 100% hoặc Chia 3 đợt).
+  + Ngày hẹn bàn giao (ô chọn lịch).
+  + Ghi chú đơn hàng (ô nhập văn bản).
+- Khung "Tạm tính giá trị hợp đồng" tự động tính tiền khi người dùng chọn gói và số lượng.
+- Nút bấm nổi bật: "GỬI ĐƠN HÀNG MỚI" (có hiệu ứng loading / disable nút khi đang gửi).
+- Bảng danh sách các đơn hàng gần nhất đã đặt (hiển thị ngay bên dưới form để kiểm tra tức thì).
 
-Hãy cung cấp toàn bộ code của 2 file và hướng dẫn cập nhật nhanh vào Apps Script giúp tôi nhé!
+Hãy cung cấp toàn bộ code sạch của 2 file Code.gs và Index.html, có chú thích rõ ràng để tôi dán vào Apps Script dùng ngay nhé!
 ```
 
 **Thao tác kiểm tra sau khi cập nhật mã:**
-1. Dán đè mã mới vào `Code.gs` và `Index.html` trong Apps Script $\rightarrow$ Bấm **Save**.
-2. Bấm **Deploy $\rightarrow$ Manage deployments (Quản lý bản triển khai) $\rightarrow$ Bấm biểu tượng cây bút sửa $\rightarrow$ Chọn Version: New version $\rightarrow$ Bấm Deploy**.
-*(Nhớ luôn chọn New version mỗi khi sửa code để link web cập nhật bản mới nhất).*
-3. Mở link Web App: Điền thử một đơn hàng *"Công ty May Nam Định - Gói Professional - 35 người"* $\rightarrow$ Bấm **Gửi đơn hàng mới**.
-4. Mở tab Google Sheets ra xem: Một dòng mới tinh vừa tự động xuất hiện với đầy đủ mã đơn và thời gian!
+1. Trong cửa sổ Apps Script của file `NovaTech_Order_System_2026`:
+   - Dán mã vào `Code.gs`.
+   - Tạo file `Index.html` và dán mã giao diện vào $\rightarrow$ Bấm **Save (Lưu)**.
+2. Bấm **Deploy $\rightarrow$ New deployment $\rightarrow$ Chọn Web app $\rightarrow$ Who has access: Anyone $\rightarrow$ Deploy $\rightarrow$ Ủy quyền truy cập**.
+3. Mở link Web App:
+   - Thấy dropdown Khách hàng và Gói dịch vụ tự động load tên công ty và tên gói từ file Sheets!
+   - Thử gửi một đơn hàng: *"Công ty TNHH Cơ khí Hồng Hà - Gói NovaPro Cloud - 45 user"* $\rightarrow$ Bấm **Gửi đơn hàng mới**.
+4. Mở tab Google Sheets: Bảng `DonHang` vừa tự động xuất hiện dòng đơn mới với mã `DH-008` chuẩn xác!
 </details>
 
 ---
 
-### 3.2. Bước 2: Nâng cấp tính năng Xuất Phiếu giao hàng / Hóa đơn PDF (Prompt 2.2 - Follow-up 1)
+### 3.2. Bước 2: Nâng cấp tính năng Xuất Phiếu giao hàng / Thỏa thuận dịch vụ PDF (Prompt 2.2 - Follow-up 1)
 
 #### Bài toán
-Sau khi đơn hàng đã được ghi nhận vào hệ thống, nhân viên kinh doanh cần in ngay Phiếu tiếp nhận đơn hàng hoặc tải file PDF để gửi Zalo cho khách hàng xác nhận.
+Sau khi đơn hàng được ghi nhận, nhân viên kinh doanh cần in ngay Phiếu tiếp nhận đơn hàng hoặc tải file PDF để gửi Zalo cho khách hàng. Phiếu này cần tự động tra cứu Mã số thuế, Địa chỉ, Người đại diện từ sheet `KhachHang_B2B`.
 
 <details>
 <summary><b>Thao tác thực hành: Chạy Prompt 2.2 bổ sung Xuất PDF</b> (bấm để mở)</summary>
@@ -233,34 +271,36 @@ Sau khi đơn hàng đã được ghi nhận vào hệ thống, nhân viên kinh
 **Gõ tiếp ngay câu lệnh follow-up này vào phiên chat:**
 
 ```markdown
-Web App đơn hàng hoạt động rất tốt! Bây giờ hãy nâng cấp thêm tính năng sau:
+Web App đơn hàng hoạt động rất tuyệt vời! Bây giờ hãy nâng cấp thêm tính năng sau:
 
-Ở mỗi dòng đơn hàng trong danh sách đơn hàng đã đặt, hãy thêm một cột "Hành động" với nút bấm:
+Ở mỗi dòng đơn hàng trong danh sách đơn hàng đã đặt, hãy thêm một cột "Thao tác" với nút bấm:
 - Nút "Xuất Phiếu Giao Hàng (PDF/In)" (icon máy in).
-- Khi người dùng bấm vào nút này của đơn hàng nào, hãy mở ra một cửa sổ popup (Modal) hiển thị mẫu "PHIẾU XÁC NHẬN ĐƠN HÀNG & THỎA THUẬN DỊCH VỤ" chuẩn khổ A4 dọc gồm:
-  + Header công ty NovaTech (MST, Hotline, Logo).
-  + Toàn bộ thông tin chi tiết của đơn hàng đó (Mã đơn, Tên khách, Gói, Ngày giao).
-  + Bảng chiết tính tiền và hướng dẫn chuyển khoản ngân hàng Vietcombank.
-  + Chữ ký xác nhận của đại diện 2 bên.
-  + Nút "In / Lưu file PDF" gọi lệnh in chuẩn CSS @media print (chỉ in đúng tờ phiếu A4, không in giao diện web).
+- Khi người dùng bấm vào nút này của đơn hàng nào, hãy mở ra một popup Modal hiển thị mẫu "PHIẾU TIẾP NHẬN ĐƠN HÀNG & THỎA THUẬN DỊCH VỤ" chuẩn khổ A4 dọc gồm:
+  + Header thương hiệu NovaTech (MST: 0109887766, Hotline: 1900 6868, Địa chỉ: Tòa nhà TechPark, Cầu Giấy, Hà Nội).
+  + Toàn bộ thông tin đơn hàng lấy từ sheet "DonHang" (Mã đơn, Gói dịch vụ, Ngày hẹn bàn giao, Giá trị).
+  + Tự động tra cứu và hiển thị thông tin pháp lý của đối tác từ sheet "KhachHang_B2B" (Tên công ty, Mã số thuế, Người đại diện ký, Địa chỉ trụ sở).
+  + Bảng chiết tính thanh toán và thông tin tài khoản chuyển khoản ngân hàng Vietcombank.
+  + Hai khung chữ ký xác nhận của Đại diện NovaTech và Đại diện Khách hàng.
+  + Nút "In / Lưu file PDF" kích hoạt lệnh in trình duyệt chuẩn CSS @media print (chỉ in đúng tờ phiếu A4, ẩn toàn bộ form web và các nút bấm xung quanh).
 
-Hãy cập nhật code của Index.html (và Code.gs nếu cần) để tôi dán vào nhé!
+Hãy cập nhật code cho Index.html (và Code.gs nếu cần hàm tra cứu thông tin khách hàng) để tôi cập nhật nhé!
 ```
 
 **Thao tác kiểm tra:**
-1. Cập nhật mã vào `Index.html` $\rightarrow$ Lưu và Deploy New Version.
-2. Trên Web App, nhìn vào danh sách đơn hàng $\rightarrow$ Bấm nút icon máy in ở một đơn bất kỳ.
-3. Popup Phiếu giao hàng A4 hiện lên thẳng tắp, sang trọng $\rightarrow$ Bấm "In/Lưu PDF" là có ngay file PDF gửi khách!
+1. Cập nhật mã vào `Index.html` (và `Code.gs` nếu có) $\rightarrow$ Bấm **Save**.
+2. Bấm **Deploy $\rightarrow$ Manage deployments $\rightarrow$ Bút chì (Edit) $\rightarrow$ Version: New version $\rightarrow$ Deploy**.
+3. Mở link Web App $\rightarrow$ Trong bảng đơn hàng, bấm nút icon máy in ở một đơn hàng bất kỳ.
+4. Popup Phiếu A4 hiện lên với đầy đủ tên công ty, MST, địa chỉ và thông tin đơn hàng $\rightarrow$ Bấm nút "In / Lưu PDF" để xem bản in đẹp chuẩn doanh nghiệp!
 </details>
 
 ---
 
-### 3.3. Bước 3: Thêm Menu tùy chỉnh `⚡ ĐƠN HÀNG` ngay trên Google Sheets (Prompt 2.3 - Follow-up 2)
+### 3.3. Bước 3: Thêm Menu tùy chỉnh `⚡ QUẢN LÝ ĐƠN HÀNG` ngay trên Google Sheets (Prompt 2.3 - Follow-up 2)
 
-#### Bài toán (Kế thừa case study thực chiến của kỹ sư phòng KTCN)
-Người quản lý hoặc kế toán không muốn mở Web App mà làm việc trực tiếp trên file Google Sheets. Họ muốn trên thanh công cụ của Google Sheets xuất hiện riêng một menu mang tên **`⚡ ĐƠN HÀNG`** để bấm nút tự động:
-1. **Tự động gom đơn hàng & cộng dồn doanh số:** Quét toàn bộ các đơn, nếu khách hàng mua nhiều lần thì tự động gộp lại thành 1 dòng duy nhất, cộng dồn tổng doanh thu và xuất sang một sheet mới tên là `BaoCao_TongHop`.
-2. **Xóa dữ liệu trùng / Dọn dẹp bảng tính.**
+#### Bài toán (Kế thừa bài toán bóc tách & tổng hợp thực chiến của kỹ sư)
+Người quản lý hoặc kế toán không cần mở Web App mà làm việc trực tiếp trên file Google Sheets. Họ muốn trên thanh công cụ của Google Sheets xuất hiện riêng menu **`⚡ QUẢN LÝ ĐƠN HÀNG`** để tự động hóa:
+1. **Tự động gom nhóm khách hàng & cộng dồn doanh số:** Quét toàn bộ sheet `DonHang`, những khách hàng đặt nhiều đơn sẽ được gộp lại thành 1 dòng duy nhất, cộng dồn tổng giá trị tích lũy, đếm số lượng đơn, tra cứu MST từ sheet `KhachHang_B2B`, tự động phân hạng khách hàng (*VIP Diamond*, *Gold*, *Standard*), và xuất sang sheet `TongHop_DoanhThu`.
+2. **Dọn dẹp bảng tính / Chuẩn hóa dữ liệu.**
 
 <details>
 <summary><b>Thao tác thực hành: Chạy Prompt 2.3 tạo Menu tự động hóa trên Sheets</b> (bấm để mở)</summary>
@@ -271,26 +311,32 @@ Người quản lý hoặc kế toán không muốn mở Web App mà làm việc
 Bây giờ, hãy bổ sung thêm tính năng TỰ ĐỘNG HÓA TRỰC TIẾP TRÊN GOOGLE SHEETS bằng Google Apps Script:
 
 Hãy thêm vào file Code.gs hàm onOpen() để khi bất kỳ ai mở file Google Sheets này lên, trên thanh công cụ (cạnh menu Help) sẽ xuất hiện một menu tùy chỉnh riêng mang tên:
-"⚡ QUẢN LÝ ĐƠN HÀNG" với 2 chức năng:
+"⚡ QUẢN LÝ ĐƠN HÀNG" với 2 chức năng tự động:
 
-1. Dòng lệnh 1: "📊 Tổng hợp doanh thu theo khách hàng"
-- Khi bấm vào: Tự động quét toàn bộ dữ liệu ở sheet "DonHang".
-- Gom nhóm (Group by) theo Tên khách hàng: Những khách hàng xuất hiện nhiều lần sẽ được gộp lại thành 1 dòng duy nhất, tự động tính tổng số đơn và CỘNG DỒN TỔNG DOANH THU của khách đó.
-- Tự động xuất kết quả sang một sheet riêng tên là "TongHop_DoanhThu" (nếu sheet chưa có thì tự tạo, kẻ bảng viền đẹp mắt, tô màu header xanh đậm chữ trắng).
-- Hiện thông báo Toast nhỏ ở góc dưới màn hình: "Đã tổng hợp thành công X khách hàng!".
+1. Dòng lệnh 1: "📊 Tổng hợp & Phân hạng Khách hàng"
+- Khi bấm vào:
+  + Quét toàn bộ dữ liệu ở sheet "DonHang".
+  + Gom nhóm (Group by) theo Tên khách hàng: Những khách hàng có nhiều đơn hàng (như Dệt may Nam Định, BĐS An Phú...) sẽ được gộp lại thành 1 dòng duy nhất, tự động tính tổng số đơn và CỘNG DỒN TỔNG GIÁ TRỊ TÍCH LŨY.
+  + Tra cứu Mã số thuế tương ứng từ sheet "KhachHang_B2B".
+  + Tự động phân hạng khách hàng dựa trên tổng doanh số tích lũy:
+    * Doanh thu >= 100.000.000 VNĐ: Hạng "💎 VIP Diamond"
+    * Doanh thu từ 40.000.000 đến dưới 100.000.000 VNĐ: Hạng "🥇 Gold"
+    * Doanh thu dưới 40.000.000 VNĐ: Hạng "🥈 Standard"
+  + Tự động ghi kết quả vào sheet "TongHop_DoanhThu" (xóa dữ liệu cũ, kẻ bảng viền đẹp mắt, tô màu header xanh lục đậm chữ trắng, định dạng số tiền VNĐ chuẩn).
+  + Hiện thông báo Toast góc dưới màn hình: "Đã tổng hợp thành công X khách hàng!".
 
-2. Dòng lệnh 2: "🧹 Dọn dẹp dữ liệu trống"
-- Tự động xóa các dòng trống hoặc dòng rác trong bảng tính.
+2. Dòng lệnh 2: "🧹 Dọn dẹp dòng trống"
+- Tự động quét và xóa các dòng trống vô tình tạo ra trong quá trình thao tác bảng tính.
 
-Hãy bổ sung đoạn code này vào file Code.gs và hướng dẫn tôi kích hoạt chạy thử trên Google Sheets!
+Hãy bổ sung đoạn mã này vào file Code.gs và hướng dẫn tôi kích hoạt chạy thử trên Google Sheets!
 ```
 
 **Thao tác kiểm tra trên Google Sheets:**
-1. Dán đoạn mã mới vào `Code.gs` $\rightarrow$ Bấm **Save**.
+1. Dán đoạn mã mới bổ sung vào cuối file `Code.gs` $\rightarrow$ Bấm **Save**.
 2. Quay lại tab bảng tính Google Sheets $\rightarrow$ Bấm **F5 (Tải lại trang)**.
-3. Nhìn lên thanh menu trên cùng (cạnh chữ *Help / Trợ giúp*): Xuất hiện menu mới toanh có hình tia sét **`⚡ QUẢN LÝ ĐƠN HÀNG`**!
-4. Bấm vào menu **`⚡ QUẢN LÝ ĐƠN HÀNG` $\rightarrow$ Bấm "📊 Tổng hợp doanh thu theo khách hàng"**.
-5. Quan sát Google Sheets tự động tạo ra một sheet mới `TongHop_DoanhThu`, lọc sạch các khách hàng trùng lặp và cộng dồn doanh số chuẩn xác 100% trong 2 giây!
+3. Nhìn lên thanh menu trên cùng (cạnh chữ *Help / Trợ giúp*): Xuất hiện menu mới toanh **`⚡ QUẢN LÝ ĐƠN HÀNG`**!
+4. Bấm vào menu **`⚡ QUẢN LÝ ĐƠN HÀNG` $\rightarrow$ Chọn "📊 Tổng hợp & Phân hạng Khách hàng"**.
+5. Mở sheet `TongHop_DoanhThu`: Toàn bộ các khách hàng đã được gom gọn, doanh số được cộng dồn chính xác 100%, phân hạng VIP lấp lánh chỉ trong 2 giây!
 </details>
 
 ---
