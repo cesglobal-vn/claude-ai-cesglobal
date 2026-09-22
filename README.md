@@ -30,6 +30,7 @@ claude-ai/
 ├── buoi-01-lam-theo-tung-buoc.md   # Giáo án buổi 01 (Làm quen & thiết lập trợ lý Claude cá nhân hóa)
 ├── buoi-02-lam-theo-tung-buoc.md   # Giáo án buổi 02 (Tạo công cụ làm việc tương tác bằng Artifacts)
 ├── buoi-03-lam-theo-tung-buoc.md   # Giáo án buổi 03 (Kết nối Dữ liệu Đám mây MCP & Tự động hóa Google Sheets / Web App)
+├── buoi-04-lam-theo-tung-buoc.md   # Giáo án buổi 04 (Cho Claude Xuống Làm Việc Trên Máy Tính & Chuẩn Hóa Không Gian Làm Việc)
 ├── workbook.html                   # Workbook tương tác buổi 01 (mở bằng trình duyệt)
 ├── slides/
 │   └── slide-buoi-01.html          # Slide trình chiếu buổi 01 (mở bằng trình duyệt)
@@ -39,9 +40,8 @@ claude-ai/
 ├── demo-files/
 │   ├── buoi-01/                     # File demo buổi 01 (hợp đồng, bảng giá, quy chế chiết khấu...)
 │   ├── buoi-02/                     # File demo buổi 02 (Excel chấm điểm Lead B2B, Word kế hoạch onboarding HR...)
-│   └── buoi-03/                     # File demo buổi 03:
-│       ├── Demo 1 - Du lieu Dashboard Doanh so NovaTech.xlsx              # File phẳng 1 sheet vẽ Dashboard Analytics
-│       └── Demo 2 - Co so Du lieu He thong Don hang B2B NovaTech.xlsx     # Database 4 sheet cho Web App Quản trị Đơn hàng
+│   ├── buoi-03/                     # File demo buổi 03 (Demo 1 Dashboard 1 sheet, Demo 2 Database 4 sheet)
+│   └── buoi-04/                     # File demo buổi 04 (Thư mục hồ sơ dự án NovaTech: hợp đồng, bảng kê, mẫu biên bản)
 └── scripts/
     ├── generate_demo_files_buoi02.py # Script sinh dữ liệu mẫu buổi 02
     └── logo_b64.txt                 # Logo CES (base64) dùng khi dựng lại workbook
