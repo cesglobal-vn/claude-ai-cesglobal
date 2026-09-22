@@ -1439,12 +1439,28 @@
             <button class="session-tab-btn" data-tab="tab-buoi-04">
               <div class="session-num">4</div>
               <div class="session-info">
-                <div class="session-name">Thao tác máy tính (Claude Code)</div>
-                <div class="session-badge-row">
-                  <span class="tag-status tag-upcoming">Sắp diễn ra</span>
-                </div>
+                <div class="session-name">Máy tính (Claude Code Desktop)</div>
               </div>
             </button>
+            <!-- Nested TOC for Buổi 4 (hidden until active) -->
+            <div class="sidebar-toc" style="display: none;">
+              <ul class="toc-list">
+                <li class="toc-item"><a href="#b4-phan-0">0. Giao diện Claude Code Desktop</a></li>
+                <li class="toc-item toc-sub"><a href="#b4-0-2">0.2. 5 khu vực giao diện</a></li>
+                <li class="toc-item toc-sub"><a href="#b4-0-3">0.3. Mở thư mục dự án</a></li>
+                <li class="toc-item"><a href="#b4-phan-1">1. Tương tác từng bước với file</a></li>
+                <li class="toc-item toc-sub"><a href="#b4-1-2">1.2. Quét &amp; nhận diện file</a></li>
+                <li class="toc-item toc-sub"><a href="#b4-1-3">1.3. Đối chiếu chéo Word/Excel</a></li>
+                <li class="toc-item toc-sub"><a href="#b4-1-4">1.4. Tạo biên bản nghiệm thu</a></li>
+                <li class="toc-item toc-sub"><a href="#b4-1-5">1.5. Nỗi đau làm việc lộn xộn</a></li>
+                <li class="toc-item"><a href="#b4-phan-2">2. Chuẩn hóa thư mục &amp; .claude/</a></li>
+                <li class="toc-item toc-sub"><a href="#b4-2-2">2.2. Dọn dẹp tự động</a></li>
+                <li class="toc-item"><a href="#b4-phan-3">3. CLAUDE.md - Bộ não ngữ cảnh</a></li>
+                <li class="toc-item toc-sub"><a href="#b4-3-3">3.3. Tạo file CLAUDE.md</a></li>
+                <li class="toc-item toc-sub"><a href="#b4-3-6">3.6. Kiểm chứng thực chiến</a></li>
+                <li class="toc-item"><a href="#b4-phan-4">4. Nghiệm thu &amp; Cầu nối Buổi 5</a></li>
+              </ul>
+            </div>
           </li>
           <li>
             <button class="session-tab-btn" data-tab="tab-buoi-05">
@@ -3077,32 +3093,367 @@ Hãy bổ sung đoạn mã này và hướng dẫn tôi chạy thử nhé.</div>
       <!-- ============================================================== -->
       <div class="tab-pane" id="tab-buoi-04">
         <div class="session-hero">
-          <div class="hero-meta-row">
-            <span class="hero-tag tag-upcoming">Buổi 4 • Sắp diễn ra</span>
-          </div>
-          <h1 class="hero-title">Cho Claude làm việc trực tiếp trên máy tính (Claude Code)</h1>
+          <h1 class="hero-title">Claude Code Desktop &amp; chuẩn hóa không gian làm việc</h1>
           <p class="hero-desc">
-            Rời khỏi giao diện web để Claude thao tác trực tiếp với file, thư mục trên ổ cứng máy tính: tự động phân loại, trích xuất dữ liệu từ hàng loạt file Word/PDF/Excel và sửa file hàng loạt.
+            Rời khỏi giao diện web: Claude "bước vào" thư mục trên ổ cứng, tự đọc file Word/Excel/PDF/Text, đối chiếu số liệu chéo và xuất file mới. Kèm chuẩn hóa cây thư mục "5S" và ban hành "bộ não ngữ cảnh" CLAUDE.md để AI làm đúng nội quy công ty một cách tự động.
           </p>
           <div class="deliverable-box">
-            <span><svg class="icon inline-icon icon-brand"><use href="#icon-gift"/></svg><strong>Sản phẩm cầm về:</strong> Môi trường Claude Code hoàn chỉnh trên máy tính cá nhân + 01 tác vụ xử lý hàng loạt file trên ổ cứng.</span>
+            <span><svg class="icon inline-icon icon-brand"><use href="#icon-gift"/></svg><strong>Sản phẩm cầm về:</strong> 01 cây thư mục chuẩn 3 ngăn (<code>01_input</code>, <code>02_templates</code>, <code>03_output</code>) + thư mục ngầm <code>.claude/</code> + 01 file <code>CLAUDE.md</code> + 02 biên bản nghiệm thu Word (Dệt may Nam Định &amp; An Phú) trong <code>03_output/</code>.</span>
           </div>
         </div>
 
-        <div class="card-panel">
-          <h3 style="font-size: 18px; margin-bottom: 14px; color: var(--brand-primary);">Nội dung bài học & Kỹ năng đạt được</h3>
-          <ul class="steps-list" style="gap: 14px;">
-            <li><span class="step-badge">1</span> <strong>Tại sao cần Claude Code:</strong> Sự khác biệt giữa hộp cát trên Web và quyền thao tác trực tiếp trên ổ cứng máy tính.</li>
-            <li><span class="step-badge">2</span> <strong>Cài đặt Cầm tay chỉ việc:</strong> Cài đặt Node.js, Claude Code CLI và kết nối tài khoản an toàn với sự hỗ trợ 1-1 của Trợ giảng.</li>
-            <li><span class="step-badge">3</span> <strong>Kịch bản xử lý file văn phòng hàng loạt:</strong> Tự quét một thư mục chứa hàng trăm file hóa đơn, hợp đồng để trích xuất dữ liệu vào 1 bảng Excel duy nhất.</li>
-            <li><span class="step-badge">4</span> <strong>An toàn dữ liệu:</strong> Cơ chế kiểm soát lệnh và sao lưu (backup) trước khi thực thi thay đổi.</li>
-          </ul>
-
-          <div class="notes-box">
-            <div style="font-size: 14px; font-weight: 700; color: var(--text-main);"><svg class="icon inline-icon icon-brand"><use href="#icon-edit"/></svg>Sổ tay ghi chú cá nhân (Buổi 4)</div>
-            <textarea class="notes-textarea" id="note-buoi-04" placeholder="Ghi chú thư mục hoặc loại file trên máy tính bạn muốn xử lý hàng loạt..."></textarea>
+        <section class="content-section" id="b4-phan-0">
+          <div class="section-header">
+            <span class="section-badge">PHẦN 0</span>
+            <h2 class="section-title">Khởi động &amp; làm quen giao diện Claude Code Desktop</h2>
           </div>
-        </div>
+
+          <div class="card-panel">
+            <h3 id="b4-0-1" style="font-size: 16px; margin-bottom: 8px;">0.1. Điểm nghẽn từ bản Web: vì sao cần đưa Claude xuống máy tính?</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">3 buổi trước ta khai thác Claude trên nền Web (claude.ai): trợ lý tùy chỉnh, Web App Artifacts, kết nối Google Drive/Sheets. Nhưng bản Web có giới hạn lớn khi làm việc hàng ngày:</p>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div>Phải bấm tải từng file lên khung chat, bị giới hạn dung lượng và số lượng file.</div></li>
+              <li><span class="step-badge">2</span><div>AI tạo tài liệu xong, bạn lại phải tải về rồi tự tay copy vào thư mục lưu trữ.</div></li>
+              <li><span class="step-badge">3</span><div>Thực tế có hàng trăm file hợp đồng, bảng kê, hồ sơ nằm rải rác trong ổ C, D - không thể ngồi tải từng file lên web.</div></li>
+              <li><span class="step-badge">4</span><div><strong>Claude Code Desktop giải quyết triệt để:</strong> chọn một thư mục bất kỳ trên máy, Claude "bước vào" tự đọc mọi file (Word, Excel, PDF, Text), tự đối chiếu và tạo file mới lưu thẳng vào ổ cứng.</div></li>
+            </ul>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-0-2" style="font-size: 16px; margin-bottom: 10px;">0.2. 5 khu vực chính trên giao diện Claude Code Desktop</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+              <div style="flex: 1 1 240px; background: var(--bg-sidebar); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px;">
+                <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;"><svg class="icon inline-icon icon-brand"><use href="#icon-package"/></svg>1. Mở thư mục dự án</div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">Nút <strong>Open Folder</strong> chọn thư mục bạn muốn Claude cùng làm việc.</p>
+              </div>
+              <div style="flex: 1 1 240px; background: var(--bg-sidebar); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px;">
+                <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;"><svg class="icon inline-icon icon-brand"><use href="#icon-list"/></svg>2. Cây thư mục &amp; Xem file</div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">Duyệt nhanh toàn bộ file/thư mục con, bấm vào file nào là xem nội dung ngay.</p>
+              </div>
+              <div style="flex: 1 1 240px; background: var(--bg-sidebar); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px;">
+                <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;"><svg class="icon inline-icon icon-brand"><use href="#icon-message"/></svg>3. Khung hội thoại &amp; thực thi</div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">Gõ câu lệnh tiếng Việt tự nhiên; Claude hiện các bước suy nghĩ và thao tác.</p>
+              </div>
+              <div style="flex: 1 1 240px; background: var(--bg-sidebar); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px;">
+                <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;"><svg class="icon inline-icon icon-brand"><use href="#icon-search"/></svg>4. Built-in Browser</div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">Trình duyệt tích hợp xem trước HTML/Dashboard/link ngay trong app, không cần mở Chrome.</p>
+              </div>
+              <div style="flex: 1 1 240px; background: var(--bg-sidebar); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px;">
+                <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;"><svg class="icon inline-icon icon-brand"><use href="#icon-lock"/></svg>5. Hộp thoại xin quyền</div>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">Nút <strong>Allow / Approve</strong> trước khi đọc, sửa, tạo file - đảm bảo an toàn, không xóa nhầm.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-0-3" style="font-size: 16px; margin-bottom: 8px;">0.3. Thao tác thực hành: Mở thư mục dự án</h3>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div>Mở ứng dụng <strong>Claude</strong> trên máy tính.</div></li>
+              <li><span class="step-badge">2</span><div>Bấm <strong>Open Folder</strong> (hoặc menu <strong>File -> Open Folder</strong>).</div></li>
+              <li><span class="step-badge">3</span><div>Chọn thư mục thực hành: <code>claude-ai/demo-files/buoi-04/</code>. <em>(Hoặc chọn thư mục chứa dữ liệu công việc thật của bạn.)</em></div></li>
+              <li><span class="step-badge">4</span><div>Nhìn cột trái: cây thư mục hiện 5 file mẫu:
+                <ul style="margin: 6px 0 0; padding-left: 18px; line-height: 1.7;">
+                  <li><code>hop_dong_dich_vu_det_may_nam_dinh_raw.docx</code></li>
+                  <li><code>bang_ke_chi_phi_trien_khai_thang_3.xlsx</code></li>
+                  <li><code>ghi_chu_hop_giao_ban_20260315.txt</code></li>
+                  <li><code>Mau_Bien_Ban_Nghiem_Thu_Chuan_NovaTech.docx</code></li>
+                  <li><code>hop_dong_phan_mem_an_phu_chua_ky.docx</code></li>
+                </ul>
+              </div></li>
+              <li><span class="step-badge">5</span><div>Bấm thử file <code>ghi_chu_hop_giao_ban_20260315.txt</code> để xem nội dung hiển thị ngay trên màn hình.</div></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-section" id="b4-phan-1">
+          <div class="section-header">
+            <span class="section-badge">PHẦN 1</span>
+            <h2 class="section-title">Tương tác từng bước với file &amp; khoảnh khắc "Àaaa..."</h2>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-1-1" style="font-size: 16px; margin-bottom: 8px;">1.1. Bài toán thực tế</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Bạn vừa nhận bộ hồ sơ nghiệm thu dự án phần mềm với <strong>Công ty CP Dệt may Nam Định</strong>. Thư mục đang có các file rời rạc: hợp đồng, bảng kê chi phí, biên bản họp và biểu mẫu chuẩn của công ty.</p>
+            <div class="callout callout-tip">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lightbulb"/></svg>Nguyên tắc giao tiếp tự nhiên với AI trên máy tính</div>
+              <p>Đừng quăng một câu lệnh khổng lồ ép AI làm tất cả ngay từ đầu. Hãy tương tác như với một cộng sự thực thụ qua 3 bước:</p>
+              <p><strong>Bước 1:</strong> Bảo AI đọc trước và tóm tắt xem thư mục đang có gì.</p>
+              <p><strong>Bước 2:</strong> Bảo AI đi sâu so sánh, đối chiếu số liệu giữa các file.</p>
+              <p><strong>Bước 3:</strong> Khi số liệu đã chuẩn, mới bảo AI tổng hợp và xuất ra file văn bản mới.</p>
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-1-2" style="font-size: 16px; margin-bottom: 8px;">1.2. Bước 1: Quét thư mục &amp; nhận diện nội dung từng file</h3>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 1.1 - Quét &amp; tóm tắt hồ sơ</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Quét thư mục này và cho tôi biết trong đây đang có những file gì, nội dung chính của từng file nói về vấn đề gì nhé.</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;"><strong>Quan sát:</strong> Claude duyệt qua từng file và tóm tắt: 2 hợp đồng dịch vụ phần mềm (Dệt may Nam Định &amp; An Phú), 1 Excel bảng kê chi phí tháng 3/2026, 1 file text ghi chép họp giao ban 15/03/2026, 1 Word biểu mẫu biên bản nghiệm thu chuẩn NovaTech. Chỉ 1 câu lệnh đã nắm bức tranh toàn cảnh mà không cần mở từng file.</p>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-1-3" style="font-size: 16px; margin-bottom: 8px;">1.3. Bước 2: Đọc sâu &amp; đối chiếu chéo số liệu (Word vs Excel)</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Kiểm tra xem thông tin giữa hợp đồng pháp lý và bảng kê chi phí kỹ thuật có trùng khớp không.</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 1.2 - Đối chiếu số liệu chéo</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Xem kỹ cho tôi 2 file hop_dong_dich_vu_det_may_nam_dinh_raw.docx và bang_ke_chi_phi_trien_khai_thang_3.xlsx. Đối chiếu xem số tiền thanh toán và số lượng tài khoản user giữa hợp đồng với bảng kê có khớp nhau không?</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;"><strong>Kết quả đối chiếu:</strong> Claude mở đồng thời Word lẫn Excel, so sánh từng dòng: giá trị hợp đồng cả 2 file đều <strong>45.000.000 VNĐ</strong>; số lượng user đều khớp <strong>35 tài khoản</strong>; hạng mục đào tạo và tích hợp Zalo ZNS đều miễn phí (0 VNĐ) đúng hợp đồng.</p>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-1-4" style="font-size: 16px; margin-bottom: 8px;">1.4. Bước 3: Tổng hợp thông tin &amp; tạo Biên bản nghiệm thu mới</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Sau khi số liệu đã xác nhận chuẩn 100%, mới yêu cầu Claude lấy thông tin điền vào mẫu chuẩn để xuất file Word.</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 1.3 - Tạo file biên bản nghiệm thu</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Số liệu khớp rồi đấy. Giờ đọc thêm file ghi_chu_hop_giao_ban_20260315.txt lấy thông tin tiến độ và người ký, rồi điền vào mẫu Mau_Bien_Ban_Nghiem_Thu_Chuan_NovaTech.docx để tạo cho tôi 1 file biên bản nghiệm thu hoàn chỉnh nhé.</div>
+            </div>
+            <ul class="steps-list" style="margin-top: 12px;">
+              <li><span class="step-badge">1</span><div>Hộp thoại xin quyền xuất hiện: Claude hỏi có cho phép tạo file Word mới không -> bấm <strong>Approve (Cho phép)</strong>.</div></li>
+              <li><span class="step-badge">2</span><div>Claude đọc nội dung cuộc họp từ file text, lấy thông tin đại diện 2 bên (bà Nguyễn Thị Hương và ông Nguyễn Văn Hùng), điền vào file mẫu chuẩn.</div></li>
+              <li><span class="step-badge">3</span><div>Một file Word mới tinh xuất hiện ngay trên cây thư mục (ví dụ <code>bien_ban_nghiem_thu.docx</code>)!</div></li>
+            </ul>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-1-5" style="font-size: 16px; margin-bottom: 8px;">1.5. Khoảnh khắc "Àaaa..." - nhìn ra "nỗi đau" khi làm việc lộn xộn</h3>
+            <div class="callout callout-warn">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-alert-triangle"/></svg>Hãy dừng 1 phút và nhìn vào cây thư mục của bạn lúc này</div>
+              <p><strong>1. File nằm lẫn lộn một đống:</strong> hợp đồng gốc, bảng kê, ghi chú tạm và biên bản mới tạo... tất cả chung một chỗ.</p>
+              <p><strong>2. Tên file tùy tiện:</strong> AI đặt tên theo ý nó (<code>bien_ban_nghiem_thu.docx</code>, không ngày tháng, không tên khách). Đồng nghiệp mở ra không biết file nào là thô, mẫu hay bản chốt.</p>
+              <p><strong>3. Nguy cơ xóa nhầm / ghi đè:</strong> làm tiếp cho khách khác, AI có thể ghi đè file mẫu chuẩn hoặc sửa nhầm hợp đồng gốc.</p>
+              <p><strong>4. AI "mất trí nhớ" khi mở phiên mới:</strong> ngày mai mở máy, Claude không nhớ quy định đặt tên/lưu file, bạn lại phải dặn từ đầu.</p>
+            </div>
+            <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;"><strong>Kết luận xương máu:</strong> đưa AI xuống máy tính mà không có quy chuẩn sắp xếp thư mục và không có bảng nội quy, thì chẳng mấy chốc ổ cứng của bạn sẽ biến thành một bãi rác khổng lồ!</p>
+          </div>
+        </section>
+
+        <section class="content-section" id="b4-phan-2">
+          <div class="section-header">
+            <span class="section-badge">PHẦN 2</span>
+            <h2 class="section-title">Chuẩn hóa cây thư mục làm việc &amp; cấu trúc <code>.claude/</code></h2>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-2-1" style="font-size: 16px; margin-bottom: 10px;">2.1. Tư duy "5S" cho dữ liệu máy tính trong kỷ nguyên AI</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Mọi thư mục dự án cần chia thành <strong>3 ngăn dữ liệu rõ ràng</strong> và <strong>1 ngăn kỹ thuật ngầm</strong>:</p>
+            <div style="background: var(--bg-sidebar); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px 16px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 13px; line-height: 1.75; color: var(--text-muted); white-space: pre-wrap; overflow-x: auto;">📁 buoi-04/
+├── 📁 01_input/       (dữ liệu thô - CHỈ ĐỌC, tuyệt đối không sửa/xóa file gốc)
+├── 📁 02_templates/   (biểu mẫu chuẩn để AI nhân bản và điền thông tin)
+├── 📁 03_output/      (thành phẩm - mọi file mới sinh ra đều lưu vào đây)
+└── 📁 .claude/        (ngăn kỹ thuật ngầm - chuẩn bị cho Buổi 5)
+    ├── 📁 skills/     (nơi cất giữ các kỹ năng quy trình tự động hóa)
+    └── 📁 agents/     (nơi khai sinh các nhân viên AI chuyên vai)</div>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-2-2" style="font-size: 16px; margin-bottom: 8px;">2.2. Thao tác thực hành: Nhờ Claude tự dọn dẹp &amp; phân loại thư mục</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Thay vì dùng chuột tạo từng thư mục rồi kéo thả thủ công, chỉ cần giao việc bằng 1 câu lệnh:</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 2 - Dọn dẹp &amp; phân loại thư mục tự động</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Dọn dẹp lại thư mục này cho ngăn nắp giúp tôi với:
+1. Tạo các thư mục con: 01_input, 02_templates, 03_output.
+2. Tạo thêm thư mục .claude (bên trong .claude tạo sẵn 2 thư mục con là skills và agents để dành cho buổi sau).
+3. Di chuyển các file hợp đồng thô, bảng kê chi phí và ghi chú cuộc họp vào 01_input.
+4. Di chuyển file Mau_Bien_Ban_Nghiem_Thu_Chuan_NovaTech.docx vào 02_templates.
+5. Di chuyển file biên bản nghiệm thu vừa tạo vào 03_output.</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;"><strong>Kết quả:</strong> chỉ sau vài giây, file được di chuyển gọn vào đúng ngăn - <code>01_input/</code> (tài liệu thô), <code>02_templates/</code> (mẫu nghiệm thu), <code>03_output/</code> (biên bản đã hoàn thành), và <code>.claude/</code> đã có sẵn <code>skills/</code> + <code>agents/</code> cho Buổi 5.</p>
+          </div>
+        </section>
+
+        <section class="content-section" id="b4-phan-3">
+          <div class="section-header">
+            <span class="section-badge">PHẦN 3</span>
+            <h2 class="section-title">"Bộ não ngữ cảnh" <code>CLAUDE.md</code> - đưa nội quy công ty cho AI</h2>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-3-1" style="font-size: 16px; margin-bottom: 8px;">3.1. <code>CLAUDE.md</code> là gì? Cầu nối với Buổi 1</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Tưởng tượng bạn vừa tuyển một cộng tác viên rất giỏi nhận việc sáng nay, nhưng chưa kịp nói gì đã bắt soạn hợp đồng ngay - chắc chắn sẽ sai, không phải vì dở mà vì <strong>chưa ai đưa "tờ giấy giới thiệu công ty"</strong>: công ty bán gì, quy tắc nào, mẫu để đâu, từ ngữ nào cấm dùng. Claude trên máy lúc mới mở cũng vậy.</p>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Tờ giấy giới thiệu đó chính là file <code>CLAUDE.md</code> đặt tại thư mục gốc dự án. Mỗi khi mở Claude Desktop tại thư mục này, <strong>việc đầu tiên Claude làm luôn là đọc <code>CLAUDE.md</code></strong> trước khi nhận bất kỳ lệnh nào.</p>
+            <div class="callout callout-note">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lightbulb"/></svg>Cầu nối với Buổi 1 (claude.ai)</div>
+              <p>Ở Buổi 1, mỗi lần tạo Trợ lý trong <strong>Projects</strong> trên web, việc đầu tiên luôn là dán nội dung vào ô <strong>Instructions</strong>. File <code>CLAUDE.md</code> chính là ô Instructions đó - vai trò y hệt, chỉ khác chỗ đặt:</p>
+              <div class="table-container" style="margin-top: 10px;">
+                <table>
+                  <thead>
+                    <tr><th>Buổi 1, trên Web (claude.ai)</th><th>Từ Buổi 4, trên Máy tính (Claude Code Desktop)</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Ô <strong>Instructions</strong> trong Project</td><td>File <code>CLAUDE.md</code> nằm tại thư mục gốc</td></tr>
+                    <tr><td>Kéo tài liệu vào ô <strong>Project Knowledge</strong></td><td>Các file tài liệu để sẵn trong các ngăn thư mục</td></tr>
+                    <tr><td>Sửa bằng cách bấm cây bút gõ tay</td><td>Sửa bằng cách nhờ chính Claude viết lại</td></tr>
+                    <tr><td>Chỉ áp dụng trong đúng Project đó</td><td>Tự áp dụng cho mọi phiên mở tại thư mục đó</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="callout callout-tip">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-target"/></svg>Phép thử một câu (The One-Sentence Test)</div>
+              Viết xong hồ sơ công ty trong <code>CLAUDE.md</code>, thử thay tên công ty bạn bằng một tên doanh nghiệp bất kỳ. Nếu câu văn vẫn đúng, tức nội dung còn chung chung. Một <code>CLAUDE.md</code> chuẩn phải gắn chặt với công việc, sản phẩm và quy chuẩn riêng của chính bạn!
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-3-2" style="font-size: 16px; margin-bottom: 8px;">3.2. Giải phẫu cấu trúc 1 file <code>CLAUDE.md</code> chuẩn công sở</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Một file <code>CLAUDE.md</code> văn phòng thường ngắn gọn dưới 80 dòng, gồm 4 phần chính:</p>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div><strong>Vai trò &amp; Bối cảnh:</strong> bạn là ai trong thư mục này (ví dụ: Trợ lý Quản trị Hồ sơ Dự án NovaTech).</div></li>
+              <li><span class="step-badge">2</span><div><strong>Quy định phân luồng thư mục:</strong> đọc dữ liệu ở đâu, lấy mẫu ở đâu, xuất kết quả vào đâu.</div></li>
+              <li><span class="step-badge">3</span><div><strong>Quy tắc đặt tên file bắt buộc:</strong> <code>[YYYYMMDD]_[TenDoiTac]_[LoaiVanBan].docx</code>.</div></li>
+              <li><span class="step-badge">4</span><div><strong>Quy chuẩn định dạng &amp; điều cấm kỵ:</strong> font chữ, định dạng số tiền (VNĐ), cấm xóa/sửa file gốc trong <code>01_input/</code>.</div></li>
+            </ul>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-3-3" style="font-size: 16px; margin-bottom: 8px;">3.3. Thao tác thực hành: Tạo file <code>CLAUDE.md</code> (chọn 1 trong 2 cách)</h3>
+            <h4 style="font-size: 15px; font-weight: 700; margin: 10px 0 6px; color: var(--brand-primary);">Lựa chọn A - Tạo nhanh theo case study NovaTech của lớp</h4>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 3A - Tạo CLAUDE.md theo case study NovaTech</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Tạo cho tôi 1 file CLAUDE.md ngay tại thư mục gốc này để làm bản hướng dẫn làm việc cho bạn mỗi khi tôi mở thư mục lên nhé:
+
+- Bạn là Trợ lý Quản trị Hồ sơ Dự án của công ty NovaTech.
+- Quy định về thư mục:
+  + Tài liệu khách hàng gửi hoặc dữ liệu thô luôn nằm ở 01_input (chỉ đọc, tuyệt đối không sửa hay xóa).
+  + Khi cần lập văn bản mới, luôn lấy mẫu chuẩn từ thư mục 02_templates.
+  + Mọi văn bản hoàn thiện sau khi xử lý phải lưu vào thư mục 03_output.
+- Quy tắc đặt tên file xuất ra:
+  Bắt buộc theo định dạng: [YYYYMMDD]_[TenDoiTac]_[LoaiVanBan].docx
+  (Ví dụ: 20260322_DetMayNamDinh_BienBanNghiemThu.docx).
+- Quy chuẩn nội dung: Dùng tiếng Việt chuẩn công sở, số tiền phải có dấu chấm phân cách hàng nghìn (VNĐ) và có dòng ghi số tiền bằng chữ.</div>
+            </div>
+            <h4 style="font-size: 15px; font-weight: 700; margin: 18px 0 6px; color: var(--accent-cyan);">Lựa chọn B - Để Claude "phỏng vấn" và tự viết cho công việc thật của bạn</h4>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Nếu bạn thực hành trên thư mục công việc thật và chưa biết viết gì, hãy để Claude phỏng vấn bạn từng câu:</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 3B - Claude phỏng vấn rồi tự viết CLAUDE.md</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Tôi muốn bạn tạo cho tôi một file CLAUDE.md đặt ngay tại thư mục gốc này để làm hồ sơ bạn đọc trước mọi việc tôi giao.
+
+Trước khi viết, hãy phỏng vấn tôi. Hỏi từng câu một, chờ tôi trả lời xong câu này rồi mới hỏi câu tiếp theo:
+1. Tôi là ai, làm việc ở công ty nào, phòng ban gì?
+2. Ba công việc chính tôi thường làm lặp đi lặp lại trong thư mục này là gì?
+3. Quy định về nơi lấy file dữ liệu, nơi lấy biểu mẫu và nơi lưu kết quả của tôi ra sao?
+4. Quy tắc đặt tên file và quy chuẩn văn phong (xưng hô, từ ngữ cấm kỵ, định dạng)?
+
+Hỏi xong 4 câu, hãy tóm tắt lại cho tôi xác nhận, tôi đồng ý rồi bạn mới viết file CLAUDE.md ngắn gọn dưới 80 dòng nhé.</div>
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-3-4" style="font-size: 16px; margin-bottom: 8px;">3.4. Dán "sơ đồ các phòng" vào <code>CLAUDE.md</code> (mục lục thư mục)</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Sau khi chia các phòng, nếu không chỉ rõ thì mỗi lần tìm file Claude vẫn phải mở từng phòng lục lọi. Cách chuẩn nhất là dán sơ đồ chỉ dẫn ngay ở cửa (ghi mục lục vào <code>CLAUDE.md</code>):</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt - Cập nhật sơ đồ thư mục vào CLAUDE.md</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Quét lại các thư mục vừa tạo (01_input, 02_templates, 03_output, .claude). Sau đó cập nhật vào file CLAUDE.md một mục tên là "Cấu trúc thư mục", ghi rõ mỗi thư mục một dòng kèm chức năng của nó để bạn luôn biết đường vào đúng phòng lấy và lưu file nhé.</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;"><strong>Kết quả:</strong> <code>CLAUDE.md</code> có thêm bảng mục lục ngắn gọn, giúp Claude định vị đường đi tức thì mà không bao giờ mở nhầm phòng.</p>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-3-5" style="font-size: 16px; margin-bottom: 8px;">3.5. Kiểm tra phản xạ định vị của Claude</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Trước khi giao việc lớn, thử kiểm tra xem Claude đã thực sự nạp "bản đồ và nội quy" chưa:</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt - Câu hỏi phản xạ định vị</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Nếu bây giờ tôi giao cho bạn một hợp đồng mới toanh của khách hàng, bạn sẽ lấy dữ liệu ở đâu, lấy mẫu ở đâu và xuất file vào thư mục nào, đặt tên file ra sao?</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;"><strong>Claude trả lời rành mạch:</strong> lấy dữ liệu tại <code>01_input/</code>, lấy mẫu tại <code>02_templates/</code>, xuất vào <code>03_output/</code>, đặt tên theo <code>[YYYYMMDD]_[TenDoiTac]_[LoaiVanBan].docx</code>.</p>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b4-3-6" style="font-size: 16px; margin-bottom: 8px;">3.6. Kiểm chứng thực chiến: Xử lý hồ sơ mới bằng 1 câu lệnh ngắn</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Trong <code>01_input/</code> có sẵn hợp đồng thứ hai: <code>hop_dong_phan_mem_an_phu_chua_ky.docx</code> (Tập đoàn BĐS An Phú). Bạn <strong>không cần</strong> dặn lại "lấy mẫu ở đâu, lưu vào đâu, đặt tên thế nào" - chỉ gõ 1 câu tự nhiên:</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 4 - Kiểm chứng tự động hóa theo nội quy</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Xử lý tiếp hợp đồng của công ty An Phú trong thư mục 01_input giúp tôi, tạo biên bản nghiệm thu tương ứng nhé.</div>
+            </div>
+            <ul class="steps-list" style="margin-top: 12px;">
+              <li><span class="step-badge">1</span><div>Claude tự đọc <code>CLAUDE.md</code> để nắm quy tắc.</div></li>
+              <li><span class="step-badge">2</span><div>Vào <code>01_input/</code> mở hợp đồng An Phú, bóc tách: Gói NovaEnterprise Suite, 100 user, trị giá 120.000.000 VNĐ, đại diện ông Vũ Hoàng Quân (CIO).</div></li>
+              <li><span class="step-badge">3</span><div>Vào <code>02_templates/</code> lấy <code>Mau_Bien_Ban_Nghiem_Thu_Chuan_NovaTech.docx</code>.</div></li>
+              <li><span class="step-badge">4</span><div>Điền toàn bộ thông tin chính xác 100%.</div></li>
+              <li><span class="step-badge">5</span><div><strong>Tự lưu vào đúng <code>03_output/</code></strong> với tên chuẩn: <code>03_output/20260322_AnPhu_BienBanNghiemThu.docx</code>.</div></li>
+              <li><span class="step-badge">6</span><div>File gốc trong <code>01_input/</code> và file mẫu trong <code>02_templates/</code> hoàn toàn nguyên vẹn!</div></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-section" id="b4-phan-4">
+          <div class="section-header">
+            <span class="section-badge">PHẦN 4</span>
+            <h2 class="section-title">Nghiệm thu Buổi 4, chia sẻ &amp; bước ngoặt sang Buổi 5</h2>
+          </div>
+
+          <div class="card-panel">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">4.1. Nghiệm thu Buổi 4</h3>
+            <div class="checklist-container">
+              <div class="checklist-title">
+                <span><svg class="icon icon-emerald"><use href="#icon-check-circle"/></svg></span>
+                <span>Về hiểu biết bản chất</span>
+              </div>
+              <div class="checklist-items">
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b4-chk-1"><span class="checklist-text">Phân biệt Claude trên Web (hộp cát) và Claude Code Desktop (cộng sự làm việc trực tiếp trên ổ cứng).</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b4-chk-2"><span class="checklist-text">Biết xem cây thư mục, xem trước file và dùng Built-in Browser để preview kết quả.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b4-chk-3"><span class="checklist-text">Hiểu cơ chế xin quyền an toàn (Allow / Approve) để bảo vệ dữ liệu công ty.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b4-chk-4"><span class="checklist-text">Thấu hiểu nỗi đau khi làm việc lộn xộn và lý do phải áp dụng quy tắc "5S" cho dữ liệu.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b4-chk-5"><span class="checklist-text">Hiểu rõ vai trò của file CLAUDE.md như một bản nội quy tự động.</span></label>
+              </div>
+            </div>
+            <div class="checklist-container" style="margin-top: 14px;">
+              <div class="checklist-title">
+                <span><svg class="icon icon-emerald"><use href="#icon-check-circle"/></svg></span>
+                <span>Về sản phẩm thực tế trên máy</span>
+              </div>
+              <div class="checklist-items">
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b4-chk-6"><span class="checklist-text">Sản phẩm 1: 01 cây thư mục chuẩn 3 ngăn (01_input, 02_templates, 03_output).</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b4-chk-7"><span class="checklist-text">Sản phẩm 2: khởi tạo sẵn thư mục ngầm .claude/ (với skills/ và agents/).</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b4-chk-8"><span class="checklist-text">Sản phẩm 3: 01 file CLAUDE.md hoàn chỉnh đóng vai "bộ não ngữ cảnh".</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b4-chk-9"><span class="checklist-text">Sản phẩm 4: 02 biên bản nghiệm thu Word chuẩn (DetMayNamDinh &amp; AnPhu) trong 03_output/.</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">4.2. Cầu nối sang Buổi 5: Đóng gói Skill &amp; phân vai Agent trong <code>.claude/</code></h3>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div><strong>Thành tựu hôm nay:</strong> đã dựng "ngôi nhà" ngăn nắp và ban hành "bản nội quy" <code>CLAUDE.md</code>. Claude tự đọc, sửa và lưu file đúng quy chuẩn.</div></li>
+              <li><span class="step-badge">2</span><div><strong>Vấn đề tiếp theo:</strong> vẫn phải gõ câu lệnh mô tả công việc mỗi lần. Nếu quy trình gồm 5-7 bước lặp lại hàng tuần, làm sao chỉ gõ một lệnh tắt (ví dụ <code>/nghiem-thu</code>) là AI chạy từ A đến Z?</div></li>
+              <li><span class="step-badge">3</span><div><strong>Buổi 5:</strong> mở cánh cửa thư mục <code>.claude/</code> - đóng gói kỹ năng thành <strong>Skill</strong> và nhân bản trợ lý thành <strong>Agent</strong> chuyên vai cùng phối hợp làm việc.</div></li>
+            </ul>
+
+            <div class="notes-box">
+              <div style="font-size: 14px; font-weight: 700; color: var(--text-main);"><svg class="icon inline-icon icon-brand"><use href="#icon-edit"/></svg>Sổ tay ghi chú cá nhân (Buổi 4)</div>
+              <textarea class="notes-textarea" id="note-buoi-04" placeholder="Ghi chú thư mục hoặc loại file trên máy tính bạn muốn xử lý hàng loạt..."></textarea>
+            </div>
+          </div>
+        </section>
       </div>
 
       <!-- ============================================================== -->

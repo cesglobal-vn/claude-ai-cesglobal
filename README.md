@@ -27,10 +27,10 @@ Chi tiết đầy đủ: xem [`docs/khung-chuong-trinh-6-buoi.md`](docs/khung-ch
 
 ```
 claude-ai/
-├── buoi-01-lam-theo-tung-buoc.md   # Giáo án buổi 01 (Làm quen & thiết lập trợ lý Claude cá nhân hóa)
-├── buoi-02-lam-theo-tung-buoc.md   # Giáo án buổi 02 (Tạo công cụ làm việc tương tác bằng Artifacts)
-├── buoi-03-lam-theo-tung-buoc.md   # Giáo án buổi 03 (Kết nối Dữ liệu Đám mây MCP & Tự động hóa Google Sheets / Web App)
-├── buoi-04-lam-theo-tung-buoc.md   # Giáo án buổi 04 (Cho Claude Xuống Làm Việc Trên Máy Tính & Chuẩn Hóa Không Gian Làm Việc)
+├── buoi-01-thiet-lap-bao-mat-va-dung-tro-ly-claude-chuyen-viec.md        # Giáo án buổi 01
+├── buoi-02-tao-cong-cu-lam-viec-tuong-tac-bang-claude-artifacts.md       # Giáo án buổi 02
+├── buoi-03-ket-noi-du-lieu-dam-may-mcp-tu-dong-hoa-google-sheets-web-app.md   # Giáo án buổi 03
+├── buoi-04-claude-code-desktop-chuan-hoa-khong-gian-lam-viec.md          # Giáo án buổi 04
 ├── workbook.html                   # Workbook tương tác buổi 01 (mở bằng trình duyệt)
 ├── slides/
 │   └── slide-buoi-01.html          # Slide trình chiếu buổi 01 (mở bằng trình duyệt)
@@ -59,7 +59,7 @@ claude-ai/
 
 ### Dành cho giảng viên / trợ giảng
 
-- Dùng [`buoi-01-lam-theo-tung-buoc.md`](buoi-01-lam-theo-tung-buoc.md) làm **giáo án bám giảng**: nội dung chia theo Phần, mỗi thao tác có bước đánh số và khối thực hành (thẻ `<details>` bấm để mở).
+- Dùng [`buoi-01-thiet-lap-bao-mat-va-dung-tro-ly-claude-chuyen-viec.md`](buoi-01-thiet-lap-bao-mat-va-dung-tro-ly-claude-chuyen-viec.md) làm **giáo án bám giảng**: nội dung chia theo Phần, mỗi thao tác có bước đánh số và khối thực hành (thẻ `<details>` bấm để mở).
 - Dùng [`slides/slide-buoi-01.html`](slides/slide-buoi-01.html) để **trình chiếu tại lớp**: mở bằng trình duyệt và chiếu toàn màn hình.
 - Dùng [`docs/khung-chuong-trinh-6-buoi.md`](docs/khung-chuong-trinh-6-buoi.md) để nắm mạch năng lực xuyên suốt 6 buổi và sản phẩm đầu ra từng buổi.
 - File demo trong `demo-files/buoi-01/` dùng để phát cho học viên chưa mang dữ liệu thật.

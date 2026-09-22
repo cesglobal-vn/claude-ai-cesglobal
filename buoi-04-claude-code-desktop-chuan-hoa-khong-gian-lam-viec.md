@@ -1,4 +1,4 @@
-# Buổi 4: Cho Claude Xuống Làm Việc Trên Máy Tính (Claude Code Desktop) & Chuẩn Hóa Không Gian Làm Việc
+# Buổi 4: Claude Code Desktop & chuẩn hóa không gian làm việc
 
 ## Nhịp buổi
 
