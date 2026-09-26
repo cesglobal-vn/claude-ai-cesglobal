@@ -72,7 +72,7 @@ Chúng ta sẽ đi qua 3 bước thực chiến: **Nghiên cứu nội dung $\ri
 
 #### Bước 1: Nhờ Claude nghiên cứu nội dung (Ra ruột trước, chưa lo vỏ)
 
-> "Bước một, mình cần có nội dung đã. Ở bước này, em muốn anh chị chỉ quan tâm tới nội dung thôi, chưa cần quan tâm hình thức đẹp hay xấu. Nó đang nằm trong khung chat, chữ đen trên nền trắng, chưa có logo, chưa có màu gì cả. Đó là chuyện của bước hai."
+> "Bước một, mình cần có nội dung đã. Ở bước này, em muốn anh chị chỉ quan tâm tới nội dung thôi, chưa cần quan tâm hình thức đẹp hay xấu. Claude sẽ xuất ra một file .md chữ trơn, chưa có logo, chưa có màu gì cả. Đó là chuyện của bước hai."
 
 <details>
 <summary><b>Thao tác thực hành Bước 1: Nghiên cứu nội dung</b> (bấm để mở)</summary>
@@ -80,39 +80,34 @@ Chúng ta sẽ đi qua 3 bước thực chiến: **Nghiên cứu nội dung $\ri
 **Gõ câu lệnh tự nhiên sau vào Claude:**
 
 ```text
-Research và cho tôi báo cáo ngắn gọn về 3 xu hướng ứng dụng AI và tự động hóa trong quản trị doanh nghiệp năm 2026.
+Tìm kiếm nhanh và cho tôi báo cáo ngắn gọn (khoảng 2 trang giấy A4) về 3 xu hướng ứng dụng AI và tự động hóa trong quản trị doanh nghiệp năm 2026. Xuất thành file md cho tôi nhé.
 ```
 
 **Quan sát kết quả:**
-Claude tự động tìm kiếm thông tin và trả ra 3 xu hướng công nghệ nổi bật năm 2026 ngay trong khung hội thoại. Nội dung rất chi tiết nhưng mới chỉ ở dạng chữ thô, chưa có tính thẩm mỹ hay nhận diện thương hiệu.
+Claude tự động tìm kiếm thông tin, tổng hợp 3 xu hướng công nghệ nổi bật năm 2026 và lưu thành một file `.md` dài khoảng 2 trang A4 ngay trong thư mục làm việc. Mở file ra xem: nội dung đầy đủ nhưng mới là chữ thô, chưa có tính thẩm mỹ hay nhận diện thương hiệu.
 </details>
 
 ---
 
 #### Bước 2: Dựng file Word đẹp, chuẩn dải màu thương hiệu và logo
 
-> "Bước hai. Giờ mình biến nội dung đó thành một file Word (.docx) tử tế, lấy đúng dải màu xanh từ logo CES Global có sẵn trong thư mục, chèn logo vào đầu trang, canh lề chuẩn chỉ và tuyệt đối không lỗi dấu tiếng Việt."
+> "Bước hai. Giờ mình biến nội dung đó thành một file Word (.docx) tử tế. Anh chị không cần tự chọn mã màu: cứ đưa logo công ty cho Claude, nó sẽ tự phân tích dải màu chủ đạo rồi áp vào tài liệu cho đẹp, hiện đại và tuyệt đối không lỗi dấu tiếng Việt."
 
 <details>
 <summary><b>Thao tác thực hành Bước 2: Tạo file Word chuẩn nhận diện</b> (bấm để mở)</summary>
 
-**Gõ câu lệnh tiếp theo vào Claude:**
+**Kéo file `logo-cesglobal.png` vào khung chat (hoặc nhắc tên file logo trong thư mục), rồi gõ tiếp câu lệnh:**
 
 ```text
-Tôi thấy nội dung khá chi tiết rồi. Bây giờ hãy tổng hợp và tạo cho tôi 1 file Word (.docx) lưu vào thư mục "03_output/20260326_BaoCao_XuHuongAI2026.docx". 
-
-Yêu cầu định dạng:
-- Lấy dải màu chủ đạo từ file "logo-cesglobal.png" trong thư mục (tone xanh dương đậm chuyên nghiệp).
-- Chèn ảnh logo "logo-cesglobal.png" vào góc trên đầu tài liệu.
-- Tiêu đề in đậm, canh lề trang chuẩn văn phòng, có bảng tóm tắt so sánh.
-- Kiểm tra kỹ để toàn bộ văn bản chuẩn tiếng Việt có dấu, tuyệt đối không bị lỗi font hay lỗi dấu.
+Nội dung ổn rồi. Bây giờ hãy tổng hợp và tạo cho tôi 1 file Word (.docx) lưu vào thư mục output cho tôi nhé
+Yêu cầu định dạng: phân tích dải màu chủ đạo từ logo này và áp dụng tone màu này vào tài liệu sao cho đẹp, hiện đại. Lưu ý file docx phải chuẩn tiếng Việt và không bị lỗi dấu.
 ```
 
 **Kiểm tra sản phẩm bằng mắt thật:**
-1. Claude sẽ chạy lệnh tạo file và thông báo đã tạo xong `03_output/20260326_BaoCao_XuHuongAI2026.docx`.
-2. Anh chị vào thư mục `03_output/` mở trực tiếp file Word này lên xem:
-   - Logo CES Global có nằm ngay ngắn ở đầu trang không?
-   - Màu của các tiêu đề có ăn khớp với màu xanh của logo không?
+1. Claude sẽ chạy lệnh tạo file và thông báo đã lưu file Word vào thư mục `output/`.
+2. Anh chị vào thư mục `output/` mở trực tiếp file Word này lên xem:
+   - Tone màu của tiêu đề, bảng biểu có ăn khớp với màu chủ đạo của logo không?
+   - Bố cục có đẹp, hiện đại, dễ đọc không?
    - Tiếng Việt có bị lỗi dấu ô vuông hay lệch dòng không?
 3. Nếu thấy chỗ nào chưa vừa ý (ví dụ: *"Logo cho nhỏ lại một chút"*, *"Bảng dữ liệu thêm màu xen kẽ"*), anh chị cứ chat tiếp để Claude chỉnh sửa đến khi **ưng ý 100%**.
 </details>
@@ -128,23 +123,22 @@ Yêu cầu định dạng:
 <details>
 <summary><b>Thao tác thực hành Bước 3: Đóng gói Skill</b> (bấm để mở)</summary>
 
-**Gõ câu lệnh sau vào Claude:**
+**Gõ câu lệnh sau vào Claude** (thay `<tên công ty của tôi>` bằng tên công ty, ví dụ `CES Global`):
 
 ```text
-Tôi thấy file Word vừa tạo rất đẹp và chuẩn rồi. Bây giờ hãy đóng gói toàn bộ cách làm, dải màu sắc, vị trí chèn logo và quy cách trình bày vừa rồi thành một Skill đặt tại: ".claude/skills/dong-goi-tai-lieu-chuan/SKILL.md".
-
-Sau này, bất cứ khi nào tôi nói "tạo tài liệu theo chuẩn CES Global" hoặc tôi gọi lệnh "/dong-goi-tai-lieu-chuan" thì bạn hãy tự động áp dụng đúng chuẩn này (lấy logo-cesglobal.png, định dạng màu sắc tương ứng, xuất file vào 03_output/ và kiểm tra không lỗi dấu tiếng Việt) mà tôi không cần dặn lại từ đầu nhé.
+Tôi thấy file này đẹp rồi, bây giờ hãy tạo cho tôi skill đóng gói tài liệu đẹp và đúng tone màu như vậy, sau này khi tôi nói tạo tài liệu theo chuẩn <tên công ty của tôi> thì hãy áp dụng skill này cho tôi. Skill lưu tại folder skill cấp project này cho tôi nhé
 ```
 
 **Quan sát phản hồi của Claude:**
-- Claude đọc lại toàn bộ phiên làm việc vừa rồi, trích xuất ra các thông số màu sắc (mã màu Hex RGB), kích thước logo, quy tắc lề trang, rồi tự động tạo ra thư mục `.claude/skills/dong-goi-tai-lieu-chuan/` và file `SKILL.md` bên trong.
+- Claude đọc lại toàn bộ phiên làm việc vừa rồi, trích xuất ra các thông số màu sắc (mã màu Hex RGB) và quy cách trình bày, rồi tự đặt tên và tạo skill trong thư mục `.claude/skills/` của dự án (ví dụ: `.claude/skills/dong-goi-tai-lieu-chuan/SKILL.md`).
+- Từ giờ chỉ cần nói *"tạo tài liệu theo chuẩn CES Global"* là Claude tự áp dụng skill này.
 </details>
 
 ---
 
 ### A.3. Mở nắp capo: Giải phẫu bên trong file `SKILL.md` có gì?
 
-Hãy mở file `.claude/skills/dong-goi-tai-lieu-chuan/SKILL.md` vừa được tạo ra. Anh chị sẽ thấy nó hoàn toàn là chữ viết thông thường, gồm 3 phần chính:
+Hãy mở file `SKILL.md` vừa được tạo ra (ở ví dụ này là `.claude/skills/dong-goi-tai-lieu-chuan/SKILL.md`). Anh chị sẽ thấy nó hoàn toàn là chữ viết thông thường, gồm 3 phần chính:
 
 ```markdown
 ---
@@ -302,7 +296,7 @@ Chỉ cấp cho trợ lý này các công cụ để đọc file và tạo/ghi f
 
 Trong file ghi rõ hướng dẫn nhiệm vụ:
 - Chuyên môn: Đọc các báo cáo nghiên cứu và dữ liệu nội bộ, sau đó đề xuất các kế hoạch hành động cụ thể, khả thi cho ban giám đốc.
-- Định dạng đầu ra: Điền thông tin vào mẫu có sẵn trong thư mục 02_templates/ hoặc tạo file markdown trong 03_output/.
+- Định dạng đầu ra: Tạo file markdown có cấu trúc rõ ràng (bối cảnh, phân tích, đề xuất hành động, lộ trình thực hiện) và lưu vào thư mục 03_output/.
 - Văn phong: Chuẩn mực công sở, sắc sảo, gãy gọn, tuyệt đối không dùng emoji.
 ```
 

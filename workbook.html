@@ -3630,37 +3630,32 @@ Hỏi xong 4 câu, hãy tóm tắt lại cho tôi xác nhận, tôi đồng ý r
             <h3 style="font-size: 16px; margin-bottom: 8px;">A.2. Ba bước tạo Skill tự nhiên (hands-on)</h3>
             <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Nghiên cứu nội dung -> Dựng file Word chuẩn màu, logo -> Đóng gói thành Skill.</p>
             <h4 style="font-size: 15px; font-weight: 700; margin: 6px 0 6px; color: var(--brand-primary);">Bước 1: Nhờ Claude nghiên cứu nội dung (ra ruột trước, chưa lo vỏ)</h4>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Ở bước này chỉ quan tâm nội dung, chưa cần đẹp: chữ đen nền trắng trong khung chat, chưa logo, chưa màu. Hình thức là chuyện của bước 2.</p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Ở bước này chỉ quan tâm nội dung, chưa cần đẹp: Claude xuất ra một file .md chữ trơn, chưa logo, chưa màu. Hình thức là chuyện của bước 2.</p>
             <div class="prompt-container">
               <div class="prompt-header">
                 <span class="prompt-label">Bước 1 - Nghiên cứu nội dung</span>
                 <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
               </div>
-              <div class="prompt-content">Research và cho tôi báo cáo ngắn gọn về 3 xu hướng ứng dụng AI và tự động hóa trong quản trị doanh nghiệp năm 2026.</div>
+              <div class="prompt-content">Tìm kiếm nhanh và cho tôi báo cáo ngắn gọn (khoảng 2 trang giấy A4) về 3 xu hướng ứng dụng AI và tự động hóa trong quản trị doanh nghiệp năm 2026. Xuất thành file md cho tôi nhé.</div>
             </div>
-            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude tự tìm kiếm và trả ra 3 xu hướng công nghệ nổi bật năm 2026 ngay trong khung chat. Nội dung chi tiết nhưng mới là chữ thô, chưa có thẩm mỹ hay nhận diện thương hiệu.</p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude tự tìm kiếm, tổng hợp 3 xu hướng nổi bật năm 2026 và lưu thành một file <code>.md</code> dài khoảng 2 trang A4 trong thư mục làm việc. Mở file ra xem: nội dung đầy đủ nhưng mới là chữ thô, chưa có thẩm mỹ hay nhận diện thương hiệu.</p>
           </div>
 
           <div class="card-panel" id="b5-buoc-2">
-            <h4 style="font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--brand-primary);">Bước 2: Dựng file Word đẹp, chuẩn dải màu thương hiệu và logo</h4>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Biến nội dung đó thành file Word (.docx) tử tế: lấy đúng dải màu xanh từ logo CES Global có sẵn trong thư mục, chèn logo đầu trang, canh lề chuẩn và tuyệt đối không lỗi dấu tiếng Việt.</p>
+            <h4 style="font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--brand-primary);">Bước 2: Dựng file Word đẹp theo tone màu của logo</h4>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Biến nội dung đó thành file Word (.docx) tử tế. Không cần tự chọn mã màu: <strong>kéo file <code>logo-cesglobal.png</code> vào khung chat</strong> (hoặc nhắc tên file logo trong thư mục), rồi gõ câu lệnh dưới. Claude sẽ tự phân tích dải màu chủ đạo và áp vào tài liệu cho đẹp, hiện đại, không lỗi dấu tiếng Việt.</p>
             <div class="prompt-container">
               <div class="prompt-header">
-                <span class="prompt-label">Bước 2 - Tạo file Word chuẩn nhận diện</span>
+                <span class="prompt-label">Bước 2 - Tạo file Word theo tone màu logo</span>
                 <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
               </div>
-              <div class="prompt-content">Tôi thấy nội dung khá chi tiết rồi. Bây giờ hãy tổng hợp và tạo cho tôi 1 file Word (.docx) lưu vào thư mục "03_output/20260326_BaoCao_XuHuongAI2026.docx".
-
-Yêu cầu định dạng:
-- Lấy dải màu chủ đạo từ file "logo-cesglobal.png" trong thư mục (tone xanh dương đậm chuyên nghiệp).
-- Chèn ảnh logo "logo-cesglobal.png" vào góc trên đầu tài liệu.
-- Tiêu đề in đậm, canh lề trang chuẩn văn phòng, có bảng tóm tắt so sánh.
-- Kiểm tra kỹ để toàn bộ văn bản chuẩn tiếng Việt có dấu, tuyệt đối không bị lỗi font hay lỗi dấu.</div>
+              <div class="prompt-content">Nội dung ổn rồi. Bây giờ hãy tổng hợp và tạo cho tôi 1 file Word (.docx) lưu vào thư mục output cho tôi nhé
+Yêu cầu định dạng: phân tích dải màu chủ đạo từ logo này và áp dụng tone màu này vào tài liệu sao cho đẹp, hiện đại. Lưu ý file docx phải chuẩn tiếng Việt và không bị lỗi dấu.</div>
             </div>
             <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;"><strong>Kiểm tra sản phẩm bằng mắt thật:</strong></p>
             <ul class="steps-list">
-              <li><span class="step-badge">1</span><div>Claude báo đã tạo xong <code>03_output/20260326_BaoCao_XuHuongAI2026.docx</code>.</div></li>
-              <li><span class="step-badge">2</span><div>Mở file Word trong <code>03_output/</code> xem: logo có nằm ngay ngắn đầu trang? Màu tiêu đề có khớp màu xanh của logo? Tiếng Việt có bị lỗi ô vuông hay lệch dòng?</div></li>
+              <li><span class="step-badge">1</span><div>Claude báo đã lưu file Word vào thư mục <code>output/</code>.</div></li>
+              <li><span class="step-badge">2</span><div>Mở file Word trong <code>output/</code> xem: tone màu tiêu đề, bảng biểu có khớp màu chủ đạo của logo? Bố cục có đẹp, hiện đại, dễ đọc? Tiếng Việt có bị lỗi ô vuông hay lệch dòng?</div></li>
               <li><span class="step-badge">3</span><div>Chỗ nào chưa vừa ý (ví dụ <em>"Logo cho nhỏ lại một chút"</em>, <em>"Bảng dữ liệu thêm màu xen kẽ"</em>) cứ chat tiếp để Claude chỉnh đến khi <strong>ưng ý 100%</strong>.</div></li>
             </ul>
           </div>
@@ -3668,21 +3663,20 @@ Yêu cầu định dạng:
           <div class="card-panel" id="b5-buoc-3">
             <h4 style="font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--brand-primary);">Bước 3: Ra lệnh đóng gói cách làm thành một Skill dùng mãi</h4>
             <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Bước đáng tiền nhất của buổi! Nhìn lại xem vừa mất bao nhiêu công dặn logo, dặn màu, dặn lề, dặn soát dấu. Thay vì tuần sau gõ lại ngần ấy thứ, ta bảo Claude đóng gói toàn bộ quy trình thành Skill.</p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Thay <code>&lt;tên công ty của tôi&gt;</code> bằng tên công ty của anh chị, ví dụ <code>CES Global</code>.</p>
             <div class="prompt-container">
               <div class="prompt-header">
                 <span class="prompt-label">Bước 3 - Đóng gói thành Skill</span>
                 <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
               </div>
-              <div class="prompt-content">Tôi thấy file Word vừa tạo rất đẹp và chuẩn rồi. Bây giờ hãy đóng gói toàn bộ cách làm, dải màu sắc, vị trí chèn logo và quy cách trình bày vừa rồi thành một Skill đặt tại: ".claude/skills/dong-goi-tai-lieu-chuan/SKILL.md".
-
-Sau này, bất cứ khi nào tôi nói "tạo tài liệu theo chuẩn CES Global" hoặc tôi gọi lệnh "/dong-goi-tai-lieu-chuan" thì bạn hãy tự động áp dụng đúng chuẩn này (lấy logo-cesglobal.png, định dạng màu sắc tương ứng, xuất file vào 03_output/ và kiểm tra không lỗi dấu tiếng Việt) mà tôi không cần dặn lại từ đầu nhé.</div>
+              <div class="prompt-content">Tôi thấy file này đẹp rồi, bây giờ hãy tạo cho tôi skill đóng gói tài liệu đẹp và đúng tone màu như vậy, sau này khi tôi nói tạo tài liệu theo chuẩn &lt;tên công ty của tôi&gt; thì hãy áp dụng skill này cho tôi. Skill lưu tại folder skill cấp project này cho tôi nhé</div>
             </div>
-            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude đọc lại phiên làm việc, trích ra các thông số (mã màu Hex, kích thước logo, quy tắc lề trang), rồi tự tạo thư mục <code>.claude/skills/dong-goi-tai-lieu-chuan/</code> và file <code>SKILL.md</code> bên trong.</p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude đọc lại phiên làm việc, trích ra thông số màu sắc (mã màu Hex) và quy cách trình bày, rồi tự đặt tên và tạo skill trong <code>.claude/skills/</code> của dự án (ví dụ <code>.claude/skills/dong-goi-tai-lieu-chuan/SKILL.md</code>). Từ giờ chỉ cần nói <em>"tạo tài liệu theo chuẩn CES Global"</em> là skill được áp dụng.</p>
           </div>
 
           <div class="card-panel">
             <h3 id="b5-a-3" style="font-size: 16px; margin-bottom: 8px;">A.3. Mở nắp capo: bên trong file <code>SKILL.md</code> có gì?</h3>
-            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 10px;">Mở file <code>.claude/skills/dong-goi-tai-lieu-chuan/SKILL.md</code> vừa tạo: hoàn toàn là chữ viết thông thường, gồm phần khai báo (tên + mô tả khi nào kích hoạt) và phần quy trình:</p>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 10px;">Mở file <code>SKILL.md</code> vừa tạo (ở ví dụ này là <code>.claude/skills/dong-goi-tai-lieu-chuan/SKILL.md</code>): hoàn toàn là chữ viết thông thường, gồm phần khai báo (tên + mô tả khi nào kích hoạt) và phần quy trình:</p>
             <div class="dg-code">---
 name: dong-goi-tai-lieu-chuan
 description: Tự động đóng gói nội dung thành file Word (.docx) chuẩn nhận diện thương hiệu CES Global với logo, tone màu xanh và kiểm tra tiếng Việt. Kích hoạt khi người dùng yêu cầu "tạo tài liệu theo chuẩn CES Global" hoặc dùng lệnh /dong-goi-tai-lieu-chuan.
@@ -3838,7 +3832,7 @@ Chỉ cấp cho trợ lý này các công cụ để đọc file và tạo/ghi f
 
 Trong file ghi rõ hướng dẫn nhiệm vụ:
 - Chuyên môn: Đọc các báo cáo nghiên cứu và dữ liệu nội bộ, sau đó đề xuất các kế hoạch hành động cụ thể, khả thi cho ban giám đốc.
-- Định dạng đầu ra: Điền thông tin vào mẫu có sẵn trong thư mục 02_templates/ hoặc tạo file markdown trong 03_output/.
+- Định dạng đầu ra: Tạo file markdown có cấu trúc rõ ràng (bối cảnh, phân tích, đề xuất hành động, lộ trình thực hiện) và lưu vào thư mục 03_output/.
 - Văn phong: Chuẩn mực công sở, sắc sảo, gãy gọn, tuyệt đối không dùng emoji.</div>
             </div>
             <div class="dg dg-compare">
