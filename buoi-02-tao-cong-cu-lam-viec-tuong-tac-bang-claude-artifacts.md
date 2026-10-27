@@ -4,12 +4,60 @@
 
 | Phần | Nội dung | Thời lượng dự kiến |
 |:---:|---|:---:|
+| **KĐ** | Khởi động: demo nhanh Artifact, file Word theo tone màu logo và tạo Skill ngay trên Claude chat | 10 phút |
 | **0** | Từ văn bản tĩnh sang công cụ tương tác: Sản phẩm hôm nay bạn mang về là gì? | 15 phút |
 | **1** | Bản chất của Artifacts, Khởi động nhanh ngoài Chat & "Aha Moment" | 30 phút |
 | **2** | Kỹ thuật "Prompt-to-App" & 2 Case Study Xây dựng công cụ thực chiến trong Project | 65 phút |
 | **3** | Kỹ thuật tinh chỉnh (Iterate), Khắc phục lỗi (Debug) & Xuất bản chia sẻ link (Publish & Share) | 25 phút |
 | **4** | Nghiệm thu cuối buổi & Định hướng Buổi 3 | 15 phút |
 
+
+---
+
+## KHỞI ĐỘNG. DEMO NHANH: ARTIFACT, FILE WORD VÀ SKILL TRÊN CLAUDE CHAT
+
+> Trước khi vào bài, xem nhanh 3 việc Claude chat làm được chỉ bằng vài câu lệnh: biến nội dung trong khung chat thành Artifact để chỉnh sửa, xuất file Word đúng tone màu logo, và đóng gói cách làm thành Skill để dùng lại. Phần này chỉ để "thấy sức mạnh", các phần sau và Buổi 5 sẽ đi sâu.
+
+**Chuẩn bị:** một nội dung đã có sẵn trong khung chat (ví dụ bản báo cáo, kế hoạch hay email Claude vừa soạn ở Buổi 1) và file ảnh logo công ty.
+
+<details>
+<summary><b>Thao tác thực hành Bước 1: Biến nội dung trong chat thành Artifact</b> (bấm để mở)</summary>
+
+**Gõ câu lệnh sau** (thay `...` bằng tên nội dung, ví dụ "bản báo cáo", "bản kế hoạch"):
+
+```text
+Chuyển ... này thành artifact cho tôi để tôi có thể chỉnh sửa trực tiếp được
+```
+
+**Quan sát:** nội dung tách khỏi dòng chat, chuyển sang cửa sổ Artifact bên phải thành một tài liệu riêng. Từ đây anh chị có thể chỉnh sửa tiếp, xem lại các phiên bản cũ, sao chép hoặc tải về.
+</details>
+
+<details>
+<summary><b>Thao tác thực hành Bước 2: Xuất file Word theo tone màu logo</b> (bấm để mở)</summary>
+
+**Kéo file ảnh logo vào khung chat, rồi gõ:**
+
+```text
+Nội dung ổn rồi. Bây giờ hãy tổng hợp và tạo cho tôi 1 file Word (.docx) cho tôi nhé
+Yêu cầu định dạng: phân tích dải màu chủ đạo từ logo này và áp dụng tone màu này vào tài liệu sao cho đẹp, hiện đại. Lưu ý file docx phải chuẩn tiếng Việt và không bị lỗi dấu.
+```
+
+**Quan sát:** Claude tự phân tích màu của logo và tạo file `.docx` để tải về. Mở file kiểm tra: màu tiêu đề, bảng biểu có khớp logo không, tiếng Việt có bị lỗi dấu không. Nếu Claude báo chưa tạo được file, kiểm tra tính năng tạo file đã được bật trong phần Settings của tài khoản.
+</details>
+
+<details>
+<summary><b>Thao tác thực hành Bước 3: Đóng gói thành Skill dùng lại</b> (bấm để mở)</summary>
+
+**Gõ câu lệnh sau** (thay `...` bằng tên công ty, ví dụ "CES Global"):
+
+```text
+Tôi thấy file này đẹp rồi, bây giờ hãy tạo cho tôi skill đóng gói tài liệu đẹp và đúng tone màu như vậy, sau này khi tôi nói tạo tài liệu theo chuẩn ... thì hãy áp dụng skill này cho tôi
+```
+
+**Quan sát:** Claude đóng gói toàn bộ cách làm (tone màu, bố cục, quy cách trình bày) thành một Skill. Làm theo hướng dẫn Claude đưa ra để lưu và bật Skill trong tài khoản. Lần sau chỉ cần nói *"tạo tài liệu theo chuẩn ..."* là Claude tự làm đúng chuẩn, không phải dặn lại.
+</details>
+
+> **Ghi nhớ:** Artifact giúp nội dung "đứng riêng" để chỉnh sửa và chia sẻ (trọng tâm của buổi hôm nay). Skill giúp "dặn một lần, dùng mãi" (Buổi 5 sẽ học kỹ trên Claude Code).
 
 ---
 

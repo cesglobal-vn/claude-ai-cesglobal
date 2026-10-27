@@ -1477,6 +1477,7 @@
             <!-- Nested TOC for Buổi 2 (hidden until active) -->
             <div class="sidebar-toc" style="display: none;">
               <ul class="toc-list">
+                <li class="toc-item"><a href="#b2-khoi-dong">Khởi động: demo Artifact, Word &amp; Skill</a></li>
                 <li class="toc-item"><a href="#b2-phan-0">0. Từ văn bản tĩnh sang công cụ tương tác</a></li>
                 <li class="toc-item"><a href="#b2-phan-1">1. Bản chất Artifacts & Cửa sổ thứ hai</a></li>
                 <li class="toc-item toc-sub"><a href="#b2-1-1">1.1. Khi nào Claude bật Artifacts</a></li>
@@ -1505,16 +1506,19 @@
               <ul class="toc-list">
                 <li class="toc-item"><a href="#b3-phan-0">0. Giải mã MCP &amp; Kết nối Drive/Gmail</a></li>
                 <li class="toc-item toc-sub"><a href="#b3-0-2">0.2. MCP là gì (cổng USB của AI)</a></li>
-                <li class="toc-item toc-sub"><a href="#b3-0-3">0.3. Kết nối Drive &amp; Gmail</a></li>
-                <li class="toc-item toc-sub"><a href="#b3-0-4">0.4. Trợ lý phân loại Gmail</a></li>
-                <li class="toc-item"><a href="#b3-phan-1">1. Google Sheets làm Database</a></li>
-                <li class="toc-item toc-sub"><a href="#b3-1-2">1.2. Giải phẫu Apps Script Web App</a></li>
-                <li class="toc-item toc-sub"><a href="#b3-1-3">1.3. Bảng đơn vs Database đa bảng</a></li>
-                <li class="toc-item"><a href="#b3-phan-2">2. Demo 1: Dashboard Analytics</a></li>
-                <li class="toc-item"><a href="#b3-phan-3">3. Demo 2: Web App Quản lý Đơn hàng</a></li>
-                <li class="toc-item toc-sub"><a href="#b3-3-1">3.1. Bước 1: Web App tiếp nhận đơn</a></li>
-                <li class="toc-item toc-sub"><a href="#b3-3-2">3.2. Bước 2: Xuất Phiếu / PDF</a></li>
-                <li class="toc-item toc-sub"><a href="#b3-3-3">3.3. Bước 3: Menu tự động hóa Sheets</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-0-3">0.3. Cài Claude in Chrome &amp; kết nối</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-0-4">0.4. File chỉ dẫn toàn cục</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-0-5">0.5. Claude in Chrome thao tác web</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-0-6">0.6. Phân loại hòm thư Gmail</a></li>
+                <li class="toc-item"><a href="#b3-phan-1">1. Ảnh chụp vs dữ liệu sống</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-1-2">1.2. Chuẩn bị dữ liệu Sheets</a></li>
+                <li class="toc-item"><a href="#b3-phan-2">2. Demo 1: Báo cáo tháng (HTML)</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-2-2">2.2. Tạo báo cáo tháng</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-2-4">2.4. Thử nghiệm "ảnh chụp"</a></li>
+                <li class="toc-item"><a href="#b3-phan-3">3. Demo 2: Dashboard sống (Artifact)</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-3-1">3.1. Tạo dashboard sống</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-3-2">3.2. Kiểm chứng dữ liệu sống</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-3-3">3.3. Cảnh báo "Cần chú ý"</a></li>
                 <li class="toc-item"><a href="#b3-phan-4">4. Nghiệm thu &amp; Cầu nối Buổi 4</a></li>
               </ul>
             </div>
@@ -2353,6 +2357,62 @@ Trình bày thành BẢNG CẢNH BÁO RỦI RO gồm các cột: Tên điều kh
           </div>
         </div>
 
+        <section class="content-section" id="b2-khoi-dong">
+          <div class="section-header">
+            <span class="section-badge">KHỞI ĐỘNG</span>
+            <h2 class="section-title">Demo nhanh: Artifact, file Word và Skill trên Claude chat</h2>
+          </div>
+
+          <div class="card-panel">
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Trước khi vào bài, xem nhanh 3 việc Claude chat làm được chỉ bằng vài câu lệnh: biến nội dung trong khung chat thành Artifact để chỉnh sửa, xuất file Word đúng tone màu logo, và đóng gói cách làm thành Skill để dùng lại. Phần này chỉ để "thấy sức mạnh", các phần sau và Buổi 5 sẽ đi sâu.</p>
+            <p style="font-size: 14px; color: var(--text-muted);"><strong>Chuẩn bị:</strong> một nội dung đã có sẵn trong khung chat (ví dụ bản báo cáo, kế hoạch hay email Claude vừa soạn ở Buổi 1) và file ảnh logo công ty.</p>
+          </div>
+
+          <div class="card-panel" id="b2-kd-1">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">Bước 1: Biến nội dung trong chat thành Artifact</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Thay <code>...</code> bằng tên nội dung, ví dụ "bản báo cáo", "bản kế hoạch".</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Khởi động 1 - Chuyển nội dung thành Artifact</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Chuyển ... này thành artifact cho tôi để tôi có thể chỉnh sửa trực tiếp được</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> nội dung tách khỏi dòng chat, chuyển sang cửa sổ Artifact bên phải thành một tài liệu riêng. Từ đây có thể chỉnh sửa tiếp, xem lại phiên bản cũ, sao chép hoặc tải về.</p>
+          </div>
+
+          <div class="card-panel" id="b2-kd-2">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">Bước 2: Xuất file Word theo tone màu logo</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;"><strong>Kéo file ảnh logo vào khung chat</strong>, rồi gõ:</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Khởi động 2 - File Word theo tone màu logo</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Nội dung ổn rồi. Bây giờ hãy tổng hợp và tạo cho tôi 1 file Word (.docx) cho tôi nhé
+Yêu cầu định dạng: phân tích dải màu chủ đạo từ logo này và áp dụng tone màu này vào tài liệu sao cho đẹp, hiện đại. Lưu ý file docx phải chuẩn tiếng Việt và không bị lỗi dấu.</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude tự phân tích màu của logo và tạo file <code>.docx</code> để tải về. Mở file kiểm tra màu tiêu đề, bảng biểu và dấu tiếng Việt. Nếu Claude báo chưa tạo được file, kiểm tra tính năng tạo file đã được bật trong phần Settings của tài khoản.</p>
+          </div>
+
+          <div class="card-panel" id="b2-kd-3">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">Bước 3: Đóng gói thành Skill dùng lại</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Thay <code>...</code> bằng tên công ty, ví dụ "CES Global".</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Khởi động 3 - Tạo Skill tài liệu theo chuẩn công ty</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Tôi thấy file này đẹp rồi, bây giờ hãy tạo cho tôi skill đóng gói tài liệu đẹp và đúng tone màu như vậy, sau này khi tôi nói tạo tài liệu theo chuẩn ... thì hãy áp dụng skill này cho tôi</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude đóng gói cách làm (tone màu, bố cục, quy cách trình bày) thành một Skill. Làm theo hướng dẫn Claude đưa ra để lưu và bật Skill trong tài khoản. Lần sau chỉ cần nói <em>"tạo tài liệu theo chuẩn ..."</em> là Claude tự làm đúng chuẩn.</p>
+            <div class="callout callout-tip">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lightbulb"/></svg>Ghi nhớ</div>
+              <strong>Artifact</strong> giúp nội dung "đứng riêng" để chỉnh sửa và chia sẻ - trọng tâm của buổi hôm nay. <strong>Skill</strong> giúp "dặn một lần, dùng mãi" - Buổi 5 sẽ học kỹ trên Claude Code.
+            </div>
+          </div>
+        </section>
+
         <section class="content-section" id="b2-phan-0">
           <div class="section-header">
             <span class="section-badge">PHẦN 0</span>
@@ -2812,19 +2872,19 @@ Giao diện phong cách quản trị nhân sự hiện đại, thanh lịch, tr�
       <!-- ============================================================== -->
       <div class="tab-pane" id="tab-buoi-03">
         <div class="session-hero">
-          <h1 class="hero-title">Kết nối Dữ liệu Đám mây (MCP) &amp; Tự động hóa Google Sheets / Web App</h1>
+          <h1 class="hero-title">Kết nối Dữ liệu Đám mây (MCP) &amp; Dashboard từ Google Sheets</h1>
           <p class="hero-desc">
-            Phá vỡ rào cản copy-paste thủ công. Cấp quyền cho Claude "nhìn thẳng" vào Google Drive / Sheets qua MCP, rồi biến Google Sheets thành Database nuôi sống Web App: từ Dashboard phân tích tới hệ thống quản lý đơn hàng B2B tự động hóa hoàn chỉnh.
+            Phá vỡ rào cản copy-paste thủ công. Cấp quyền cho Claude "nhìn thẳng" vào Gmail, Google Drive, Google Sheets qua MCP, rồi biến bảng số liệu bán hàng thành 2 loại dashboard: báo cáo tháng dạng file HTML để gửi đi, và dashboard điều hành tự cập nhật để chủ doanh nghiệp theo dõi riêng hằng ngày.
           </p>
           <div class="deliverable-box">
-            <span><svg class="icon inline-icon icon-brand"><use href="#icon-gift"/></svg><strong>Sản phẩm cầm về:</strong> 01 Dashboard Analytics có link chia sẻ + 01 Web App Quản lý Đơn hàng (gửi đơn, xuất phiếu PDF) + 01 Menu tự động hóa <code>⚡ QUẢN LÝ ĐƠN HÀNG</code> ngay trên Google Sheets.</span>
+            <span><svg class="icon inline-icon icon-brand"><use href="#icon-gift"/></svg><strong>Sản phẩm cầm về:</strong> 01 trợ lý phân loại hòm thư Gmail + 01 báo cáo kinh doanh tháng dạng HTML (in / lưu PDF được) + 01 dashboard điều hành Artifact tự cập nhật theo Google Sheets.</span>
           </div>
         </div>
 
         <section class="content-section" id="b3-phan-0">
           <div class="section-header">
             <span class="section-badge">PHẦN 0</span>
-            <h2 class="section-title">Giải mã MCP &amp; Kết nối Claude với Google Drive &amp; Gmail</h2>
+            <h2 class="section-title">Giải mã MCP, Claude in Chrome &amp; kết nối Google Drive, Gmail</h2>
           </div>
 
           <div class="card-panel">
@@ -2848,28 +2908,91 @@ Giao diện phong cách quản trị nhân sự hiện đại, thanh lịch, tr�
           </div>
 
           <div class="card-panel">
-            <h3 id="b3-0-3" style="font-size: 16px; margin-bottom: 8px;">0.3. Thao tác thực hành: Kết nối Google Workspace (Drive &amp; Gmail) trên Web</h3>
+            <h3 id="b3-0-3" style="font-size: 16px; margin-bottom: 8px;">0.3. Chuẩn bị: cài Claude in Chrome và kết nối Google Drive, Gmail</h3>
+            <h4 style="font-size: 15px; font-weight: 700; margin: 10px 0 6px; color: var(--brand-primary);">A. Cài tiện ích Claude in Chrome</h4>
             <ul class="steps-list">
-              <li><span class="step-badge">1</span><div>Mở <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" style="color: var(--brand-primary);">claude.ai</a>.</div></li>
-              <li><span class="step-badge">2</span><div>Bấm ảnh đại diện / tên tài khoản góc dưới trái -> chọn <strong>Settings</strong>.</div></li>
-              <li><span class="step-badge">3</span><div>Menu bên trái, tìm mục <strong>Integrations</strong> (hoặc <strong>Connectors / Connected Accounts</strong>).</div></li>
-              <li><span class="step-badge">4</span><div>Tìm dòng <strong>Google Drive</strong> và <strong>Gmail</strong> (hoặc gói tích hợp <strong>Google Workspace</strong>) -> bấm <strong>Connect</strong> (hoặc <strong>Add</strong>).</div></li>
-              <li><span class="step-badge">5</span><div>Cửa sổ Google hiện ra: chọn tài khoản Google làm việc -> bấm <strong>Cho phép (Allow)</strong> cấp quyền đọc tài liệu và email.</div></li>
-              <li><span class="step-badge">6</span><div>Trạng thái chuyển màu xanh <strong>Connected</strong> là xong, quay lại khung chat.</div></li>
-              <li><span class="step-badge">7</span><div><strong>Thử nghiệm nhanh với Google Drive:</strong> trong ô chat, bấm dấu cộng <code>+</code> -> <strong>Add from Google Drive</strong> -> chọn 1 file bất kỳ -> gõ <em>"Tóm tắt 3 ý chính của tài liệu này cho tôi"</em>. Claude đọc thẳng từ Drive, không cần tải file về máy!</div></li>
+              <li><span class="step-badge">1</span><div>Mở Google Chrome, vào trang tiện ích <a href="https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn" target="_blank" rel="noopener noreferrer" style="color: var(--brand-primary);">Claude in Chrome trên Chrome Web Store</a>.</div></li>
+              <li><span class="step-badge">2</span><div>Bấm <strong>Thêm vào Chrome (Add to Chrome)</strong>, rồi ghim biểu tượng Claude lên thanh công cụ của Chrome.</div></li>
+              <li><span class="step-badge">3</span><div>Đăng nhập tiện ích bằng <strong>đúng tài khoản Claude</strong> đang dùng trong app Claude trên máy.</div></li>
             </ul>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Tiện ích chạy trên Google Chrome và dành cho các gói trả phí của Claude.</p>
+            <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 6px; color: var(--brand-primary);">B. Kết nối Google Drive và Gmail</h4>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div>Trong app Claude, bấm dấu <code>+</code> cạnh ô nhập -> <strong>Add connectors</strong> (hoặc vào <strong>Settings -> Connectors</strong>).</div></li>
+              <li><span class="step-badge">2</span><div>Chọn <strong>Google Drive</strong> -> <strong>Connect</strong> -> chọn tài khoản Google làm việc -> <strong>Cho phép (Allow)</strong>. Làm tương tự với <strong>Gmail</strong>.</div></li>
+              <li><span class="step-badge">3</span><div>Trạng thái chuyển sang <strong>Connected</strong> là xong.</div></li>
+            </ul>
+            <div class="callout callout-warn">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-alert-triangle"/></svg>Chọn đúng tài khoản Google</div>
+              Connector đăng nhập tài khoản Google nào thì Claude đọc mail và tạo file trên tài khoản đó. Máy có nhiều tài khoản Google thì kiểm tra kỹ trước khi bấm Allow.
+            </div>
           </div>
 
           <div class="card-panel">
-            <h3 id="b3-0-4" style="font-size: 16px; margin-bottom: 8px;">0.4. Thực hành với Gmail: Trợ lý phân loại hòm thư công việc</h3>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bước 1:</strong> Mở phiên chat mới trên Claude và dán câu lệnh sau:</p>
+            <h3 id="b3-0-4" style="font-size: 16px; margin-bottom: 8px;">0.4. File chỉ dẫn toàn cục: dặn Claude quy tắc làm việc một lần cho mọi phiên</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Giống ô Instructions của Projects ở Buổi 1, nhưng áp dụng cho <strong>mọi phiên làm việc</strong> của Claude trên máy. Làm 2 bước: hỏi trước, chưa sửa gì; xem xong mới thêm quy tắc.</p>
             <div class="prompt-container">
               <div class="prompt-header">
-                <span class="prompt-label">Câu lệnh - Trợ lý phân loại hòm thư Gmail (Thư ký điều hành)</span>
+                <span class="prompt-label">Prompt 0.4a - Hỏi vị trí file chỉ dẫn toàn cục</span>
                 <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
               </div>
-              <div class="prompt-content">Hãy đóng vai Thư ký Điều hành của tôi.
-Hãy quét các email tôi nhận được trong 24 giờ qua (hoặc 3 ngày gần nhất) trong hòm thư Gmail và thực hiện:
+              <div class="prompt-content">File chỉ dẫn toàn cục (global) của bạn nằm ở đâu trên máy tôi?
+Nếu file đã có thì đọc cho tôi nội dung hiện tại. Nếu chưa có thì cho tôi biết bạn sẽ tạo file ở đâu.
+Chưa sửa gì cả.</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin: 10px 0;"><strong>Quan sát:</strong> Claude cho biết đường dẫn file (thường là file <code>CLAUDE.md</code> trong thư mục <code>.claude</code> của tài khoản máy tính) và đọc nội dung nếu file đã có. Câu "Chưa sửa gì cả" giúp Claude chỉ xem, không tự ghi.</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 0.4b - Thêm quy tắc làm việc</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Thêm các quy tắc sau vào file chỉ dẫn toàn cục của bạn. Nếu file đã có nội dung thì giữ nguyên, chỉ thêm vào cuối:
+
+Quy tắc làm việc với tôi
+1. Luôn trả lời bằng tiếng Việt có dấu đầy đủ, rõ ý, chuyên nghiệp.
+2. Yêu cầu chưa rõ hoặc thiếu dữ liệu thì hỏi lại, không tự đoán.
+3. Chỉ sửa đúng phần tôi yêu cầu, không tự ý sửa thêm chỗ khác.
+4. Trước khi xóa hoặc ghi đè file nào, phải hỏi tôi trước.</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude thêm 4 quy tắc vào cuối file, giữ nguyên phần đã có. Từ phiên sau Claude tự tuân theo mà không cần dặn lại. Buổi 4 sẽ học tiếp file <code>CLAUDE.md</code> riêng cho từng thư mục dự án.</p>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b3-0-5" style="font-size: 16px; margin-bottom: 8px;">0.5. Claude in Chrome: cho Claude tự thao tác trên trình duyệt</h3>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 0.5a - Kiểm tra Claude in Chrome</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Bạn có dùng được Claude in chrome trên máy tôi không? Nếu có thì hãy liệt kê ra các tab đang mở</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin: 10px 0;"><strong>Quan sát:</strong> Claude kết nối với tiện ích và liệt kê các tab đang mở trong Chrome. Nếu Claude báo chưa kết nối được: kiểm tra Chrome đang mở, tiện ích đã cài và đăng nhập đúng tài khoản Claude.</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 0.5b - Đọc báo giúp tôi</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">mở cho tôi trang báo lao động và cho tôi tiêu đề và nội dung 3 bài viết mới nhất về chủ đề kinh doanh đi</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude tự mở tab mới, vào báo Lao động, tìm chuyên mục kinh doanh, đọc và tóm tắt 3 bài mới nhất. Lần đầu vào một trang mới, tiện ích có thể hỏi xin phép: bấm cho phép.</p>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b3-0-6" style="font-size: 16px; margin-bottom: 8px;">0.6. Gmail: kiểm tra kết nối và phân loại hòm thư công việc</h3>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 0.6a - Kiểm tra kết nối Gmail và Drive</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">bạn có kết nối được với gmail và drive của tôi không?</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin: 10px 0;"><strong>Quan sát:</strong> Claude xác nhận đã kết nối và cho biết đang dùng tài khoản Google nào. Nếu sai tài khoản, đổi lại trong Settings -> Connectors trước khi làm tiếp.</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 0.6b - Phân loại hòm thư 7 ngày gần nhất</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Hãy quét các email tôi nhận được trong 7 ngày gần nhất trong hòm thư Gmail và thực hiện:
 
 1. Phân loại email thành 3 nhóm rõ ràng:
    - [KHẨN CẤP / CẦN XỬ LÝ NGAY]: Email từ cấp trên, đối tác quan trọng, hoặc có thời hạn gấp.
@@ -2881,8 +3004,8 @@ Hãy quét các email tôi nhận được trong 24 giờ qua (hoặc 3 ngày g�
    - Đề xuất 1 việc cụ thể tôi cần làm hôm nay.</div>
             </div>
             <div class="callout callout-tip">
-              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-message"/></svg>Bước 2 - Trải nghiệm kết quả</div>
-              Claude tự động quét hòm thư đến và trả về bảng tóm tắt công việc trong ngày, giúp bạn nắm nhanh các đầu việc quan trọng mà không cần mở từng email để đọc.
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-message"/></svg>Trải nghiệm kết quả</div>
+              Claude tự quét hòm thư 7 ngày qua và trả về bảng phân loại kèm việc cần làm hôm nay, giúp nắm nhanh các đầu việc quan trọng mà không cần mở từng email.
             </div>
           </div>
         </section>
@@ -2890,123 +3013,137 @@ Hãy quét các email tôi nhận được trong 24 giờ qua (hoặc 3 ngày g�
         <section class="content-section" id="b3-phan-1">
           <div class="section-header">
             <span class="section-badge">PHẦN 1</span>
-            <h2 class="section-title">Tư duy kiến trúc: Google Sheets làm Database cho Web App</h2>
+            <h2 class="section-title">Ảnh chụp và dữ liệu sống: 2 cách làm dashboard từ Google Sheets</h2>
           </div>
 
           <div class="card-panel">
-            <h3 id="b3-1-1" style="font-size: 16px; margin-bottom: 8px;">1.1. Vì sao dân văn phòng không cần học lập trình Database phức tạp?</h3>
-            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Thông thường để dựng web quản lý đơn hàng, dân lập trình phải thuê máy chủ (Server), mua tên miền (Domain) và cài cơ sở dữ liệu phức tạp (MySQL, MongoDB...). Nhưng với dân văn phòng, <strong>Google Sheets chính là một Database hoàn hảo</strong>:</p>
-            <ul class="steps-list">
-              <li><span class="step-badge">1</span><div>Giao diện dạng bảng quen thuộc, ai cũng biết nhìn và chỉnh sửa.</div></li>
-              <li><span class="step-badge">2</span><div>Tự động lưu trữ đám mây, chia sẻ nhiều người dùng cùng lúc.</div></li>
-              <li><span class="step-badge">3</span><div>Hoàn toàn miễn phí và bảo mật theo tài khoản Google.</div></li>
-            </ul>
-          </div>
-
-          <div class="card-panel">
-            <h3 id="b3-1-2" style="font-size: 16px; margin-bottom: 10px;">1.2. Giải phẫu cỗ máy Google Apps Script (GAS) Web App</h3>
-            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Google Apps Script cho phép dựng một ứng dụng web chạy thẳng trên nền tảng Google bằng đúng <strong>2 file duy nhất</strong>:</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px;">
-              <div style="flex: 1 1 240px; background: var(--bg-sidebar); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px;">
-                <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;"><svg class="icon inline-icon icon-brand"><use href="#icon-database"/></svg>1. <code>Code.gs</code> - Phía Server</div>
-                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">Máy chủ Google. Cầu nối dữ liệu: đọc số liệu từ Sheet, tính toán, chuẩn hóa ngày tháng / số tiền, và ghi dữ liệu mới trở lại Sheet.</p>
+            <h3 id="b3-1-1" style="font-size: 16px; margin-bottom: 8px;">1.1. Hai loại dashboard, hai mục đích khác nhau</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Khi Claude đã "nhìn thẳng" được vào Google Sheets qua connector, có 2 cách biến bảng số liệu thành dashboard. Hiểu đúng sự khác nhau sẽ biết chọn cách nào cho từng việc:</p>
+            <div class="dg dg-compare">
+              <div class="dg-node dg-accent-amber">
+                <div class="dg-node-title dg-c-amber">Demo 1 - File HTML: "ảnh chụp"</div>
+                <div class="dg-row"><span class="dg-pill">Lấy số liệu</span><div>Đọc Sheet <strong>1 lần</strong> lúc tạo, rồi "chép" số vào trong file.</div></div>
+                <div class="dg-row"><span class="dg-pill">Sửa Sheet</span><div>File <strong>không đổi</strong>. Muốn số mới phải nhờ Claude làm lại.</div></div>
+                <div class="dg-row"><span class="dg-pill">Hợp cho</span><div>Báo cáo <strong>chốt kỳ</strong> (tháng, quý), gửi sếp, gửi khách, in PDF.</div></div>
               </div>
-              <div style="flex: 1 1 240px; background: var(--bg-sidebar); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px;">
-                <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;"><svg class="icon inline-icon icon-brand"><use href="#icon-file-text"/></svg>2. <code>Index.html</code> - Phía Client</div>
-                <p style="font-size: 13px; color: var(--text-muted); margin: 0;">Giao diện Web. Chứa nút bấm, form nhập liệu, bảng hiển thị, biểu đồ trực quan (Chart.js / Tailwind CSS).</p>
+              <div class="dg-node dg-accent-emerald">
+                <div class="dg-node-title dg-c-emerald">Demo 2 - Artifact: "dữ liệu sống"</div>
+                <div class="dg-row"><span class="dg-pill">Lấy số liệu</span><div>Đọc Sheet qua connector <strong>mỗi lần mở</strong> và tự làm mới định kỳ.</div></div>
+                <div class="dg-row"><span class="dg-pill">Sửa Sheet</span><div>Dashboard <strong>tự đổi theo</strong>, không cần nhờ ai làm lại.</div></div>
+                <div class="dg-row"><span class="dg-pill">Hợp cho</span><div>Chủ doanh nghiệp <strong>theo dõi hằng ngày</strong>, xem riêng, không chia sẻ.</div></div>
               </div>
             </div>
-            <div class="callout callout-warn">
-              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-alert-triangle"/></svg>Quy trình "Deploy as Web App" (Triển khai ứng dụng)</div>
-              <ol style="margin: 6px 0 0; padding-left: 20px; font-size: 13px; color: var(--text-muted); line-height: 1.7;">
-                <li>Trong Google Sheets: menu <strong>Extensions (Tiện ích mở rộng) -> Apps Script</strong>.</li>
-                <li>Dán mã vào <code>Code.gs</code> và tạo file <code>Index.html</code>.</li>
-                <li>Bấm <strong>Deploy (Triển khai) -> New deployment (Triển khai mới)</strong>.</li>
-                <li>Chọn loại: <strong>Web app</strong>.</li>
-                <li>Cấu hình quyền: <em>Execute as:</em> <strong>Me</strong> (chạy dưới quyền của bạn); <em>Who has access:</em> <strong>Anyone</strong> (ai có link đều mở được - tiện gửi đồng nghiệp).</li>
-                <li>Bấm <strong>Deploy</strong> -> Google cấp link web (<code>https://script.google.com/macros/s/.../exec</code>). Mở link đó lên là thành một website sống!</li>
-              </ol>
+            <div class="callout callout-note">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lightbulb"/></svg>Ví von dễ nhớ</div>
+              <p>File HTML giống <strong>tấm ảnh chụp</strong> cửa hàng lúc 9 giờ sáng: đẹp, gửi đi được, nhưng 10 giờ có khách mới thì ảnh vẫn là cảnh lúc 9 giờ.</p>
+              <p>Dashboard Artifact nối connector giống <strong>màn hình camera</strong>: mở lên là thấy cửa hàng ngay lúc này.</p>
             </div>
           </div>
 
           <div class="card-panel">
-            <h3 id="b3-1-3" style="font-size: 16px; margin-bottom: 10px;">1.3. Phân biệt 2 cấp độ dữ liệu: Bảng thống kê đơn vs Database đa bảng</h3>
-            <div class="table-container">
-              <table>
-                <thead>
-                  <tr><th>Tiêu chí so sánh</th><th>Demo 1: Dashboard Analytics</th><th>Demo 2: Web App Quản lý Đơn hàng</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td><strong>Bản chất</strong></td><td>Báo cáo phân tích chỉ đọc (Read-only Analytics)</td><td>Phần mềm mini tương tác 2 chiều (CRUD Web App)</td></tr>
-                  <tr><td><strong>Cấu trúc file</strong></td><td><strong>01 Sheet phẳng</strong> (<code>DoanhSo_NovaTech_2026</code>)</td><td><strong>04 Sheet quan hệ</strong> mô phỏng Database thực thụ</td></tr>
-                  <tr><td><strong>File mẫu đi kèm</strong></td><td><code>Demo 1 - Du lieu Dashboard Doanh so NovaTech.xlsx</code></td><td><code>Demo 2 - Co so Du lieu He thong Don hang B2B NovaTech.xlsx</code></td></tr>
-                  <tr><td><strong>Các bảng dữ liệu</strong></td><td>Gom toàn bộ dữ liệu lịch sử vào 1 bảng để vẽ biểu đồ</td><td><code>DonHang</code> (đơn phát sinh), <code>DanhMuc_GoiDichVu</code> (bảng giá), <code>KhachHang_B2B</code> (MST, địa chỉ), <code>TongHop_DoanhThu</code> (cộng dồn)</td></tr>
-                </tbody>
-              </table>
+            <h3 id="b3-1-2" style="font-size: 16px; margin-bottom: 8px;">1.2. Chuẩn bị dữ liệu: nhờ Claude sao chép file mẫu về Drive</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Không cần tự tải file lên Drive: dán link file mẫu của lớp và nhờ Claude tạo bản sao qua connector Google Drive. Thay <code>....</code> bằng tên của anh chị.</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 1.0 - Sao chép file dữ liệu mẫu về Drive</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">https://docs.google.com/spreadsheets/d/11q_TGO8mDPIvKzUFXk3QwYq-3HWoHqg8GtKYDkeAHts/edit?usp=sharing
+bạn hãy tạo bản sao sheet này về drive của tôi nhé. Đặt tên là .... - Thực hành buổi 3</div>
             </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin: 10px 0;"><strong>Quan sát:</strong> Claude tạo bản sao trong Google Drive (của tài khoản đang kết nối) và gửi lại link file mới. Dùng link này cho chỗ <code>{Dán link gg sheets}</code> ở các câu lệnh phía sau. Nếu dùng số liệu thật của công ty thì tự tải file lên Drive và lấy link tương tự.</p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">File mẫu có sheet <code>DonHang</code> gồm 50 đơn hàng tháng 2 và tháng 3/2026 (mã đơn, khách hàng, gói giải pháp, thành tiền, ngày hẹn bàn giao, trạng thái), cùng các sheet danh mục gói dịch vụ và danh bạ khách hàng.</p>
           </div>
         </section>
 
         <section class="content-section" id="b3-phan-2">
           <div class="section-header">
             <span class="section-badge">PHẦN 2</span>
-            <h2 class="section-title">Thực hành Demo 1: Dashboard Analytics bằng Google Apps Script</h2>
+            <h2 class="section-title">Demo 1: Báo cáo kinh doanh tháng bằng file HTML ("ảnh chụp")</h2>
           </div>
 
-          <div class="card-panel">
+          <div class="card-panel" id="b3-2-1">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-              <h3 style="font-size: 17px; color: var(--text-main);">2.1. Bài toán thực tế</h3>
-              <span class="tag-status tag-ready">Read-only Analytics</span>
+              <h3 style="font-size: 17px; color: var(--text-main);">2.1. Bước 1: Cho Claude đọc và làm quen dữ liệu</h3>
+              <span class="tag-status tag-ready">Báo cáo chốt tháng</span>
             </div>
-            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Bạn có bảng theo dõi doanh số NovaTech trên Google Sheets (Mã đơn, Ngày đặt, Khách hàng, Gói phần mềm, Số tiền, Trạng thái thanh toán, Nhân viên phụ trách).</p>
-            <ul class="steps-list">
-              <li><span class="step-badge">1</span><div>Bạn không muốn sếp hay đối tác phải mở bảng tính chi chít hàng trăm dòng số liệu khô khan.</div></li>
-              <li><span class="step-badge">2</span><div>Bạn muốn biến nó thành <strong>Dashboard trực quan có biểu đồ cột, biểu đồ tròn, bộ lọc theo tháng</strong> chạy độc lập trên trình duyệt.</div></li>
-            </ul>
-          </div>
-
-          <div class="card-panel">
-            <h3 style="font-size: 16px; margin-bottom: 8px;">2.2. Câu lệnh Prompt chuẩn cho Demo 1</h3>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bước 1:</strong> Nạp dữ liệu doanh số vào một Google Sheets và copy link (URL) của file (nếu chưa có, xem cách nạp file demo ở Bước 2). Mở ô Chat hoặc Project trên Claude, dán câu lệnh dưới đây và thay <code>{Dán link gg sheets}</code> bằng link Google Sheets của bạn:</p>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bài toán:</strong> cuối tháng, sếp cần một bản báo cáo kinh doanh tháng 3 đẹp, rõ ràng để đọc và lưu lại. Trước khi làm báo cáo, cho Claude đọc dữ liệu để chắc nó hiểu đúng bảng số liệu. Gõ tiếp trong cùng phiên vừa sao chép file (chữ "file Google Sheets trên" là file vừa tạo ở Prompt 1.0).</p>
             <div class="prompt-container">
               <div class="prompt-header">
-                <span class="prompt-label">Câu lệnh tạo Dashboard Analytics (GAS Web App)</span>
+                <span class="prompt-label">Prompt 1.1 - Đọc và làm quen dữ liệu</span>
                 <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
               </div>
-              <div class="prompt-content">Hãy đọc và phân tích bảng dữ liệu bán hàng trong file Google Sheets này: {Dán link gg sheets}
+              <div class="prompt-content">Hãy đọc file Google Sheets trên
 
-1. YÊU CẦU:
-- Tôi muốn xây dựng 1 dashboard trực quan hóa các số liệu này bằng Google Apps Script.
-- Hãy đọc file Sheets và tự đề xuất xây dựng các biểu đồ phù hợp.
-- Tách code hoàn chỉnh thành 2 file: "Code.gs" và "Index.html".
-- Code phải sạch, có chú thích, xử lý tốt khi Sheet có dữ liệu rỗng.
-
-2. KẾT QUẢ CẦN CÓ:
-- Giải thích ngắn gọn về các biểu đồ và chỉ số KPI được chọn.
-- Cung cấp toàn bộ mã nguồn của cả 2 file Code.gs và Index.html để tôi copy dán dùng ngay.
-- Hướng dẫn các bước thao tác step-by-step cho người không chuyên kỹ thuật.</div>
+Cho tôi biết:
+- File có những sheet nào, mỗi sheet chứa thông tin gì.
+- Dữ liệu đơn hàng trải từ tháng nào đến tháng nào, mỗi tháng có bao nhiêu đơn.
+- 3 con số đáng chú ý nhất mà một người quản lý nên biết.</div>
             </div>
-            <p style="font-size: 13px; color: var(--text-muted); margin-top: 14px;"><strong>Bước 2 - Triển khai mã nguồn vào Google Sheets:</strong></p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude đọc file qua connector Google Drive và tóm tắt cấu trúc, ví dụ sheet <code>DonHang</code> có 16 đơn tháng 2 và 34 đơn tháng 3/2026. Nếu Claude hiểu sai cột nào, sửa ngay ở bước này trước khi làm báo cáo.</p>
+          </div>
+
+          <div class="card-panel" id="b3-2-2">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">2.2. Bước 2: Tạo báo cáo tháng dạng file HTML</h3>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 1.2 - Dashboard báo cáo tháng 3/2026</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Dựa vào thông tin của sheets trên, hãy làm cho tôi 1 dashboard báo cáo kinh doanh THÁNG 3/2026 dạng file HTML, lưu vào thư mục Download với tên bao-cao-thang-03-2026.html:
+- Thẻ số liệu: tổng doanh thu, số đơn, giá trị trung bình mỗi đơn, số khách hàng.
+- Biểu đồ doanh thu theo gói giải pháp và biểu đồ số đơn theo trạng thái.
+- Bảng top 5 khách hàng có giá trị đơn lớn nhất trong tháng.
+- So sánh với tháng 2/2026: tăng hay giảm bao nhiêu %.
+- Ghi rõ dòng "Số liệu chốt ngày ..." ở đầu báo cáo.
+- Giao diện hiện đại, dễ đọc.
+có thể tự đề xuất sao cho đầy đủ trên dashboard</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;"><strong>Kiểm tra:</strong></p>
             <ul class="steps-list">
-              <li><span class="step-badge">1</span><div>Mở bảng tính Google Sheets mới (đặt tên <code>NovaTech_Sales_Dashboard_2026</code>).</div></li>
-              <li><span class="step-badge">2</span><div>Nhập dữ liệu: <strong>Tệp (File) -> Nhập (Import) -> Tải lên (Upload)</strong> file mẫu <code>demo-files/buoi-03/Demo 1 - Du lieu Dashboard Doanh so NovaTech.xlsx</code> (20 dòng doanh số chuẩn), hoặc dán dữ liệu doanh số thực tế của bạn. Sau đó copy link (URL) của file để dán vào chỗ <code>{Dán link gg sheets}</code> trong câu lệnh ở Bước 1.</div></li>
-              <li><span class="step-badge">3</span><div>Bấm menu <strong>Extensions (Tiện ích mở rộng) -> Apps Script</strong>.</div></li>
-              <li><span class="step-badge">4</span><div>Tại file <code>Code.gs</code>: xóa sạch mã mặc định, dán toàn bộ code <code>Code.gs</code> Claude vừa tạo.</div></li>
-              <li><span class="step-badge">5</span><div>Tạo file <code>Index.html</code>: bấm dấu <code>+</code> cạnh chữ <em>Files</em> -> chọn <strong>HTML</strong>, đặt tên <code>Index</code>, xóa mã cũ, dán code <code>Index.html</code> của Claude vào.</div></li>
-              <li><span class="step-badge">6</span><div>Bấm biểu tượng đĩa mềm <strong>Save (Lưu)</strong> cả 2 file.</div></li>
+              <li><span class="step-badge">1</span><div>File <code>bao-cao-thang-03-2026.html</code> xuất hiện trong thư mục <strong>Download</strong>, bấm đúp để mở bằng trình duyệt.</div></li>
+              <li><span class="step-badge">2</span><div>Đối chiếu 1-2 con số với Google Sheets (ví dụ tổng số đơn tháng 3) để chắc Claude tính đúng.</div></li>
             </ul>
-            <p style="font-size: 13px; color: var(--text-muted); margin-top: 14px;"><strong>Bước 3 - Bấm Deploy để lấy đường link Web App:</strong></p>
+          </div>
+
+          <div class="card-panel" id="b3-2-3">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">2.3. Bước 3: Tinh chỉnh cho đúng ý người đọc</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Báo cáo cho sếp cần nhận định, không chỉ có số. Gõ tiếp trong cùng phiên:</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 1.3 - Thêm nhận định và nút in PDF</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Báo cáo ổn rồi. Hãy bổ sung:
+- 3 nhận định ngắn về tình hình kinh doanh tháng 3 đặt ngay đầu báo cáo (điểm tốt, điểm cần lo, việc nên làm tiếp).
+- Một nút "In / Lưu PDF" để tôi gửi báo cáo cho sếp, khi in chỉ in nội dung báo cáo.</div>
+            </div>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 1.4 (tùy chọn) - Đổi tone màu theo logo công ty</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Đổi tone màu của báo cáo theo màu chủ đạo của logo công ty tôi (tôi gửi kèm file logo), và chèn logo vào góc trên báo cáo.</div>
+            </div>
+          </div>
+
+          <div class="card-panel" id="b3-2-4">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">2.4. Bước 4: Thử nghiệm "ảnh chụp"</h3>
             <ul class="steps-list">
-              <li><span class="step-badge">1</span><div>Góc trên phải, bấm nút xanh <strong>Deploy (Triển khai) -> New deployment (Triển khai mới)</strong>.</div></li>
-              <li><span class="step-badge">2</span><div>Bấm bánh răng cạnh <em>Select type</em> -> chọn <strong>Web app</strong>. Điền mô tả <code>NovaTech Dashboard v1</code>.</div></li>
-              <li><span class="step-badge">3</span><div>Mục <em>Who has access</em>: chọn <strong>Anyone</strong>.</div></li>
-              <li><span class="step-badge">4</span><div>Bấm <strong>Deploy</strong> -> <strong>Authorize access</strong> -> chọn tài khoản Google -> <strong>Advanced (Nâng cao)</strong> -> <strong>Go to Untitled project (unsafe)</strong> -> <strong>Allow (Cho phép)</strong>. <em>(Đây là bước xác thực bảo mật thông thường của Google khi chạy script do chính bạn tạo.)</em></div></li>
-              <li><span class="step-badge">5</span><div>Google cung cấp <strong>Web app URL</strong>: bấm <strong>Copy</strong> và mở link trên tab mới.</div></li>
+              <li><span class="step-badge">1</span><div>Mở Google Sheets, sửa cột <strong>Thành tiền (VNĐ)</strong> của một đơn tháng 3 (ví dụ tăng thêm 100.000.000).</div></li>
+              <li><span class="step-badge">2</span><div>Mở lại file <code>bao-cao-thang-03-2026.html</code>: tổng doanh thu <strong>vẫn là số cũ</strong>. Đó chính là "ảnh chụp".</div></li>
+              <li><span class="step-badge">3</span><div>Muốn số mới thì phải nhờ Claude làm lại:</div></li>
             </ul>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 1.5 - Cập nhật lại báo cáo thủ công</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Tôi vừa sửa số liệu trong Google Sheets. Hãy đọc lại file và cập nhật báo cáo tháng 3 với số liệu mới nhất, giữ nguyên giao diện.</div>
+            </div>
             <div class="callout callout-tip">
-              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-target"/></svg>Bước 4 - Trải nghiệm Dashboard sống</div>
-              <p>Màn hình hiện Dashboard với các thẻ KPI doanh số, biểu đồ cột doanh thu theo thời gian và biểu đồ tròn cơ cấu gói cước.</p>
-              <p>Thử quay lại Google Sheets, sửa một số tiền doanh thu bất kỳ -> quay lại tab Dashboard bấm F5/Tải lại trang -> biểu đồ tự động cập nhật số liệu mới ngay lập tức!</p>
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-target"/></svg>Kết luận Demo 1</div>
+              File HTML rất hợp cho <strong>báo cáo chốt kỳ</strong>: số liệu đứng yên đúng như thời điểm chốt, gửi đi hay in ra đều được. Nhưng nếu cần theo dõi <strong>từng ngày</strong> thì mỗi lần phải nhờ làm lại. Đó là lý do có Demo 2.
             </div>
           </div>
         </section>
@@ -3014,132 +3151,91 @@ Hãy quét các email tôi nhận được trong 24 giờ qua (hoặc 3 ngày g�
         <section class="content-section" id="b3-phan-3">
           <div class="section-header">
             <span class="section-badge">PHẦN 3</span>
-            <h2 class="section-title">Thực hành Demo 2: Hệ thống Quản lý Đơn hàng B2B (tiến hóa qua từng Prompt)</h2>
+            <h2 class="section-title">Demo 2: Dashboard điều hành tự cập nhật cho chủ doanh nghiệp (Artifact)</h2>
           </div>
 
           <div class="card-panel">
-            <div class="callout callout-tip">
-              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lightbulb"/></svg>Phương pháp phát triển lặp từng bước (Iterative Development)</div>
-              <p>Khi làm việc với AI để xây phần mềm, <strong>tuyệt đối không quăng một câu lệnh khổng lồ</strong> đòi làm tất cả cùng lúc. Đi theo quy trình 3 bước chuyên nghiệp:</p>
-              <p><strong>Bước 1:</strong> Dựng phần lõi (Core Web App kết nối Database đa bảng) chạy mượt trước.</p>
-              <p><strong>Bước 2:</strong> Bổ sung nghiệp vụ (xuất hóa đơn / phiếu giao hàng PDF tra cứu từ bảng đối tác).</p>
-              <p><strong>Bước 3:</strong> Tạo menu tự động hóa cao cấp ngay trên Google Sheets (<code>⚡ QUẢN LÝ ĐƠN HÀNG</code> gom số liệu và phân hạng khách hàng).</p>
+            <div class="callout callout-note">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lock"/></svg>Dashboard riêng của chủ doanh nghiệp, không chia sẻ</div>
+              <p>Artifact được tạo ở chế độ <strong>riêng tư</strong>: chỉ anh chị mở được. Mỗi lần mở, nó đọc Google Sheets bằng chính connector và tài khoản Google của anh chị.</p>
+              <p>Lần đầu mở, trang sẽ hỏi cho phép dùng connector Google Drive: bấm <strong>Cho phép</strong>. Không bấm chia sẻ dashboard này cho người khác, vì đây là số liệu kinh doanh nội bộ.</p>
             </div>
-
-            <h3 id="b3-3-0" style="font-size: 16px; margin: 18px 0 8px;">3.0. Chuẩn bị Cơ sở Dữ liệu Đa bảng (Multi-sheet Database)</h3>
-            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Khác Demo 1 chỉ 1 sheet phẳng, Demo 2 là một ứng dụng quản trị hoàn chỉnh, dùng một file Google Sheets riêng đóng vai Cơ sở dữ liệu quan hệ (Mini Relational DB):</p>
-            <ul class="steps-list">
-              <li><span class="step-badge">1</span><div>Mở Google Drive -> tạo file Google Sheets mới, đặt tên <code>NovaTech_Order_System_2026</code>.</div></li>
-              <li><span class="step-badge">2</span><div><strong>Tệp (File) -> Nhập (Import) -> Tải lên (Upload)</strong> file mẫu <code>demo-files/buoi-03/Demo 2 - Co so Du lieu He thong Don hang B2B NovaTech.xlsx</code>.</div></li>
-              <li><span class="step-badge">3</span><div>Kiểm tra đủ <strong>4 Sheet quan hệ</strong>:
-                <ul style="margin: 6px 0 0; padding-left: 18px; line-height: 1.7;">
-                  <li><code>DonHang</code> - Bảng giao dịch: lưu lịch sử đơn hàng, là nơi Web App ghi dòng đơn mới.</li>
-                  <li><code>DanhMuc_GoiDichVu</code> - Bảng danh mục: bảng giá niêm yết &amp; thông số 4 gói giải pháp.</li>
-                  <li><code>KhachHang_B2B</code> - Bảng khách hàng: Mã KH, Tên công ty, MST, Người đại diện, Hotline, Địa chỉ.</li>
-                  <li><code>TongHop_DoanhThu</code> - Bảng tổng hợp: bảng đích nhận số liệu cộng dồn từ script.</li>
-                </ul>
-              </div></li>
-              <li><span class="step-badge">4</span><div>Bấm menu <strong>Extensions (Tiện ích mở rộng) -> Apps Script</strong> để sẵn sàng lập trình cùng Claude.</div></li>
-            </ul>
           </div>
 
           <div class="card-panel" id="b3-3-1">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-              <h3 style="font-size: 17px; color: var(--text-main);">3.1. Bước 1: Web App tiếp nhận đơn hàng kết nối đa bảng</h3>
-              <span class="tag-status tag-ready">Prompt 2.1</span>
+              <h3 style="font-size: 17px; color: var(--text-main);">3.1. Bước 1: Tạo dashboard sống</h3>
+              <span class="tag-status tag-ready">Dữ liệu sống</span>
             </div>
-            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bài toán:</strong> Sales/đối tác đi thị trường cần một trang web trên điện thoại/laptop để tạo đơn hàng mới. Trang web tự lấy danh mục gói cước và danh bạ khách hàng từ Sheets; bấm "Gửi đơn" thì tự sinh mã đơn và lưu vào sheet <code>DonHang</code>.</p>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bài toán:</strong> chủ doanh nghiệp muốn sáng nào mở lên cũng thấy ngay tình hình kinh doanh mới nhất, không phải chờ ai làm báo cáo.</p>
             <div class="prompt-container">
               <div class="prompt-header">
-                <span class="prompt-label">Prompt 2.1 - Dựng Web App tiếp nhận đơn hàng B2B</span>
+                <span class="prompt-label">Prompt 2.1 - Dashboard điều hành tự cập nhật</span>
                 <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
               </div>
-              <div class="prompt-content">Hãy đọc cấu trúc file Google Sheets này: {Dán link gg sheets}
-Đây là cơ sở dữ liệu quản lý đơn hàng B2B, gồm các sheet: DonHang, DanhMuc_GoiDichVu, KhachHang_B2B.
-
-1. YÊU CẦU:
-- Tôi muốn xây dựng 1 Web App tiếp nhận đơn hàng bằng Google Apps Script, kết nối trực tiếp với file Sheets này.
-- Form tạo đơn tự động lấy danh sách Khách hàng và Gói dịch vụ từ các sheet để chọn; khi gửi đơn thì tự sinh mã đơn và lưu vào sheet DonHang.
-- Có bảng hiển thị các đơn hàng gần nhất ngay bên dưới để kiểm tra.
-- Tách code hoàn chỉnh thành 2 file: "Code.gs" và "Index.html".
-- Code phải sạch, có chú thích, xử lý tốt khi Sheet có dữ liệu rỗng.
-
-2. KẾT QUẢ CẦN CÓ:
-- Cung cấp toàn bộ mã nguồn của cả 2 file Code.gs và Index.html để tôi copy dán dùng ngay.
-- Hướng dẫn các bước thao tác step-by-step cho người không chuyên kỹ thuật.</div>
+              <div class="prompt-content">Bây giờ tôi muốn 1 dashboard điều hành, tự cập nhật theo Google Sheets mà tôi không phải nhờ làm lại.
+Hãy tạo nó dưới dạng Artifact:
+- Mỗi lần mở, đọc trực tiếp file Sheets trên qua connector Google Drive.
+- Khi đang mở thì tự làm mới số liệu và hiện dòng "Cập nhật lúc ...".</div>
             </div>
-            <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;"><strong>Kiểm tra sau khi cập nhật mã:</strong></p>
-            <ul class="steps-list">
-              <li><span class="step-badge">1</span><div>Dán mã vào <code>Code.gs</code>, tạo <code>Index.html</code> dán giao diện -> <strong>Save</strong>.</div></li>
-              <li><span class="step-badge">2</span><div><strong>Deploy -> New deployment -> Web app -> Who has access: Anyone -> Deploy -> Ủy quyền truy cập</strong>.</div></li>
-              <li><span class="step-badge">3</span><div>Mở link Web App: dropdown Khách hàng và Gói dịch vụ tự động load từ Sheets. Thử gửi đơn <em>"Công ty TNHH Cơ khí Hồng Hà - Gói NovaPro Cloud - 45 user"</em> -> bấm <strong>Gửi đơn hàng mới</strong>.</div></li>
-              <li><span class="step-badge">4</span><div>Mở tab Google Sheets: bảng <code>DonHang</code> vừa tự xuất hiện dòng đơn mới với mã <code>DH-008</code> chuẩn xác!</div></li>
-            </ul>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude dựng trang dashboard và gửi link Artifact. Mở link, bấm <strong>Cho phép</strong> khi trang hỏi dùng connector Google Drive, số liệu hiện ra cùng dòng "Cập nhật lúc ...".</p>
           </div>
 
           <div class="card-panel" id="b3-3-2">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-              <h3 style="font-size: 17px; color: var(--text-main);">3.2. Bước 2: Xuất Phiếu giao hàng / Thỏa thuận dịch vụ PDF</h3>
-              <span class="tag-status tag-ready">Prompt 2.2 - Follow-up 1</span>
-            </div>
-            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bài toán:</strong> Sau khi ghi nhận đơn, nhân viên cần in ngay Phiếu tiếp nhận hoặc tải PDF gửi Zalo cho khách. Phiếu tự động tra cứu Mã số thuế, Địa chỉ, Người đại diện từ sheet <code>KhachHang_B2B</code>.</p>
-            <div class="prompt-container">
-              <div class="prompt-header">
-                <span class="prompt-label">Prompt 2.2 - Bổ sung tính năng Xuất Phiếu / PDF (gõ tiếp trong cùng phiên)</span>
-                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
-              </div>
-              <div class="prompt-content">Web App đơn hàng chạy tốt rồi! Giờ hãy nâng cấp thêm cho tôi:
-
-- Ở mỗi dòng trong bảng đơn hàng, thêm nút "Xuất phiếu (PDF/In)".
-- Bấm vào sẽ hiện một phiếu "PHIẾU TIẾP NHẬN ĐƠN HÀNG &amp; THỎA THUẬN DỊCH VỤ" khổ A4, gồm: thông tin công ty NovaTech, thông tin đơn hàng, và tự động tra cứu thông tin khách (tên công ty, mã số thuế, địa chỉ, người đại diện) từ sheet KhachHang_B2B.
-- Có nút "In / Lưu PDF" chỉ in ra đúng tờ phiếu A4 (ẩn form và các nút khác khi in).
-
-Hãy cập nhật lại code giúp tôi nhé.</div>
-            </div>
-            <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;"><strong>Kiểm tra:</strong></p>
+            <h3 style="font-size: 16px; margin-bottom: 8px;">3.2. Bước 2: Kiểm chứng "dữ liệu sống"</h3>
             <ul class="steps-list">
-              <li><span class="step-badge">1</span><div>Cập nhật mã vào <code>Index.html</code> (và <code>Code.gs</code> nếu có) -> <strong>Save</strong>.</div></li>
-              <li><span class="step-badge">2</span><div><strong>Deploy -> Manage deployments -> Bút chì (Edit) -> Version: New version -> Deploy</strong>.</div></li>
-              <li><span class="step-badge">3</span><div>Mở link Web App, trong bảng đơn hàng bấm nút icon máy in ở một đơn bất kỳ.</div></li>
-              <li><span class="step-badge">4</span><div>Popup Phiếu A4 hiện đầy đủ tên công ty, MST, địa chỉ và thông tin đơn -> bấm "In / Lưu PDF" xem bản in đẹp chuẩn doanh nghiệp!</div></li>
+              <li><span class="step-badge">1</span><div>Mở Google Sheets, thêm một dòng đơn mới vào cuối sheet <code>DonHang</code> (ví dụ mã <code>DH-051</code>, tháng 3/2026, trạng thái <strong>Chờ duyệt</strong>, thành tiền 60.000.000).</div></li>
+              <li><span class="step-badge">2</span><div>Quay lại dashboard, chờ một lúc (hoặc tải lại trang): tổng doanh thu, số đơn "Chờ duyệt" và dòng "Cập nhật lúc ..." <strong>tự đổi theo</strong>.</div></li>
+              <li><span class="step-badge">3</span><div>So với Demo 1: không cần gõ thêm câu lệnh nào.</div></li>
             </ul>
+            <div class="callout callout-warn">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-alert-triangle"/></svg>"Sống" nghĩa là gì cho đúng</div>
+              Dashboard cập nhật khi <strong>mở hoặc tải lại trang</strong>, và khi đang mở thì <strong>hỏi lại theo chu kỳ</strong> do Claude cài sẵn (muốn đổi thì nói, ví dụ "làm mới mỗi 1 phút"). Không phải số nhảy ngay tức thì từng giây. Dòng "Cập nhật lúc ..." cho biết số liệu mới tới thời điểm nào.
+            </div>
           </div>
 
           <div class="card-panel" id="b3-3-3">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-              <h3 style="font-size: 17px; color: var(--text-main);">3.3. Bước 3: Menu tùy chỉnh <code>⚡ QUẢN LÝ ĐƠN HÀNG</code> trên Google Sheets</h3>
-              <span class="tag-status tag-ready">Prompt 2.3 - Follow-up 2</span>
-            </div>
-            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bài toán:</strong> Người quản lý / kế toán không cần mở Web App mà làm trực tiếp trên Google Sheets. Họ muốn thanh công cụ xuất hiện menu riêng <code>⚡ QUẢN LÝ ĐƠN HÀNG</code> để tự động gom nhóm khách hàng, cộng dồn doanh số tích lũy, tra cứu MST, phân hạng (<em>VIP Diamond / Gold / Standard</em>) và xuất sang sheet <code>TongHop_DoanhThu</code>.</p>
+            <h3 style="font-size: 16px; margin-bottom: 8px;">3.3. Bước 3: Thêm khu vực "Cần chú ý hôm nay"</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Chủ doanh nghiệp không cần nhìn mọi con số, mà cần biết <strong>việc gì đang có vấn đề</strong>. Gõ tiếp:</p>
             <div class="prompt-container">
               <div class="prompt-header">
-                <span class="prompt-label">Prompt 2.3 - Tạo Menu tự động hóa trên Sheets (gõ tiếp)</span>
+                <span class="prompt-label">Prompt 2.2 - Cảnh báo việc cần xử lý</span>
                 <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
               </div>
-              <div class="prompt-content">Tiếp tục nâng cấp bằng Google Apps Script:
-
-Hãy thêm một menu tùy chỉnh tên "⚡ QUẢN LÝ ĐƠN HÀNG" tự hiện trên thanh công cụ Google Sheets mỗi khi mở file (dùng hàm onOpen), gồm 2 chức năng:
-
-1. "Tổng hợp &amp; Phân hạng Khách hàng": quét sheet DonHang, gom các đơn theo từng khách hàng, cộng dồn tổng doanh số, tra cứu mã số thuế từ sheet KhachHang_B2B, rồi tự động phân hạng khách theo tổng doanh số (ví dụ: từ 100 triệu trở lên là VIP, 40-100 triệu là Gold, dưới 40 triệu là Standard) và ghi kết quả ra sheet TongHop_DoanhThu (kẻ bảng gọn gàng, định dạng tiền VNĐ).
-2. "Dọn dẹp dòng trống": xóa các dòng trống thừa trong bảng.
-
-Hãy bổ sung đoạn mã này và hướng dẫn tôi chạy thử nhé.</div>
+              <div class="prompt-content">Thêm khu vực "Cần chú ý hôm nay" ở đầu dashboard:
+- Các đơn đang "Chờ duyệt", kèm tổng số tiền đang chờ duyệt.
+- Các đơn có ngày hẹn bàn giao trong 7 ngày tới mà chưa bàn giao.
+- Tô đỏ những đơn đã quá ngày hẹn bàn giao mà chưa bàn giao.</div>
             </div>
-            <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;"><strong>Kiểm tra trên Google Sheets:</strong></p>
-            <ul class="steps-list">
-              <li><span class="step-badge">1</span><div>Dán đoạn mã mới vào cuối file <code>Code.gs</code> -> <strong>Save</strong>.</div></li>
-              <li><span class="step-badge">2</span><div>Quay lại tab bảng tính -> bấm <strong>F5 (Tải lại trang)</strong>.</div></li>
-              <li><span class="step-badge">3</span><div>Nhìn thanh menu trên cùng (cạnh <em>Help / Trợ giúp</em>): xuất hiện menu mới toanh <code>⚡ QUẢN LÝ ĐƠN HÀNG</code>.</div></li>
-              <li><span class="step-badge">4</span><div>Bấm <code>⚡ QUẢN LÝ ĐƠN HÀNG</code> -> chọn <strong>"📊 Tổng hợp &amp; Phân hạng Khách hàng"</strong>.</div></li>
-              <li><span class="step-badge">5</span><div>Mở sheet <code>TongHop_DoanhThu</code>: các khách hàng đã gom gọn, doanh số cộng dồn chính xác 100%, phân hạng VIP lấp lánh chỉ trong 2 giây!</div></li>
-            </ul>
+          </div>
+
+          <div class="card-panel" id="b3-3-4">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">3.4. Bước 4: Bộ lọc và ghim để mở hằng ngày</h3>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 2.3 - Bộ lọc theo tháng và gói giải pháp</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Thêm bộ lọc theo tháng và theo gói giải pháp ở đầu dashboard để tôi xem nhanh từng phần. Mặc định hiển thị tháng gần nhất.</div>
+            </div>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 2.4 - Ghim lên thanh bên</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Ghim dashboard này lên thanh bên của tôi để sáng nào tôi cũng mở xem nhanh.</div>
+            </div>
+            <div class="callout callout-tip">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-target"/></svg>Kết luận Demo 2</div>
+              Báo cáo gửi đi thì dùng <strong>file HTML</strong> (Demo 1). Màn hình theo dõi riêng hằng ngày thì dùng <strong>Artifact nối connector</strong> (Demo 2). Cùng một file Google Sheets, hai cách dùng cho hai mục đích.
+            </div>
           </div>
         </section>
 
         <section class="content-section" id="b3-phan-4">
           <div class="section-header">
             <span class="section-badge">PHẦN 4</span>
-            <h2 class="section-title">Nghiệm thu Buổi 3, chia sẻ &amp; cầu nối sang Buổi 4</h2>
+            <h2 class="section-title">Nghiệm thu Buổi 3 &amp; cầu nối sang Buổi 4</h2>
           </div>
 
           <div class="card-panel">
@@ -3150,40 +3246,39 @@ Hãy bổ sung đoạn mã này và hướng dẫn tôi chạy thử nhé.</div>
                 <span>Về hiểu biết bản chất</span>
               </div>
               <div class="checklist-items">
-                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-1"><span class="checklist-text">Hiểu rõ MCP (Model Context Protocol) qua ẩn dụ "cổng USB Type-C của AI".</span></label>
-                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-2"><span class="checklist-text">Nắm cơ chế dùng Google Sheets làm Cơ sở dữ liệu (Database) nuôi sống Web App.</span></label>
-                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-3"><span class="checklist-text">Hiểu cấu trúc 2 file Apps Script: Code.gs (server xử lý) và Index.html (client hiển thị).</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-1"><span class="checklist-text">Hiểu MCP (Model Context Protocol) qua ẩn dụ "cổng USB Type-C của AI".</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-2"><span class="checklist-text">Phân biệt dashboard "ảnh chụp" (file HTML) và dashboard "dữ liệu sống" (Artifact nối connector), biết khi nào dùng cái nào.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-3"><span class="checklist-text">Hiểu "sống" nghĩa là cập nhật khi mở và theo chu kỳ, không phải tức thì; biết đọc dòng "Cập nhật lúc ...".</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-4"><span class="checklist-text">Biết giữ dashboard số liệu nội bộ ở chế độ riêng tư, không chia sẻ.</span></label>
               </div>
             </div>
             <div class="checklist-container" style="margin-top: 14px;">
               <div class="checklist-title">
                 <span><svg class="icon icon-emerald"><use href="#icon-check-circle"/></svg></span>
-                <span>Về sản phẩm số cầm về dùng ngay</span>
+                <span>Về sản phẩm số mang về</span>
               </div>
               <div class="checklist-items">
-                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-4"><span class="checklist-text">Sản phẩm 1: 01 Dashboard Analytics phân tích Google Sheets bằng biểu đồ động, có link web công khai.</span></label>
-                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-5"><span class="checklist-text">Sản phẩm 2: 01 Web App Quản lý Đơn hàng (form gửi đơn tự lưu vào Sheets + xuất Phiếu giao hàng PDF).</span></label>
-                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-6"><span class="checklist-text">Sản phẩm 3: 01 Menu ⚡ QUẢN LÝ ĐƠN HÀNG chạy trực tiếp trên Sheets, gom nhóm &amp; cộng dồn số liệu bằng 1 cú click.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-9"><span class="checklist-text">Có file chỉ dẫn toàn cục với 4 quy tắc làm việc riêng của mình.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-10"><span class="checklist-text">Cài Claude in Chrome; Claude liệt kê được các tab đang mở và đọc được tin trên báo Lao động.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-5"><span class="checklist-text">Kết nối thành công Google Drive và Gmail; chạy được trợ lý phân loại hòm thư.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-6"><span class="checklist-text">Sản phẩm 1: 01 file báo cáo kinh doanh tháng dạng HTML, có nhận định và nút In / Lưu PDF.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-7"><span class="checklist-text">Sản phẩm 2: 01 dashboard điều hành Artifact tự cập nhật theo Google Sheets, có khu vực "Cần chú ý hôm nay".</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-8"><span class="checklist-text">Đã ghim dashboard lên thanh bên để mở hằng ngày.</span></label>
               </div>
             </div>
           </div>
 
           <div class="card-panel">
-            <h3 style="font-size: 16px; margin-bottom: 8px;">4.2. Chia sẻ thành quả tại lớp</h3>
-            <p style="font-size: 14px; color: var(--text-muted);">Copy đường link Web App vừa Deploy, dán vào nhóm Zalo lớp để đồng nghiệp và giảng viên cùng mở thử trên điện thoại, bấm gửi thử đơn hàng xem dữ liệu có nhảy về Google Sheets không!</p>
-          </div>
-
-          <div class="card-panel">
-            <h3 style="font-size: 16px; margin-bottom: 8px;">4.3. Cầu nối sang Buổi 4: Cho Claude xuống làm việc trên máy tính (Claude Desktop)</h3>
+            <h3 style="font-size: 16px; margin-bottom: 8px;">4.2. Cầu nối sang Buổi 4: Cho Claude xuống làm việc trên máy tính</h3>
             <ul class="steps-list">
-              <li><span class="step-badge">1</span><div><strong>Thành tựu hôm nay:</strong> làm chủ dữ liệu đám mây (Drive, Sheets) và biến Claude thành lập trình viên tự động hóa bảng tính mà không cần biết viết code.</div></li>
-              <li><span class="step-badge">2</span><div><strong>Bài toán mới:</strong> nếu công ty có hàng trăm file Word / hợp đồng scan nặng hàng trăm MB nằm ngay trong ổ C, ổ D, không thể tải hết lên Drive thì sao?</div></li>
-              <li><span class="step-badge">3</span><div><strong>Buổi 4:</strong> đưa Claude xuống máy tính với <strong>Claude Desktop / Claude Code</strong> - tự mở từng file, trích xuất dữ liệu, sửa lỗi hàng loạt và đổi tên file tự động.</div></li>
+              <li><span class="step-badge">1</span><div><strong>Thành tựu hôm nay:</strong> Claude đọc thẳng dữ liệu trên Gmail, Google Drive, Google Sheets; anh chị có báo cáo tháng để gửi đi và dashboard sống để theo dõi riêng.</div></li>
+              <li><span class="step-badge">2</span><div><strong>Bài toán mới:</strong> nếu công ty có hàng trăm file Word, hợp đồng, bảng kê nằm trong ổ C, ổ D, không thể đưa hết lên Drive thì sao?</div></li>
+              <li><span class="step-badge">3</span><div><strong>Buổi 4:</strong> cho Claude làm việc trực tiếp với thư mục trên máy tính bằng <strong>Claude Code Desktop</strong>: tự mở từng file, đối chiếu số liệu, tạo file mới và sắp xếp thư mục ngăn nắp.</div></li>
             </ul>
 
             <div class="notes-box">
               <div style="font-size: 14px; font-weight: 700; color: var(--text-main);"><svg class="icon inline-icon icon-brand"><use href="#icon-edit"/></svg>Sổ tay ghi chú cá nhân (Buổi 3)</div>
-              <textarea class="notes-textarea" id="note-buoi-03" placeholder="Ghi chú nguồn dữ liệu Google Drive/Sheets bạn muốn kết nối..."></textarea>
+              <textarea class="notes-textarea" id="note-buoi-03" placeholder="Ghi chú bảng số liệu bạn muốn làm báo cáo tháng hoặc dashboard theo dõi hằng ngày..."></textarea>
             </div>
           </div>
         </section>
