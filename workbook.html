@@ -1515,10 +1515,10 @@
                 <li class="toc-item"><a href="#b3-phan-2">2. Demo 1: Báo cáo tháng (HTML)</a></li>
                 <li class="toc-item toc-sub"><a href="#b3-2-2">2.2. Tạo báo cáo tháng</a></li>
                 <li class="toc-item toc-sub"><a href="#b3-2-4">2.4. Thử nghiệm "ảnh chụp"</a></li>
-                <li class="toc-item"><a href="#b3-phan-3">3. Demo 2: Dashboard sống (Artifact)</a></li>
-                <li class="toc-item toc-sub"><a href="#b3-3-1">3.1. Tạo dashboard sống</a></li>
-                <li class="toc-item toc-sub"><a href="#b3-3-2">3.2. Kiểm chứng dữ liệu sống</a></li>
-                <li class="toc-item toc-sub"><a href="#b3-3-3">3.3. Cảnh báo "Cần chú ý"</a></li>
+                <li class="toc-item"><a href="#b3-phan-3">3. Demo 2: Web app Apps Script</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-3-1">3.1. Kiểm tra Claude in Chrome</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-3-2">3.2. Mở sheet xem thử</a></li>
+                <li class="toc-item toc-sub"><a href="#b3-3-3">3.3. Dựng web app Apps Script</a></li>
                 <li class="toc-item"><a href="#b3-phan-4">4. Nghiệm thu &amp; Cầu nối Buổi 4</a></li>
               </ul>
             </div>
@@ -1533,6 +1533,7 @@
             <!-- Nested TOC for Buổi 4 (hidden until active) -->
             <div class="sidebar-toc" style="display: none;">
               <ul class="toc-list">
+                <li class="toc-item"><a href="#b4-khoi-dong">Ôn lại Buổi 3: kết nối NotebookLM</a></li>
                 <li class="toc-item"><a href="#b4-phan-0">0. Giao diện Claude Code Desktop</a></li>
                 <li class="toc-item toc-sub"><a href="#b4-0-2">0.2. 5 khu vực giao diện</a></li>
                 <li class="toc-item toc-sub"><a href="#b4-0-3">0.3. Mở thư mục dự án</a></li>
@@ -2875,10 +2876,10 @@ Giao diện phong cách quản trị nhân sự hiện đại, thanh lịch, tr�
         <div class="session-hero">
           <h1 class="hero-title">Kết nối Dữ liệu Đám mây (MCP) &amp; Dashboard từ Google Sheets</h1>
           <p class="hero-desc">
-            Phá vỡ rào cản copy-paste thủ công. Cấp quyền cho Claude "nhìn thẳng" vào Gmail, Google Drive, Google Sheets qua MCP, rồi biến bảng số liệu bán hàng thành 2 loại dashboard: báo cáo tháng dạng file HTML để gửi đi, và dashboard điều hành tự cập nhật để chủ doanh nghiệp theo dõi riêng hằng ngày.
+            Phá vỡ rào cản copy-paste thủ công. Cấp quyền cho Claude "nhìn thẳng" vào Gmail, Google Drive, Google Sheets qua MCP, rồi biến bảng số liệu bán hàng thành 2 loại dashboard: báo cáo tháng dạng file HTML để gửi đi, và web app quản lý bán hàng kết nối thẳng Google Sheets do Claude in Chrome tự dựng trên Apps Script.
           </p>
           <div class="deliverable-box">
-            <span><svg class="icon inline-icon icon-brand"><use href="#icon-gift"/></svg><strong>Sản phẩm cầm về:</strong> 01 trợ lý phân loại hòm thư Gmail + 01 báo cáo kinh doanh tháng dạng HTML (in / lưu PDF được) + 01 dashboard điều hành Artifact tự cập nhật theo Google Sheets.</span>
+            <span><svg class="icon inline-icon icon-brand"><use href="#icon-gift"/></svg><strong>Sản phẩm cầm về:</strong> 01 trợ lý phân loại hòm thư Gmail + 01 báo cáo kinh doanh tháng dạng HTML (in / lưu PDF được) + 01 web app Apps Script quản lý danh mục, đơn hàng, khách hàng kèm dashboard, lưu thẳng vào Google Sheets.</span>
           </div>
         </div>
 
@@ -3028,16 +3029,16 @@ Quy tắc làm việc với tôi
                 <div class="dg-row"><span class="dg-pill">Hợp cho</span><div>Báo cáo <strong>chốt kỳ</strong> (tháng, quý), gửi sếp, gửi khách, in PDF.</div></div>
               </div>
               <div class="dg-node dg-accent-emerald">
-                <div class="dg-node-title dg-c-emerald">Demo 2 - Artifact: "dữ liệu sống"</div>
-                <div class="dg-row"><span class="dg-pill">Lấy số liệu</span><div>Đọc Sheet qua connector <strong>mỗi lần mở</strong> và tự làm mới định kỳ.</div></div>
-                <div class="dg-row"><span class="dg-pill">Sửa Sheet</span><div>Dashboard <strong>tự đổi theo</strong>, không cần nhờ ai làm lại.</div></div>
-                <div class="dg-row"><span class="dg-pill">Hợp cho</span><div>Chủ doanh nghiệp <strong>theo dõi hằng ngày</strong>, xem riêng, không chia sẻ.</div></div>
+                <div class="dg-node-title dg-c-emerald">Demo 2 - Web app Apps Script: "dữ liệu sống"</div>
+                <div class="dg-row"><span class="dg-pill">Lấy số liệu</span><div>Đọc thẳng Sheet <strong>mỗi lần mở</strong> trang web.</div></div>
+                <div class="dg-row"><span class="dg-pill">Sửa Sheet</span><div>Web app <strong>tự đổi theo</strong>; thêm, sửa, xóa trên web là <strong>ghi thẳng vào Sheet</strong>.</div></div>
+                <div class="dg-row"><span class="dg-pill">Hợp cho</span><div><strong>Quản lý hằng ngày</strong> danh mục, đơn hàng, khách hàng, kèm dashboard thống kê.</div></div>
               </div>
             </div>
             <div class="callout callout-note">
               <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lightbulb"/></svg>Ví von dễ nhớ</div>
               <p>File HTML giống <strong>tấm ảnh chụp</strong> cửa hàng lúc 9 giờ sáng: đẹp, gửi đi được, nhưng 10 giờ có khách mới thì ảnh vẫn là cảnh lúc 9 giờ.</p>
-              <p>Dashboard Artifact nối connector giống <strong>màn hình camera</strong>: mở lên là thấy cửa hàng ngay lúc này.</p>
+              <p>Web app Apps Script giống <strong>màn hình camera kiêm quầy thu ngân</strong>: mở lên là thấy cửa hàng ngay lúc này, và nhập đơn được luôn tại chỗ.</p>
             </div>
           </div>
 
@@ -3152,83 +3153,83 @@ có thể tự đề xuất sao cho đầy đủ trên dashboard</div>
         <section class="content-section" id="b3-phan-3">
           <div class="section-header">
             <span class="section-badge">PHẦN 3</span>
-            <h2 class="section-title">Demo 2: Dashboard điều hành tự cập nhật cho chủ doanh nghiệp (Artifact)</h2>
+            <h2 class="section-title">Demo 2: Web app quản lý bán hàng trên Apps Script, Claude in Chrome tự thao tác</h2>
           </div>
 
           <div class="card-panel">
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bài toán:</strong> chủ doanh nghiệp đang theo dõi doanh thu, đơn hàng, khách hàng trên một file Google Sheets nhiều sheet, thao tác trực tiếp trên bảng rất khó xem. Muốn có một trang web riêng để <strong>thêm, sửa, xóa</strong> danh mục, đơn hàng, khách hàng và có <strong>dashboard thống kê nhanh</strong>, dữ liệu vẫn lưu thẳng vào Google Sheets.</p>
             <div class="callout callout-note">
-              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lock"/></svg>Dashboard riêng của chủ doanh nghiệp, không chia sẻ</div>
-              <p>Artifact được tạo ở chế độ <strong>riêng tư</strong>: chỉ anh chị mở được. Mỗi lần mở, nó đọc Google Sheets bằng chính connector và tài khoản Google của anh chị.</p>
-              <p>Lần đầu mở, trang sẽ hỏi cho phép dùng connector Google Drive: bấm <strong>Cho phép</strong>. Không bấm chia sẻ dashboard này cho người khác, vì đây là số liệu kinh doanh nội bộ.</p>
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lightbulb"/></svg>Vì sao dùng Apps Script</div>
+              <p><strong>Google Apps Script</strong> là công cụ có sẵn trong Google Sheets, cho phép dựng một trang web <strong>đọc và ghi thẳng vào Sheet</strong>: mở web là thấy số liệu mới nhất, nhập trên web là Sheet có dòng mới.</p>
+              <p>Anh chị không cần biết code: <strong>Claude in Chrome</strong> sẽ tự mở Apps Script, viết code, lưu và triển khai thành web app.</p>
+            </div>
+            <div class="callout callout-warn">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-alert-triangle"/></svg>Hai bước anh chị tự làm, không để Claude làm thay</div>
+              <p><strong>Cấp quyền (Authorize / Allow):</strong> lần đầu chạy, Google hỏi cho phép script truy cập tài khoản. Claude sẽ dừng lại, anh chị tự đọc và tự bấm.</p>
+              <p><strong>Ai được mở web app:</strong> đây là số liệu kinh doanh nội bộ, nên chọn chỉ mình mình hoặc trong công ty. Không chọn "Anyone" (ai có link cũng xem và sửa được).</p>
             </div>
           </div>
 
           <div class="card-panel" id="b3-3-1">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-              <h3 style="font-size: 17px; color: var(--text-main);">3.1. Bước 1: Tạo dashboard sống</h3>
-              <span class="tag-status tag-ready">Dữ liệu sống</span>
-            </div>
-            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;"><strong>Bài toán:</strong> chủ doanh nghiệp muốn sáng nào mở lên cũng thấy ngay tình hình kinh doanh mới nhất, không phải chờ ai làm báo cáo.</p>
+            <h3 style="font-size: 16px; margin-bottom: 8px;">3.1. Bước 1: Kiểm tra Claude in Chrome</h3>
             <div class="prompt-container">
               <div class="prompt-header">
-                <span class="prompt-label">Prompt 2.1 - Dashboard điều hành tự cập nhật</span>
+                <span class="prompt-label">Prompt 2.1 - Kiểm tra Claude in Chrome</span>
                 <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
               </div>
-              <div class="prompt-content">Bây giờ tôi muốn 1 dashboard điều hành, tự cập nhật theo Google Sheets mà tôi không phải nhờ làm lại.
-Hãy tạo nó dưới dạng Artifact:
-- Mỗi lần mở, đọc trực tiếp file Sheets trên qua connector Google Drive.
-- Khi đang mở thì tự làm mới số liệu và hiện dòng "Cập nhật lúc ...".</div>
+              <div class="prompt-content">Bạn có dùng được Claude in chrome trên máy tôi không?</div>
             </div>
-            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude dựng trang dashboard và gửi link Artifact. Mở link, bấm <strong>Cho phép</strong> khi trang hỏi dùng connector Google Drive, số liệu hiện ra cùng dòng "Cập nhật lúc ...".</p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude xác nhận đã kết nối được tiện ích Claude in Chrome. Nếu chưa được: kiểm tra Chrome đang mở, tiện ích đã cài và đăng nhập đúng tài khoản Claude (như mục 0.3).</p>
           </div>
 
           <div class="card-panel" id="b3-3-2">
-            <h3 style="font-size: 16px; margin-bottom: 8px;">3.2. Bước 2: Kiểm chứng "dữ liệu sống"</h3>
-            <ul class="steps-list">
-              <li><span class="step-badge">1</span><div>Mở Google Sheets, thêm một dòng đơn mới vào cuối sheet <code>DonHang</code> (ví dụ mã <code>DH-051</code>, tháng 3/2026, trạng thái <strong>Chờ duyệt</strong>, thành tiền 60.000.000).</div></li>
-              <li><span class="step-badge">2</span><div>Quay lại dashboard, chờ một lúc (hoặc tải lại trang): tổng doanh thu, số đơn "Chờ duyệt" và dòng "Cập nhật lúc ..." <strong>tự đổi theo</strong>.</div></li>
-              <li><span class="step-badge">3</span><div>So với Demo 1: không cần gõ thêm câu lệnh nào.</div></li>
-            </ul>
-            <div class="callout callout-warn">
-              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-alert-triangle"/></svg>"Sống" nghĩa là gì cho đúng</div>
-              Dashboard cập nhật khi <strong>mở hoặc tải lại trang</strong>, và khi đang mở thì <strong>hỏi lại theo chu kỳ</strong> do Claude cài sẵn (muốn đổi thì nói, ví dụ "làm mới mỗi 1 phút"). Không phải số nhảy ngay tức thì từng giây. Dòng "Cập nhật lúc ..." cho biết số liệu mới tới thời điểm nào.
+            <h3 style="font-size: 16px; margin-bottom: 8px;">3.2. Bước 2: Mở file Google Sheets xem thử</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Thay <code>{Dán link gg sheets}</code> bằng link file Google Sheets tổng hợp doanh thu của anh chị.</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt 2.2 - Mở sheet xem thử</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">{Dán link gg sheets}
+mở sheet này xem thử cho tôi nhé</div>
             </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude in Chrome mở file trong một tab mới của Chrome và tóm tắt các sheet, các cột dữ liệu đang có. Lần đầu vào trang Google Sheets, tiện ích có thể hỏi xin phép: bấm cho phép.</p>
           </div>
 
           <div class="card-panel" id="b3-3-3">
-            <h3 style="font-size: 16px; margin-bottom: 8px;">3.3. Bước 3: Thêm khu vực "Cần chú ý hôm nay"</h3>
-            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Chủ doanh nghiệp không cần nhìn mọi con số, mà cần biết <strong>việc gì đang có vấn đề</strong>. Gõ tiếp:</p>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+              <h3 style="font-size: 17px; color: var(--text-main);">3.3. Bước 3: Giao việc dựng web app trên Apps Script</h3>
+              <span class="tag-status tag-ready">Claude in Chrome tự thao tác</span>
+            </div>
             <div class="prompt-container">
               <div class="prompt-header">
-                <span class="prompt-label">Prompt 2.2 - Cảnh báo việc cần xử lý</span>
+                <span class="prompt-label">Prompt 2.3 - Dựng web app thêm sửa xóa và dashboard</span>
                 <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
               </div>
-              <div class="prompt-content">Thêm khu vực "Cần chú ý hôm nay" ở đầu dashboard:
-- Các đơn đang "Chờ duyệt", kèm tổng số tiền đang chờ duyệt.
-- Các đơn có ngày hẹn bàn giao trong 7 ngày tới mà chưa bàn giao.
-- Tô đỏ những đơn đã quá ngày hẹn bàn giao mà chưa bàn giao.</div>
+              <div class="prompt-content">Đây là file excel tổng hợp doanh thu của tôi, hiện tôi chỉ thao tác trên này thì hơi khó xem, tôi biết là có thể dùng AppsScript để làm web và kết nối với gg sheet để lưu luôn. Hãy dùng claude in chrome và tự thao tác với AppsScript rồi tự tạo code đưa lên cho tôi nhé.
+Tôi muốn trên web tôi sẽ thêm sửa xóa được danh mục, đơn hàng, khách hàng luôn,... Có dashboard để xem nhanh thống kê luôn.
+Có gì thắc mắc thì hỏi lại tôi cho chắc nhé</div>
             </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;"><strong>Quan sát:</strong></p>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div>Claude <strong>hỏi lại vài câu</strong> cho chắc (ví dụ: sheet nào là danh mục, đơn hàng, khách hàng; dashboard cần chỉ số gì; ai được mở web app). Trả lời ngắn gọn như nói với đồng nghiệp.</div></li>
+              <li><span class="step-badge">2</span><div>Claude in Chrome tự mở <strong>Tiện ích mở rộng -> Apps Script</strong> từ file Sheets, viết code, lưu lại rồi vào <strong>Triển khai -> Ứng dụng web</strong>. Anh chị chỉ cần theo dõi trên Chrome.</div></li>
+              <li><span class="step-badge">3</span><div>Tới bước <strong>cấp quyền</strong>, Claude dừng lại: anh chị tự bấm cho phép.</div></li>
+              <li><span class="step-badge">4</span><div>Claude gửi <strong>link web app</strong>. Mở link: có trang dashboard thống kê và các trang quản lý danh mục, đơn hàng, khách hàng.</div></li>
+            </ul>
           </div>
 
           <div class="card-panel" id="b3-3-4">
-            <h3 style="font-size: 16px; margin-bottom: 8px;">3.4. Bước 4: Bộ lọc và ghim để mở hằng ngày</h3>
-            <div class="prompt-container">
-              <div class="prompt-header">
-                <span class="prompt-label">Prompt 2.3 - Bộ lọc theo tháng và gói giải pháp</span>
-                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
-              </div>
-              <div class="prompt-content">Thêm bộ lọc theo tháng và theo gói giải pháp ở đầu dashboard để tôi xem nhanh từng phần. Mặc định hiển thị tháng gần nhất.</div>
-            </div>
-            <div class="prompt-container">
-              <div class="prompt-header">
-                <span class="prompt-label">Prompt 2.4 - Ghim lên thanh bên</span>
-                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
-              </div>
-              <div class="prompt-content">Ghim dashboard này lên thanh bên của tôi để sáng nào tôi cũng mở xem nhanh.</div>
-            </div>
+            <h3 style="font-size: 16px; margin-bottom: 8px;">3.4. Bước 4: Kiểm chứng web app đọc ghi thẳng vào Google Sheets</h3>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div>Trên web app, <strong>thêm một đơn hàng mới</strong> rồi mở Google Sheets: sheet đơn hàng có thêm dòng mới.</div></li>
+              <li><span class="step-badge">2</span><div><strong>Sửa một con số trực tiếp trong Google Sheets</strong>, quay lại web app bấm tải lại trang: dashboard đổi theo.</div></li>
+              <li><span class="step-badge">3</span><div>Thử sửa, xóa một khách hàng trên web và đối chiếu lại trong Sheet.</div></li>
+              <li><span class="step-badge">4</span><div>Muốn thêm tính năng (lọc theo tháng, xuất báo cáo...) thì nói tiếp với Claude, Claude in Chrome sẽ sửa code và triển khai lại.</div></li>
+            </ul>
             <div class="callout callout-tip">
               <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-target"/></svg>Kết luận Demo 2</div>
-              Báo cáo gửi đi thì dùng <strong>file HTML</strong> (Demo 1). Màn hình theo dõi riêng hằng ngày thì dùng <strong>Artifact nối connector</strong> (Demo 2). Cùng một file Google Sheets, hai cách dùng cho hai mục đích.
+              Báo cáo gửi đi thì dùng <strong>file HTML</strong> (Demo 1): số liệu đứng yên đúng thời điểm chốt. Còn quản lý hằng ngày thì dùng <strong>web app Apps Script</strong> (Demo 2): vừa xem số liệu mới nhất, vừa thêm, sửa, xóa ngay trên web, mọi thứ lưu thẳng vào Google Sheets.
             </div>
           </div>
         </section>
@@ -3248,9 +3249,9 @@ Hãy tạo nó dưới dạng Artifact:
               </div>
               <div class="checklist-items">
                 <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-1"><span class="checklist-text">Hiểu MCP (Model Context Protocol) qua ẩn dụ "cổng USB Type-C của AI".</span></label>
-                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-2"><span class="checklist-text">Phân biệt dashboard "ảnh chụp" (file HTML) và dashboard "dữ liệu sống" (Artifact nối connector), biết khi nào dùng cái nào.</span></label>
-                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-3"><span class="checklist-text">Hiểu "sống" nghĩa là cập nhật khi mở và theo chu kỳ, không phải tức thì; biết đọc dòng "Cập nhật lúc ...".</span></label>
-                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-4"><span class="checklist-text">Biết giữ dashboard số liệu nội bộ ở chế độ riêng tư, không chia sẻ.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-2"><span class="checklist-text">Phân biệt dashboard "ảnh chụp" (file HTML) và "dữ liệu sống" (web app Apps Script đọc ghi thẳng vào Sheet), biết khi nào dùng cái nào.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-3"><span class="checklist-text">Biết tự bấm bước cấp quyền Apps Script, không để Claude bấm thay.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-4"><span class="checklist-text">Biết chọn đúng người được mở web app (chỉ mình mình hoặc trong công ty), không để "Anyone".</span></label>
               </div>
             </div>
             <div class="checklist-container" style="margin-top: 14px;">
@@ -3263,8 +3264,8 @@ Hãy tạo nó dưới dạng Artifact:
                 <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-10"><span class="checklist-text">Cài Claude in Chrome; Claude liệt kê được các tab đang mở và đọc được tin trên báo Lao động.</span></label>
                 <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-5"><span class="checklist-text">Kết nối thành công Google Drive và Gmail; chạy được trợ lý phân loại hòm thư.</span></label>
                 <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-6"><span class="checklist-text">Sản phẩm 1: 01 file báo cáo kinh doanh tháng dạng HTML, có nhận định và nút In / Lưu PDF.</span></label>
-                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-7"><span class="checklist-text">Sản phẩm 2: 01 dashboard điều hành Artifact tự cập nhật theo Google Sheets, có khu vực "Cần chú ý hôm nay".</span></label>
-                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-8"><span class="checklist-text">Đã ghim dashboard lên thanh bên để mở hằng ngày.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-7"><span class="checklist-text">Sản phẩm 2: 01 web app Apps Script thêm, sửa, xóa danh mục, đơn hàng, khách hàng, có dashboard thống kê, dữ liệu lưu thẳng vào Google Sheets.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b3-chk-8"><span class="checklist-text">Thêm thử 1 đơn hàng trên web app và thấy dòng mới xuất hiện trong Google Sheets.</span></label>
               </div>
             </div>
           </div>
@@ -3272,7 +3273,7 @@ Hãy tạo nó dưới dạng Artifact:
           <div class="card-panel">
             <h3 style="font-size: 16px; margin-bottom: 8px;">4.2. Cầu nối sang Buổi 4: Cho Claude xuống làm việc trên máy tính</h3>
             <ul class="steps-list">
-              <li><span class="step-badge">1</span><div><strong>Thành tựu hôm nay:</strong> Claude đọc thẳng dữ liệu trên Gmail, Google Drive, Google Sheets; anh chị có báo cáo tháng để gửi đi và dashboard sống để theo dõi riêng.</div></li>
+              <li><span class="step-badge">1</span><div><strong>Thành tựu hôm nay:</strong> Claude đọc thẳng dữ liệu trên Gmail, Google Drive, Google Sheets; anh chị có báo cáo tháng để gửi đi và web app quản lý bán hàng kết nối thẳng Google Sheets.</div></li>
               <li><span class="step-badge">2</span><div><strong>Bài toán mới:</strong> nếu công ty có hàng trăm file Word, hợp đồng, bảng kê nằm trong ổ C, ổ D, không thể đưa hết lên Drive thì sao?</div></li>
               <li><span class="step-badge">3</span><div><strong>Buổi 4:</strong> cho Claude làm việc trực tiếp với thư mục trên máy tính bằng <strong>Claude Code Desktop</strong>: tự mở từng file, đối chiếu số liệu, tạo file mới và sắp xếp thư mục ngăn nắp.</div></li>
             </ul>
@@ -3298,6 +3299,68 @@ Hãy tạo nó dưới dạng Artifact:
             <span><svg class="icon inline-icon icon-brand"><use href="#icon-gift"/></svg><strong>Sản phẩm cầm về:</strong> 01 cây thư mục chuẩn 3 ngăn (<code>...</code>, <code>...</code>, <code>...</code>) + thư mục ngầm <code>.claude/</code> + 01 file <code>CLAUDE.md</code> + 02 biên bản nghiệm thu Word (Dệt may Nam Định &amp; An Phú) trong <code>.../</code>.</span>
           </div>
         </div>
+
+        <section class="content-section" id="b4-khoi-dong">
+          <div class="section-header">
+            <span class="section-badge">ÔN TẬP</span>
+            <h2 class="section-title">Ôn lại Buổi 3: kết nối NotebookLM với Claude bằng MCP cộng đồng</h2>
+          </div>
+
+          <div class="card-panel">
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Ôn lại MCP đã học ở Buổi 3: ngoài các connector có sẵn (Google Drive, Gmail...), cộng đồng còn viết rất nhiều MCP để nối Claude với công cụ khác. Ví dụ: kết nối <strong>NotebookLM</strong> để Claude liệt kê notebook, thêm nguồn tài liệu, hỏi đáp trên notebook, tạo audio overview... Phần này cho Claude tự tìm, tự đánh giá và tự cài một MCP như vậy.</p>
+            <div class="callout callout-warn">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-alert-triangle"/></svg>MCP cộng đồng là công cụ không chính thức</div>
+              <p>MCP NotebookLM dùng trong bài (<code>jacob-bd/gemini-notebook-mcp-cli</code>) do cộng đồng viết, đăng nhập bằng cách lấy cookie Google từ trình duyệt và gọi các API nội bộ chưa công bố của Google. Tác giả ghi rõ có thể không phù hợp điều khoản của Google, dùng cho mục đích cá nhân, tự chịu rủi ro.</p>
+              <p>Nên thử với tài khoản Google cá nhân, không dùng tài khoản chứa dữ liệu nhạy cảm của công ty. Bước đăng nhập Google anh chị tự làm.</p>
+            </div>
+          </div>
+
+          <div class="card-panel" id="b4-kd-1">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">Bước 1: Nhờ Claude tìm MCP được cộng đồng dùng nhiều</h3>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Ôn tập 1 - Tìm MCP NotebookLM trên GitHub</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Hiện tôi cần kết nối notebooklm với claude của tôi, research trên github cho tôi xem có mcp nào cộng đồng dùng nhiều và đánh giá cao không nhé</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude tìm trên GitHub và so sánh các MCP NotebookLM theo số sao, mức cập nhật gần đây, cách cài đặt và mức độ rủi ro.</p>
+          </div>
+
+          <div class="card-panel" id="b4-kd-2">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">Bước 2: Nhờ Claude kiểm tra một repo cụ thể</h3>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Ôn tập 2 - Kiểm tra repo trước khi cài</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">https://github.com/jacob-bd/gemini-notebook-mcp-cli
+check thử cái này xem được ko</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude đọc trang GitHub và báo lại: công cụ làm được gì, cài thế nào, đăng nhập Google ra sao, có cảnh báo gì. Đây là thói quen tốt: <strong>luôn cho Claude kiểm tra trước khi cài</strong> bất kỳ công cụ cộng đồng nào.</p>
+          </div>
+
+          <div class="card-panel" id="b4-kd-3">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">Bước 3: Để Claude tự cài và kết nối</h3>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Ôn tập 3 - Claude tự chạy lệnh cài đặt</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">ok vậy tôi dùng cái trên nhé. Bạn sẽ tự chạy lệnh hết cho tôi nhé</div>
+            </div>
+            <ul class="steps-list" style="margin-top: 12px;">
+              <li><span class="step-badge">1</span><div>Claude tự chạy lệnh cài công cụ (cài thêm <code>uv</code> nếu máy chưa có). Khi Claude xin phép chạy lệnh, đọc qua rồi bấm cho phép.</div></li>
+              <li><span class="step-badge">2</span><div>Tới bước đăng nhập, công cụ mở một cửa sổ trình duyệt riêng: <strong>anh chị tự đăng nhập Google</strong>.</div></li>
+              <li><span class="step-badge">3</span><div>Claude cấu hình kết nối MCP vào Claude. Làm theo hướng dẫn của Claude nếu cần khởi động lại app.</div></li>
+              <li><span class="step-badge">4</span><div>Thử ngay: <em>"Liệt kê các notebook NotebookLM của tôi"</em>.</div></li>
+            </ul>
+            <div class="callout callout-tip">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lightbulb"/></svg>Ghi nhớ</div>
+              MCP này có rất nhiều công cụ nên chiếm nhiều bộ nhớ ngữ cảnh của Claude. Khi không dùng NotebookLM thì tắt nó đi cho Claude làm việc nhẹ hơn.
+            </div>
+          </div>
+        </section>
 
         <section class="content-section" id="b4-phan-0">
           <div class="section-header">
