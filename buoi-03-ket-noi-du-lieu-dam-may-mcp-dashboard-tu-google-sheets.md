@@ -7,7 +7,7 @@
 | **0** | **Giải mã MCP, Claude in Chrome & kết nối Google Drive, Gmail:**<br>- MCP là gì? Ẩn dụ "cổng USB vạn năng" của AI.<br>- Cài Claude in Chrome, kết nối Google Drive & Gmail trong app Claude.<br>- File chỉ dẫn toàn cục: dặn Claude quy tắc làm việc một lần.<br>- Claude in Chrome: liệt kê tab, đọc báo giúp.<br>- Gmail: phân loại hòm thư 7 ngày gần nhất. | 40 phút |
 | **1** | **Ảnh chụp và dữ liệu sống:**<br>- 2 loại dashboard, 2 mục đích.<br>- Nhờ Claude sao chép file dữ liệu mẫu về Drive. | 10 phút |
 | **2** | **DEMO 1: Báo cáo kinh doanh tháng bằng file HTML ("ảnh chụp"):**<br>- Đọc dữ liệu, tạo báo cáo tháng 3/2026, tinh chỉnh, thử nghiệm "ảnh chụp". | 45 phút |
-| **3** | **DEMO 2: Dashboard điều hành tự cập nhật bằng Artifact:**<br>- Tạo dashboard sống, kiểm chứng, thêm cảnh báo, bộ lọc, ghim lên thanh bên. | 40 phút |
+| **3** | **DEMO 2: Web app quản lý bán hàng trên Apps Script (Claude in Chrome tự thao tác):**<br>- Kiểm tra Claude in Chrome, mở sheet, giao việc dựng web app thêm sửa xóa kèm dashboard, kiểm chứng đọc ghi vào Sheet. | 40 phút |
 | **4** | **Nghiệm thu Buổi 3 & Cầu nối sang Buổi 4** | 15 phút |
 
 ---
@@ -161,16 +161,16 @@ Hãy quét các email tôi nhận được trong 7 ngày gần nhất trong hòm
 
 Khi Claude đã "nhìn thẳng" được vào Google Sheets qua connector, có 2 cách biến bảng số liệu thành dashboard. Hiểu đúng sự khác nhau sẽ biết chọn cách nào cho từng việc:
 
-| Tiêu chí | Demo 1 - File HTML: "ảnh chụp" | Demo 2 - Artifact: "dữ liệu sống" |
+| Tiêu chí | Demo 1 - File HTML: "ảnh chụp" | Demo 2 - Web app Apps Script: "dữ liệu sống" |
 |---|---|---|
-| **Lấy số liệu** | Đọc Sheet **1 lần** lúc tạo, rồi "chép" số vào trong file | Đọc Sheet qua connector **mỗi lần mở** và tự làm mới định kỳ |
-| **Sửa Sheet** | File **không đổi**. Muốn số mới phải nhờ Claude làm lại | Dashboard **tự đổi theo**, không cần nhờ ai làm lại |
-| **Hợp cho** | Báo cáo **chốt kỳ** (tháng, quý), gửi sếp, gửi khách, in PDF | Chủ doanh nghiệp **theo dõi hằng ngày**, xem riêng, không chia sẻ |
+| **Lấy số liệu** | Đọc Sheet **1 lần** lúc tạo, rồi "chép" số vào trong file | Đọc thẳng Sheet **mỗi lần mở** trang web |
+| **Sửa Sheet** | File **không đổi**. Muốn số mới phải nhờ Claude làm lại | Web app **tự đổi theo**; thêm, sửa, xóa trên web là **ghi thẳng vào Sheet** |
+| **Hợp cho** | Báo cáo **chốt kỳ** (tháng, quý), gửi sếp, gửi khách, in PDF | **Quản lý hằng ngày** danh mục, đơn hàng, khách hàng, kèm dashboard thống kê |
 
 > [!NOTE]
 > **Ví von dễ nhớ:**
 > - File HTML giống **tấm ảnh chụp** cửa hàng lúc 9 giờ sáng: đẹp, gửi đi được, nhưng 10 giờ có khách mới thì ảnh vẫn là cảnh lúc 9 giờ.
-> - Dashboard Artifact nối connector giống **màn hình camera**: mở lên là thấy cửa hàng ngay lúc này.
+> - Web app Apps Script giống **màn hình camera kiêm quầy thu ngân**: mở lên là thấy cửa hàng ngay lúc này, và nhập đơn được luôn tại chỗ.
 
 ---
 
@@ -284,80 +284,80 @@ Tôi vừa sửa số liệu trong Google Sheets. Hãy đọc lại file và c�
 
 ---
 
-## PHẦN 3. DEMO 2: DASHBOARD ĐIỀU HÀNH TỰ CẬP NHẬT CHO CHỦ DOANH NGHIỆP (ARTIFACT)
+## PHẦN 3. DEMO 2: WEB APP QUẢN LÝ BÁN HÀNG TRÊN APPS SCRIPT, CLAUDE IN CHROME TỰ THAO TÁC
+
+**Bài toán:** chủ doanh nghiệp đang theo dõi doanh thu, đơn hàng, khách hàng trên một file Google Sheets nhiều sheet, thao tác trực tiếp trên bảng rất khó xem. Muốn có một trang web riêng để **thêm, sửa, xóa** danh mục, đơn hàng, khách hàng và có **dashboard thống kê nhanh**, dữ liệu vẫn lưu thẳng vào Google Sheets.
 
 > [!NOTE]
-> **Dashboard riêng của chủ doanh nghiệp, không chia sẻ:**
-> - Artifact được tạo ở chế độ **riêng tư**: chỉ anh chị mở được. Mỗi lần mở, nó đọc Google Sheets bằng chính connector và tài khoản Google của anh chị.
-> - Lần đầu mở, trang sẽ hỏi cho phép dùng connector Google Drive: bấm **Cho phép**. Không bấm chia sẻ dashboard này cho người khác, vì đây là số liệu kinh doanh nội bộ.
-
-### 3.1. Bước 1: Tạo dashboard sống
-
-**Bài toán:** chủ doanh nghiệp muốn sáng nào mở lên cũng thấy ngay tình hình kinh doanh mới nhất, không phải chờ ai làm báo cáo.
-
-<details>
-<summary><b>Thao tác thực hành: Dashboard điều hành tự cập nhật (Prompt 2.1)</b> (bấm để mở)</summary>
-
-```text
-Bây giờ tôi muốn 1 dashboard điều hành, tự cập nhật theo Google Sheets mà tôi không phải nhờ làm lại.
-Hãy tạo nó dưới dạng Artifact:
-- Mỗi lần mở, đọc trực tiếp file Sheets trên qua connector Google Drive.
-- Khi đang mở thì tự làm mới số liệu và hiện dòng "Cập nhật lúc ...".
-```
-
-**Quan sát:** Claude dựng trang dashboard và gửi link Artifact. Mở link, bấm **Cho phép** khi trang hỏi dùng connector Google Drive, số liệu hiện ra cùng dòng "Cập nhật lúc ...".
-</details>
-
----
-
-### 3.2. Bước 2: Kiểm chứng "dữ liệu sống"
-
-1. Mở Google Sheets, thêm một dòng đơn mới vào cuối sheet `DonHang` (ví dụ mã `DH-051`, tháng 3/2026, trạng thái **Chờ duyệt**, thành tiền 60.000.000).
-2. Quay lại dashboard, chờ một lúc (hoặc tải lại trang): tổng doanh thu, số đơn "Chờ duyệt" và dòng "Cập nhật lúc ..." **tự đổi theo**.
-3. So với Demo 1: không cần gõ thêm câu lệnh nào.
+> **Vì sao dùng Apps Script:**
+> - **Google Apps Script** là công cụ có sẵn trong Google Sheets, cho phép dựng một trang web **đọc và ghi thẳng vào Sheet**: mở web là thấy số liệu mới nhất, nhập trên web là Sheet có dòng mới.
+> - Anh chị không cần biết code: **Claude in Chrome** sẽ tự mở Apps Script, viết code, lưu và triển khai thành web app.
 
 > [!WARNING]
-> **"Sống" nghĩa là gì cho đúng:** Dashboard cập nhật khi **mở hoặc tải lại trang**, và khi đang mở thì **hỏi lại theo chu kỳ** do Claude cài sẵn (muốn đổi thì nói, ví dụ "làm mới mỗi 1 phút"). Không phải số nhảy ngay tức thì từng giây. Dòng "Cập nhật lúc ..." cho biết số liệu mới tới thời điểm nào.
+> **Hai bước anh chị tự làm, không để Claude làm thay:**
+> - **Cấp quyền (Authorize / Allow):** lần đầu chạy, Google hỏi cho phép script truy cập tài khoản. Claude sẽ dừng lại, anh chị tự đọc và tự bấm.
+> - **Ai được mở web app:** đây là số liệu kinh doanh nội bộ, nên chọn chỉ mình mình hoặc trong công ty. Không chọn "Anyone" (ai có link cũng xem và sửa được).
 
----
-
-### 3.3. Bước 3: Thêm khu vực "Cần chú ý hôm nay"
-
-Chủ doanh nghiệp không cần nhìn mọi con số, mà cần biết **việc gì đang có vấn đề**. Gõ tiếp:
+### 3.1. Bước 1: Kiểm tra Claude in Chrome
 
 <details>
-<summary><b>Thao tác thực hành: Cảnh báo việc cần xử lý (Prompt 2.2)</b> (bấm để mở)</summary>
+<summary><b>Thao tác thực hành: Kiểm tra Claude in Chrome (Prompt 2.1)</b> (bấm để mở)</summary>
 
 ```text
-Thêm khu vực "Cần chú ý hôm nay" ở đầu dashboard:
-- Các đơn đang "Chờ duyệt", kèm tổng số tiền đang chờ duyệt.
-- Các đơn có ngày hẹn bàn giao trong 7 ngày tới mà chưa bàn giao.
-- Tô đỏ những đơn đã quá ngày hẹn bàn giao mà chưa bàn giao.
+Bạn có dùng được Claude in chrome trên máy tôi không?
 ```
+
+**Quan sát:** Claude xác nhận đã kết nối được tiện ích Claude in Chrome. Nếu chưa được: kiểm tra Chrome đang mở, tiện ích đã cài và đăng nhập đúng tài khoản Claude (như mục 0.3).
 </details>
 
 ---
 
-### 3.4. Bước 4: Bộ lọc và ghim để mở hằng ngày
+### 3.2. Bước 2: Mở file Google Sheets xem thử
+
+Thay `{Dán link gg sheets}` bằng link file Google Sheets tổng hợp doanh thu của anh chị.
 
 <details>
-<summary><b>Thao tác thực hành: Bộ lọc và ghim lên thanh bên (Prompt 2.3, 2.4)</b> (bấm để mở)</summary>
-
-**Prompt 2.3 - Bộ lọc theo tháng và gói giải pháp:**
+<summary><b>Thao tác thực hành: Mở sheet xem thử (Prompt 2.2)</b> (bấm để mở)</summary>
 
 ```text
-Thêm bộ lọc theo tháng và theo gói giải pháp ở đầu dashboard để tôi xem nhanh từng phần. Mặc định hiển thị tháng gần nhất.
+{Dán link gg sheets}
+mở sheet này xem thử cho tôi nhé
 ```
 
-**Prompt 2.4 - Ghim lên thanh bên:**
-
-```text
-Ghim dashboard này lên thanh bên của tôi để sáng nào tôi cũng mở xem nhanh.
-```
+**Quan sát:** Claude in Chrome mở file trong một tab mới của Chrome và tóm tắt các sheet, các cột dữ liệu đang có. Lần đầu vào trang Google Sheets, tiện ích có thể hỏi xin phép: bấm cho phép.
 </details>
+
+---
+
+### 3.3. Bước 3: Giao việc dựng web app trên Apps Script
+
+<details>
+<summary><b>Thao tác thực hành: Dựng web app thêm sửa xóa và dashboard (Prompt 2.3)</b> (bấm để mở)</summary>
+
+```text
+Đây là file excel tổng hợp doanh thu của tôi, hiện tôi chỉ thao tác trên này thì hơi khó xem, tôi biết là có thể dùng AppsScript để làm web và kết nối với gg sheet để lưu luôn. Hãy dùng claude in chrome và tự thao tác với AppsScript rồi tự tạo code đưa lên cho tôi nhé.
+Tôi muốn trên web tôi sẽ thêm sửa xóa được danh mục, đơn hàng, khách hàng luôn,... Có dashboard để xem nhanh thống kê luôn.
+Có gì thắc mắc thì hỏi lại tôi cho chắc nhé
+```
+
+**Quan sát:**
+1. Claude **hỏi lại vài câu** cho chắc (ví dụ: sheet nào là danh mục, đơn hàng, khách hàng; dashboard cần chỉ số gì; ai được mở web app). Trả lời ngắn gọn như nói với đồng nghiệp.
+2. Claude in Chrome tự mở **Tiện ích mở rộng -> Apps Script** từ file Sheets, viết code, lưu lại rồi vào **Triển khai -> Ứng dụng web**. Anh chị chỉ cần theo dõi trên Chrome.
+3. Tới bước **cấp quyền**, Claude dừng lại: anh chị tự bấm cho phép.
+4. Claude gửi **link web app**. Mở link: có trang dashboard thống kê và các trang quản lý danh mục, đơn hàng, khách hàng.
+</details>
+
+---
+
+### 3.4. Bước 4: Kiểm chứng web app đọc ghi thẳng vào Google Sheets
+
+1. Trên web app, **thêm một đơn hàng mới** rồi mở Google Sheets: sheet đơn hàng có thêm dòng mới.
+2. **Sửa một con số trực tiếp trong Google Sheets**, quay lại web app bấm tải lại trang: dashboard đổi theo.
+3. Thử sửa, xóa một khách hàng trên web và đối chiếu lại trong Sheet.
+4. Muốn thêm tính năng (lọc theo tháng, xuất báo cáo...) thì nói tiếp với Claude, Claude in Chrome sẽ sửa code và triển khai lại.
 
 > [!TIP]
-> **Kết luận Demo 2:** Báo cáo gửi đi thì dùng **file HTML** (Demo 1). Màn hình theo dõi riêng hằng ngày thì dùng **Artifact nối connector** (Demo 2). Cùng một file Google Sheets, hai cách dùng cho hai mục đích.
+> **Kết luận Demo 2:** Báo cáo gửi đi thì dùng **file HTML** (Demo 1): số liệu đứng yên đúng thời điểm chốt. Còn quản lý hằng ngày thì dùng **web app Apps Script** (Demo 2): vừa xem số liệu mới nhất, vừa thêm, sửa, xóa ngay trên web, mọi thứ lưu thẳng vào Google Sheets.
 
 ---
 
@@ -367,22 +367,22 @@ Ghim dashboard này lên thanh bên của tôi để sáng nào tôi cũng mở 
 
 #### Về hiểu biết bản chất:
 - [ ] Hiểu MCP (Model Context Protocol) qua ẩn dụ "cổng USB Type-C của AI".
-- [ ] Phân biệt dashboard "ảnh chụp" (file HTML) và dashboard "dữ liệu sống" (Artifact nối connector), biết khi nào dùng cái nào.
-- [ ] Hiểu "sống" nghĩa là cập nhật khi mở và theo chu kỳ, không phải tức thì; biết đọc dòng "Cập nhật lúc ...".
-- [ ] Biết giữ dashboard số liệu nội bộ ở chế độ riêng tư, không chia sẻ.
+- [ ] Phân biệt dashboard "ảnh chụp" (file HTML) và "dữ liệu sống" (web app Apps Script đọc ghi thẳng vào Sheet), biết khi nào dùng cái nào.
+- [ ] Biết tự bấm bước cấp quyền Apps Script, không để Claude bấm thay.
+- [ ] Biết chọn đúng người được mở web app (chỉ mình mình hoặc trong công ty), không để "Anyone".
 
 #### Về sản phẩm số mang về:
 - [ ] Có file chỉ dẫn toàn cục với 4 quy tắc làm việc riêng của mình.
 - [ ] Cài Claude in Chrome; Claude liệt kê được các tab đang mở và đọc được tin trên báo Lao động.
 - [ ] Kết nối thành công Google Drive và Gmail; chạy được trợ lý phân loại hòm thư.
 - [ ] **Sản phẩm 1:** 01 file báo cáo kinh doanh tháng dạng HTML, có nhận định và nút In / Lưu PDF.
-- [ ] **Sản phẩm 2:** 01 dashboard điều hành Artifact tự cập nhật theo Google Sheets, có khu vực "Cần chú ý hôm nay".
-- [ ] Đã ghim dashboard lên thanh bên để mở hằng ngày.
+- [ ] **Sản phẩm 2:** 01 web app Apps Script thêm, sửa, xóa danh mục, đơn hàng, khách hàng, có dashboard thống kê, dữ liệu lưu thẳng vào Google Sheets.
+- [ ] Thêm thử 1 đơn hàng trên web app và thấy dòng mới xuất hiện trong Google Sheets.
 
 ---
 
 ### 4.2. Cầu nối sang Buổi 4: Cho Claude xuống làm việc trên máy tính
 
-- **Thành tựu hôm nay:** Claude đọc thẳng dữ liệu trên Gmail, Google Drive, Google Sheets; anh chị có báo cáo tháng để gửi đi và dashboard sống để theo dõi riêng.
+- **Thành tựu hôm nay:** Claude đọc thẳng dữ liệu trên Gmail, Google Drive, Google Sheets; anh chị có báo cáo tháng để gửi đi và web app quản lý bán hàng kết nối thẳng Google Sheets.
 - **Bài toán mới:** nếu công ty có hàng trăm file Word, hợp đồng, bảng kê nằm trong ổ C, ổ D, không thể đưa hết lên Drive thì sao?
 - **Buổi 4:** cho Claude làm việc trực tiếp với thư mục trên máy tính bằng **Claude Code Desktop**: tự mở từng file, đối chiếu số liệu, tạo file mới và sắp xếp thư mục ngăn nắp.
