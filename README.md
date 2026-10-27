@@ -29,7 +29,7 @@ Chi tiết đầy đủ: xem [`docs/khung-chuong-trinh-6-buoi.md`](docs/khung-ch
 claude-ai/
 ├── buoi-01-thiet-lap-bao-mat-va-dung-tro-ly-claude-chuyen-viec.md        # Giáo án buổi 01
 ├── buoi-02-tao-cong-cu-lam-viec-tuong-tac-bang-claude-artifacts.md       # Giáo án buổi 02
-├── buoi-03-ket-noi-du-lieu-dam-may-mcp-tu-dong-hoa-google-sheets-web-app.md   # Giáo án buổi 03
+├── buoi-03-ket-noi-du-lieu-dam-may-mcp-dashboard-tu-google-sheets.md     # Giáo án buổi 03
 ├── buoi-04-claude-code-desktop-chuan-hoa-khong-gian-lam-viec.md          # Giáo án buổi 04
 ├── workbook.html                   # Workbook tương tác buổi 01 (mở bằng trình duyệt)
 ├── slides/

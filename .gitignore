@@ -22,6 +22,7 @@ Thumbs.db
 # Vercel deploy (chỉ dùng local, không đưa vào repo học viên)
 .vercel
 vercel.json
+.vercelignore
 docs/deployment-guide.md
 
 # Agent & Claude configurations / skills
