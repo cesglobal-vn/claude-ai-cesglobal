@@ -28,7 +28,7 @@
     ↓
 [Buổi 5] Đóng gói bí quyết thành Skill & Phân vai Agent tự hành (Skills & Subagents)
     ↓
-[Buổi 6] Ghép nối cỗ máy tự động hóa hoàn chỉnh cho công việc (Orchestration & CLAUDE.md)
+[Buổi 6] Làm video giới thiệu & landing page doanh nghiệp (Skill làm video + Vercel + Apps Script)
 ```
 
 ---
@@ -100,16 +100,16 @@
 
 ---
 
-### BUỔI 6: XÂY DỰNG QUY TRÌNH LÀM VIỆC TỰ ĐỘNG HÓA HOÀN CHỈNH
-- **Trọng tâm:** Ghép nối tất cả các mắt xích đã học: `CLAUDE.md` (Bộ não ngữ cảnh) + MCP (Kết nối dữ liệu) + Agent/Skill (Xử lý nghiệp vụ) + Artifacts (Trực quan hóa) thành một hệ thống tự động hoàn chỉnh cho công việc thật.
+### BUỔI 6: LÀM VIDEO GIỚI THIỆU & LANDING PAGE DOANH NGHIỆP BẰNG CLAUDE
+- **Trọng tâm:** Dùng Claude Code (Skill cấp project + trình duyệt tích hợp / Claude in Chrome) để tự làm 2 sản phẩm truyền thông cho công ty: video giới thiệu và landing page thu thập khách hàng.
 - **Thời lượng:** 150 phút
-- **Sản phẩm đầu ra:** **01 Quy trình làm việc tự động hóa End-to-End** áp dụng trực tiếp vào công việc hàng ngày của học viên.
+- **Sản phẩm đầu ra:** **01 Video giới thiệu công ty 45 giây** (giọng đọc AI, nhạc, hiệu ứng) + **01 Landing page chạy trên Vercel** có form đăng ký tự đổ dữ liệu về Google Sheets.
 - **Nội dung:**
-  1. Bức tranh phối hợp tổng thể: Sự kiện kích hoạt -> Gọi dữ liệu -> Agent chạy Skill -> Xuất sản phẩm cuối.
-  2. Xây dựng file `CLAUDE.md` chuẩn cho doanh nghiệp/cá nhân làm nền ngữ cảnh tự hành.
-  3. Lắp ráp quy trình End-to-End: Kết hợp MCP dữ liệu + Agent + xuất kết quả trực quan (Artifact/Báo cáo).
-  4. Thực hành tổng kết: Hoàn thiện quy trình tự động hóa cá nhân cho công việc thật.
-  5. Demo tốt nghiệp, cấp chứng nhận điện tử CES Global và định hướng tự duy trì hệ thống AI.
+  1. Bản chất video làm bằng code: chuỗi khung hình, Chrome headless chụp từng khung, FFmpeg ghép video và trộn âm thanh.
+  2. Kiểm tra độ an toàn và cài bộ Skill làm video (Lemo-Opuscar) ở cấp project; tạo giọng đọc bằng Google AI Studio.
+  3. Cấu trúc landing page, research thiết kế và tone màu theo ngành trên Dribbble, Pinterest.
+  4. Đưa website lên mạng bằng Vercel (lưu ý gói Hobby chỉ cho mục đích phi thương mại).
+  5. Nối form đăng ký về Google Sheets bằng Apps Script; nghiệm thu và tổng kết khóa học.
 
 ---
 
@@ -122,4 +122,4 @@
 | **3** | Kết nối Claude với Dữ liệu công việc | Web / Connectors | 1 Báo cáo tự động hóa đọc từ Google Drive/Sheets |
 | **4** | Cho Claude làm việc trên máy tính | Claude Code (Local) | Môi trường Claude Code hoàn chỉnh + Xử lý file hàng loạt |
 | **5** | Tạo Skill & Agent chuyên vai | Claude Code / Skills | 1 Skill quy trình chuẩn (SOP) + 1 Agent chuyên trách |
-| **6** | Xây dựng Quy trình tự động hóa | End-to-End Workflow | 1 Quy trình làm việc tự động khép kín (CLAUDE.md + Agent + Data) |
+| **6** | Làm video giới thiệu & landing page | Claude Code + Vercel + Apps Script | 1 Video giới thiệu 45 giây + 1 Landing page có form đổ về Google Sheets |

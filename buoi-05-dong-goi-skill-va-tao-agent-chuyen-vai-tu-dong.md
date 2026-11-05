@@ -17,7 +17,7 @@
 | **B** | **Agent & Subagent: Tuyển 2 nhân viên biên chế chính thức:**<br>- Ẩn dụ: "Một công ty thu nhỏ" (Nhân viên vs Trợ lý phụ phòng riêng).<br>- Tại sao cần ổ khóa `tools:` bằng sắt? Chống prompt injection ngoài mạng.<br>- Tuyển 2 nhân viên bằng tiếng Việt tự nhiên không cần nhớ code. | 35 phút | LT 15'<br>HV 20' | **Bước 4:** Tuyển `nghien-cuu-doi-thu.md` (Chỉ đọc & tra web, khóa quyền ghi sửa file).<br>**Bước 5:** Tuyển `chuyen-vien-de-xuat.md` (Chỉ đọc & tạo file, không ra mạng). |
 | | **Nghỉ giải lao & Hỗ trợ kỹ thuật** | 10 phút | Giải lao | Trợ giảng kiểm tra từng máy: đã có đủ file Skill và 2 file Agent. |
 | **C** | **Phân biệt cốt tử Skill vs Agent & Mô hình phối hợp thực chiến:**<br>- Cuốn công thức (*Làm thế nào?*) vs Bản hợp đồng có chìa khóa (*Ai làm & Được đụng vào đâu?*).<br>- Bảng ma trận 3 tầng: `CLAUDE.md` - `SKILL` - `AGENT`.<br>- Phối hợp: Nối chuỗi (Tuần tự) & Chạy song song (Parallel). | 35 phút | LT 10'<br>HV 25' | **Bước 6:** Phối hợp Nối chuỗi: Nghiên cứu đối thủ $\rightarrow$ Lập đề xuất chiến lược.<br>**Bước 7:** Phối hợp Chạy song song: Nghiên cứu 2 thị trường cùng lúc. |
-| **D** | **Kinh tế học Token, Thước đo chọn việc & Bệ phóng sang Buổi 6:**<br>- Token là gì? Tiếng Việt có dấu tốn token ra sao?<br>- Khám phá lệnh `/context` (kim xăng) và `/compact` (dọn dẹp bộ nhớ).<br>- Thước đo 3 mức giao việc chuẩn bị cho Capstone Buổi 6.<br>- Nghiệm thu sản phẩm mang về. | 15 phút | Đúc kết | Bảng checklist sản phẩm + Thước đo giao việc thực tế. |
+| **D** | **Kinh tế học Token, Thước đo chọn việc & Bệ phóng sang Buổi 6:**<br>- Token là gì? Tiếng Việt có dấu tốn token ra sao?<br>- Khám phá lệnh `/context` (kim xăng) và `/compact` (dọn dẹp bộ nhớ).<br>- Thước đo 3 mức giao việc để tự chọn công cụ sau khóa học.<br>- Nghiệm thu sản phẩm mang về. | 15 phút | Đúc kết | Bảng checklist sản phẩm + Thước đo giao việc thực tế. |
 
 ---
 
@@ -420,7 +420,7 @@ MỨC 2: Việc phụ nặng, cần phòng riêng hoặc cần quy trình chuẩ
 
 MỨC 3: Dự án lớn chuỗi giá trị khép kín (End-to-End Workflow)
 └──► PHỐI HỢP TOÀN DIỆN: CLAUDE.md + Đa Agent + Skill + Dữ liệu MCP 
-     (Đây chính là ĐỈNH CAO của BUỔI 6 - CAPSTONE PROJECT!)
+     (Cấp độ anh chị hướng tới khi tự vận hành sau khóa học)
 ```
 
 ---

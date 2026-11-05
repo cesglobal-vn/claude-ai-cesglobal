@@ -464,14 +464,14 @@ Giả sử sau khi đàm phán, đối tác gửi lại bản hợp đồng đã
 
 - Nhìn xuống góc dưới bên phải Project có khối **Scheduled**.
 - Đây là tính năng hẹn giờ để Claude tự động làm việc định kỳ (ví dụ: đúng 17h thứ Sáu tự tổng hợp danh sách các deal báo giá hoặc các hợp đồng cần thẩm tra trong tuần).
-- Hôm nay ta nhận diện vị trí tính năng này; Buổi 6 sẽ kết hợp cùng công cụ tự động hóa trên máy tính để tạo cỗ máy tự chạy hoàn chỉnh.
+- Hôm nay ta nhận diện vị trí tính năng này; khi đã có Skill và Agent (Buổi 5), anh chị có thể hẹn giờ cho chúng tự chạy định kỳ.
 
 <details>
 <summary><b>Thao tác thực hành: Quan sát khối Scheduled</b> (bấm để mở)</summary>
 
 1. Nhìn xuống khối dưới cùng ở cột bên phải Project: **Scheduled** (có dấu `+`).
 2. Bấm vào dấu `+` để xem bảng giao diện tạo lịch định kỳ.
-3. Ghi nhận tính năng này để sẵn sàng cho bài toán tự động hóa hoàn chỉnh ở Buổi 6.
+3. Ghi nhận tính năng này để sẵn sàng cho các bài toán tự động hóa định kỳ sau này.
 </details>
 
 ---
@@ -491,6 +491,6 @@ Tự tay làm được:
 Hiểu để dùng sau:
 - [ ] Vì sao không nên dùng Chat thông thường cho việc dài hạn mà phải dùng Claude Projects.
 - [ ] Năng lực đối chiếu chéo nhiều file tài liệu (PDF, Word) cùng lúc trong Context.
-- [ ] Nhận biết vị trí tính năng Scheduled Tasks để chuẩn bị cho tự động hóa ở Buổi 6.
+- [ ] Nhận biết vị trí tính năng Scheduled Tasks để chuẩn bị cho tự động hóa định kỳ.
 
 Thiếu mục nào thì kéo lên làm lại đúng bước đó. Buổi sau ta sẽ **biến ý tưởng công việc thành công cụ mini, bảng tính tự động và ứng dụng tương tác chạy được ngay trên trình duyệt bằng Claude Artifacts**.
