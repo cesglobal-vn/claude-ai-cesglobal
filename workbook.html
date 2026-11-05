@@ -1574,6 +1574,7 @@
                 <li class="toc-item"><a href="#b5-phan-c">C. Skill vs Agent &amp; phối hợp</a></li>
                 <li class="toc-item toc-sub"><a href="#b5-c-1">C.1. Bảng so sánh 3 tầng</a></li>
                 <li class="toc-item toc-sub"><a href="#b5-c-2">C.2. Nối chuỗi &amp; song song</a></li>
+                <li class="toc-item toc-sub"><a href="#b5-c-3">C.3. Agent cộng đồng cấp global</a></li>
                 <li class="toc-item"><a href="#b5-phan-d">D. Token, thước đo &amp; nghiệm thu</a></li>
                 <li class="toc-item toc-sub"><a href="#b5-d-2">D.2. Thước đo 3 mức</a></li>
                 <li class="toc-item toc-sub"><a href="#b5-d-3">D.3. Nghiệm thu Buổi 5</a></li>
@@ -3718,7 +3719,7 @@ Tải 5 file demo buổi 4 từ link trên về folder hiện tại cho tôi</di
             Dặn một lần, dùng mãi: đóng gói cách làm tài liệu chuẩn thương hiệu thành <strong>Skill</strong> trong <code>.claude/skills/</code>. Tuyển 2 "nhân viên biên chế" <strong>Agent</strong> có chùm chìa khóa công cụ riêng trong <code>.claude/agents/</code>, rồi điều phối họ phối hợp nối chuỗi và chạy song song. Môi trường: Claude Code Desktop (Local).
           </p>
           <div class="deliverable-box">
-            <span><svg class="icon inline-icon icon-brand"><use href="#icon-gift"/></svg><strong>Sản phẩm cầm về:</strong> 01 Skill <code>dong-goi-tai-lieu-chuan</code> (file Word chuẩn logo &amp; màu CES Global) + 01 tài liệu NovaTech tạo tự động bằng Skill + 02 Agent (<code>nghien-cuu-doi-thu</code>, <code>chuyen-vien-de-xuat</code>) + 02 file kết quả phối hợp dây chuyền trong <code>03_output/</code>.</span>
+            <span><svg class="icon inline-icon icon-brand"><use href="#icon-gift"/></svg><strong>Sản phẩm cầm về:</strong> 01 Skill <code>dong-goi-tai-lieu-chuan</code> (file Word chuẩn logo &amp; màu CES Global) + 01 tài liệu NovaTech tạo tự động bằng Skill + 02 Agent (nghiên cứu đối thủ, chuyên viên đề xuất) + 02 file kết quả phối hợp dây chuyền trong <code>03_output/</code>.</span>
           </div>
         </div>
 
@@ -3897,7 +3898,7 @@ description: Tự động đóng gói nội dung thành file Word (.docx) chuẩ
               <div class="dg-split"><span></span><span></span></div>
               <div class="dg-cols">
                 <div class="dg-node dg-accent-amber">
-                  <div class="dg-node-title">Phòng riêng số 1: <code>nghien-cuu-doi-thu</code></div>
+                  <div class="dg-node-title">Phòng riêng số 1: Agent nghiên cứu đối thủ</div>
                   <ul>
                     <li>Ra mạng tra cứu hàng trăm trang web</li>
                     <li>Chỉ gửi bản tóm tắt gọn gàng về</li>
@@ -3905,7 +3906,7 @@ description: Tự động đóng gói nội dung thành file Word (.docx) chuẩ
                   <span class="dg-tag dg-c-rose">Khóa tay: KHÔNG được sửa file</span>
                 </div>
                 <div class="dg-node dg-accent-emerald">
-                  <div class="dg-node-title">Phòng riêng số 2: <code>chuyen-vien-de-xuat</code></div>
+                  <div class="dg-node-title">Phòng riêng số 2: Agent chuyên viên đề xuất</div>
                   <ul>
                     <li>Đọc dữ liệu nội bộ, soạn đề xuất hành động</li>
                     <li>Lưu file vào <code>03_output/</code></li>
@@ -3949,50 +3950,44 @@ description: Tự động đóng gói nội dung thành file Word (.docx) chuẩ
           <div class="card-panel">
             <h3 id="b5-b-3" style="font-size: 16px; margin-bottom: 8px;">B.3. Tuyển 2 nhân viên biên chế bằng tiếng Việt tự nhiên</h3>
             <ul class="steps-list">
-              <li><span class="step-badge">1</span><div><strong><code>nghien-cuu-doi-thu</code>:</strong> chuyên Deep Research thị trường trên web. Cần ra mạng, nhưng <strong>khóa quyền ghi sửa file</strong>.</div></li>
-              <li><span class="step-badge">2</span><div><strong><code>chuyen-vien-de-xuat</code>:</strong> chuyên đọc dữ liệu nội bộ để lên phương án chiến lược. Cần quyền ghi file báo cáo, nhưng <strong>không cần ra mạng</strong>.</div></li>
+              <li><span class="step-badge">1</span><div><strong>Agent nghiên cứu đối thủ:</strong> chuyên Deep Research thị trường trên web. Cần ra mạng, nhưng <strong>khóa quyền ghi sửa file</strong>.</div></li>
+              <li><span class="step-badge">2</span><div><strong>Agent chuyên viên đề xuất:</strong> chuyên đọc dữ liệu nội bộ để lên phương án chiến lược. Cần quyền ghi file báo cáo, nhưng <strong>không cần ra mạng</strong>.</div></li>
             </ul>
             <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 6px; color: var(--brand-primary);">Bước 4: Tuyển Nhân viên 1 - Trợ lý Nghiên cứu đối thủ</h4>
             <div class="prompt-container">
               <div class="prompt-header">
-                <span class="prompt-label">Bước 4 - Tạo Agent nghien-cuu-doi-thu</span>
+                <span class="prompt-label">Bước 4 - Tạo agent nghiên cứu đối thủ</span>
                 <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
               </div>
-              <div class="prompt-content">Tạo cho tôi một agent mới, đặt tại đường dẫn: ".claude/agents/nghien-cuu-doi-thu.md" ngay trong thư mục làm việc này.
+              <div class="prompt-content">Tạo cho tôi một agent mới, agent nghiên cứu đối thủ , lưu tại thư mục làm việc này.
 
 Chỉ cấp cho trợ lý này các công cụ để đọc file, tìm kiếm file và tra cứu thông tin trên web. Tuyệt đối KHÔNG cấp công cụ chỉnh sửa hay tạo file mới.
 
-Trong file ghi rõ hướng dẫn nhiệm vụ:
-- Chuyên môn: Nghiên cứu thị trường và đối thủ cạnh tranh trong ngành phần mềm/công nghệ.
-- Phong cách: Khách quan, trung thực, trích dẫn rõ nguồn link và các số liệu cụ thể.
-- Giới hạn an toàn: Chỉ đọc và tra cứu thông tin, tuyệt đối không chỉnh sửa dữ liệu trên máy.</div>
+Trong file ghi hướng dẫn cho trợ lý này: nhiệm vụ là nghiên cứu đối thủ trong ngành của tôi, chỉ đọc và tra cứu thông tin trên mạng, tuyệt đối không chỉnh sửa file của tôi, và luôn trích dẫn rõ nguồn thông tin kèm các con số đối chiếu cụ thể.</div>
             </div>
-            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Mở file xem thử:</strong> Claude tạo <code>.claude/agents/nghien-cuu-doi-thu.md</code>. Nhìn phần <code>tools:</code> chỉ có quyền đọc và tìm kiếm (<code>WebSearch</code>, <code>Read</code>...), hoàn toàn không có <code>Write</code>!</p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Mở file xem thử:</strong> Claude tạo file agent trong thư mục <code>.claude/agents/</code> (ví dụ <code>nghien-cuu-doi-thu.md</code>). Nhìn phần <code>tools:</code> chỉ có quyền đọc và tìm kiếm (<code>WebSearch</code>, <code>Read</code>...), hoàn toàn không có <code>Write</code>!</p>
           </div>
 
           <div class="card-panel" id="b5-buoc-5">
             <h4 style="font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--brand-primary);">Bước 5: Tuyển Nhân viên 2 - Chuyên viên Đề xuất chiến lược</h4>
             <div class="prompt-container">
               <div class="prompt-header">
-                <span class="prompt-label">Bước 5 - Tạo Agent chuyen-vien-de-xuat</span>
+                <span class="prompt-label">Bước 5 - Tạo agent chuyên viên đề xuất</span>
                 <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
               </div>
-              <div class="prompt-content">Tạo tiếp cho tôi một agent thứ hai, đặt tại đường dẫn: ".claude/agents/chuyen-vien-de-xuat.md" ngay trong thư mục làm việc này.
+              <div class="prompt-content">Tạo tiếp cho tôi một agent thứ hai, agent chuyên viên đề xuất, đặt ngay trong thư mục làm việc này.
 
-Chỉ cấp cho trợ lý này các công cụ để đọc file và tạo/ghi file mới. Không cần cấp công cụ tra cứu web vì nhân sự này chỉ làm việc trên dữ liệu nội bộ.
+Chỉ cấp cho trợ lý này các công cụ để đọc file và tạo/ghi file mới. Không cần cấp công cụ tra cứu web vì chỉ làm việc trên dữ liệu nội bộ.
 
-Trong file ghi rõ hướng dẫn nhiệm vụ:
-- Chuyên môn: Đọc các báo cáo nghiên cứu và dữ liệu nội bộ, sau đó đề xuất các kế hoạch hành động cụ thể, khả thi cho ban giám đốc.
-- Định dạng đầu ra: Tạo file markdown có cấu trúc rõ ràng (bối cảnh, phân tích, đề xuất hành động, lộ trình thực hiện) và lưu vào thư mục 03_output/.
-- Văn phong: Chuẩn mực công sở, sắc sảo, gãy gọn, tuyệt đối không dùng emoji.</div>
+Trong file ghi hướng dẫn cho trợ lý này: nhiệm vụ là đọc các báo cáo hoặc dữ liệu phân tích được chỉ định, sau đó đề xuất các giải pháp, kế hoạch hành động cụ thể cho ban giám đốc. Văn phong công sở rõ ràng, sắc sảo, tuyệt đối không dùng emoji.</div>
             </div>
             <div class="dg dg-compare">
               <div class="dg-node dg-accent-amber">
-                <div class="dg-node-title"><code>nghien-cuu-doi-thu</code></div>
+                <div class="dg-node-title">Agent nghiên cứu đối thủ</div>
                 Có chìa khóa ra mạng, <strong>bị khóa tay không cho sửa file</strong> -> an toàn 100% dữ liệu gốc.
               </div>
               <div class="dg-node dg-accent-emerald">
-                <div class="dg-node-title"><code>chuyen-vien-de-xuat</code></div>
+                <div class="dg-node-title">Agent chuyên viên đề xuất</div>
                 Có chìa khóa tạo file đề xuất, <strong>không cần ra mạng</strong> -> tập trung sâu vào chuyên môn nội bộ.
               </div>
             </div>
@@ -4065,13 +4060,13 @@ Trong file ghi rõ hướng dẫn nhiệm vụ:
               </div>
               <div class="prompt-content">Làm lần lượt hai bước theo quy trình nối chuỗi giữa 2 agent, xong bước 1 mới sang bước 2:
 
-- Bước 1: Nhờ agent nghien-cuu-doi-thu tìm giúp tôi 3 đối thủ lớn trong ngành phần mềm ERP/CRM doanh nghiệp tại Việt Nam (ví dụ Bravo, Misa, Fast) và điểm mạnh nhất của họ. Lưu bản tóm tắt vào file "03_output/nghien-cuu-doi-thu.md".
-- Bước 2: Sau khi có file đó, nhờ agent chuyen-vien-de-xuat đọc file "03_output/nghien-cuu-doi-thu.md" và soạn cho tôi một bản đề xuất 3 hành động cụ thể để công ty NovaTech cạnh tranh lại với họ, lưu kết quả vào "03_output/de-xuat-chien-luoc.md".</div>
+- Bước 1: Nhờ agent nghiên cứu đối thủ tìm giúp tôi 3 đối thủ lớn trong ngành phần mềm ERP/CRM doanh nghiệp tại Việt Nam (ví dụ Bravo, Misa, Fast) và điểm mạnh nhất của họ. Lưu bản tóm tắt vào file "03_output/nghien-cuu-doi-thu.md".
+- Bước 2: Sau khi có file đó, nhờ agent chuyên viên đề xuất đọc file "03_output/nghien-cuu-doi-thu.md" và soạn cho tôi một bản đề xuất 3 hành động cụ thể để công ty NovaTech cạnh tranh lại với họ, lưu kết quả vào "03_output/de-xuat-chien-luoc.md".</div>
             </div>
             <ul class="steps-list" style="margin-top: 12px;">
-              <li><span class="step-badge">1</span><div>Claude gọi <code>nghien-cuu-doi-thu</code> vào phòng riêng tra cứu web. Màn hình chính chỉ hiện thông báo gọn gàng, không ngập rác thông tin.</div></li>
+              <li><span class="step-badge">1</span><div>Claude gọi agent nghiên cứu đối thủ vào phòng riêng tra cứu web. Màn hình chính chỉ hiện thông báo gọn gàng, không ngập rác thông tin.</div></li>
               <li><span class="step-badge">2</span><div>File <code>03_output/nghien-cuu-doi-thu.md</code> xuất hiện.</div></li>
-              <li><span class="step-badge">3</span><div>Ngay lập tức <code>chuyen-vien-de-xuat</code> được điều động đọc file đó và hoàn thiện bản đề xuất chiến lược tại <code>03_output/de-xuat-chien-luoc.md</code>!</div></li>
+              <li><span class="step-badge">3</span><div>Ngay lập tức agent chuyên viên đề xuất được điều động đọc file đó và hoàn thiện bản đề xuất chiến lược tại <code>03_output/de-xuat-chien-luoc.md</code>!</div></li>
             </ul>
           </div>
 
@@ -4082,14 +4077,59 @@ Trong file ghi rõ hướng dẫn nhiệm vụ:
                 <span class="prompt-label">Bước 7 - Điều phối 2 trợ lý chạy song song</span>
                 <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
               </div>
-              <div class="prompt-content">Dùng agent nghien-cuu-doi-thu tìm giúp tôi các xu hướng phần mềm quản trị doanh nghiệp đang thịnh hành năm 2026.
+              <div class="prompt-content">Dùng agent nghiên cứu đối thủ tìm giúp tôi các thương hiệu cùng ngành đang bán chạy trên thị trường.
 
 Chạy song song 2 trợ lý cùng lúc:
-- Trợ lý 1: nghiên cứu thị trường tại Việt Nam
-- Trợ lý 2: nghiên cứu thị trường quốc tế
-Mỗi trợ lý làm việc độc lập trong phòng riêng rồi mang bản tóm tắt đối chiếu về cho tôi nhé.</div>
+- Trợ lý 1: nghiên cứu ở thị trường Việt Nam
+- Trợ lý 2: nghiên cứu ở thị trường quốc tế
+Mỗi trợ lý làm việc độc lập rồi mang bản tóm tắt về cho tôi nhé.</div>
             </div>
             <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude mở đồng thời 2 phòng làm việc riêng biệt, 2 trợ lý cùng thu thập và tổng hợp độc lập - nhanh gấp đôi so với làm lần lượt từng việc!</p>
+          </div>
+
+          <div class="card-panel" id="b5-c-3">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">C.3. Tuyển agent chuyên môn có sẵn từ cộng đồng &amp; đặt ở cấp global</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Tự viết từng agent thì mất công. Cộng đồng đã soạn sẵn rất nhiều "hồ sơ nhân sự" mẫu, ví như <strong>một công ty cung ứng nhân sự</strong>: mình chọn đúng người, rồi "đào tạo lại" cho hợp với công ty mình.</p>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div><strong>agency-agents</strong> (<code>msitarzewski/agency-agents</code> trên GitHub, giấy phép MIT, rất phổ biến) là thư viện hơn 200 file agent chia theo phòng ban: kỹ thuật, thiết kế, marketing, bán hàng, tài chính, quản lý dự án, chăm sóc khách hàng...</div></li>
+              <li><span class="step-badge">2</span><div>Mỗi agent là một file markdown: phần đầu khai báo tên, mô tả (khi nào gọi), phần thân ghi vai trò, nhiệm vụ, quy tắc, quy trình làm việc. Bản gốc viết bằng tiếng Anh và chưa biết gì về công ty anh chị, nên cần Claude <strong>đọc, chọn lọc và chỉnh lại</strong>.</div></li>
+              <li><span class="step-badge">3</span><div><strong>Cấp project vs cấp global:</strong> agent đặt trong <code>.claude/agents/</code> của thư mục dự án chỉ dùng trong dự án đó; đặt trong <code>~/.claude/agents/</code> (Windows: <code>C:\Users\&lt;tên&gt;\.claude\agents\</code>) thì <strong>mọi dự án</strong> đều gọi được. Tương tự, <code>~/.claude/CLAUDE.md</code> là nội quy chung áp dụng cho mọi dự án.</div></li>
+            </ul>
+            <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 6px; color: var(--brand-primary);">Bước 8: Xem thư viện agent mẫu</h4>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Bước 8 - Link thư viện agency-agents</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">https://github.com/msitarzewski/agency-agents</div>
+            </div>
+            <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 6px; color: var(--brand-primary);">Bước 9: Nhờ Claude đọc kỹ, hỏi lại và đề xuất bộ agent phù hợp</h4>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Bước 9 - Đề xuất &amp; chỉnh bộ agent cấp global</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">https://github.com/msitarzewski/agency-agents
+Hãy đọc kỹ project này cho tôi, tôi cần cấu hình vài bạn agent chuyên môn để làm các công việc hằng ngày cho tôi, Hãy dựa vào CLAUDE.md của tôi, và các lịch sử memory tương tác hằng ngày của tôi, có thể hỏi tôi thêm về chuyên môn, rồi bạn sẽ đề xuất giúp tôi nên dùng các agent nào, và sẽ chỉnh sửa lại như thế nào cho phù hợp với công việc của tôi. Bộ agent này sẽ đặt ở cấp global nên cần làm kỹ, hỏi rõ tôi nhé</div>
+            </div>
+            <ul class="steps-list" style="margin-top: 12px;">
+              <li><span class="step-badge">1</span><div>Claude đọc thư viện, đọc <code>CLAUDE.md</code> và memory của anh chị để hiểu công việc hằng ngày.</div></li>
+              <li><span class="step-badge">2</span><div>Claude <strong>hỏi lại</strong> về chuyên môn, việc lặp lại, mức độ tự động mong muốn. Trả lời càng cụ thể, bộ agent càng sát.</div></li>
+              <li><span class="step-badge">3</span><div>Claude đề xuất danh sách agent nên dùng và cách chỉnh (dịch sang tiếng Việt, bỏ phần thừa, thêm quy tắc công ty, khóa <code>tools:</code>). <strong>Duyệt xong</strong> mới cho Claude ghi vào <code>~/.claude/agents/</code>.</div></li>
+            </ul>
+            <div class="callout callout-warn">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-alert-triangle"/></svg>Agent tải từ mạng là "lời dặn" cho Claude</div>
+              File agent không phải phần mềm, nhưng nó điều khiển cách Claude làm việc. Trước khi cài, nhờ Claude soát nội dung có câu lệnh lạ không (ví dụ gửi dữ liệu ra ngoài, xóa file), và kiểm tra dòng <code>tools:</code> chỉ cấp đúng quyền cần thiết. Agent cấp global ảnh hưởng tới mọi dự án nên càng phải duyệt kỹ.
+            </div>
+            <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 6px; color: var(--brand-primary);">Bước 10: Dặn Claude ưu tiên dùng agent chuyên biệt (ghi vào CLAUDE.md global)</h4>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Bước 10 - Quy tắc ưu tiên agent chuyên biệt</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Tôi đã có các agent chuyên biệt, ở các tác vụ chuyên môn và cần thiết thì hãy dùng các agent chuyên biệt nếu có, trừ khi không có thì mới dùng các agent có sẵn của claude. Thêm quy tắc này vào CLAUDE.md cấp global cho tôi luôn</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;"><strong>Quan sát:</strong> Claude thêm quy tắc vào <code>~/.claude/CLAUDE.md</code>. Từ đó ở mọi dự án, khi gặp việc chuyên môn Claude sẽ tự giao cho agent chuyên biệt phù hợp, chỉ khi không có mới dùng agent mặc định của Claude.</p>
           </div>
         </section>
 
@@ -4164,7 +4204,7 @@ Mỗi trợ lý làm việc độc lập trong phòng riêng rồi mang bản t�
               <div class="checklist-items">
                 <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b5-chk-6"><span class="checklist-text">Sản phẩm 1: 01 Skill .claude/skills/dong-goi-tai-lieu-chuan/SKILL.md tạo file Word đúng logo và màu CES Global.</span></label>
                 <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b5-chk-7"><span class="checklist-text">Sản phẩm 2: 01 file Word giới thiệu dịch vụ NovaTech tạo tự động bằng Skill, lưu trong 03_output/.</span></label>
-                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b5-chk-8"><span class="checklist-text">Sản phẩm 3: 02 Agent - nghien-cuu-doi-thu.md (chỉ đọc &amp; tra web, khóa ghi sửa) và chuyen-vien-de-xuat.md (đọc &amp; ghi nội bộ, không ra mạng).</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b5-chk-8"><span class="checklist-text">Sản phẩm 3: 02 Agent trong .claude/agents/ - agent nghiên cứu đối thủ (chỉ đọc &amp; tra web, khóa ghi sửa) và agent chuyên viên đề xuất (đọc &amp; ghi nội bộ, không ra mạng).</span></label>
                 <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b5-chk-9"><span class="checklist-text">Sản phẩm 4: 02 file kết quả phối hợp dây chuyền - 03_output/nghien-cuu-doi-thu.md và 03_output/de-xuat-chien-luoc.md.</span></label>
               </div>
             </div>

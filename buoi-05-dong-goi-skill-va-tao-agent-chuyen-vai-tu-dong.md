@@ -14,9 +14,9 @@
 |:---:|---|:---:|:---:|---|
 | **0** | **Khởi động & Mở cánh cửa `.claude/`:**<br>- Điểm lại thành quả Buổi 4 (`CLAUDE.md` và cây thư mục 3 ngăn).<br>- Khám phá 2 ngăn kéo bí mật: `.claude/skills/` và `.claude/agents/`. | 10 phút | Trực quan | Điểm lại thành quả Buổi 4, nêu 2 điểm nghẽn mới dẫn vào Skill và Agent. |
 | **A** | **Skill: Dặn một lần, dùng mãi (Đóng gói tài liệu chuẩn thương hiệu):**<br>- Điểm đau: Mỗi lần nhờ tài liệu lại phải dặn lại từ đầu.<br>- Ẩn dụ: "Tờ quy trình dán trên tường" / "Quyển công thức".<br>- 3 bước tạo Skill tự nhiên: Nghiên cứu $\rightarrow$ Dựng file Word có logo/màu chuẩn $\rightarrow$ Nhờ đóng gói thành Skill. | 45 phút | LT 15'<br>HV 30' | **Bước 1:** Nhờ Claude nghiên cứu nội dung xu hướng AI 2026.<br>**Bước 2:** Kéo logo, tạo file Word chuẩn màu, chuẩn tiếng Việt.<br>**Bước 3:** Nhờ Claude đóng gói thành Skill `dong-goi-tai-lieu-chuan`.<br>**Mở nắp capo:** Soi file `SKILL.md` và gọi lại bằng 1 câu ngắn. |
-| **B** | **Agent & Subagent: Tuyển 2 nhân viên biên chế chính thức:**<br>- Ẩn dụ: "Một công ty thu nhỏ" (Nhân viên vs Trợ lý phụ phòng riêng).<br>- Tại sao cần ổ khóa `tools:` bằng sắt? Chống prompt injection ngoài mạng.<br>- Tuyển 2 nhân viên bằng tiếng Việt tự nhiên không cần nhớ code. | 35 phút | LT 15'<br>HV 20' | **Bước 4:** Tuyển `nghien-cuu-doi-thu.md` (Chỉ đọc & tra web, khóa quyền ghi sửa file).<br>**Bước 5:** Tuyển `chuyen-vien-de-xuat.md` (Chỉ đọc & tạo file, không ra mạng). |
+| **B** | **Agent & Subagent: Tuyển 2 nhân viên biên chế chính thức:**<br>- Ẩn dụ: "Một công ty thu nhỏ" (Nhân viên vs Trợ lý phụ phòng riêng).<br>- Tại sao cần ổ khóa `tools:` bằng sắt? Chống prompt injection ngoài mạng.<br>- Tuyển 2 nhân viên bằng tiếng Việt tự nhiên không cần nhớ code. | 35 phút | LT 15'<br>HV 20' | **Bước 4:** Tuyển agent nghiên cứu đối thủ (Chỉ đọc & tra web, khóa quyền ghi sửa file).<br>**Bước 5:** Tuyển agent chuyên viên đề xuất (Chỉ đọc & tạo file, không ra mạng). |
 | | **Nghỉ giải lao & Hỗ trợ kỹ thuật** | 10 phút | Giải lao | Trợ giảng kiểm tra từng máy: đã có đủ file Skill và 2 file Agent. |
-| **C** | **Phân biệt cốt tử Skill vs Agent & Mô hình phối hợp thực chiến:**<br>- Cuốn công thức (*Làm thế nào?*) vs Bản hợp đồng có chìa khóa (*Ai làm & Được đụng vào đâu?*).<br>- Bảng ma trận 3 tầng: `CLAUDE.md` - `SKILL` - `AGENT`.<br>- Phối hợp: Nối chuỗi (Tuần tự) & Chạy song song (Parallel). | 35 phút | LT 10'<br>HV 25' | **Bước 6:** Phối hợp Nối chuỗi: Nghiên cứu đối thủ $\rightarrow$ Lập đề xuất chiến lược.<br>**Bước 7:** Phối hợp Chạy song song: Nghiên cứu 2 thị trường cùng lúc. |
+| **C** | **Phân biệt cốt tử Skill vs Agent & Mô hình phối hợp thực chiến:**<br>- Cuốn công thức (*Làm thế nào?*) vs Bản hợp đồng có chìa khóa (*Ai làm & Được đụng vào đâu?*).<br>- Bảng ma trận 3 tầng: `CLAUDE.md` - `SKILL` - `AGENT`.<br>- Phối hợp: Nối chuỗi (Tuần tự) & Chạy song song (Parallel). | 35 phút | LT 10'<br>HV 25' | **Bước 6:** Phối hợp Nối chuỗi: Nghiên cứu đối thủ $\rightarrow$ Lập đề xuất chiến lược.<br>**Bước 7:** Phối hợp Chạy song song: Nghiên cứu 2 thị trường cùng lúc.<br>**Bước 8-10:** Tuyển agent chuyên môn từ thư viện agency-agents, đặt cấp global + quy tắc ưu tiên agent chuyên biệt. |
 | **D** | **Kinh tế học Token, Thước đo chọn việc & Bệ phóng sang Buổi 6:**<br>- Token là gì? Tiếng Việt có dấu tốn token ra sao?<br>- Khám phá lệnh `/context` (kim xăng) và `/compact` (dọn dẹp bộ nhớ).<br>- Thước đo 3 mức giao việc để tự chọn công cụ sau khóa học.<br>- Nghiệm thu sản phẩm mang về. | 15 phút | Đúc kết | Bảng checklist sản phẩm + Thước đo giao việc thực tế. |
 
 ---
@@ -219,7 +219,7 @@ Hãy tưởng tượng thư mục làm việc của anh chị là **"Một công
 │             ┌────────────────────┴────────────────────┐                │
 │             ▼                                         ▼                │
 │   PHÒNG RIÊNG SỐ 1                          PHÒNG RIÊNG SỐ 2           │
-│   [nghien-cuu-doi-thu]                      [chuyen-vien-de-xuat]      │
+│   [Nghiên cứu đối thủ]                      [Chuyên viên đề xuất]      │
 │   - Ra mạng tra cứu hàng trăm trang web     - Đọc dữ liệu nội bộ       │
 │   - Khóa chặt tay: KHÔNG ĐƯỢC SỬA FILE      - Soạn đề xuất hành động   │
 │   - Chỉ gửi bản tóm tắt gọn gàng về         - Lưu file vào 03_output/  │
@@ -255,10 +255,10 @@ Hãy tưởng tượng thư mục làm việc của anh chị là **"Một công
 ### B.3. Tuyển 2 nhân viên biên chế bằng tiếng Việt tự nhiên
 
 Chúng ta sẽ tuyển 2 nhân sự chuyên trách cho công ty:
-1. **Nhân viên 1 (`nghien-cuu-doi-thu`):** Chuyên Deep Research thông tin thị trường trên web. Cần ra mạng, nhưng **khóa quyền ghi sửa file**.
-2. **Nhân viên 2 (`chuyen-vien-de-xuat`):** Chuyên ngồi văn phòng đọc dữ liệu nội bộ để lên phương án chiến lược. Cần quyền ghi file báo cáo, nhưng **không cần ra mạng**.
+1. **Nhân viên 1 (agent nghiên cứu đối thủ):** Chuyên Deep Research thông tin thị trường trên web. Cần ra mạng, nhưng **khóa quyền ghi sửa file**.
+2. **Nhân viên 2 (agent chuyên viên đề xuất):** Chuyên ngồi văn phòng đọc dữ liệu nội bộ để lên phương án chiến lược. Cần quyền ghi file báo cáo, nhưng **không cần ra mạng**.
 
-#### Bước 4: Tuyển Nhân viên 1: Trợ lý Nghiên cứu đối thủ (`nghien-cuu-doi-thu`)
+#### Bước 4: Tuyển Nhân viên 1: Agent nghiên cứu đối thủ
 
 <details>
 <summary><b>Thao tác thực hành Bước 4: Tạo Agent Nghiên cứu đối thủ</b> (bấm để mở)</summary>
@@ -266,23 +266,20 @@ Chúng ta sẽ tuyển 2 nhân sự chuyên trách cho công ty:
 **Gõ câu lệnh tiếng Việt tự nhiên sau vào Claude:**
 
 ```text
-Tạo cho tôi một agent mới, đặt tại đường dẫn: ".claude/agents/nghien-cuu-doi-thu.md" ngay trong thư mục làm việc này.
+Tạo cho tôi một agent mới, agent nghiên cứu đối thủ , lưu tại thư mục làm việc này.
 
 Chỉ cấp cho trợ lý này các công cụ để đọc file, tìm kiếm file và tra cứu thông tin trên web. Tuyệt đối KHÔNG cấp công cụ chỉnh sửa hay tạo file mới.
 
-Trong file ghi rõ hướng dẫn nhiệm vụ:
-- Chuyên môn: Nghiên cứu thị trường và đối thủ cạnh tranh trong ngành phần mềm/công nghệ.
-- Phong cách: Khách quan, trung thực, trích dẫn rõ nguồn link và các số liệu cụ thể.
-- Giới hạn an toàn: Chỉ đọc và tra cứu thông tin, tuyệt đối không chỉnh sửa dữ liệu trên máy.
+Trong file ghi hướng dẫn cho trợ lý này: nhiệm vụ là nghiên cứu đối thủ trong ngành của tôi, chỉ đọc và tra cứu thông tin trên mạng, tuyệt đối không chỉnh sửa file của tôi, và luôn trích dẫn rõ nguồn thông tin kèm các con số đối chiếu cụ thể.
 ```
 
 **Mở file xem thử:**  
-Claude tạo ra file `.claude/agents/nghien-cuu-doi-thu.md`. Khi mở file ra, anh chị nhìn vào phần `tools:`: Chỉ có quyền đọc và tìm kiếm (`WebSearch`, `Read`...), hoàn toàn không có `Write`!
+Claude tạo file agent trong thư mục `.claude/agents/` (ví dụ `nghien-cuu-doi-thu.md`). Khi mở file ra, anh chị nhìn vào phần `tools:`: Chỉ có quyền đọc và tìm kiếm (`WebSearch`, `Read`...), hoàn toàn không có `Write`!
 </details>
 
 ---
 
-#### Bước 5: Tuyển Nhân viên 2: Chuyên viên Đề xuất chiến lược (`chuyen-vien-de-xuat`)
+#### Bước 5: Tuyển Nhân viên 2: Agent chuyên viên đề xuất
 
 <details>
 <summary><b>Thao tác thực hành Bước 5: Tạo Agent Đề xuất chiến lược</b> (bấm để mở)</summary>
@@ -290,19 +287,16 @@ Claude tạo ra file `.claude/agents/nghien-cuu-doi-thu.md`. Khi mở file ra, a
 **Gõ câu lệnh tự nhiên tiếp theo vào Claude:**
 
 ```text
-Tạo tiếp cho tôi một agent thứ hai, đặt tại đường dẫn: ".claude/agents/chuyen-vien-de-xuat.md" ngay trong thư mục làm việc này.
+Tạo tiếp cho tôi một agent thứ hai, agent chuyên viên đề xuất, đặt ngay trong thư mục làm việc này.
 
-Chỉ cấp cho trợ lý này các công cụ để đọc file và tạo/ghi file mới. Không cần cấp công cụ tra cứu web vì nhân sự này chỉ làm việc trên dữ liệu nội bộ.
+Chỉ cấp cho trợ lý này các công cụ để đọc file và tạo/ghi file mới. Không cần cấp công cụ tra cứu web vì chỉ làm việc trên dữ liệu nội bộ.
 
-Trong file ghi rõ hướng dẫn nhiệm vụ:
-- Chuyên môn: Đọc các báo cáo nghiên cứu và dữ liệu nội bộ, sau đó đề xuất các kế hoạch hành động cụ thể, khả thi cho ban giám đốc.
-- Định dạng đầu ra: Tạo file markdown có cấu trúc rõ ràng (bối cảnh, phân tích, đề xuất hành động, lộ trình thực hiện) và lưu vào thư mục 03_output/.
-- Văn phong: Chuẩn mực công sở, sắc sảo, gãy gọn, tuyệt đối không dùng emoji.
+Trong file ghi hướng dẫn cho trợ lý này: nhiệm vụ là đọc các báo cáo hoặc dữ liệu phân tích được chỉ định, sau đó đề xuất các giải pháp, kế hoạch hành động cụ thể cho ban giám đốc. Văn phong công sở rõ ràng, sắc sảo, tuyệt đối không dùng emoji.
 ```
 
 **So sánh 2 nhân viên vừa tuyển:**
-- `nghien-cuu-doi-thu`: Có chìa khóa ra mạng, **bị khóa tay không cho sửa file** $\rightarrow$ An toàn 100% dữ liệu gốc!
-- `chuyen-vien-de-xuat`: Có chìa khóa tạo file đề xuất, **không cần ra mạng** $\rightarrow$ Tập trung sâu vào chuyên môn nội bộ!
+- Agent nghiên cứu đối thủ: Có chìa khóa ra mạng, **bị khóa tay không cho sửa file** $\rightarrow$ An toàn 100% dữ liệu gốc!
+- Agent chuyên viên đề xuất: Có chìa khóa tạo file đề xuất, **không cần ra mạng** $\rightarrow$ Tập trung sâu vào chuyên môn nội bộ!
 </details>
 
 ---
@@ -360,14 +354,14 @@ Bây giờ anh chị đóng vai trò là **Trưởng phòng / Sếp điều ph�
 ```text
 Làm lần lượt hai bước theo quy trình nối chuỗi giữa 2 agent, xong bước 1 mới sang bước 2:
 
-- Bước 1: Nhờ agent nghien-cuu-doi-thu tìm giúp tôi 3 đối thủ lớn trong ngành phần mềm ERP/CRM doanh nghiệp tại Việt Nam (ví dụ Bravo, Misa, Fast) và điểm mạnh nhất của họ. Lưu bản tóm tắt vào file "03_output/nghien-cuu-doi-thu.md".
-- Bước 2: Sau khi có file đó, nhờ agent chuyen-vien-de-xuat đọc file "03_output/nghien-cuu-doi-thu.md" và soạn cho tôi một bản đề xuất 3 hành động cụ thể để công ty NovaTech cạnh tranh lại với họ, lưu kết quả vào "03_output/de-xuat-chien-luoc.md".
+- Bước 1: Nhờ agent nghiên cứu đối thủ tìm giúp tôi 3 đối thủ lớn trong ngành phần mềm ERP/CRM doanh nghiệp tại Việt Nam (ví dụ Bravo, Misa, Fast) và điểm mạnh nhất của họ. Lưu bản tóm tắt vào file "03_output/nghien-cuu-doi-thu.md".
+- Bước 2: Sau khi có file đó, nhờ agent chuyên viên đề xuất đọc file "03_output/nghien-cuu-doi-thu.md" và soạn cho tôi một bản đề xuất 3 hành động cụ thể để công ty NovaTech cạnh tranh lại với họ, lưu kết quả vào "03_output/de-xuat-chien-luoc.md".
 ```
 
 **Quan sát cách AI làm việc:**
-1. Claude gọi `nghien-cuu-doi-thu` vào phòng riêng tra cứu web. Màn hình chính của anh chị chỉ thấy thông báo gọn gàng, không bị ngập rác thông tin.
+1. Claude gọi agent nghiên cứu đối thủ vào phòng riêng tra cứu web. Màn hình chính của anh chị chỉ thấy thông báo gọn gàng, không bị ngập rác thông tin.
 2. File `03_output/nghien-cuu-doi-thu.md` xuất hiện.
-3. Ngay lập tức, `chuyen-vien-de-xuat` được điều động vào đọc file nghiên cứu đó và hoàn thiện bản đề xuất chiến lược sắc sảo tại `03_output/de-xuat-chien-luoc.md`!
+3. Ngay lập tức, agent chuyên viên đề xuất được điều động vào đọc file nghiên cứu đó và hoàn thiện bản đề xuất chiến lược sắc sảo tại `03_output/de-xuat-chien-luoc.md`!
 </details>
 
 ---
@@ -380,16 +374,70 @@ Làm lần lượt hai bước theo quy trình nối chuỗi giữa 2 agent, xon
 **Gõ câu lệnh sau vào Claude:**
 
 ```text
-Dùng agent nghien-cuu-doi-thu tìm giúp tôi các xu hướng phần mềm quản trị doanh nghiệp đang thịnh hành năm 2026.
+Dùng agent nghiên cứu đối thủ tìm giúp tôi các thương hiệu cùng ngành đang bán chạy trên thị trường.
 
 Chạy song song 2 trợ lý cùng lúc:
-- Trợ lý 1: nghiên cứu thị trường tại Việt Nam
-- Trợ lý 2: nghiên cứu thị trường quốc tế
-Mỗi trợ lý làm việc độc lập trong phòng riêng rồi mang bản tóm tắt đối chiếu về cho tôi nhé.
+- Trợ lý 1: nghiên cứu ở thị trường Việt Nam
+- Trợ lý 2: nghiên cứu ở thị trường quốc tế
+Mỗi trợ lý làm việc độc lập rồi mang bản tóm tắt về cho tôi nhé.
 ```
 
 **Quan sát hiện tượng:**
 - Claude mở đồng thời 2 phòng làm việc riêng biệt. Cả 2 trợ lý cùng cào dữ liệu và tổng hợp độc lập, thời gian hoàn thành nhanh gấp đôi so với làm lần lượt từng việc!
+</details>
+
+---
+
+### C.3. Tuyển agent chuyên môn có sẵn từ cộng đồng & đặt ở cấp global
+
+**Lý thuyết:** Tự viết từng agent thì mất công. Cộng đồng đã soạn sẵn rất nhiều "hồ sơ nhân sự" mẫu, ví như **một công ty cung ứng nhân sự**: mình chọn đúng người, rồi "đào tạo lại" cho hợp với công ty mình.
+
+- **agency-agents** (`msitarzewski/agency-agents` trên GitHub, giấy phép MIT, rất phổ biến) là thư viện hơn 200 file agent chia theo phòng ban: kỹ thuật, thiết kế, marketing, bán hàng, tài chính, quản lý dự án, chăm sóc khách hàng...
+- Mỗi agent là một file markdown: phần đầu khai báo tên, mô tả (khi nào gọi), phần thân ghi vai trò, nhiệm vụ, quy tắc, quy trình làm việc. Bản gốc viết bằng tiếng Anh và chưa biết gì về công ty anh chị, nên cần Claude **đọc, chọn lọc và chỉnh lại**.
+- **Cấp project vs cấp global:** agent đặt trong `.claude/agents/` của thư mục dự án chỉ dùng trong dự án đó; đặt trong `~/.claude/agents/` (Windows: `C:\Users\<tên>\.claude\agents\`) thì **mọi dự án** đều gọi được. Tương tự, `~/.claude/CLAUDE.md` là nội quy chung áp dụng cho mọi dự án.
+
+#### Bước 8: Xem thư viện agent mẫu
+
+<details>
+<summary><b>Thao tác thực hành Bước 8: Link thư viện agency-agents</b> (bấm để mở)</summary>
+
+```text
+https://github.com/msitarzewski/agency-agents
+```
+
+</details>
+
+#### Bước 9: Nhờ Claude đọc kỹ, hỏi lại và đề xuất bộ agent phù hợp
+
+<details>
+<summary><b>Thao tác thực hành Bước 9: Đề xuất & chỉnh bộ agent cấp global</b> (bấm để mở)</summary>
+
+```text
+https://github.com/msitarzewski/agency-agents
+Hãy đọc kỹ project này cho tôi, tôi cần cấu hình vài bạn agent chuyên môn để làm các công việc hằng ngày cho tôi, Hãy dựa vào CLAUDE.md của tôi, và các lịch sử memory tương tác hằng ngày của tôi, có thể hỏi tôi thêm về chuyên môn, rồi bạn sẽ đề xuất giúp tôi nên dùng các agent nào, và sẽ chỉnh sửa lại như thế nào cho phù hợp với công việc của tôi. Bộ agent này sẽ đặt ở cấp global nên cần làm kỹ, hỏi rõ tôi nhé
+```
+
+**Diễn biến:**
+1. Claude đọc thư viện, đọc `CLAUDE.md` và memory của anh chị để hiểu công việc hằng ngày.
+2. Claude **hỏi lại** về chuyên môn, việc lặp lại, mức độ tự động mong muốn. Trả lời càng cụ thể, bộ agent càng sát.
+3. Claude đề xuất danh sách agent nên dùng và cách chỉnh (dịch sang tiếng Việt, bỏ phần thừa, thêm quy tắc công ty, khóa `tools:`). **Duyệt xong** mới cho Claude ghi vào `~/.claude/agents/`.
+
+</details>
+
+> [!WARNING]
+> **Agent tải từ mạng là "lời dặn" cho Claude:** file agent không phải phần mềm, nhưng nó điều khiển cách Claude làm việc. Trước khi cài, nhờ Claude soát nội dung có câu lệnh lạ không (ví dụ gửi dữ liệu ra ngoài, xóa file), và kiểm tra dòng `tools:` chỉ cấp đúng quyền cần thiết. Agent cấp global ảnh hưởng tới mọi dự án nên càng phải duyệt kỹ.
+
+#### Bước 10: Dặn Claude ưu tiên dùng agent chuyên biệt (ghi vào CLAUDE.md global)
+
+<details>
+<summary><b>Thao tác thực hành Bước 10: Quy tắc ưu tiên agent chuyên biệt</b> (bấm để mở)</summary>
+
+```text
+Tôi đã có các agent chuyên biệt, ở các tác vụ chuyên môn và cần thiết thì hãy dùng các agent chuyên biệt nếu có, trừ khi không có thì mới dùng các agent có sẵn của claude. Thêm quy tắc này vào CLAUDE.md cấp global cho tôi luôn
+```
+
+**Quan sát:** Claude thêm quy tắc vào `~/.claude/CLAUDE.md`. Từ đó ở mọi dự án, khi gặp việc chuyên môn Claude sẽ tự giao cho agent chuyên biệt phù hợp, chỉ khi không có mới dùng agent mặc định của Claude.
+
 </details>
 
 ---
@@ -440,8 +488,8 @@ Trước khi đóng máy kết thúc Buổi 5, anh chị hãy kiểm tra lại t
 - [ ] **Sản phẩm 1:** 01 Skill chuẩn hóa `.claude/skills/dong-goi-tai-lieu-chuan/SKILL.md` tạo file Word đúng logo và màu nhận diện CES Global.
 - [ ] **Sản phẩm 2:** 01 file Word giới thiệu dịch vụ NovaTech được tạo tự động bằng Skill lưu trong `03_output/`.
 - [ ] **Sản phẩm 3:** 02 Agent biên chế chính thức:
-  - `.claude/agents/nghien-cuu-doi-thu.md` (Chỉ đọc & tra web, khóa quyền ghi sửa file).
-  - `.claude/agents/chuyen-vien-de-xuat.md` (Chỉ đọc & ghi file nội bộ, không ra mạng).
+  - Agent nghiên cứu đối thủ trong `.claude/agents/` (Chỉ đọc & tra web, khóa quyền ghi sửa file).
+  - Agent chuyên viên đề xuất trong `.claude/agents/` (Chỉ đọc & ghi file nội bộ, không ra mạng).
 - [ ] **Sản phẩm 4:** 02 file kết quả phối hợp dây chuyền thành công:
   - `03_output/nghien-cuu-doi-thu.md` (Báo cáo nghiên cứu 3 đối thủ).
   - `03_output/de-xuat-chien-luoc.md` (Phương án hành động cạnh tranh).
