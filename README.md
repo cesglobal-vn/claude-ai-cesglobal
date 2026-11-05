@@ -1,6 +1,6 @@
 # Làm chủ Claude AI cho công việc thật - Tài liệu khóa học
 
-> **Workbook trực tuyến (mở là dùng ngay):** https://cesglobal-claude.vercel.app
+> **Workbook trực tuyến (mở là dùng ngay):** https://cesglobal-vn.github.io/claude-ai-cesglobal/
 
 Kho tài liệu chính thức cho khóa đào tạo **"Làm chủ Claude AI cho công việc thật"** của **CES Global**: giáo án từng bước, workbook tương tác cho học viên, khung chương trình và bộ file demo dùng để thực hành.
 
@@ -33,6 +33,7 @@ claude-ai/
 ├── buoi-04-claude-code-desktop-chuan-hoa-khong-gian-lam-viec.md          # Giáo án buổi 04
 ├── buoi-05-dong-goi-skill-va-tao-agent-chuyen-vai-tu-dong.md             # Giáo án buổi 05
 ├── buoi-06-lam-video-gioi-thieu-va-landing-page-doanh-nghiep-bang-claude.md # Giáo án buổi 06
+├── index.html                      # Trang gốc GitHub Pages, tự chuyển sang workbook.html
 ├── workbook.html                   # Workbook tương tác buổi 01 (mở bằng trình duyệt)
 ├── slides/
 │   └── slide-buoi-01.html          # Slide trình chiếu buổi 01 (mở bằng trình duyệt)
