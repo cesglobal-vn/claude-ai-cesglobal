@@ -448,12 +448,10 @@ Trước khi đóng máy kết thúc Buổi 5, anh chị hãy kiểm tra lại t
 
 ---
 
-### D.4. Cầu nối sang Buổi 6: Dự án Tốt nghiệp Capstone - Cỗ máy tự động hóa toàn diện
+### D.4. Cầu nối sang Buổi 6: Làm video giới thiệu và landing page doanh nghiệp
 
 - **Chúc mừng anh chị đã hoàn thành Buổi 5!** Hôm nay anh chị đã sở hữu trọn vẹn cả quy trình chuẩn (Skill) và đội ngũ nhân sự chuyên trách có phân quyền (Agent).
-- **Ở Buổi 6 (Buổi tốt nghiệp):** Chúng ta sẽ xâu chuỗi toàn bộ những gì đã học từ Buổi 1 đến Buổi 5:
-  - Giao diện Web App tương tác (Buổi 2)
-  - Dữ liệu đám mây Google Sheets / Drive qua MCP (Buổi 3)
-  - Hệ thống file trên máy tính & `CLAUDE.md` (Buổi 4)
-  - Cặp đôi Agent và Skill chuẩn hóa (Buổi 5)
-- $\rightarrow$ Tất cả sẽ hòa quyện thành **01 CỖ MÁY TỰ ĐỘNG HÓA HOÀN CHỈNH (End-to-End Autonomous System)** giải quyết trọn vẹn bài toán kinh doanh thật của chính doanh nghiệp anh chị!
+- **Ở Buổi 6:** Chúng ta dùng chính những năng lực đó để tự làm 2 sản phẩm truyền thông cho công ty:
+  - **Video giới thiệu 45 giây:** cài một bộ Skill làm phim bằng code ở cấp project (như Buổi 5), Claude tự viết kịch bản, tạo giọng đọc AI, nhạc, hiệu ứng và render thành video.
+  - **Landing page:** Claude research thiết kế cùng ngành, dựng trang, đưa lên Vercel, rồi nối form đăng ký về Google Sheets bằng Apps Script (đã gặp ở Buổi 3).
+- Anh chị đóng vai đạo diễn và người duyệt, Claude là cả đội sản xuất!

@@ -17,7 +17,7 @@ Kho tài liệu chính thức cho khóa đào tạo **"Làm chủ Claude AI cho 
 | 3 | Kết nối Claude với dữ liệu thật (Connectors) | Web | 1 Báo cáo tự động đọc từ Google Drive / Sheets / Gmail |
 | 4 | Cho Claude làm việc trên máy tính (Claude Code) | Local | Claude Code hoàn chỉnh + xử lý file hàng loạt |
 | 5 | Đóng gói Skill & tạo Agent chuyên vai | Local | 1 Skill quy trình chuẩn + 1 Agent chuyên trách |
-| 6 | Xây dựng quy trình tự động hóa hoàn chỉnh | End-to-End | 1 Luồng làm việc tự động khép kín (CLAUDE.md + Agent + Data) |
+| 6 | Làm video giới thiệu & landing page doanh nghiệp | Local + Web | 1 Video giới thiệu 45 giây + 1 Landing page trên Vercel có form đổ về Google Sheets |
 
 Chi tiết đầy đủ: xem [`docs/khung-chuong-trinh-6-buoi.md`](docs/khung-chuong-trinh-6-buoi.md).
 
@@ -31,6 +31,8 @@ claude-ai/
 ├── buoi-02-tao-cong-cu-lam-viec-tuong-tac-bang-claude-artifacts.md       # Giáo án buổi 02
 ├── buoi-03-ket-noi-du-lieu-dam-may-mcp-dashboard-tu-google-sheets.md     # Giáo án buổi 03
 ├── buoi-04-claude-code-desktop-chuan-hoa-khong-gian-lam-viec.md          # Giáo án buổi 04
+├── buoi-05-dong-goi-skill-va-tao-agent-chuyen-vai-tu-dong.md             # Giáo án buổi 05
+├── buoi-06-lam-video-gioi-thieu-va-landing-page-doanh-nghiep-bang-claude.md # Giáo án buổi 06
 ├── workbook.html                   # Workbook tương tác buổi 01 (mở bằng trình duyệt)
 ├── slides/
 │   └── slide-buoi-01.html          # Slide trình chiếu buổi 01 (mở bằng trình duyệt)

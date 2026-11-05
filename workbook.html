@@ -1584,12 +1584,27 @@
             <button class="session-tab-btn" data-tab="tab-buoi-06">
               <div class="session-num">6</div>
               <div class="session-info">
-                <div class="session-name">Cỗ máy tự động hóa hoàn chỉnh</div>
-                <div class="session-badge-row">
-                  <span class="tag-status tag-upcoming">Tốt nghiệp</span>
-                </div>
+                <div class="session-name">Làm video &amp; landing page</div>
               </div>
             </button>
+            <!-- Nested TOC for Buổi 6 (hidden until active) -->
+            <div class="sidebar-toc" style="display: none;">
+              <ul class="toc-list">
+                <li class="toc-item"><a href="#b6-phan-a">A. Làm video bằng code</a></li>
+                <li class="toc-item toc-sub"><a href="#b6-a-1">A.1. Video là chuỗi khung hình</a></li>
+                <li class="toc-item toc-sub"><a href="#b6-a-2">A.2. Hai cách AI làm video</a></li>
+                <li class="toc-item toc-sub"><a href="#b6-a-3">A.3. Chrome headless render</a></li>
+                <li class="toc-item toc-sub"><a href="#b6-a-4">A.4. Giọng đọc, nhạc, hiệu ứng</a></li>
+                <li class="toc-item toc-sub"><a href="#b6-a-5">A.5. Thực hành làm video</a></li>
+                <li class="toc-item"><a href="#b6-phan-b">B. Landing page &amp; thu khách hàng</a></li>
+                <li class="toc-item toc-sub"><a href="#b6-b-1">B.1. Cấu trúc landing page</a></li>
+                <li class="toc-item toc-sub"><a href="#b6-b-2">B.2. Research thiết kế</a></li>
+                <li class="toc-item toc-sub"><a href="#b6-b-3">B.3. Dựng landing page</a></li>
+                <li class="toc-item toc-sub"><a href="#b6-b-4">B.4. Đưa lên Vercel</a></li>
+                <li class="toc-item toc-sub"><a href="#b6-b-5">B.5. Form về Google Sheets</a></li>
+                <li class="toc-item"><a href="#b6-phan-c">C. Nghiệm thu &amp; tổng kết</a></li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>
@@ -4156,15 +4171,13 @@ Mỗi trợ lý làm việc độc lập trong phòng riêng rồi mang bản t�
           </div>
 
           <div class="card-panel">
-            <h3 id="b5-d-4" style="font-size: 16px; margin-bottom: 8px;">D.4. Cầu nối sang Buổi 6: dự án tốt nghiệp Capstone</h3>
-            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Chúc mừng anh chị đã sở hữu trọn vẹn quy trình chuẩn (Skill) và đội ngũ nhân sự chuyên trách có phân quyền (Agent). Buổi 6 sẽ xâu chuỗi toàn bộ Buổi 1 đến Buổi 5:</p>
+            <h3 id="b5-d-4" style="font-size: 16px; margin-bottom: 8px;">D.4. Cầu nối sang Buổi 6: làm video giới thiệu và landing page doanh nghiệp</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Chúc mừng anh chị đã sở hữu trọn vẹn quy trình chuẩn (Skill) và đội ngũ nhân sự chuyên trách có phân quyền (Agent). Buổi 6 dùng chính những năng lực đó để tự làm 2 sản phẩm truyền thông cho công ty:</p>
             <ul class="steps-list">
-              <li><span class="step-badge">1</span><div>Giao diện Web App tương tác (Buổi 2).</div></li>
-              <li><span class="step-badge">2</span><div>Dữ liệu đám mây Google Sheets / Drive qua MCP (Buổi 3).</div></li>
-              <li><span class="step-badge">3</span><div>Hệ thống file trên máy tính &amp; <code>CLAUDE.md</code> (Buổi 4).</div></li>
-              <li><span class="step-badge">4</span><div>Cặp đôi Agent và Skill chuẩn hóa (Buổi 5).</div></li>
+              <li><span class="step-badge">1</span><div><strong>Video giới thiệu 45 giây:</strong> cài một bộ Skill làm phim bằng code ở cấp project (như Buổi 5), Claude tự viết kịch bản, tạo giọng đọc AI, nhạc, hiệu ứng và render thành video.</div></li>
+              <li><span class="step-badge">2</span><div><strong>Landing page:</strong> Claude research thiết kế cùng ngành, dựng trang, đưa lên Vercel, rồi nối form đăng ký về Google Sheets bằng Apps Script (đã gặp ở Buổi 3).</div></li>
             </ul>
-            <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Tất cả hòa quyện thành <strong>01 cỗ máy tự động hóa hoàn chỉnh (End-to-End Autonomous System)</strong> giải quyết bài toán kinh doanh thật của chính doanh nghiệp anh chị!</p>
+            <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Anh chị đóng vai đạo diễn và người duyệt, Claude là cả đội sản xuất!</p>
 
             <div class="notes-box">
               <div style="font-size: 14px; font-weight: 700; color: var(--text-main);"><svg class="icon inline-icon icon-brand"><use href="#icon-edit"/></svg>Sổ tay ghi chú cá nhân (Buổi 5)</div>
@@ -4175,36 +4188,340 @@ Mỗi trợ lý làm việc độc lập trong phòng riêng rồi mang bản t�
       </div>
 
       <!-- ============================================================== -->
-      <!-- BUỔI 6: XÂY DỰNG QUY TRÌNH TỰ ĐỘNG HÓA HOÀN CHỈNH -->
+      <!-- BUỔI 6: LÀM VIDEO GIỚI THIỆU VÀ LANDING PAGE DOANH NGHIỆP -->
       <!-- ============================================================== -->
       <div class="tab-pane" id="tab-buoi-06">
         <div class="session-hero">
-          <div class="hero-meta-row">
-            <span class="hero-tag tag-ready">Buổi 6 • Tốt nghiệp</span>
-          </div>
-          <h1 class="hero-title">Xây dựng cỗ máy tự động hóa công việc hoàn chỉnh</h1>
+          <h1 class="hero-title">Làm video giới thiệu và landing page doanh nghiệp bằng Claude</h1>
           <p class="hero-desc">
-            Ghép nối tất cả các mắt xích đã học: CLAUDE.md (Bộ não ngữ cảnh) + MCP (Kết nối dữ liệu) + Agent/Skill (Xử lý nghiệp vụ) + Artifacts (Trực quan hóa) thành một hệ thống tự động hoàn chỉnh cho công việc thật.
+            Hai sản phẩm truyền thông mà doanh nghiệp nào cũng cần: một video ngắn giới thiệu công ty có giọng đọc, nhạc, hiệu ứng, và một landing page có form đăng ký tự đổ dữ liệu khách hàng về Google Sheets. Claude tự viết kịch bản, tự dựng, tự đưa lên mạng; anh chị đóng vai đạo diễn và người duyệt.
           </p>
           <div class="deliverable-box">
-            <span><svg class="icon inline-icon icon-brand"><use href="#icon-gift"/></svg><strong>Sản phẩm cầm về:</strong> 01 Quy trình làm việc tự động hóa End-to-End hoàn chỉnh + Chứng nhận điện tử CES Global.</span>
+            <span><svg class="icon inline-icon icon-brand"><use href="#icon-gift"/></svg><strong>Sản phẩm cầm về:</strong> 01 video 45 giây giới thiệu công ty (giọng đọc AI, nhạc, hiệu ứng âm thanh) + 01 landing page chạy trên Vercel, có form đăng ký tự đổ dữ liệu về Google Sheets.</span>
           </div>
         </div>
 
-        <div class="card-panel">
-          <h3 style="font-size: 18px; margin-bottom: 14px; color: var(--brand-primary);">Nội dung bài học & Kỹ năng đạt được</h3>
-          <ul class="steps-list" style="gap: 14px;">
-            <li><span class="step-badge">1</span> <strong>Bức tranh tự động hóa tổng thể:</strong> Kích hoạt theo sự kiện -> Gọi dữ liệu -> Agent chạy Skill -> Xuất báo cáo tự động.</li>
-            <li><span class="step-badge">2</span> <strong>Xây dựng file CLAUDE.md:</strong> Định hình "bản đồ trí tuệ" cho thư mục công việc của bạn để bất kỳ AI nào mở ra cũng hiểu ngay bối cảnh.</li>
-            <li><span class="step-badge">3</span> <strong>Lắp ráp cỗ máy End-to-End:</strong> Ghép dữ liệu thật từ Google Drive/Local sang Agent xử lý và xuất giao diện tương tác.</li>
-            <li><span class="step-badge">4</span> <strong>Demo tốt nghiệp & Đúc kết:</strong> Trình bày hệ thống tự động hóa của bạn, nhận phản hồi từ chuyên gia và nhận chứng chỉ tốt nghiệp CES Global.</li>
-          </ul>
-
-          <div class="notes-box">
-            <div style="font-size: 14px; font-weight: 700; color: var(--text-main);"><svg class="icon inline-icon icon-brand"><use href="#icon-edit"/></svg>Sổ tay ghi chú cá nhân (Buổi 6)</div>
-            <textarea class="notes-textarea" id="note-buoi-06" placeholder="Kế hoạch phát triển và duy trì hệ thống AI sau khóa học..."></textarea>
+        <section class="content-section" id="b6-phan-a">
+          <div class="section-header">
+            <span class="section-badge">PHẦN A</span>
+            <h2 class="section-title">Làm video giới thiệu công ty bằng code</h2>
           </div>
-        </div>
+
+          <div class="card-panel">
+            <h3 id="b6-a-1" style="font-size: 16px; margin-bottom: 8px;">A.1. Video thực chất là gì trong mắt máy tính?</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Video là <strong>một chuỗi ảnh tĩnh (khung hình, frame)</strong> hiện lên thật nhanh nối tiếp nhau. Mắt người thấy liền mạch khi tốc độ đủ cao, đo bằng <strong>fps</strong> (frames per second - số khung hình mỗi giây):</p>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div>Phim điện ảnh thường chạy <strong>24 fps</strong>; video mạng xã hội hay dùng <strong>24-30 fps</strong>.</div></li>
+              <li><span class="step-badge">2</span><div>Một video <strong>45 giây ở 24 fps</strong> gồm <strong>45 x 24 = 1.080 khung hình</strong>. Ở 30 fps là 1.350 khung hình.</div></li>
+              <li><span class="step-badge">3</span><div>Âm thanh (giọng đọc, nhạc, hiệu ứng) là một <strong>dải riêng</strong>, được "ghép" khớp với hình theo dòng thời gian.</div></li>
+            </ul>
+            <div class="callout callout-note">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lightbulb"/></svg>Ví von dễ nhớ</div>
+              Video giống <strong>cuốn sách lật (flipbook)</strong>: mỗi trang là một bức vẽ hơi khác trang trước, lật nhanh thì hình chuyển động. Làm video bằng code chính là nhờ Claude "vẽ" đúng từng trang, rồi đóng lại thành cuốn.
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b6-a-2" style="font-size: 16px; margin-bottom: 8px;">A.2. Hai cách AI làm video</h3>
+            <div class="dg dg-compare">
+              <div class="dg-node dg-accent-amber">
+                <div class="dg-node-title dg-c-amber">Cách 1 - Mô hình sinh video</div>
+                <div class="dg-row"><span class="dg-pill">Cách làm</span><div>Gõ mô tả, mô hình AI tự "vẽ" ra cả đoạn video (các công cụ dạng Veo, Sora, Kling...).</div></div>
+                <div class="dg-row"><span class="dg-pill">Mạnh</span><div>Cảnh quay giống thật, người, phong cảnh.</div></div>
+                <div class="dg-row"><span class="dg-pill">Yếu</span><div>Khó kiểm soát chữ, logo, màu thương hiệu; muốn sửa 1 chi tiết thường phải tạo lại cả đoạn.</div></div>
+              </div>
+              <div class="dg-node dg-accent-emerald">
+                <div class="dg-node-title dg-c-emerald">Cách 2 - Làm phim bằng code (bài hôm nay)</div>
+                <div class="dg-row"><span class="dg-pill">Cách làm</span><div>Claude viết một trang web hoạt hình, rồi "chụp" từng khung hình thành video.</div></div>
+                <div class="dg-row"><span class="dg-pill">Mạnh</span><div>Chữ, logo, số liệu, màu sắc <strong>chính xác tuyệt đối</strong>; sửa chỗ nào là sửa đúng chỗ đó.</div></div>
+                <div class="dg-row"><span class="dg-pill">Hợp cho</span><div>Video giới thiệu công ty, motion graphics, video số liệu, video bài giảng.</div></div>
+              </div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted);">Bộ skill dùng trong bài là <strong>Lemo-Opuscar</strong> (<code>lemomo-ai/lemo-opuscar</code> trên GitHub, mã nguồn mở MIT, khoảng 12 nghìn sao). Tác giả ghi rõ: phim làm hoàn toàn bằng code, <strong>không dùng mô hình sinh video, không dùng cảnh quay có sẵn</strong>, kèm hơn 60 phong cách phim dựng sẵn.</p>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b6-a-3" style="font-size: 16px; margin-bottom: 8px;">A.3. Quy trình render: Chrome chạy ngầm chụp từng khung hình</h3>
+            <div class="dg">
+              <div class="dg-node dg-center dg-narrow dg-accent-brand">
+                <div class="dg-node-title">1. Kịch bản và dòng thời gian (timeline)</div>
+                Claude đọc tư liệu, viết lời thoại, chia cảnh, chốt giây nào hiện gì, nhạc dồn ở đâu.
+              </div>
+              <div class="dg-down"></div>
+              <div class="dg-node dg-center dg-narrow dg-accent-cyan">
+                <div class="dg-node-title">2. Trang web hoạt hình có hàm <code>render(t)</code></div>
+                Mỗi thời điểm <code>t</code> vẽ ra đúng 1 khung hình (bằng Canvas, three.js cho 3D).
+              </div>
+              <div class="dg-down"></div>
+              <div class="dg-node dg-center dg-narrow dg-accent-amber">
+                <div class="dg-node-title">3. Chrome headless chụp từng khung hình</div>
+                Trình duyệt chạy ngầm gọi <code>render(t)</code> lần lượt cho từng khung, chụp lại thành ảnh.
+              </div>
+              <div class="dg-down"></div>
+              <div class="dg-node dg-center dg-narrow dg-accent-emerald">
+                <div class="dg-node-title">4. FFmpeg ghép ảnh thành video</div>
+                Nối hàng nghìn ảnh thành file MP4, trộn giọng đọc, nhạc, hiệu ứng, cân âm lượng.
+              </div>
+              <div class="dg-down"></div>
+              <div class="dg-node dg-center dg-narrow">
+                <div class="dg-node-title">5. Kiểm tra và xuất bản</div>
+                Xem bảng ảnh tóm tắt các cảnh, soát phụ đề, nghe lại âm thanh, sửa rồi render lại.
+              </div>
+            </div>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div><strong>Chrome headless</strong> là trình duyệt Chrome chạy ngầm, không hiện cửa sổ. Máy dùng nó để "mở" trang hoạt hình và chụp ảnh tự động, nhanh và không cần người bấm.</div></li>
+              <li><span class="step-badge">2</span><div><strong>Vì sao phải "hàm theo thời gian"?</strong> Cùng một <code>t</code> luôn ra cùng một hình (tính tất định). Nhờ vậy có thể chia nhiều luồng render song song mà video không bị giật, và render lại bao nhiêu lần cũng giống hệt nhau.</div></li>
+              <li><span class="step-badge">3</span><div><strong>FFmpeg</strong> là công cụ mã nguồn mở xử lý video và âm thanh, gần như mọi phần mềm dựng phim đều dùng. Ở bước cuối, âm thanh được chuẩn hóa khoảng <strong>-14 LUFS</strong> (đơn vị đo độ to cảm nhận), mức to nhỏ phổ biến của các nền tảng video trực tuyến.</div></li>
+            </ul>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b6-a-4" style="font-size: 16px; margin-bottom: 8px;">A.4. Âm thanh: giọng đọc AI Studio, nhạc và hiệu ứng</h3>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div><strong>Giọng đọc bằng Google AI Studio:</strong> AI Studio có trang tạo giọng nói dùng mô hình Gemini TTS (chuyển văn bản thành giọng nói). Chọn giọng có sẵn (nam, nữ), rồi <strong>mô tả cách đọc bằng lời</strong>, ví dụ "đọc nhanh nhẹn, hào hứng, như quảng cáo", sau đó tải file âm thanh WAV. Bài này Claude tự mở AI Studio trong <strong>trình duyệt tích hợp</strong> để làm thay, chỉ dừng lại khi cần anh chị đăng nhập.</div></li>
+              <li><span class="step-badge">2</span><div><strong>Nhạc nền và hiệu ứng âm thanh:</strong> bộ skill tự soạn nhạc từ thư viện nhạc cụ mẫu và tự tổng hợp hiệu ứng (tiếng vút, tiếng chạm...). Mỗi hiệu ứng được gắn với đúng khung hình trên timeline, nên chữ hiện ra là tiếng "tách" vang lên đúng lúc.</div></li>
+              <li><span class="step-badge">3</span><div><strong>Trộn âm:</strong> giọng đọc luôn nổi hơn nhạc (nhạc tự hạ xuống khi có lời), phụ đề được xuất kèm để xem không cần bật tiếng.</div></li>
+            </ul>
+          </div>
+
+          <div class="card-panel" id="b6-a-5">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">A.5. Thực hành: kiểm tra, cài skill và làm video 45 giây</h3>
+            <h4 style="font-size: 15px; font-weight: 700; margin: 10px 0 6px; color: var(--brand-primary);">Bước 1: Cho Claude kiểm tra repo trước khi cài</h4>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Link repo bộ skill làm video</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">https://github.com/lemomo-ai/lemo-opuscar</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin: 10px 0;">Mở link để xem trang giới thiệu và các video mẫu, sau đó giao Claude kiểm tra:</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt A1 - Kiểm tra độ an toàn của repo</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">https://github.com/lemomo-ai/lemo-opuscar
+repo này là gì? có an toàn để dùng ko, có mã độc gì ko? cách cài đặt như thế nào</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin: 10px 0;"><strong>Quan sát:</strong> Claude đọc repo và báo lại: công cụ làm gì, giấy phép, mức độ phổ biến, các script sẽ chạy khi cài, cần cài thêm gì. Thói quen tốt đã học ở Buổi 4: <strong>luôn kiểm tra trước khi cài</strong>.</p>
+
+            <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 6px; color: var(--brand-primary);">Bước 2: Cài bộ skill vào thư mục skill cấp project</h4>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt A2 - Cài skill cấp project</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">cài bộ skill này cho tôi nhé. Đặt tại thư mục skill cấp project</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin: 10px 0;"><strong>Quan sát:</strong> Claude chép bộ skill vào thư mục <code>.claude/skills/</code> của dự án (cấp project, như Buổi 5), rồi cài các công cụ đi kèm: Node.js, FFmpeg, Python, trình duyệt chạy ngầm. Khi Claude xin phép chạy lệnh, đọc qua rồi bấm cho phép.</p>
+
+            <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 6px; color: var(--brand-primary);">Bước 3: Giao việc làm video 45 giây</h4>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt A3 - Làm video giới thiệu CES Global</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">https://cesglobal.com.vn/
+đọc nội dung trong link này, dựa vào đây tự viết kịch bản và làm cho tôi video 45 giây giới thiệu về CES Global. Có giọng đọc, sound effect, nhạc,... sao cho thu hút. Phần voice thì bạn sẽ dùng AI Studio để tạo voice cho tôi. Bạn cũng sẽ tự mở trình duyệt tích hợp sẵn để tự động thao tác tạo voice cho tôi. Nếu cần đăng nhập thì dừng lại hướng dẫn tôi. Dùng giọng đọc nam, sao cho phù hợp, nhanh nhẹn, thu hút</div>
+            </div>
+            <ul class="steps-list" style="margin-top: 12px;">
+              <li><span class="step-badge">1</span><div>Claude đọc website, viết kịch bản 45 giây và chọn phong cách phim phù hợp.</div></li>
+              <li><span class="step-badge">2</span><div>Claude mở AI Studio trong trình duyệt tích hợp. Nếu chưa đăng nhập Google, Claude dừng lại: <strong>anh chị tự đăng nhập</strong>, rồi bảo Claude làm tiếp.</div></li>
+              <li><span class="step-badge">3</span><div>Claude tạo giọng nam, tải file giọng đọc về, soạn nhạc, hiệu ứng, render từng khung hình và ghép thành file MP4.</div></li>
+              <li><span class="step-badge">4</span><div>Xem video. Muốn sửa thì nói cụ thể như với người dựng phim: <em>"cảnh logo kéo dài thêm 2 giây"</em>, <em>"nhạc nhỏ lại một chút"</em>.</div></li>
+            </ul>
+            <div class="callout callout-warn">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-alert-triangle"/></svg>Cần biết trước khi làm</div>
+              <p><strong>Thời gian và chi phí:</strong> theo tác giả, một video mất khoảng 30-60 phút và khá nhiều lượt dùng Claude. Nên làm khi máy rảnh, cắm sạc.</p>
+              <p><strong>Cấu hình máy:</strong> cần Node.js 20 trở lên, FFmpeg 7 trở lên, Python 3.11 trở lên; bộ công cụ tải về vài trăm MB. Tác giả khuyên dùng WSL trên Windows; các phong cách 3D cần máy có card đồ họa.</p>
+              <p><strong>Bản quyền:</strong> mã nguồn bộ skill theo giấy phép MIT; video anh chị làm ra thuộc về anh chị. Nội dung website đưa vào video phải là của công ty mình hoặc được phép dùng.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section" id="b6-phan-b">
+          <div class="section-header">
+            <span class="section-badge">PHẦN B</span>
+            <h2 class="section-title">Làm landing page, đưa lên Vercel và thu thập khách hàng về Google Sheets</h2>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b6-b-1" style="font-size: 16px; margin-bottom: 8px;">B.1. Landing page là gì và gồm những phần nào?</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;"><strong>Landing page</strong> (trang đích) là một trang web <strong>chỉ phục vụ một mục tiêu</strong>, thường là để khách để lại thông tin hoặc mua hàng. Một landing page tốt thường có:</p>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div><strong>Phần đầu trang (hero):</strong> tiêu đề nói rõ lợi ích, 1 câu mô tả, 1 nút kêu gọi hành động (CTA) nổi bật.</div></li>
+              <li><span class="step-badge">2</span><div><strong>Dịch vụ, lợi ích:</strong> khách nhận được gì, khác đối thủ ở đâu.</div></li>
+              <li><span class="step-badge">3</span><div><strong>Bằng chứng tin cậy:</strong> khách hàng tiêu biểu, con số, đánh giá, hình ảnh thật.</div></li>
+              <li><span class="step-badge">4</span><div><strong>Câu hỏi thường gặp:</strong> trả lời trước các băn khoăn của khách.</div></li>
+              <li><span class="step-badge">5</span><div><strong>Form đăng ký:</strong> ngắn gọn, chỉ hỏi thông tin thật sự cần (họ tên, số điện thoại, email, nhu cầu).</div></li>
+            </ul>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b6-b-2" style="font-size: 16px; margin-bottom: 8px;">B.2. Research thiết kế: lấy cảm hứng từ các trang design lớn</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Trước khi dựng, xem các mẫu đẹp cùng ngành để chốt phong cách và tone màu:</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Link tham khảo thiết kế</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Các trang lớn về design để tham khảo:
+https://dribbble.com/search/landing-page
+https://www.pinterest.com/</div>
+            </div>
+            <ul class="steps-list" style="margin-top: 12px;">
+              <li><span class="step-badge">1</span><div><a href="https://dribbble.com/search/landing-page" target="_blank" rel="noopener noreferrer" style="color: var(--brand-primary);">Dribbble</a>: nơi các nhà thiết kế đăng mẫu giao diện. Tìm "landing page" kèm ngành của mình.</div></li>
+              <li><span class="step-badge">2</span><div><a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" style="color: var(--brand-primary);">Pinterest</a>: gom ảnh tham khảo thành bảng ý tưởng (moodboard) về màu sắc, bố cục, phong cách.</div></li>
+              <li><span class="step-badge">3</span><div><strong>Chụp lại 1 mẫu ưng ý</strong> để gửi kèm câu lệnh: Claude nhìn ảnh sẽ bắt đúng phong cách nhanh hơn nhiều so với mô tả bằng lời.</div></li>
+            </ul>
+            <div class="table-container" style="margin-top: 10px;">
+              <table>
+                <thead>
+                  <tr><th>Ngành</th><th>Tone màu thường gặp</th><th>Cảm giác mang lại</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Tài chính, kế toán, luật</td><td>Xanh navy, xám, trắng</td><td>Tin cậy, chắc chắn</td></tr>
+                  <tr><td>Y tế, giáo dục</td><td>Xanh dương nhạt, xanh lá, trắng</td><td>Sạch sẽ, an tâm</td></tr>
+                  <tr><td>Ăn uống, bán lẻ</td><td>Cam, đỏ, vàng</td><td>Kích thích, năng động</td></tr>
+                  <tr><td>Cao cấp, bất động sản</td><td>Đen, vàng đồng, kem</td><td>Sang trọng, đẳng cấp</td></tr>
+                  <tr><td>Công nghệ</td><td>Xanh tím, gradient, nền tối</td><td>Hiện đại, sáng tạo</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="callout callout-tip">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lightbulb"/></svg>Tham khảo, không sao chép</div>
+              Mẫu trên Dribbble, Pinterest là tác phẩm của người khác: lấy cảm hứng về bố cục, màu, phong cách; nội dung, hình ảnh, logo phải là của công ty mình. Màu chủ đạo nên bám theo màu logo, như đã làm với Skill ở Buổi 5.
+            </div>
+          </div>
+
+          <div class="card-panel" id="b6-b-3">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">B.3. Thực hành: dựng landing page</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Thay <code>...</code> bằng chủ đề, ngành của công ty; <strong>gửi kèm ảnh mẫu</strong> đã chọn ở B.2.</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt B1 - Research và dựng landing page</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Hiện tại tôi cần làm 1 website cho công tôi về chủ đề ... Tôi cần bạn research thêm các mẫu trong cùng ngành xem style và tone màu nên sử dụng như thế nào. Hãy hỏi lại tôi để chắc chắn bạn làm đúng ý tôi. Có thể research các mẫu hiện đại, sang trọng trên các trang web lớn như dribbble, pinterest,...
+Đây là cái mẫu tôi thấy phù hợp</div>
+            </div>
+            <ul class="steps-list" style="margin-top: 12px;">
+              <li><span class="step-badge">1</span><div>Claude research các mẫu cùng ngành và <strong>hỏi lại</strong>: tên công ty, đối tượng khách hàng, mục tiêu trang, màu thương hiệu, nội dung các phần. Trả lời càng cụ thể, trang càng đúng ý.</div></li>
+              <li><span class="step-badge">2</span><div>Claude đề xuất phong cách, tone màu, bố cục, rồi dựng trang và mở cho anh chị xem trong trình duyệt.</div></li>
+              <li><span class="step-badge">3</span><div>Góp ý chỉnh sửa như với nhà thiết kế cho tới khi "tạm ổn" thì sang bước đưa lên mạng.</div></li>
+            </ul>
+          </div>
+
+          <div class="card-panel" id="b6-b-4">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">B.4. Đưa website lên mạng bằng Vercel</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;"><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer" style="color: var(--brand-primary);">Vercel</a> là dịch vụ lưu trữ và đưa website lên mạng. Website được phân phối qua mạng máy chủ khắp thế giới (CDN) nên tải nhanh ở mọi nơi. Mỗi lần đưa lên (deploy) có một link riêng để xem thử, còn link chính (production) luôn trỏ tới bản mới nhất; có thể gắn tên miền riêng của công ty.</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Link Vercel (tạo tài khoản trước nếu chưa có)</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">https://vercel.com/</div>
+            </div>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt B2 - Đẩy website lên Vercel</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">tôi thấy tạm ổn, bây giờ hãy đẩy lên vercel cho tôi, tôi đã có tài khoản vercel rồi, bạn hãy tự cài đặt thêm nếu cần và tự chạy lệnh cho tôi, nếu cần tôi đăng nhập hoặc làm gì thì hướng dẫn tôi</div>
+            </div>
+            <ul class="steps-list" style="margin-top: 12px;">
+              <li><span class="step-badge">1</span><div>Claude cài công cụ dòng lệnh của Vercel nếu máy chưa có.</div></li>
+              <li><span class="step-badge">2</span><div>Lần đầu, Vercel mở trình duyệt để đăng nhập: <strong>anh chị tự đăng nhập</strong> tài khoản Vercel.</div></li>
+              <li><span class="step-badge">3</span><div>Claude đưa website lên và gửi lại link. Mở link trên điện thoại để kiểm tra giao diện.</div></li>
+            </ul>
+            <div class="callout callout-warn">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-alert-triangle"/></svg>Gói miễn phí của Vercel chỉ cho mục đích cá nhân</div>
+              Theo điều khoản của Vercel, gói Hobby (miễn phí) chỉ dùng cho mục đích <strong>cá nhân, phi thương mại</strong>. Website chính thức của công ty là mục đích thương mại, cần nâng lên gói Pro. Gói miễn phí vẫn phù hợp để học và làm bản thử.
+            </div>
+          </div>
+
+          <div class="card-panel" id="b6-b-5">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">B.5. Form đăng ký tự đổ dữ liệu về Google Sheets bằng Apps Script</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 4px;">Website trên Vercel chỉ là "mặt tiền", không tự lưu được dữ liệu. Ta dùng <strong>Apps Script</strong> (đã gặp ở Buổi 3) làm "người nhận hồ sơ" ghi thẳng vào Google Sheets:</p>
+            <div class="dg">
+              <div class="dg-hflow">
+                <div class="dg-node dg-center dg-accent-brand"><div class="dg-node-title">Khách bấm Đăng ký</div>trên landing page</div>
+                <div class="dg-right"></div>
+                <div class="dg-node dg-center dg-accent-cyan"><div class="dg-node-title">Link web app Apps Script</div>nhận dữ liệu gửi tới</div>
+                <div class="dg-right"></div>
+                <div class="dg-node dg-center dg-accent-emerald"><div class="dg-node-title">Google Sheets</div>thêm 1 dòng kèm thời gian</div>
+              </div>
+            </div>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">Prompt B3 - Form đăng ký đổ về Google Sheets</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">Ở mục đăng ký, tôi cần thu thập thông tin khách hàng khi khách hàng để lại thông tin. Bạn hãy dùng Apps Script để tự động đổ data đó về gg sheet khi khách hàng bấm đăng ký trên web. Bạn hãy dùng Claude in Chrome/ trình duyệt tích hợp sẵn (anh chị chọn 1 trong 2 khi gửi prompt) để tự thao tác cho tôi nhé. Cần đăng nhập gì thì tôi sẽ làm.</div>
+            </div>
+            <ul class="steps-list" style="margin-top: 12px;">
+              <li><span class="step-badge">1</span><div>Claude tạo file Google Sheets nhận dữ liệu, mở Apps Script, viết đoạn code nhận form, lưu và <strong>triển khai thành ứng dụng web</strong>.</div></li>
+              <li><span class="step-badge">2</span><div>Tới bước cấp quyền, <strong>anh chị tự bấm</strong> cho phép.</div></li>
+              <li><span class="step-badge">3</span><div>Claude gắn link web app vào form trên website rồi đưa lại lên Vercel.</div></li>
+              <li><span class="step-badge">4</span><div>Thử đăng ký trên website thật: Google Sheets có thêm 1 dòng thông tin vừa nhập.</div></li>
+            </ul>
+            <div class="callout callout-note">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lock"/></svg>Vì sao lần này chọn "Anyone" mà vẫn an toàn?</div>
+              <p>Ở Buổi 3, web app quản trị phải giới hạn người mở vì nó <strong>xem và sửa</strong> toàn bộ dữ liệu. Còn ở đây, khách vào website không đăng nhập Google, nên web app nhận form <strong>bắt buộc</strong> để "Anyone"; bù lại đoạn code chỉ làm đúng một việc là <strong>ghi thêm dòng mới</strong>, không cho xem hay sửa dữ liệu cũ.</p>
+              <p>Thông tin khách để lại là dữ liệu cá nhân: nên có dòng đồng ý thu thập thông tin trên form, chỉ dùng đúng mục đích và không chia sẻ file Sheets ra ngoài. Mỗi lần sửa code Apps Script, nhớ <strong>triển khai phiên bản mới</strong> thì thay đổi mới có hiệu lực.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section" id="b6-phan-c">
+          <div class="section-header">
+            <span class="section-badge">PHẦN C</span>
+            <h2 class="section-title">Nghiệm thu Buổi 6 &amp; tổng kết khóa học</h2>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b6-c-1" style="font-size: 16px; margin-bottom: 8px;">C.1. Nghiệm thu Buổi 6</h3>
+            <div class="checklist-container">
+              <div class="checklist-title">
+                <span><svg class="icon icon-emerald"><use href="#icon-check-circle"/></svg></span>
+                <span>Về hiểu biết bản chất</span>
+              </div>
+              <div class="checklist-items">
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b6-chk-1"><span class="checklist-text">Giải thích được video là chuỗi khung hình, và cách Chrome headless chụp từng khung rồi FFmpeg ghép thành video.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b6-chk-2"><span class="checklist-text">Phân biệt mô hình sinh video và làm phim bằng code, biết khi nào dùng cách nào.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b6-chk-3"><span class="checklist-text">Nắm các phần của một landing page và cách research thiết kế, tone màu theo ngành.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b6-chk-4"><span class="checklist-text">Hiểu luồng form: website gửi dữ liệu, Apps Script nhận, Google Sheets lưu; biết vì sao web app nhận form để "Anyone".</span></label>
+              </div>
+            </div>
+            <div class="checklist-container" style="margin-top: 14px;">
+              <div class="checklist-title">
+                <span><svg class="icon icon-emerald"><use href="#icon-check-circle"/></svg></span>
+                <span>Về sản phẩm mang về</span>
+              </div>
+              <div class="checklist-items">
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b6-chk-5"><span class="checklist-text">Sản phẩm 1: 01 video 45 giây giới thiệu công ty có giọng đọc AI, nhạc, hiệu ứng âm thanh.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b6-chk-6"><span class="checklist-text">Sản phẩm 2: 01 landing page đúng phong cách, tone màu thương hiệu, đã chạy trên Vercel.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b6-chk-7"><span class="checklist-text">Form đăng ký trên website đổ dữ liệu về Google Sheets, đã thử đăng ký thành công.</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <h3 id="b6-c-2" style="font-size: 16px; margin-bottom: 8px;">C.2. Nhìn lại hành trình 6 buổi</h3>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div><strong>Buổi 1-2:</strong> trợ lý Claude hiểu công việc của mình, và công cụ tương tác bằng Artifacts.</div></li>
+              <li><span class="step-badge">2</span><div><strong>Buổi 3:</strong> kết nối dữ liệu thật (Gmail, Drive, Sheets), dashboard và web app quản lý.</div></li>
+              <li><span class="step-badge">3</span><div><strong>Buổi 4-5:</strong> Claude làm việc trên máy tính, CLAUDE.md, Skill và Agent chuyên vai.</div></li>
+              <li><span class="step-badge">4</span><div><strong>Buổi 6:</strong> tự làm sản phẩm truyền thông: video giới thiệu và landing page thu khách hàng.</div></li>
+            </ul>
+            <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Từ đây, mỗi việc lặp lại trong công việc đều có thể giao cho Claude: dặn rõ, duyệt kỹ, và đóng gói thành Skill để dùng mãi.</p>
+
+            <div class="notes-box">
+              <div style="font-size: 14px; font-weight: 700; color: var(--text-main);"><svg class="icon inline-icon icon-brand"><use href="#icon-edit"/></svg>Sổ tay ghi chú cá nhân (Buổi 6)</div>
+              <textarea class="notes-textarea" id="note-buoi-06" placeholder="Ý tưởng video, landing page cho công ty bạn và kế hoạch dùng Claude sau khóa học..."></textarea>
+            </div>
+          </div>
+        </section>
       </div>
 
     </main>
