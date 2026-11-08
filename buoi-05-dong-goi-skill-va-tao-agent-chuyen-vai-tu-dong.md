@@ -13,7 +13,7 @@
 | Phần | Nội dung trọng tâm | Thời lượng | Dạng bài | Trọng tâm sư phạm & Thao tác |
 |:---:|---|:---:|:---:|---|
 | **0** | **Khởi động & Mở cánh cửa `.claude/`:**<br>- Điểm lại thành quả Buổi 4 (`CLAUDE.md` và cây thư mục 3 ngăn).<br>- Khám phá 2 ngăn kéo bí mật: `.claude/skills/` và `.claude/agents/`. | 10 phút | Trực quan | Điểm lại thành quả Buổi 4, nêu 2 điểm nghẽn mới dẫn vào Skill và Agent. |
-| **A** | **Skill: Dặn một lần, dùng mãi (Đóng gói tài liệu chuẩn thương hiệu):**<br>- Điểm đau: Mỗi lần nhờ tài liệu lại phải dặn lại từ đầu.<br>- Ẩn dụ: "Tờ quy trình dán trên tường" / "Quyển công thức".<br>- 3 bước tạo Skill tự nhiên: Nghiên cứu $\rightarrow$ Dựng file Word có logo/màu chuẩn $\rightarrow$ Nhờ đóng gói thành Skill. | 45 phút | LT 15'<br>HV 30' | **Bước 1:** Nhờ Claude nghiên cứu nội dung xu hướng AI 2026.<br>**Bước 2:** Kéo logo, tạo file Word chuẩn màu, chuẩn tiếng Việt.<br>**Bước 3:** Nhờ Claude đóng gói thành Skill `dong-goi-tai-lieu-chuan`.<br>**Mở nắp capo:** Soi file `SKILL.md` và gọi lại bằng 1 câu ngắn. |
+| **A** | **Skill: Dặn một lần, dùng mãi (Đóng gói tài liệu chuẩn thương hiệu):**<br>- Điểm đau: Mỗi lần nhờ tài liệu lại phải dặn lại từ đầu.<br>- Ẩn dụ: "Tờ quy trình dán trên tường" / "Quyển công thức".<br>- 3 bước tạo Skill tự nhiên: Nghiên cứu $\rightarrow$ Dựng file Word có logo/màu chuẩn $\rightarrow$ Nhờ đóng gói thành Skill. | 45 phút | LT 15'<br>HV 30' | **Bước 1:** Nhờ Claude nghiên cứu nội dung xu hướng AI 2026.<br>**Bước 2:** Kéo logo, tạo file Word chuẩn màu, chuẩn tiếng Việt.<br>**Bước 3:** Nhờ Claude đóng gói thành Skill `dong-goi-tai-lieu-chuan`.<br>**Mở nắp capo:** Soi file `SKILL.md` và gọi lại bằng 1 câu ngắn.<br>**Skill cộng đồng:** Đánh giá bộ marketingskills, cài SlideFly cấp project, tạo slide bằng `/slidefly`. |
 | **B** | **Agent & Subagent: Tuyển 2 nhân viên biên chế chính thức:**<br>- Ẩn dụ: "Một công ty thu nhỏ" (Nhân viên vs Trợ lý phụ phòng riêng).<br>- Tại sao cần ổ khóa `tools:` bằng sắt? Chống prompt injection ngoài mạng.<br>- Tuyển 2 nhân viên bằng tiếng Việt tự nhiên không cần nhớ code. | 35 phút | LT 15'<br>HV 20' | **Bước 4:** Tuyển agent nghiên cứu đối thủ (Chỉ đọc & tra web, khóa quyền ghi sửa file).<br>**Bước 5:** Tuyển agent chuyên viên đề xuất (Chỉ đọc & tạo file, không ra mạng). |
 | | **Nghỉ giải lao & Hỗ trợ kỹ thuật** | 10 phút | Giải lao | Trợ giảng kiểm tra từng máy: đã có đủ file Skill và 2 file Agent. |
 | **C** | **Phân biệt cốt tử Skill vs Agent & Mô hình phối hợp thực chiến:**<br>- Cuốn công thức (*Làm thế nào?*) vs Bản hợp đồng có chìa khóa (*Ai làm & Được đụng vào đâu?*).<br>- Bảng ma trận 3 tầng: `CLAUDE.md` - `SKILL` - `AGENT`.<br>- Phối hợp: Nối chuỗi (Tuần tự) & Chạy song song (Parallel). | 35 phút | LT 10'<br>HV 25' | **Bước 6:** Phối hợp Nối chuỗi: Nghiên cứu đối thủ $\rightarrow$ Lập đề xuất chiến lược.<br>**Bước 7:** Phối hợp Chạy song song: Nghiên cứu 2 thị trường cùng lúc.<br>**Bước 8-10:** Tuyển agent chuyên môn từ thư viện agency-agents, đặt cấp global + quy tắc ưu tiên agent chuyên biệt. |
@@ -192,6 +192,78 @@ Trong thư mục `demo-files/buoi-05/` có sẵn file `gioi_thieu_dich_vu_novate
 3. Nó tự biết lấy `logo-cesglobal.png`, tự áp màu xanh thương hiệu, tự căn lề, tự tạo file Word hoàn hảo lưu vào `03_output/`.
 4. Anh chị mở file mới trong `03_output/` ra xem: **Đúng 100% phong cách thương hiệu mà không cần anh chị phải nhắc lại một câu nào!**
 </details>
+
+---
+
+### A.5. Cài Skill có sẵn từ cộng đồng: Bộ skill marketing & Tạo slide với SlideFly
+
+Skill không chỉ tự đóng gói như A.2. Cộng đồng đã chia sẻ rất nhiều Skill làm sẵn, cài vào giống như **cài thêm app cho điện thoại**: chép đúng thư mục Skill vào `.claude/skills/` là Claude biết thêm một nghề mới.
+
+- **Một Skill cộng đồng gồm gì?** Một thư mục có file `SKILL.md` (tờ quy trình), có thể kèm mẫu, hình, font và các script chạy trên máy. Vì có thể chạy script, **luôn cho Claude soát trước khi cài** (như cách đã kiểm tra repo ở Buổi 4).
+- **marketingskills** (`coreyhaines31/marketingskills`, giấy phép MIT, rất phổ biến): hơn 50 skill marketing như viết nội dung bán hàng, tối ưu chuyển đổi trang, SEO, email, quảng cáo, định giá, ra mắt sản phẩm. Điểm hay: skill nền `product-marketing` tạo một **file bối cảnh sản phẩm** (khách hàng mục tiêu, nỗi đau, đối thủ, giọng thương hiệu...) mà các skill khác đọc trước khi làm. "Chỉnh theo thông tin project" chính là điền file này cho đúng công ty mình. Bản gốc viết bằng tiếng Anh, thiên về sản phẩm SaaS, nên chỉ nên chọn vài skill thật cần.
+- **SlideFly** (`andyluu98/slidefly`, giấy phép MIT, tài liệu tiếng Việt): skill tạo slide thành **1 file HTML duy nhất**, mở bằng trình duyệt là trình chiếu, có hiệu ứng chuyển cảnh mượt kiểu Morph của PowerPoint. Hơn 80 phong cách thiết kế, font hỗ trợ đủ dấu tiếng Việt; xuất được file PowerPoint (.pptx) khi yêu cầu.
+
+| SlideFly làm việc theo các bước | Anh chị làm gì |
+|---|---|
+| 1. Đọc nội dung, hỏi gộp các câu còn thiếu (mục đích, người xem, số slide, cảm giác mong muốn) | Trả lời một lượt cho rõ |
+| 2. Gợi ý vài phong cách, dựng **vài slide mẫu** để chọn | Chọn mẫu ưng ý |
+| 3. Dựng cả bộ, gói thành 1 file HTML | Chờ |
+| 4. Tự mở trình duyệt kiểm tra chữ tràn, khoảng trống, độ tương phản rồi sửa | Chờ |
+| 5. Giao đường dẫn file | Mở file: phím mũi tên hoặc Space để chuyển slide, phím F để toàn màn hình |
+
+<details>
+<summary><b>Thao tác thực hành 1: Đánh giá bộ skill marketing trước khi cài</b> (bấm để mở)</summary>
+
+```text
+https://github.com/coreyhaines31/marketingskills
+tìm hiểu cho tôi bộ skill này là gì, có phù hợp với project của tôi hay không? Và nếu có phù hợp thì hãy liệt kê ra các skill cần thiết có thể đưa vào project này, và mình cũng sẽ chỉnh lại theo thông tin của project này.
+```
+
+**Quan sát:** Claude đọc repo, cho biết bộ skill làm gì, có hợp với công việc của project không, đề xuất vài skill nên lấy và cách điền thông tin công ty vào file bối cảnh. Chỉ cài khi anh chị đã duyệt danh sách.
+
+</details>
+
+<details>
+<summary><b>Thao tác thực hành 2: Xem trang giới thiệu SlideFly</b> (bấm để mở)</summary>
+
+```text
+https://andyluu98.github.io/slidefly/
+```
+
+Mở link để xem slide mẫu chạy trực tiếp và bộ sưu tập phong cách.
+
+</details>
+
+<details>
+<summary><b>Thao tác thực hành 3: Cài SlideFly vào thư mục skill cấp project</b> (bấm để mở)</summary>
+
+```text
+https://github.com/andyluu98/slidefly
+cài cho tôi skill này, đặt tại folder skill cấp project này cho tôi
+```
+
+**Quan sát:** Claude tải repo về, chép đúng thư mục skill (trong repo nằm ở `skill/slidefly/`) vào `.claude/skills/slidefly/` của project. Một vài bước dùng Python để gói file và chọn phong cách, nếu máy chưa có Claude sẽ hướng dẫn cài.
+
+</details>
+
+<details>
+<summary><b>Thao tác thực hành 4: Gọi /slidefly tạo slide, xem 5 slide mẫu trước</b> (bấm để mở)</summary>
+
+Đính kèm hoặc chỉ tới nội dung cần làm slide (ví dụ file nghiên cứu xu hướng AI ở Bước 1, hoặc `gioi_thieu_dich_vu_novatech.md`), rồi gửi:
+
+```text
+sử dụng skill /slidefly để tạo cho tôi slide cho nội dung này. Trước khi tạo thì cho tôi mẫu 5 slide phù hợp với nội dung trên
+```
+
+**Diễn biến:**
+1. Claude hỏi lại mục đích, người xem, số slide, rồi dựng **5 slide mẫu** để anh chị duyệt phong cách và bố cục.
+2. Duyệt xong mới dựng cả bộ: mở file HTML, bấm mũi tên xem hiệu ứng chuyển cảnh.
+3. Cần gửi cho người dùng PowerPoint thì nhờ thêm: *"xuất thêm bản .pptx"*.
+
+</details>
+
+> [!TIP]
+> **Duyệt mẫu trước, dựng sau:** câu "trước khi tạo thì cho tôi mẫu 5 slide" là thói quen đáng giữ với mọi việc lớn: xem mẫu nhỏ, chốt hướng, rồi mới để Claude làm cả bộ. Sửa ở bước mẫu rẻ hơn nhiều so với sửa cả bộ 20 slide.
 
 ---
 
@@ -493,6 +565,7 @@ Trước khi đóng máy kết thúc Buổi 5, anh chị hãy kiểm tra lại t
 - [ ] **Sản phẩm 4:** 02 file kết quả phối hợp dây chuyền thành công:
   - `03_output/nghien-cuu-doi-thu.md` (Báo cáo nghiên cứu 3 đối thủ).
   - `03_output/de-xuat-chien-luoc.md` (Phương án hành động cạnh tranh).
+- [ ] **Sản phẩm 5:** Skill SlideFly cài cấp project trong `.claude/skills/slidefly/` + 01 bộ slide HTML tạo bằng `/slidefly`.
 
 ---
 

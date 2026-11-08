@@ -1567,6 +1567,7 @@
                 <li class="toc-item toc-sub"><a href="#b5-a-2">A.2. 3 bước tạo Skill</a></li>
                 <li class="toc-item toc-sub"><a href="#b5-a-3">A.3. Giải phẫu SKILL.md</a></li>
                 <li class="toc-item toc-sub"><a href="#b5-a-4">A.4. Thử gọi lại Skill</a></li>
+                <li class="toc-item toc-sub"><a href="#b5-a-5">A.5. Skill cộng đồng &amp; SlideFly</a></li>
                 <li class="toc-item"><a href="#b5-phan-b">B. Agent &amp; Subagent</a></li>
                 <li class="toc-item toc-sub"><a href="#b5-b-1">B.1. Mô hình công ty thu nhỏ</a></li>
                 <li class="toc-item toc-sub"><a href="#b5-b-2">B.2. Ổ khóa tools:</a></li>
@@ -3874,6 +3875,75 @@ description: Tự động đóng gói nội dung thành file Word (.docx) chuẩ
               <li><span class="step-badge">4</span><div>Mở file mới trong <code>03_output/</code>: <strong>đúng 100% phong cách thương hiệu</strong> mà không phải nhắc lại câu nào!</div></li>
             </ul>
           </div>
+
+          <div class="card-panel" id="b5-a-5">
+            <h3 style="font-size: 16px; margin-bottom: 8px;">A.5. Cài Skill có sẵn từ cộng đồng: bộ skill marketing &amp; tạo slide với SlideFly</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">Skill không chỉ tự đóng gói như A.2. Cộng đồng đã chia sẻ rất nhiều Skill làm sẵn, cài vào giống như <strong>cài thêm app cho điện thoại</strong>: chép đúng thư mục Skill vào <code>.claude/skills/</code> là Claude biết thêm một nghề mới.</p>
+            <ul class="steps-list">
+              <li><span class="step-badge">1</span><div><strong>Một Skill cộng đồng gồm gì?</strong> Một thư mục có file <code>SKILL.md</code> (tờ quy trình), có thể kèm mẫu, hình, font và các script chạy trên máy. Vì có thể chạy script, <strong>luôn cho Claude soát trước khi cài</strong> (như cách đã kiểm tra repo ở Buổi 4).</div></li>
+              <li><span class="step-badge">2</span><div><strong>marketingskills</strong> (<code>coreyhaines31/marketingskills</code>, giấy phép MIT, rất phổ biến): hơn 50 skill marketing như viết nội dung bán hàng, tối ưu chuyển đổi trang, SEO, email, quảng cáo, định giá, ra mắt sản phẩm. Điểm hay: skill nền <code>product-marketing</code> tạo một <strong>file bối cảnh sản phẩm</strong> (khách hàng mục tiêu, nỗi đau, đối thủ, giọng thương hiệu...) mà các skill khác đọc trước khi làm. "Chỉnh theo thông tin project" chính là điền file này cho đúng công ty mình. Bản gốc viết bằng tiếng Anh, thiên về sản phẩm SaaS, nên chỉ nên chọn vài skill thật cần.</div></li>
+              <li><span class="step-badge">3</span><div><strong>SlideFly</strong> (<code>andyluu98/slidefly</code>, giấy phép MIT, tài liệu tiếng Việt): skill tạo slide thành <strong>1 file HTML duy nhất</strong>, mở bằng trình duyệt là trình chiếu, có hiệu ứng chuyển cảnh mượt kiểu Morph của PowerPoint. Hơn 80 phong cách thiết kế, font hỗ trợ đủ dấu tiếng Việt; xuất được file PowerPoint (.pptx) khi yêu cầu.</div></li>
+            </ul>
+            <div class="table-container" style="margin-top: 10px;">
+              <table>
+                <thead><tr><th>SlideFly làm việc theo các bước</th><th>Anh chị làm gì</th></tr></thead>
+                <tbody>
+                  <tr><td>1. Đọc nội dung, hỏi gộp các câu còn thiếu (mục đích, người xem, số slide, cảm giác mong muốn)</td><td>Trả lời một lượt cho rõ</td></tr>
+                  <tr><td>2. Gợi ý vài phong cách, dựng <strong>vài slide mẫu</strong> để chọn</td><td>Chọn mẫu ưng ý</td></tr>
+                  <tr><td>3. Dựng cả bộ, gói thành 1 file HTML</td><td>Chờ</td></tr>
+                  <tr><td>4. Tự mở trình duyệt kiểm tra chữ tràn, khoảng trống, độ tương phản rồi sửa</td><td>Chờ</td></tr>
+                  <tr><td>5. Giao đường dẫn file</td><td>Mở file: phím mũi tên hoặc Space để chuyển slide, phím F để toàn màn hình</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 6px; color: var(--brand-primary);">Thực hành 1: Đánh giá bộ skill marketing trước khi cài</h4>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">A.5.1 - Đánh giá bộ marketingskills</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">https://github.com/coreyhaines31/marketingskills
+tìm hiểu cho tôi bộ skill này là gì, có phù hợp với project của tôi hay không? Và nếu có phù hợp thì hãy liệt kê ra các skill cần thiết có thể đưa vào project này, và mình cũng sẽ chỉnh lại theo thông tin của project này.</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin: 10px 0;"><strong>Quan sát:</strong> Claude đọc repo, cho biết bộ skill làm gì, có hợp với công việc của project không, đề xuất vài skill nên lấy và cách điền thông tin công ty vào file bối cảnh. Chỉ cài khi anh chị đã duyệt danh sách.</p>
+            <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 6px; color: var(--brand-primary);">Thực hành 2: Xem trang giới thiệu SlideFly</h4>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">A.5.2 - Link trang giới thiệu SlideFly</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">https://andyluu98.github.io/slidefly/</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin: 10px 0;">Mở link để xem slide mẫu chạy trực tiếp và bộ sưu tập phong cách.</p>
+            <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 6px; color: var(--brand-primary);">Thực hành 3: Cài SlideFly vào thư mục skill cấp project</h4>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">A.5.3 - Cài skill SlideFly cấp project</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">https://github.com/andyluu98/slidefly
+cài cho tôi skill này, đặt tại folder skill cấp project này cho tôi</div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin: 10px 0;"><strong>Quan sát:</strong> Claude tải repo về, chép đúng thư mục skill (trong repo nằm ở <code>skill/slidefly/</code>) vào <code>.claude/skills/slidefly/</code> của project. Một vài bước dùng Python để gói file và chọn phong cách, nếu máy chưa có Claude sẽ hướng dẫn cài.</p>
+            <h4 style="font-size: 15px; font-weight: 700; margin: 16px 0 6px; color: var(--brand-primary);">Thực hành 4: Gọi /slidefly tạo slide, xem 5 slide mẫu trước</h4>
+            <p style="font-size: 13px; color: var(--text-muted); margin: 10px 0;">Đính kèm hoặc chỉ tới nội dung cần làm slide (ví dụ file nghiên cứu xu hướng AI ở Bước 1, hoặc <code>gioi_thieu_dich_vu_novatech.md</code>), rồi gửi:</p>
+            <div class="prompt-container">
+              <div class="prompt-header">
+                <span class="prompt-label">A.5.4 - Tạo slide bằng /slidefly</span>
+                <button class="btn-copy" onclick="copyText(this)">Sao chép</button>
+              </div>
+              <div class="prompt-content">sử dụng skill /slidefly để tạo cho tôi slide cho nội dung này. Trước khi tạo thì cho tôi mẫu 5 slide phù hợp với nội dung trên</div>
+            </div>
+            <ul class="steps-list" style="margin-top: 12px;">
+              <li><span class="step-badge">1</span><div>Claude hỏi lại mục đích, người xem, số slide, rồi dựng <strong>5 slide mẫu</strong> để anh chị duyệt phong cách và bố cục.</div></li>
+              <li><span class="step-badge">2</span><div>Duyệt xong mới dựng cả bộ: mở file HTML, bấm mũi tên xem hiệu ứng chuyển cảnh.</div></li>
+              <li><span class="step-badge">3</span><div>Cần gửi cho người dùng PowerPoint thì nhờ thêm: <em>"xuất thêm bản .pptx"</em>.</div></li>
+            </ul>
+            <div class="callout callout-tip">
+              <div class="callout-title"><svg class="icon inline-icon"><use href="#icon-lightbulb"/></svg>Duyệt mẫu trước, dựng sau</div>
+              Câu "trước khi tạo thì cho tôi mẫu 5 slide" là thói quen đáng giữ với mọi việc lớn: xem mẫu nhỏ, chốt hướng, rồi mới để Claude làm cả bộ. Sửa ở bước mẫu rẻ hơn nhiều so với sửa cả bộ 20 slide.
+            </div>
+          </div>
         </section>
 
         <section class="content-section" id="b5-phan-b">
@@ -4206,6 +4276,7 @@ Hãy đọc kỹ project này cho tôi, tôi cần cấu hình vài bạn agent 
                 <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b5-chk-7"><span class="checklist-text">Sản phẩm 2: 01 file Word giới thiệu dịch vụ NovaTech tạo tự động bằng Skill, lưu trong 03_output/.</span></label>
                 <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b5-chk-8"><span class="checklist-text">Sản phẩm 3: 02 Agent trong .claude/agents/ - agent nghiên cứu đối thủ (chỉ đọc &amp; tra web, khóa ghi sửa) và agent chuyên viên đề xuất (đọc &amp; ghi nội bộ, không ra mạng).</span></label>
                 <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b5-chk-9"><span class="checklist-text">Sản phẩm 4: 02 file kết quả phối hợp dây chuyền - 03_output/nghien-cuu-doi-thu.md và 03_output/de-xuat-chien-luoc.md.</span></label>
+                <label class="checklist-item"><input type="checkbox" class="checklist-checkbox" data-id="b5-chk-10"><span class="checklist-text">Sản phẩm 5: Skill SlideFly cài cấp project trong .claude/skills/slidefly/ + 01 bộ slide HTML tạo bằng /slidefly.</span></label>
               </div>
             </div>
           </div>
